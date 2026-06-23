@@ -50,6 +50,33 @@ import { venue } from '../data/venue';
   </section>
 
   <!-- BRUNCH MENU -->
+  <section id="brunch-menu" class="bg-brand-cream px-6 sm:px-8 lg:px-12 py-20 sm:py-28">
+    <div class="max-w-2xl mx-auto text-center mb-14">
+      <Eyebrow align="center">The Menu</Eyebrow>
+      <h2 class="font-display text-section-xl leading-display uppercase text-brand-charcoal mb-4">Brunch Menu</h2>
+      <p class="text-brand-charcoal/60 leading-relaxed">
+        {venue.brunch.days} &middot; {venue.brunch.hours}
+      </p>
+    </div>
+
+    <!-- Food -->
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-20">
+      <MenuCard image="/photos/brunch-chicken-waffle.jpg" imageAlt="Chicken and waffle with maple syrup and fresh fruit" name="Chicken & Waffle" category="food" />
+      <MenuCard image="/photos/brunch-avocado-toast.jpg" imageAlt="Avocado toast with fried egg, heirloom tomatoes, microgreens" name="Avocado Toast" category="food" />
+      <MenuCard image="/photos/brunch-dishes-overhead.jpg" imageAlt="Coco Cabana brunch spread with French toast and tropical dishes" name="Brunch Spread" category="food" />
+    </div>
+
+    <!-- Drinks -->
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-10">
+        <Eyebrow align="center">The Bar</Eyebrow>
+        <h3 class="font-display text-2xl leading-display uppercase text-brand-charcoal">Bottomless Mimosas</h3>
+      </div>
+      <div class="max-w-xs mx-auto">
+        <MenuCard image="/photos/brunch-mimosas.jpg" imageAlt="Bottomless mimosa flight with Campo Viejo cava and copper flamingo" name="Bottomless Mimosas" description="Campo Viejo Cava · 2-Hour Bottomless · Classic, Tropical & Citrus" category="drinks" />
+      </div>
+    </div>
+  </section>
 
   <!-- MIMOSA BANNER -->
   <FullBleedBanner
@@ -68,25 +95,6 @@ import { venue } from '../data/venue';
     </p>
     <Button href={venue.reservationsUrl} variant="primary" external>Reserve Your Table</Button>
   </FullBleedBanner>
-  <section id="brunch-menu" class="bg-brand-cream px-6 sm:px-8 lg:px-12 py-20 sm:py-28">
-    <div class="max-w-2xl mx-auto text-center mb-14">
-      <Eyebrow align="center">The Menu</Eyebrow>
-      <h2 class="font-display text-section-xl leading-display uppercase text-brand-charcoal mb-4">Brunch Menu</h2>
-      <p class="text-brand-charcoal/60 leading-relaxed">
-        {venue.brunch.days} &middot; {venue.brunch.hours}
-      </p>
-    </div>
-    <!-- Food cards -->
-    <div class="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-16">
-      <MenuCard image="/photos/brunch-chicken-waffle.jpg" imageAlt="Chicken and waffle with maple syrup and fresh fruit" name="Chicken & Waffle" category="food" />
-      <MenuCard image="/photos/brunch-avocado-toast.jpg" imageAlt="Avocado toast with fried egg, heirloom tomatoes, microgreens" name="Avocado Toast" category="food" />
-      <MenuCard image="/photos/brunch-dishes-overhead.jpg" imageAlt="Coco Cabana brunch spread with French toast and tropical dishes" name="Brunch Spread" category="food" />
-    </div>
-    <!-- Drinks row -->
-    <div class="max-w-sm mx-auto">
-      <MenuCard image="/photos/brunch-mimosas.jpg" imageAlt="Bottomless mimosa flight with Campo Viejo cava and copper flamingo" name="Bottomless Mimosas" description="Campo Viejo Cava · 2-Hour Bottomless · Classic, Tropical & Citrus" category="drinks" />
-    </div>
-  </section>
 
   <!-- ROOFTOP SPLIT -->
   <SplitSection
