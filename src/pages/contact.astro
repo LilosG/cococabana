@@ -1,0 +1,98 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+import SplitSection from '../components/SplitSection.astro';
+import Button from '../components/Button.astro';
+import Eyebrow from '../components/Eyebrow.astro';
+import { venue } from '../data/venue';
+---
+
+<Layout
+  transparentNav={true}
+  title={`Contact | ${venue.fullName} | ${venue.address.city}, ${venue.address.state}`}
+  description={`Reservations, private events, and directions to ${venue.name} — ${venue.hotel}, ${venue.address.street}, ${venue.address.city}, ${venue.address.state}.`}
+>
+  <PageHero
+    image="/photos/bar-rooftop-interior.jpg"
+    imageAlt="Coco Cabana open-air rooftop bar — marble counter, bar stools, hanging greenery, Oceanside views"
+  >
+    <Eyebrow tone="dark">{venue.address.city}, {venue.address.state}</Eyebrow>
+    <h1 class="font-display leading-ultra text-hero uppercase mb-6">Get in Touch</h1>
+    <p class="text-brand-cream/80 leading-relaxed max-w-xl mb-8">
+      Reservations, private events, or just finding us — everything you need is below.
+    </p>
+    <Button href={venue.reservationsUrl} variant="primary" external>Reserve a Table</Button>
+  </PageHero>
+
+  <!-- 3-COL INFO GRID -->
+  <section class="bg-brand-charcoal text-brand-cream px-6 sm:px-8 lg:px-12 py-20 sm:py-28">
+    <div class="max-w-5xl mx-auto grid md:grid-cols-3 gap-12">
+      <div>
+        <Eyebrow tone="dark">Reservations</Eyebrow>
+        <h2 class="font-display text-2xl uppercase text-brand-cream mb-4">Book a Table</h2>
+        <p class="text-brand-cream/60 leading-relaxed mb-6">Reserve online via Toast or call us directly. Walk-ins welcome based on availability.</p>
+        <div class="flex flex-col gap-3">
+          <Button href={venue.reservationsUrl} variant="primary" external>Reserve Online</Button>
+          <Button href={venue.phoneHref} variant="ghost">{venue.phone}</Button>
+        </div>
+      </div>
+      <div>
+        <Eyebrow tone="dark">Private Events</Eyebrow>
+        <h2 class="font-display text-2xl uppercase text-brand-cream mb-4">Host an Event</h2>
+        <p class="text-brand-cream/60 leading-relaxed mb-6">Birthdays, celebrations, corporate gatherings — call us to start planning your event on the rooftop.</p>
+        <div class="flex flex-col gap-3">
+          <Button href={venue.phoneHref} variant="primary">Call to Inquire</Button>
+          <Button href={venue.routes.privateEvents} variant="ghost">Private Events Page</Button>
+        </div>
+      </div>
+      <div>
+        <Eyebrow tone="dark">Find Us</Eyebrow>
+        <h2 class="font-display text-2xl uppercase text-brand-cream mb-4">Visit</h2>
+        <a href={venue.mapsUrl} target="_blank" rel="noopener noreferrer" class="block text-brand-cream hover:text-brand-pink transition-colors mb-2">
+          {venue.address.street}<br />{venue.address.city}, {venue.address.state} {venue.address.zip}
+        </a>
+        <p class="text-brand-cream/60 text-sm mb-6">{venue.hotel}</p>
+        <Button href={venue.mapsUrl} variant="ghost" external>Get Directions</Button>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOURS + MAP -->
+  <section class="bg-brand-cream px-6 sm:px-8 lg:px-12 py-20 sm:py-28">
+    <div class="max-w-5xl mx-auto grid md:grid-cols-5 gap-px bg-brand-charcoal/10 border border-brand-charcoal/10">
+      <div class="md:col-span-2 bg-brand-cream p-8 sm:p-10">
+        <Eyebrow>Hours</Eyebrow>
+        <h2 class="font-display text-section-xl leading-display uppercase text-brand-charcoal mb-6">When We're Open</h2>
+        <div class="space-y-2 mb-8">
+          {venue.hours.schedule.map(row => (
+            <div class="flex justify-between gap-4 text-sm">
+              <span class="text-brand-charcoal/60">{row.days}</span>
+              <span class:list={[row.hours === 'Closed' ? 'text-brand-charcoal/30' : 'text-brand-charcoal']}>{row.hours}</span>
+            </div>
+          ))}
+        </div>
+        <p class="text-brand-charcoal/50 text-xs uppercase tracking-label">{venue.hours.shortSummary}</p>
+      </div>
+      <div class="md:col-span-3 min-h-[400px] overflow-hidden">
+        <iframe
+          title={`Map to ${venue.fullName}`}
+          src={venue.mapsEmbedUrl}
+          class="w-full h-full border-0 min-h-[400px]"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOCIAL + CTA -->
+  <section class="bg-brand-charcoal px-6 sm:px-8 lg:px-12 py-16 sm:py-20 text-center">
+    <Eyebrow align="center" tone="dark">Follow Along</Eyebrow>
+    <h2 class="font-display text-section-xl leading-display uppercase text-brand-cream mb-4">{venue.social.instagramHandle}</h2>
+    <p class="text-brand-cream/60 mb-8">Follow us on Instagram for events, specials, and rooftop vibes.</p>
+    <div class="flex flex-wrap gap-4 justify-center">
+      <Button href={venue.social.instagram} variant="primary" external>Follow on Instagram</Button>
+      <Button href={venue.reservationsUrl} variant="ghost" external>Reserve a Table</Button>
+    </div>
+  </section>
+</Layout>

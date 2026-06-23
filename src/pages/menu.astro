@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import PageHero from '../components/PageHero.astro';
+import FullBleedBanner from '../components/FullBleedBanner.astro';
 import Button from '../components/Button.astro';
 import Eyebrow from '../components/Eyebrow.astro';
 import MenuCard from '../components/MenuCard.astro';
@@ -9,14 +10,13 @@ import { venue } from '../data/venue';
 
 <Layout
   transparentNav={true}
-  title={`Menu | ${venue.fullName}`}
-  description={`Food and cocktails at ${venue.name} — ${venue.hotel}, ${venue.address.city}, ${venue.address.state}.`}
+  title={`Menu | ${venue.fullName} | ${venue.address.city}, ${venue.address.state}`}
+  description={`Food and cocktails at ${venue.name} — Caribbean-inspired bar program and rooftop kitchen at ${venue.hotel}, ${venue.address.city}.`}
 >
   <PageHero
     image="/photos/menu-flamingo-hero.jpg"
-    imageAlt="Coco Cabana signature copper flamingo cocktail vessel with rattan pendants and Oceanside rooftop in background"
+    imageAlt="Coco Cabana signature copper flamingo cocktail vessel with rattan pendants and Oceanside rooftop"
     imagePosition="object-bottom"
-    
   >
     <Eyebrow tone="dark">{venue.address.city}, {venue.address.state}</Eyebrow>
     <h1 class="font-display leading-ultra text-hero uppercase mb-6">The Menu</h1>
@@ -31,10 +31,13 @@ import { venue } from '../data/venue';
     <div class="max-w-2xl mx-auto text-center mb-12">
       <Eyebrow align="center">The Kitchen</Eyebrow>
       <h2 class="font-display text-section-xl leading-display uppercase text-brand-charcoal mb-4">Food</h2>
+      <p class="text-brand-charcoal/60 leading-relaxed">
+        Rooftop plates built to share — Caribbean-influenced and made for the open air.
+      </p>
     </div>
-    <div class="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-      <MenuCard image="/photos/food/wings.jpg" imageAlt="Fried chicken wings with chili and herb garnish" category="food" />
-      <MenuCard name="Spicy Chicken Bowl" image="/photos/food/spicy-chicken-bowl.jpg" imageAlt="Spicy chicken bowl with rice, broccolini, and pico" imagePosition="object-[center_80%]" category="food" />
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-10">
+      <MenuCard image="/photos/food/wings.jpg" imageAlt="Crispy fried wings at Coco Cabana" category="food" />
+      <MenuCard name="Spicy Chicken Bowl" image="/photos/food/spicy-chicken-bowl.jpg" imageAlt="Spicy chicken bowl with rice and broccolini" imagePosition="object-[center_80%]" category="food" />
       <MenuCard name="Hawaiian Cubano" image="/photos/food/hawaiian-cubano.jpg" imageAlt="Hawaiian Cubano sandwich with fries" imagePosition="object-[center_75%]" category="food" />
       <MenuCard name="Coconut Shrimp" image="/photos/food/coconut-shrimp-v2.jpg" imageAlt="Coconut shrimp with dipping sauce" category="food" />
       <MenuCard name="Chicken Sando" image="/photos/food/chicken-sando.jpg" imageAlt="Crispy chicken sandwich with slaw and fries" imagePosition="object-[center_75%]" category="food" />
@@ -47,15 +50,42 @@ import { venue } from '../data/venue';
     <div class="max-w-2xl mx-auto text-center mb-12">
       <Eyebrow align="center" tone="dark">The Bar</Eyebrow>
       <h2 class="font-display text-section-xl leading-display uppercase text-brand-cream mb-4">Cocktails</h2>
+      <p class="text-brand-cream/60 leading-relaxed">
+        Caribbean-inspired cocktails crafted from scratch — built for a rooftop above the Pacific.
+      </p>
     </div>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
-      <MenuCard name="Caribe Welcome" description="House rum blend, coconut water, apricot brandy, coconut cream, fresh lime" image="/photos/drinks/caribe-welcome.jpg" imageAlt="Caribe Welcome cocktail served in a coconut with orchid garnish" category="drinks" tone="dark" />
-      <MenuCard name="Swedish Bikini Team" description="House rum blend, strawberry, cucumber, coconut water, lemon" image="/photos/drinks/swedish-bikini-team.jpg" imageAlt="Swedish Bikini Team cocktail with cucumber ribbon and strawberry garnish" category="drinks" tone="dark" />
-      <MenuCard name="Havana Good Time" image="/photos/drinks/havana-good-time.jpg" imageAlt="Havana Good Time cocktail served in a copper flamingo vessel" imagePosition="object-[center_85%]" category="drinks" tone="dark" />
-      <MenuCard name="Miami Pound Machine" description="Blanco tequila, passionfruit, bitters" image="/photos/drinks/miami-pound-machine.jpg" imageAlt="Miami Pound Machine cocktail with banana leaf and lime wheel garnish" imagePosition="object-[25%_center]" category="drinks" tone="dark" />
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto mb-10">
+      <MenuCard name="Caribe Welcome" description="House rum blend, coconut water, apricot brandy, coconut cream, fresh lime" image="/photos/drinks/caribe-welcome.jpg" imageAlt="Caribe Welcome cocktail in a coconut with orchid garnish" category="drinks" tone="dark" />
+      <MenuCard name="Swedish Bikini Team" description="House rum blend, strawberry, cucumber, coconut water, lemon" image="/photos/drinks/swedish-bikini-team.jpg" imageAlt="Swedish Bikini Team cocktail with cucumber ribbon and strawberry" category="drinks" tone="dark" />
+      <MenuCard name="Havana Good Time" image="/photos/drinks/havana-good-time.jpg" imageAlt="Havana Good Time cocktail in a copper flamingo vessel" imagePosition="object-[center_85%]" category="drinks" tone="dark" />
+      <MenuCard name="Miami Pound Machine" description="Blanco tequila, passionfruit, bitters" image="/photos/drinks/miami-pound-machine.jpg" imageAlt="Miami Pound Machine cocktail with banana leaf and lime wheel" imagePosition="object-[25%_center]" category="drinks" tone="dark" />
+    </div>
+    <div class="text-center">
+      <Button href={venue.reservationsUrl} variant="ghost" external>Reserve a Table</Button>
     </div>
   </section>
 
+  <!-- BRUNCH CALLOUT BANNER -->
+  <FullBleedBanner
+    image="/photos/brunch-mimosas-banner.jpg"
+    imageAlt="Coco Cabana bottomless mimosas — Campo Viejo cava flights with copper flamingo on marble table"
+    imagePosition="object-center"
+    minHeight="min-h-[560px] sm:min-h-[620px]"
+  >
+    <Eyebrow tone="dark">Weekend Brunch</Eyebrow>
+    <h2 class="font-display leading-display text-section-xl uppercase mb-2">
+      Brunch on<br />the Rooftop
+    </h2>
+    <p class="accent-text text-accent-xl text-brand-pink mb-6">{venue.brunch.days}</p>
+    <p class="text-brand-cream/80 leading-relaxed mb-2">{venue.brunch.hours}</p>
+    <p class="text-brand-cream/60 text-sm mb-8">{venue.brunch.highlight}</p>
+    <div class="flex flex-wrap gap-4">
+      <Button href={venue.routes.brunch} variant="primary">View Brunch Menu</Button>
+      <Button href={venue.reservationsUrl} variant="ghost" external>Reserve</Button>
+    </div>
+  </FullBleedBanner>
+
+  <!-- RESERVE CTA -->
   <section class="bg-brand-cream px-6 sm:px-8 lg:px-12 py-16 sm:py-20 text-center">
     <h2 class="font-display text-section-xl leading-display uppercase text-brand-charcoal mb-2">Reserve</h2>
     <p class="accent-text text-accent-xl text-brand-pink mb-8">Your Table</p>

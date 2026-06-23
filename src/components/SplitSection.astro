@@ -1,0 +1,43 @@
+---
+interface Props {
+  image: string;
+  imageAlt: string;
+  imagePosition?: string;
+  tone?: 'light' | 'dark' | 'navy';
+  imageLeft?: boolean;
+  minHeight?: string;
+}
+
+const {
+  image,
+  imageAlt,
+  imagePosition = 'object-center',
+  tone = 'light',
+  imageLeft = false,
+  minHeight = 'min-h-[560px] md:min-h-[640px]',
+} = Astro.props;
+
+const bgClass = {
+  light: 'bg-brand-cream',
+  dark:  'bg-brand-charcoal',
+  navy:  'bg-brand-navy',
+}[tone];
+---
+
+<section class:list={[bgClass, 'overflow-hidden']}>
+  <div class:list={['max-w-7xl mx-auto grid md:grid-cols-[3fr_2fr] items-stretch', minHeight]}>
+    <div class:list={['relative min-h-[380px] md:min-h-0', imageLeft ? 'md:order-1' : 'md:order-2']}>
+      <img
+        src={image}
+        alt={imageAlt}
+        class:list={['absolute inset-0 w-full h-full object-cover', imagePosition]}
+      />
+    </div>
+    <div class:list={[
+      'px-8 sm:px-10 lg:px-14 py-16 sm:py-20 flex flex-col justify-center',
+      imageLeft ? 'md:order-2' : 'md:order-1',
+    ]}>
+      <slot />
+    </div>
+  </div>
+</section>

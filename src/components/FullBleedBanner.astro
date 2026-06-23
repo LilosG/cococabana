@@ -1,0 +1,36 @@
+---
+interface Props {
+  image: string;
+  imageAlt: string;
+  imagePosition?: string;
+  minHeight?: string;
+  gradientDirection?: 'left' | 'right';
+}
+
+const {
+  image,
+  imageAlt,
+  imagePosition = 'object-center',
+  minHeight = 'min-h-[580px] sm:min-h-[640px]',
+  gradientDirection = 'left',
+} = Astro.props;
+
+const gradient = gradientDirection === 'left'
+  ? 'bg-gradient-to-r from-brand-charcoal/90 via-brand-charcoal/55 to-transparent'
+  : 'bg-gradient-to-l from-brand-charcoal/90 via-brand-charcoal/55 to-transparent';
+---
+
+<section class:list={['relative flex items-center overflow-hidden', minHeight]}>
+  <div class="absolute inset-0">
+    <img
+      src={image}
+      alt={imageAlt}
+      class:list={['w-full h-full object-cover', imagePosition]}
+    />
+    <div class:list={['absolute inset-0', gradient]}></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-brand-charcoal/50 via-transparent to-transparent"></div>
+  </div>
+  <div class="relative z-10 px-6 sm:px-8 lg:px-12 py-24 sm:py-32 max-w-xl text-brand-cream">
+    <slot />
+  </div>
+</section>

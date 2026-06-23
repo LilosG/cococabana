@@ -1,6 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import PageHero from '../components/PageHero.astro';
+import SplitSection from '../components/SplitSection.astro';
+import FullBleedBanner from '../components/FullBleedBanner.astro';
 import Button from '../components/Button.astro';
 import Eyebrow from '../components/Eyebrow.astro';
 import MenuCard from '../components/MenuCard.astro';
@@ -9,14 +11,13 @@ import { venue } from '../data/venue';
 
 <Layout
   title={`Brunch | ${venue.fullName} | ${venue.address.city}, ${venue.address.state}`}
-  description={`Weekend brunch at ${venue.name} — ${venue.brunch.days}, ${venue.brunch.hours}. ${venue.brunch.highlight}. Rooftop dining above Downtown Oceanside at ${venue.hotel}.`}
+  description={`Weekend brunch at ${venue.name} — ${venue.brunch.days}, ${venue.brunch.hours}. ${venue.brunch.highlight}. Rooftop dining above Downtown ${venue.address.city} at ${venue.hotel}.`}
   transparentNav={true}
 >
   <PageHero
     image="/photos/brunch-hero.jpg"
-    imageAlt="Coco Cabana weekend brunch spread — colorful plates, eggs, French toast, mimosas on marble table"
+    imageAlt="Coco Cabana weekend brunch spread — colorful plates, eggs, French toast on marble table"
     imagePosition="object-top"
-    heightClass="min-h-[80vh]"
   >
     <Eyebrow tone="dark">Weekend Brunch</Eyebrow>
     <h1 class="font-display leading-ultra text-hero uppercase mb-2">Brunch</h1>
@@ -48,30 +49,66 @@ import { venue } from '../data/venue';
     </div>
   </section>
 
+  <!-- MIMOSA BANNER -->
+  <FullBleedBanner
+    image="/photos/brunch-mimosas-banner.jpg"
+    imageAlt="Coco Cabana bottomless mimosas — Campo Viejo cava flights with copper flamingo on marble table"
+    imagePosition="object-center"
+    minHeight="min-h-[560px] sm:min-h-[620px]"
+  >
+    <Eyebrow tone="dark">Bottomless Mimosas</Eyebrow>
+    <h2 class="font-display leading-display text-section-xl uppercase mb-2">
+      Campo Viejo<br />Cava
+    </h2>
+    <p class="accent-text text-accent-xl text-brand-pink mb-6">2-Hour Bottomless</p>
+    <p class="text-brand-cream/80 leading-relaxed mb-8">
+      Classic, Tropical &amp; Citrus — bottomless for 2 hours while you dine. Available every {venue.brunch.days} from {venue.brunch.hours}.
+    </p>
+    <Button href={venue.reservationsUrl} variant="primary" external>Reserve Your Table</Button>
+  </FullBleedBanner>
+
   <!-- BRUNCH MENU -->
   <section id="brunch-menu" class="bg-brand-cream px-6 sm:px-8 lg:px-12 py-20 sm:py-28">
     <div class="max-w-2xl mx-auto text-center mb-14">
       <Eyebrow align="center">The Menu</Eyebrow>
-      <h2 class="font-display text-section-xl leading-display uppercase text-brand-charcoal">Brunch Menu</h2>
-      <p class="text-brand-charcoal/50 text-sm italic mt-3">
+      <h2 class="font-display text-section-xl leading-display uppercase text-brand-charcoal mb-4">Brunch Menu</h2>
+      <p class="text-brand-charcoal/60 leading-relaxed">
         {venue.brunch.days} &middot; {venue.brunch.hours}
       </p>
     </div>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
-      <MenuCard image="/photos/brunch-chicken-waffle.jpg" imageAlt="Chicken and waffle with maple syrup, fresh fruit, and home fries" name="Chicken & Waffle" category="food" />
-      <MenuCard image="/photos/brunch-avocado-toast.jpg" imageAlt="Avocado toast with fried egg, heirloom tomatoes, and microgreens" name="Avocado Toast" category="food" />
-      <MenuCard image="/photos/brunch-dishes-overhead.jpg" imageAlt="Coco Cabana brunch spread with French toast, eggs, and tropical dishes" name="Brunch Spread" category="food" />
-      <MenuCard image="/photos/brunch-mimosas.jpg" imageAlt="Bottomless mimosa flight with Campo Viejo cava, pineapple bucket and copper flamingo" name="Bottomless Mimosas" description="Campo Viejo Cava · 2-Hour Bottomless · Classic, Tropical & Citrus" category="drinks" />
+    <!-- Food cards -->
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-16">
+      <MenuCard image="/photos/brunch-chicken-waffle.jpg" imageAlt="Chicken and waffle with maple syrup and fresh fruit" name="Chicken & Waffle" category="food" />
+      <MenuCard image="/photos/brunch-avocado-toast.jpg" imageAlt="Avocado toast with fried egg, heirloom tomatoes, microgreens" name="Avocado Toast" category="food" />
+      <MenuCard image="/photos/brunch-dishes-overhead.jpg" imageAlt="Coco Cabana brunch spread with French toast and tropical dishes" name="Brunch Spread" category="food" />
+    </div>
+    <!-- Drinks row -->
+    <div class="max-w-sm mx-auto">
+      <MenuCard image="/photos/brunch-mimosas.jpg" imageAlt="Bottomless mimosa flight with Campo Viejo cava and copper flamingo" name="Bottomless Mimosas" description="Campo Viejo Cava · 2-Hour Bottomless · Classic, Tropical & Citrus" category="drinks" />
     </div>
   </section>
+
+  <!-- ROOFTOP SPLIT -->
+  <SplitSection
+    image="/photos/brunch-rooftop-banner.jpg"
+    imageAlt="Coco Cabana rooftop brunch setup with disco balls, mimosas, and palms"
+    imageLeft={true}
+    tone="dark"
+  >
+    <Eyebrow tone="dark">The Setting</Eyebrow>
+    <h2 class="font-display text-section-xl leading-display uppercase text-brand-cream mb-4">Brunch Above Oceanside</h2>
+    <p class="accent-text text-accent-xl text-brand-pink mb-6">Every Weekend</p>
+    <p class="text-brand-cream/70 leading-relaxed mb-8">
+      There's no better setting for a weekend brunch than four stories above Downtown Oceanside. Disco balls, palm trees, and bottomless mimosas — the rooftop is all yours on {venue.brunch.days}.
+    </p>
+    <Button href={venue.reservationsUrl} variant="primary" external>Reserve Now</Button>
+  </SplitSection>
 
   <!-- RESERVE CTA -->
   <section class="bg-brand-charcoal px-6 sm:px-8 lg:px-12 py-16 sm:py-20 text-center">
     <h2 class="font-display text-section-xl leading-display uppercase text-brand-cream mb-2">Reserve</h2>
     <p class="accent-text text-accent-xl text-brand-pink mb-6">Your Brunch Table</p>
-    <p class="text-brand-cream/60 mb-8">
-      {venue.brunch.days} &middot; {venue.brunch.hours} &middot; {venue.address.street}, {venue.address.city}
-    </p>
+    <p class="text-brand-cream/60 mb-8">{venue.brunch.days} &middot; {venue.brunch.hours} &middot; {venue.address.street}, {venue.address.city}</p>
     <Button href={venue.reservationsUrl} variant="primary" external>Reserve Now</Button>
   </section>
 </Layout>

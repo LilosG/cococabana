@@ -1,6 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import PageHero from '../components/PageHero.astro';
+import SplitSection from '../components/SplitSection.astro';
+import FullBleedBanner from '../components/FullBleedBanner.astro';
 import Button from '../components/Button.astro';
 import Eyebrow from '../components/Eyebrow.astro';
 import TickList from '../components/TickList.astro';
@@ -9,12 +11,12 @@ import { venue } from '../data/venue';
 
 <Layout
   transparentNav={true}
-  title={`Private Events | ${venue.fullName}`}
-  description={`Host a private event at ${venue.name} — ${venue.hotel}, ${venue.address.city}, ${venue.address.state}.`}
+  title={`Private Events | ${venue.fullName} | ${venue.address.city}, ${venue.address.state}`}
+  description={`Host your private event at ${venue.name} — rooftop bar atop ${venue.hotel} in Downtown ${venue.address.city}. Birthdays, celebrations, corporate gatherings, and rehearsal dinners.`}
 >
   <PageHero
     image="/photos/events-crowd-hero.jpg"
-    imageAlt="Coco Cabana rooftop packed with guests at golden hour — bartender at the bar, full venue energy"
+    imageAlt="Coco Cabana rooftop packed with guests at golden hour — bartender at full venue"
     imagePosition="object-[center_40%]"
   >
     <Eyebrow tone="dark">Private Events</Eyebrow>
@@ -22,40 +24,105 @@ import { venue } from '../data/venue';
       Your Event.<br />Our Rooftop.
     </h1>
     <p class="text-brand-cream/80 leading-relaxed max-w-xl mb-8">
-      From birthdays to celebrations, {venue.name} sets the scene for a night to remember.
-      Reach out to start planning.
+      From birthdays to corporate gatherings, {venue.name} sets the scene for a night to remember above Downtown {venue.address.city}.
     </p>
-    <Button href={venue.phoneHref} variant="primary">Call to Inquire</Button>
+    <div class="flex flex-wrap gap-4">
+      <Button href={venue.phoneHref} variant="primary">Call to Inquire</Button>
+      <Button href="#what-we-host" variant="ghost">What We Host</Button>
+    </div>
   </PageHero>
 
-  <section class="bg-brand-cream px-6 sm:px-8 lg:px-12 py-20 sm:py-28">
-    <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
-      <img
-        src="/photos/events-group-lifestyle.jpg"
-        alt="Group celebrating at Coco Cabana rooftop bar with cocktails"
-        class="w-full aspect-[4/3] object-cover object-[center_40%]"
-      />
-      <div>
-        <Eyebrow>What We Host</Eyebrow>
-        <h2 class="font-display text-section-xl leading-display uppercase text-brand-charcoal mb-6">
-          Built for the Occasion
-        </h2>
-        <div class="mb-8">
-          <TickList items={['Birthday Parties', 'Celebrations & Milestones', 'Corporate Gatherings', 'Rehearsal Dinners']} />
-        </div>
-        <Button href={venue.phoneHref} variant="dark">Call to Inquire</Button>
+  <!-- STATS STRIP -->
+  <section class="bg-brand-charcoal text-brand-cream">
+    <div class="max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-4 divide-x divide-y sm:divide-y-0 divide-brand-cream/10">
+      <div class="px-5 py-8 text-center">
+        <p class="accent-text text-2xl text-brand-pink mb-1">Rooftop</p>
+        <p class="uppercase tracking-stat text-xs text-brand-cream/50">Exclusive Venue</p>
+      </div>
+      <div class="px-5 py-8 text-center">
+        <p class="accent-text text-2xl text-brand-pink mb-1">Full Bar</p>
+        <p class="uppercase tracking-stat text-xs text-brand-cream/50">Caribbean Cocktails</p>
+      </div>
+      <div class="px-5 py-8 text-center">
+        <p class="accent-text text-2xl text-brand-pink mb-1">Downtown</p>
+        <p class="uppercase tracking-stat text-xs text-brand-cream/50">{venue.address.city}, {venue.address.state}</p>
+      </div>
+      <div class="px-5 py-8 text-center">
+        <p class="accent-text text-2xl text-brand-pink mb-1">Open Air</p>
+        <p class="uppercase tracking-stat text-xs text-brand-cream/50">4 Stories Up</p>
       </div>
     </div>
   </section>
 
+  <!-- WHAT WE HOST -->
+  <SplitSection
+    id="what-we-host"
+    image="/photos/events-group-lifestyle.jpg"
+    imageAlt="Group celebrating at Coco Cabana rooftop with cocktails and the gold pineapple wall"
+    imagePosition="object-[center_40%]"
+    imageLeft={true}
+    tone="light"
+  >
+    <Eyebrow>What We Host</Eyebrow>
+    <h2 class="font-display text-section-xl leading-display uppercase text-brand-charcoal mb-6">Built for the Occasion</h2>
+    <div class="mb-8">
+      <TickList items={['Birthday Parties', 'Celebrations & Milestones', 'Corporate Gatherings', 'Rehearsal Dinners', 'Brand Events']} />
+    </div>
+    <p class="text-brand-charcoal/60 leading-relaxed mb-8">
+      Call us directly to discuss availability, capacity, and what we can put together for your event. Every event is different — we'll make it work.
+    </p>
+    <Button href={venue.phoneHref} variant="primary">Call to Inquire</Button>
+  </SplitSection>
+
+  <!-- ATMOSPHERE BANNER -->
+  <FullBleedBanner
+    image="/photos/events-crowd-hero.jpg"
+    imageAlt="Packed rooftop at golden hour — Coco Cabana private event atmosphere"
+    imagePosition="object-[center_30%]"
+    gradientDirection="right"
+    minHeight="min-h-[600px] sm:min-h-[680px]"
+  >
+    <Eyebrow tone="dark">The Setting</Eyebrow>
+    <h2 class="font-display leading-display text-section-xl uppercase mb-2">
+      The Rooftop<br />Is Yours
+    </h2>
+    <p class="accent-text text-accent-xl text-brand-pink mb-6">Above Downtown {venue.address.city}</p>
+    <p class="text-brand-cream/80 leading-relaxed mb-8">
+      Four stories above {venue.address.street} — open air, full bar, and a view that makes every event unforgettable.
+    </p>
+    <Button href={venue.phoneHref} variant="primary">Start Planning</Button>
+  </FullBleedBanner>
+
+  <!-- HOW IT WORKS -->
+  <section class="bg-brand-cream px-6 sm:px-8 lg:px-12 py-20 sm:py-28">
+    <div class="max-w-2xl mx-auto text-center mb-12">
+      <Eyebrow align="center">The Process</Eyebrow>
+      <h2 class="font-display text-section-xl leading-display uppercase text-brand-charcoal">How It Works</h2>
+    </div>
+    <div class="max-w-4xl mx-auto grid md:grid-cols-3 gap-8">
+      <div class="text-center">
+        <p class="accent-text text-4xl text-brand-pink mb-4">01</p>
+        <h3 class="font-display uppercase tracking-feature text-sm text-brand-charcoal mb-3">Call or Inquire</h3>
+        <p class="text-brand-charcoal/60 text-sm leading-relaxed">Reach out directly to discuss your event date, size, and what you're envisioning.</p>
+      </div>
+      <div class="text-center">
+        <p class="accent-text text-4xl text-brand-pink mb-4">02</p>
+        <h3 class="font-display uppercase tracking-feature text-sm text-brand-charcoal mb-3">We Build the Plan</h3>
+        <p class="text-brand-charcoal/60 text-sm leading-relaxed">We'll put together the details — space, bar, and anything else that makes the night yours.</p>
+      </div>
+      <div class="text-center">
+        <p class="accent-text text-4xl text-brand-pink mb-4">03</p>
+        <h3 class="font-display uppercase tracking-feature text-sm text-brand-charcoal mb-3">Enjoy the Rooftop</h3>
+        <p class="text-brand-charcoal/60 text-sm leading-relaxed">Show up, settle in, and let the rooftop do the rest. We'll handle everything.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
   <section class="bg-brand-charcoal px-6 sm:px-8 lg:px-12 py-16 sm:py-20 text-center">
     <Eyebrow align="center" tone="dark">Start Planning</Eyebrow>
-    <h2 class="font-display text-section-xl leading-display uppercase text-brand-cream mb-2">
-      Let's Talk
-    </h2>
-    <p class="text-brand-cream/60 mb-8">
-      {venue.phone} &middot; {venue.address.street}, {venue.address.city}, {venue.address.state}
-    </p>
+    <h2 class="font-display text-section-xl leading-display uppercase text-brand-cream mb-2">Let's Talk</h2>
+    <p class="text-brand-cream/60 mb-8">{venue.phone} &middot; {venue.address.street}, {venue.address.city}, {venue.address.state}</p>
     <div class="flex flex-wrap gap-4 justify-center">
       <Button href={venue.phoneHref} variant="primary">Call to Inquire</Button>
       <Button href={venue.reservationsUrl} variant="ghost" external>Reserve a Table</Button>

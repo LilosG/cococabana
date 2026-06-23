@@ -1,6 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import PageHero from '../components/PageHero.astro';
+import SplitSection from '../components/SplitSection.astro';
+import FullBleedBanner from '../components/FullBleedBanner.astro';
 import Button from '../components/Button.astro';
 import Eyebrow from '../components/Eyebrow.astro';
 import FeatureTagList from '../components/FeatureTagList.astro';
@@ -9,20 +11,19 @@ import { venue } from '../data/venue';
 
 <Layout
   transparentNav={true}
-  title={`The Venue | ${venue.fullName}`}
-  description={`The rooftop, the cabana, and the live music program at ${venue.name} — ${venue.hotel}, ${venue.address.city}, ${venue.address.state}.`}
+  title={`The Venue | ${venue.fullName} | Rooftop Bar in ${venue.address.city}, ${venue.address.state}`}
+  description={`Explore the rooftop, the cabana, and the live music program at ${venue.name} — ${venue.hotel}, ${venue.address.city}. Open ${venue.hours.shortSummary}.`}
 >
   <PageHero
     image="/photos/venue-aerial-sign.jpg"
-    imageAlt="Coco Cabana rooftop bar aerial view — COCOCABANA sign on The Brick Hotel in Downtown Oceanside"
+    imageAlt="Aerial view of Coco Cabana rooftop bar — COCOCABANA sign on The Brick Hotel, Downtown Oceanside"
   >
     <Eyebrow tone="dark">{venue.address.city}, {venue.address.state} &middot; {venue.hotel}</Eyebrow>
     <h1 class="font-display leading-ultra text-hero uppercase mb-6">
       The Rooftop.<br />The Cabana.
     </h1>
     <p class="text-brand-cream/80 leading-relaxed max-w-xl mb-8">
-      One space above {venue.hotel}, built around its own identity — the open-air rooftop,
-      the cushioned cabana seating, and the live music that brings it together after dark.
+      Four stories above Downtown Oceanside — open air, full bar, and a rooftop built entirely around its own identity.
     </p>
     <div class="flex flex-wrap gap-4">
       <Button href={venue.reservationsUrl} variant="primary" external>Reserve a Table</Button>
@@ -30,58 +31,132 @@ import { venue } from '../data/venue';
     </div>
   </PageHero>
 
-  <!-- THE CABANA -->
-  <section id="cabana" class="bg-brand-charcoal px-6 sm:px-8 lg:px-12 py-20 sm:py-28">
-    <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
-      <div class="md:order-2">
-        <img
-          src="/photos/lounge-tile-cushions.jpg"
-          alt="Coco Cabana lounge seating with tile wall and cushioned daybeds"
-          class="w-full aspect-[4/3] object-cover"
-        />
+  <!-- STATS STRIP -->
+  <section class="bg-brand-charcoal text-brand-cream">
+    <div class="max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-4 divide-x divide-y sm:divide-y-0 divide-brand-cream/10">
+      <div class="px-5 py-8 text-center">
+        <p class="accent-text text-2xl text-brand-pink mb-1">Rooftop</p>
+        <p class="uppercase tracking-stat text-xs text-brand-cream/50">4 Stories Up</p>
       </div>
-      <div class="md:order-1">
-        <Eyebrow tone="dark">The Cabana</Eyebrow>
-        <h2 class="font-display text-section-xl leading-display uppercase text-brand-cream mb-4">Lounge Seating</h2>
-        <p class="text-brand-cream/70 leading-relaxed mb-6">
-          The cabana's signature lounge seating is designed for settling in — rattan pendants
-          overhead, geometric tile walls, pink daybeds, and unobstructed views of the Oceanside
-          skyline.
-        </p>
-        <FeatureTagList tags={['Cushioned Daybeds', 'Tile Bar Wall', 'Rooftop Views']} />
+      <div class="px-5 py-8 text-center">
+        <p class="accent-text text-2xl text-brand-pink mb-1">Open Air</p>
+        <p class="uppercase tracking-stat text-xs text-brand-cream/50">Full Bar Program</p>
+      </div>
+      <div class="px-5 py-8 text-center">
+        <p class="accent-text text-2xl text-brand-pink mb-1">DJ Nights</p>
+        <p class="uppercase tracking-stat text-xs text-brand-cream/50">Fri &amp; Sat · Every Weekend</p>
+      </div>
+      <div class="px-5 py-8 text-center">
+        <p class="accent-text text-2xl text-brand-pink mb-1">Downtown</p>
+        <p class="uppercase tracking-stat text-xs text-brand-cream/50">{venue.address.city}, {venue.address.state}</p>
       </div>
     </div>
   </section>
 
-  <!-- LIVE MUSIC -->
+  <!-- THE ROOFTOP -->
+  <SplitSection
+    image="/photos/welcome-lounge-tilewall.jpg"
+    imageAlt="Coco Cabana rooftop lounge — rattan pendants, tile wall, city views"
+    imageLeft={true}
+    tone="light"
+  >
+    <Eyebrow>The Space</Eyebrow>
+    <h2 class="font-display text-section-xl leading-display uppercase text-brand-charcoal mb-4">The Rooftop</h2>
+    <p class="accent-text text-accent-xl text-brand-pink mb-6">Above It All</p>
+    <p class="text-brand-charcoal/70 leading-relaxed mb-8">
+      Perched above {venue.hotel} at {venue.address.street}, the rooftop is a full open-air experience — Caribbean-inspired cocktails, a complete bar program, and views that stretch past the palm canopy all the way to the Pacific.
+    </p>
+    <FeatureTagList tags={['Open Air', 'Full Bar', 'Pacific Views', 'Downtown Oceanside']} />
+  </SplitSection>
+
+  <!-- THE CABANA — full-bleed banner -->
+  <FullBleedBanner
+    image="/photos/cabana-lounge-cityview.jpg"
+    imageAlt="Coco Cabana lounge seating — pink daybeds, geometric tile wall, Oceanside skyline"
+    imagePosition="object-center"
+    minHeight="min-h-[640px] sm:min-h-[700px]"
+  >
+    <Eyebrow tone="dark">The Cabana</Eyebrow>
+    <h2 class="font-display leading-display text-section-xl uppercase mb-2">
+      Lounge Seating
+    </h2>
+    <p class="accent-text text-accent-xl text-brand-pink mb-6">Stay a While</p>
+    <p class="text-brand-cream/80 leading-relaxed mb-8">
+      The cabana's signature lounge seating is designed for settling in — rattan pendants overhead, geometric tile walls, pink daybeds, and unobstructed views of the Oceanside skyline. Claim your corner early.
+    </p>
+    <div class="flex flex-wrap gap-4">
+      <Button href={venue.reservationsUrl} variant="primary" external>Reserve Your Spot</Button>
+    </div>
+  </FullBleedBanner>
+
+  <!-- THE VIEW -->
+  <SplitSection
+    image="/photos/venue-sunset-view.jpg"
+    imageAlt="Sunset viewed from Coco Cabana rooftop — palms silhouetted against orange sky"
+    imagePosition="object-[center_65%]"
+    imageLeft={false}
+    tone="dark"
+  >
+    <Eyebrow tone="dark">The View</Eyebrow>
+    <h2 class="font-display text-section-xl leading-display uppercase text-brand-cream mb-4">Sunsets</h2>
+    <p class="accent-text text-accent-xl text-brand-pink mb-6">Worth Arriving Early For</p>
+    <p class="text-brand-cream/70 leading-relaxed mb-8">
+      Four stories up, the views stretch past the rooftops and palm canopy all the way to the Pacific. Sunsets here are something else entirely — settle in before golden hour and watch the sky change over the water.
+    </p>
+    <FeatureTagList tags={['Pacific Views', 'Open Sky', 'Golden Hour']} />
+  </SplitSection>
+
+  <!-- LIVE MUSIC — full-bleed banner -->
+  <FullBleedBanner
+    image="/photos/live-music-dj.jpg"
+    imageAlt="DJ set at Coco Cabana rooftop with crowd"
+    imagePosition="object-[center_30%]"
+    minHeight="min-h-[600px] sm:min-h-[680px]"
+  >
+    <Eyebrow tone="dark">After Dark</Eyebrow>
+    <h2 class="font-display leading-display text-section-xl uppercase mb-2">
+      Live Music<br />&amp; Events
+    </h2>
+    <p class="accent-text text-accent-xl text-brand-pink mb-6">Every Friday &amp; Saturday</p>
+    <p class="text-brand-cream/80 leading-relaxed mb-8">
+      Live DJ sets every Friday and Saturday night. The rooftop transforms after dark — cocktails, open air, and the Oceanside skyline as your backdrop.
+    </p>
+    <Button href={venue.reservationsUrl} variant="primary" external>Reserve for the Night</Button>
+  </FullBleedBanner>
+
+  <!-- DETAILS MOSAIC -->
   <section class="bg-brand-cream px-6 sm:px-8 lg:px-12 py-20 sm:py-28">
-    <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
-      <img
-        src="/photos/live-music-dj.jpg"
-        alt="DJ set at Coco Cabana rooftop with crowd"
-        class="w-full aspect-[4/3] object-cover object-[center_30%]"
-      />
-      <div>
-        <Eyebrow>After Dark</Eyebrow>
-        <h2 class="font-display text-section-xl leading-display uppercase text-brand-charcoal mb-4">Live Music &amp; Events</h2>
-        <p class="text-brand-charcoal/70 leading-relaxed mb-6">
-          Live DJ sets every Friday and Saturday night. The rooftop transforms after dark —
-          cocktails, open air, and the Oceanside skyline as your backdrop.
-        </p>
-        <FeatureTagList tags={['DJ Fri & Sat', 'Every Weekend', 'Rooftop']} />
+    <div class="max-w-2xl mx-auto text-center mb-12">
+      <Eyebrow align="center">The Details</Eyebrow>
+      <h2 class="font-display text-section-xl leading-display uppercase text-brand-charcoal">The Atmosphere</h2>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
+      <div class="overflow-hidden aspect-square">
+        <img src="/photos/details-flamingo-taps.jpg" alt="Copper flamingo draft tap handles at Coco Cabana" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+      </div>
+      <div class="overflow-hidden aspect-square">
+        <img src="/photos/details-coconut-cups.jpg" alt="Coco Cabana branded coconut cups with copper flamingo vessel" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+      </div>
+      <div class="overflow-hidden aspect-square">
+        <img src="/photos/details-neon-night.jpg" alt="Neon pink palm sign glowing at night at Coco Cabana" class="w-full h-full object-cover object-[center_75%] hover:scale-105 transition-transform duration-500" />
+      </div>
+      <div class="overflow-hidden aspect-square">
+        <img src="/photos/details-pendant-interior.jpg" alt="Rattan pendant lamps and tropical plants at Coco Cabana" class="w-full h-full object-cover object-[center_40%] hover:scale-105 transition-transform duration-500" />
+      </div>
+      <div class="overflow-hidden aspect-square">
+        <img src="/photos/details-ursula-cocktail.jpg" alt="Coco Cabana cocktail in front of the gold pineapple wall" class="w-full h-full object-cover object-[center_30%] hover:scale-105 transition-transform duration-500" />
+      </div>
+      <div class="overflow-hidden aspect-square">
+        <img src="/photos/details-pineapple-wall.jpg" alt="Gold pineapple wall display at Coco Cabana bar" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
       </div>
     </div>
   </section>
 
-  <!-- CLOSING CTA -->
+  <!-- CTA -->
   <section class="bg-brand-charcoal px-6 sm:px-8 lg:px-12 py-16 sm:py-20 text-center">
     <Eyebrow align="center" tone="dark">Come See It</Eyebrow>
-    <h2 class="font-display text-section-xl leading-display uppercase text-brand-cream mb-6">
-      {venue.name} Awaits
-    </h2>
-    <p class="text-brand-cream/60 mb-8">
-      {venue.hotel}, {venue.address.city}, {venue.address.state} &middot; {venue.hours.shortSummary}
-    </p>
+    <h2 class="font-display text-section-xl leading-display uppercase text-brand-cream mb-6">{venue.name} Awaits</h2>
+    <p class="text-brand-cream/60 mb-8">{venue.hotel}, {venue.address.city}, {venue.address.state} &middot; {venue.hours.shortSummary}</p>
     <div class="flex flex-wrap gap-4 justify-center">
       <Button href={venue.reservationsUrl} variant="primary" external>Reserve a Table</Button>
       <Button href={venue.routes.privateEvents} variant="ghost">Plan a Private Event</Button>

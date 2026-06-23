@@ -1,0 +1,75 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PageHero from '../../components/PageHero.astro';
+import Button from '../../components/Button.astro';
+import Eyebrow from '../../components/Eyebrow.astro';
+import { venue } from '../../data/venue';
+
+const placeholderPosts = [
+  {
+    slug: 'best-rooftop-bars-oceanside',
+    title: 'The Best Rooftop Bars in Oceanside, CA',
+    excerpt: 'Oceanside\'s rooftop bar scene is growing — here\'s what makes Coco Cabana the one worth the trip.',
+    date: 'June 2026',
+    category: 'Local Guide',
+  },
+  {
+    slug: 'bottomless-mimosas-oceanside',
+    title: 'Where to Find Bottomless Mimosas in Oceanside',
+    excerpt: 'Weekend brunch in Oceanside starts here — Campo Viejo cava, a rooftop view, and a 2-hour limit.',
+    date: 'June 2026',
+    category: 'Brunch',
+  },
+  {
+    slug: 'private-events-oceanside-rooftop',
+    title: 'Planning a Private Event on a Rooftop in Oceanside',
+    excerpt: 'Everything you need to know about booking Coco Cabana for your next birthday, celebration, or corporate event.',
+    date: 'May 2026',
+    category: 'Private Events',
+  },
+];
+---
+
+<Layout
+  transparentNav={true}
+  title={`Blog | ${venue.fullName} | Oceanside Rooftop Bar Guide`}
+  description={`Local guides, event updates, and rooftop lifestyle from ${venue.name} — ${venue.hotel}, Downtown ${venue.address.city}.`}
+>
+  <PageHero
+    image="/photos/hero-aerial.jpg"
+    imageAlt="Aerial view of Coco Cabana rooftop bar over Downtown Oceanside"
+  >
+    <Eyebrow tone="dark">{venue.address.city}, {venue.address.state}</Eyebrow>
+    <h1 class="font-display leading-ultra text-hero uppercase mb-6">From the Rooftop</h1>
+    <p class="text-brand-cream/80 leading-relaxed max-w-xl mb-8">
+      Local guides, event updates, and everything happening above Downtown Oceanside.
+    </p>
+  </PageHero>
+
+  <section class="bg-brand-cream px-6 sm:px-8 lg:px-12 py-20 sm:py-28">
+    <div class="max-w-2xl mx-auto text-center mb-12">
+      <Eyebrow align="center">The Blog</Eyebrow>
+      <h2 class="font-display text-section-xl leading-display uppercase text-brand-charcoal">Latest Posts</h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+      {placeholderPosts.map(post => (
+        <article class="flex flex-col">
+          <div class="bg-brand-charcoal/5 aspect-[4/3] w-full mb-4 flex items-center justify-center">
+            <span class="text-xs uppercase tracking-label text-brand-charcoal/30">{post.category}</span>
+          </div>
+          <p class="text-xs uppercase tracking-label text-brand-pink mb-2">{post.category} &middot; {post.date}</p>
+          <h3 class="font-display uppercase text-sm tracking-feature text-brand-charcoal mb-3 leading-snug">{post.title}</h3>
+          <p class="text-brand-charcoal/60 text-sm leading-relaxed mb-4">{post.excerpt}</p>
+          <a href={`/blog/${post.slug}`} class="text-xs uppercase tracking-label text-brand-pink hover:text-brand-pink-dark transition-colors mt-auto">Read More →</a>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="bg-brand-charcoal px-6 sm:px-8 lg:px-12 py-16 sm:py-20 text-center">
+    <Eyebrow align="center" tone="dark">Come Visit</Eyebrow>
+    <h2 class="font-display text-section-xl leading-display uppercase text-brand-cream mb-6">{venue.name} Awaits</h2>
+    <p class="text-brand-cream/60 mb-8">{venue.hotel} &middot; {venue.address.city}, {venue.address.state} &middot; {venue.hours.shortSummary}</p>
+    <Button href={venue.reservationsUrl} variant="primary" external>Reserve a Table</Button>
+  </section>
+</Layout>

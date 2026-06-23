@@ -1,7 +1,15 @@
-// Content collections placeholder — mirrors the Park 101 pattern.
-// No collections defined yet; add a blog collection here when that
-// page gets planned, following the same BlogLayout/BlogCard pattern
-// already standardized across the other GPH client repos.
-import { defineCollection } from 'astro:content';
+import { defineCollection, z } from 'astro:content';
+import { glob } from 'astro/loaders';
 
-export const collections = {};
+const blog = defineCollection({
+  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/blog' }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    date: z.coerce.date(),
+    category: z.string(),
+    ogImage: z.string().optional(),
+  }),
+});
+
+export const collections = { blog };
