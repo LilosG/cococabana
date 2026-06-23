@@ -1,0 +1,38 @@
+---
+// Shared CTA button. Variants cover every context in the build:
+// primary (brand-pink, sampled from the real venue — the portfolio's
+// accent-CTA pattern, same structural role as Park101's orange / Louisiana's
+// gold / Miss B's coral / Coco Maya's teal), dark (solid charcoal, the
+// neutral-CTA pairing seen alongside the accent button on every reference
+// site), secondary (outlined), ghost (outlined, for dark backgrounds).
+
+interface Props {
+  href: string;
+  variant?: 'primary' | 'dark' | 'secondary' | 'ghost';
+  external?: boolean;
+  class?: string;
+}
+
+const { href, variant = 'primary', external = false, class: className = '' } = Astro.props;
+
+const base =
+  'inline-flex items-center justify-center px-8 py-3.5 text-sm uppercase tracking-button transition-colors duration-300';
+
+const variants = {
+  primary: 'bg-brand-pink text-brand-charcoal hover:bg-brand-pink-dark hover:text-brand-cream',
+  dark: 'bg-brand-charcoal text-brand-cream hover:bg-brand-blush-dark',
+  secondary:
+    'border border-brand-charcoal text-brand-charcoal tracking-button-outline hover:bg-brand-charcoal hover:text-brand-cream',
+  ghost:
+    'border border-brand-cream/40 text-brand-cream tracking-button-outline hover:bg-brand-cream hover:text-brand-charcoal',
+};
+---
+
+<a
+  href={href}
+  class:list={[base, variants[variant], className]}
+  target={external ? '_blank' : undefined}
+  rel={external ? 'noopener noreferrer' : undefined}
+>
+  <slot />
+</a>

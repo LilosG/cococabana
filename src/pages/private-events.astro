@@ -1,0 +1,76 @@
+---
+// Built because routes.privateEvents was already linked from three CTAs
+// (homepage teaser, venue page intro, venue page closing band) with no
+// page behind any of them — a real 404, not a style gap.
+// No invented capacity, packages, or pricing — those aren't confirmed,
+// so the page routes interested guests to a phone call rather than
+// fabricating a request form or numbers that don't exist yet.
+import Layout from '../layouts/Layout.astro';
+import Button from '../components/Button.astro';
+import Eyebrow from '../components/Eyebrow.astro';
+import TickList from '../components/TickList.astro';
+import ImagePlaceholder from '../components/ImagePlaceholder.astro';
+import { venue } from '../data/venue';
+---
+
+<Layout
+  transparentNav={true}
+  title={`Private Events | ${venue.fullName}`}
+  description={`Host a private event at ${venue.name} — ${venue.hotel}, ${venue.address.city}, ${venue.address.state}.`}
+>
+  <section class="relative min-h-[70vh] flex items-end overflow-hidden">
+    <div class="absolute inset-0">
+      <img
+        src="/photos/events-crowd-hero.jpg"
+        alt="Coco Cabana rooftop packed with guests at golden hour — bartender at the bar, full venue energy"
+        class="w-full h-full object-cover object-[center_40%]"
+        fetchpriority="high"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-brand-charcoal/85 via-brand-charcoal/30 to-transparent"></div>
+      <div class="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-brand-charcoal/40 to-transparent"></div>
+    </div>
+    <div class="relative z-10 px-6 sm:px-8 lg:px-12 pb-20 sm:pb-24 w-full text-brand-cream">
+      <Eyebrow tone="dark">Private Events</Eyebrow>
+      <h1 class="font-display leading-ultra text-hero uppercase mb-6">
+        Your Event.<br />Our Rooftop.
+      </h1>
+      <p class="text-brand-cream/80 leading-relaxed max-w-xl mb-8">
+        From birthdays to celebrations, {venue.name} sets the scene for a night to remember.
+        Reach out to start planning.
+      </p>
+      <Button href={venue.phoneHref} variant="primary">Call to Inquire</Button>
+    </div>
+  </section>
+
+  <section class="bg-brand-cream px-6 sm:px-8 lg:px-12 py-20 sm:py-28">
+    <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <img src="/photos/events-group-lifestyle.jpg" alt="Group celebrating at Coco Cabana rooftop bar with cocktails" class="w-full aspect-[4/3] object-cover object-[center_40%]" />
+      <div>
+        <Eyebrow>What We Host</Eyebrow>
+        <h2 class="font-display text-section-xl leading-display uppercase text-brand-charcoal mb-6">
+          Built for the Occasion
+        </h2>
+        <div class="mb-8">
+          <TickList items={['Birthday Parties', 'Celebrations & Milestones', 'Corporate Gatherings', 'Rehearsal Dinners']} />
+        </div>
+        <p class="text-brand-charcoal/40 text-sm italic">
+          Capacity, packages, and pricing are still being finalized — call for current availability.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-brand-charcoal px-6 sm:px-8 lg:px-12 py-16 sm:py-20 text-center">
+    <Eyebrow align="center" tone="dark">Start Planning</Eyebrow>
+    <h2 class="font-display text-section-xl leading-display uppercase text-brand-cream mb-2">
+      Let's Talk
+    </h2>
+    <p class="text-brand-cream/60 mb-8">
+      {venue.phone} &middot; {venue.address.street}, {venue.address.city}, {venue.address.state}
+    </p>
+    <div class="flex flex-wrap gap-4 justify-center">
+      <Button href={venue.phoneHref} variant="primary">Call to Inquire</Button>
+      <Button href={venue.reservationsUrl} variant="ghost" external>Reserve a Table</Button>
+    </div>
+  </section>
+</Layout>

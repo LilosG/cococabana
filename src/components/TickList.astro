@@ -1,0 +1,17 @@
+---
+interface Props {
+  items: string[];
+  tone?: 'light' | 'dark';
+}
+
+const { items, tone = 'light' } = Astro.props;
+---
+
+<ul class="space-y-3">
+  {items.map((item) => (
+    <li class="flex items-center gap-3 text-sm">
+      <span class:list={['block w-4 h-px shrink-0', tone === 'dark' ? 'bg-brand-pink' : 'bg-brand-pink']}></span>
+      <span class={tone === 'dark' ? 'text-brand-cream/80' : 'text-brand-charcoal/70'}>{item}</span>
+    </li>
+  ))}
+</ul>

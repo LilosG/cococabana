@@ -1,0 +1,127 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Button from '../components/Button.astro';
+import Eyebrow from '../components/Eyebrow.astro';
+import FeatureTagList from '../components/FeatureTagList.astro';
+import ImagePlaceholder from '../components/ImagePlaceholder.astro';
+import { venue } from '../data/venue';
+---
+
+<Layout
+  transparentNav={true}
+  title={`The Venue | ${venue.fullName}`}
+  description={`The rooftop, the cabana, and the live music program at ${venue.name} — ${venue.hotel}, ${venue.address.city}, ${venue.address.state}.`}
+>
+  <!-- ════════════════════════════════════════════════════════════
+       INTRO — matches Park101's /venue hero band. No invented
+       capacity/screen-count stats here (Park101 has "2 LEVELS, 20+
+       SCREENS" etc.) — those aren't confirmed for Coco Cabana, so
+       that strip is left out rather than filled with guesses.
+       ════════════════════════════════════════════════════════════ -->
+  <section class="relative min-h-[70vh] flex items-end overflow-hidden">
+    <div class="absolute inset-0">
+      <img
+        src="/photos/venue-aerial-sign.jpg"
+        alt="Coco Cabana rooftop bar aerial view — COCOCABANA sign on The Brick Hotel in Downtown Oceanside"
+        class="w-full h-full object-cover object-center"
+        fetchpriority="high"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-brand-charcoal/85 via-brand-charcoal/25 to-transparent"></div>
+      <div class="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-brand-charcoal/40 to-transparent"></div>
+    </div>
+    <div class="relative z-10 px-6 sm:px-8 lg:px-12 pb-20 sm:pb-24 w-full text-brand-cream">
+      <Eyebrow tone="dark">{venue.address.city}, {venue.address.state} &middot; {venue.hotel}</Eyebrow>
+      <h1 class="font-display leading-ultra text-hero uppercase mb-6">
+        The Rooftop.<br />The Cabana.
+      </h1>
+      <p class="text-brand-cream/80 leading-relaxed max-w-xl mb-8">
+        One space above {venue.hotel}, built around its own identity — the open-air rooftop,
+        the cushioned cabana seating, and the live music that brings it together after dark.
+      </p>
+      <div class="flex flex-wrap gap-4">
+        <Button href={venue.reservationsUrl} variant="primary" external>Reserve a Table</Button>
+        <Button href={venue.routes.privateEvents} variant="ghost">Private Events</Button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════
+       THE VIEW — full treatment, same copy/pending state as the
+       homepage teaser, with the feature-tag list pattern added.
+       Tags left to the two facts actually confirmed (rooftop,
+       open-air) rather than inventing specifics like "fire pits"
+       or "communal tables" the way Park101's page does for itself.
+       ════════════════════════════════════════════════════════════ -->
+  <section class="bg-brand-cream px-6 sm:px-8 lg:px-12 py-20 sm:py-28">
+    <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <ImagePlaceholder label="Rooftop / ocean &amp; pier view" category="venue" aspect="aspect-[4/3]" />
+      <div>
+        <Eyebrow>Upstairs</Eyebrow>
+        <h2 class="font-display text-section-xl leading-display uppercase text-brand-charcoal mb-4">The View</h2>
+        <p class="text-brand-charcoal/40 text-sm italic mb-2">
+          Copy pending — space and view details to be confirmed.
+        </p>
+        <FeatureTagList tags={['Rooftop', 'Open-Air', 'Downtown Oceanside']} />
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════
+       THE CABANA — uses the one real photo already confirmed
+       (tile wall + cushioned daybeds), full treatment.
+       ════════════════════════════════════════════════════════════ -->
+  <section id="cabana" class="bg-brand-charcoal px-6 sm:px-8 lg:px-12 py-20 sm:py-28">
+    <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <div class="md:order-2">
+        <img
+          src="/photos/lounge-tile-cushions.jpg"
+          alt="Coco Cabana lounge seating with tile wall and cushioned daybeds"
+          class="w-full aspect-[4/3] object-cover"
+        />
+      </div>
+      <div class="md:order-1">
+        <Eyebrow tone="dark">The Cabana</Eyebrow>
+        <h2 class="font-display text-section-xl leading-display uppercase text-brand-cream mb-4">Lounge Seating</h2>
+        <p class="text-brand-cream/40 text-sm italic mb-2">
+          Copy pending — space details to be confirmed.
+        </p>
+        <FeatureTagList tags={['Cushioned Daybeds', 'Tile Bar Wall', 'Rooftop']} />
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════
+       LIVE MUSIC & EVENTS — full treatment, same pending state as
+       homepage. No programming/calendar facts confirmed yet.
+       ════════════════════════════════════════════════════════════ -->
+  <section class="bg-brand-cream px-6 sm:px-8 lg:px-12 py-20 sm:py-28">
+    <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <ImagePlaceholder label="Live music / DJ set" category="lifestyle-event" aspect="aspect-[4/3]" />
+      <div>
+        <Eyebrow>After Dark</Eyebrow>
+        <h2 class="font-display text-section-xl leading-display uppercase text-brand-charcoal mb-4">Live Music &amp; Events</h2>
+        <p class="text-brand-charcoal/40 text-sm italic mb-2">
+          Recurring programming/calendar pending — open item.
+        </p>
+        <FeatureTagList tags={['Rooftop', 'Downtown Oceanside']} />
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════
+       CLOSING CTA — matches Park101's "PARK 101 AWAITS" band.
+       ════════════════════════════════════════════════════════════ -->
+  <section class="bg-brand-charcoal px-6 sm:px-8 lg:px-12 py-16 sm:py-20 text-center">
+    <Eyebrow align="center" tone="dark">Come See It</Eyebrow>
+    <h2 class="font-display text-section-xl leading-display uppercase text-brand-cream mb-6">
+      {venue.name} Awaits
+    </h2>
+    <p class="text-brand-cream/60 mb-8">
+      {venue.hotel}, {venue.address.city}, {venue.address.state} &middot; {venue.hours.shortSummary}
+    </p>
+    <div class="flex flex-wrap gap-4 justify-center">
+      <Button href={venue.reservationsUrl} variant="primary" external>Reserve a Table</Button>
+      <Button href={venue.routes.privateEvents} variant="ghost">Plan a Private Event</Button>
+    </div>
+  </section>
+</Layout>

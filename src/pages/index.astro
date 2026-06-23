@@ -1,0 +1,435 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Button from '../components/Button.astro';
+import Eyebrow from '../components/Eyebrow.astro';
+import TickList from '../components/TickList.astro';
+import MenuCard from '../components/MenuCard.astro';
+import { venue } from '../data/venue';
+---
+
+<Layout
+  title={`${venue.fullName} | ${venue.address.city}, ${venue.address.state}`}
+  description={`${venue.name} — rooftop bar at ${venue.hotel}, ${venue.address.street}, ${venue.address.city}. Caribbean-inspired cocktails, weekend brunch, and DJ nights above Downtown Oceanside.`}
+  transparentNav={true}
+>
+
+  <!-- ════════════════════════════════════════════════════════════
+       1 · HERO
+       ════════════════════════════════════════════════════════════ -->
+  <section class="relative min-h-screen flex items-end overflow-hidden">
+    <div class="absolute inset-0">
+      <img
+        src="/photos/hero-aerial.jpg"
+        alt="Coco Cabana rooftop bar aerial view over Downtown Oceanside, CA"
+        class="w-full h-full object-cover"
+        fetchpriority="high"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-brand-charcoal/85 via-brand-charcoal/25 to-transparent"></div>
+      <div class="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-brand-charcoal/45 to-transparent"></div>
+    </div>
+    <div class="relative z-10 px-6 sm:px-8 lg:px-12 pb-20 sm:pb-28 w-full text-brand-cream">
+      <Eyebrow tone="dark">{venue.address.city}, {venue.address.state} &middot; {venue.hotel}</Eyebrow>
+      <h1 class="font-display leading-ultra text-hero uppercase mb-2">{venue.name}</h1>
+      <p class="uppercase tracking-feature text-sm sm:text-base text-brand-cream/80 mb-8">{venue.tagline}</p>
+      <div class="flex flex-wrap gap-4">
+        <Button href={venue.reservationsUrl} variant="primary" external>Reserve a Table</Button>
+        <Button href="#hours" variant="ghost">Hours &amp; Location</Button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════
+       INFO STRIP
+       ════════════════════════════════════════════════════════════ -->
+  <section class="bg-brand-charcoal text-brand-cream">
+    <div class="max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-4 divide-x divide-y sm:divide-y-0 divide-brand-cream/10">
+      <!-- Hours Today — dynamic via client JS -->
+      <div class="px-5 py-8 text-center">
+        <p class="uppercase tracking-stat text-xs text-brand-cream/50 mb-2">Hours Today</p>
+        <p id="info-hours" class="accent-text text-xl sm:text-2xl text-brand-pink leading-tight">Thu–Sun</p>
+        <p id="info-day" class="uppercase tracking-stat text-xs text-brand-cream/40 mt-1">Open</p>
+      </div>
+      <!-- Weekend Brunch -->
+      <div class="px-5 py-8 text-center">
+        <p class="uppercase tracking-stat text-xs text-brand-cream/50 mb-2">Weekend Brunch</p>
+        <p class="accent-text text-xl sm:text-2xl text-brand-pink leading-tight">Sat &amp; Sun</p>
+        <p class="uppercase tracking-stat text-xs text-brand-cream/40 mt-1">10:00 AM – 2:00 PM</p>
+      </div>
+      <!-- DJ Nights -->
+      <div class="px-5 py-8 text-center">
+        <p class="uppercase tracking-stat text-xs text-brand-cream/50 mb-2">DJ Nights</p>
+        <p class="accent-text text-xl sm:text-2xl text-brand-pink leading-tight">Fri &amp; Sat</p>
+        <p class="uppercase tracking-stat text-xs text-brand-cream/40 mt-1">Live Every Weekend</p>
+      </div>
+      <!-- Location -->
+      <div class="px-5 py-8 text-center">
+        <p class="uppercase tracking-stat text-xs text-brand-cream/50 mb-2">Location</p>
+        <p class="accent-text text-xl sm:text-2xl text-brand-pink leading-tight">Oceanside</p>
+        <p class="uppercase tracking-stat text-xs text-brand-cream/40 mt-1">{venue.address.street}</p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Dynamic "Hours Today" based on client's local day
+    const schedule: Record<number, { hours: string; day: string }> = {
+      0: { hours: '10AM – 9PM',    day: 'Sunday'    },
+      1: { hours: 'Closed',        day: 'Monday'    },
+      2: { hours: 'Closed',        day: 'Tuesday'   },
+      3: { hours: 'Closed',        day: 'Wednesday' },
+      4: { hours: '5PM – 10PM',    day: 'Thursday'  },
+      5: { hours: '11AM – 12AM',   day: 'Friday'    },
+      6: { hours: '10AM – 12AM',   day: 'Saturday'  },
+    };
+    const today = new Date().getDay();
+    const todayInfo = schedule[today];
+    const hoursEl = document.getElementById('info-hours');
+    const dayEl   = document.getElementById('info-day');
+    if (hoursEl && todayInfo) hoursEl.textContent = todayInfo.hours;
+    if (dayEl   && todayInfo) dayEl.textContent   = todayInfo.day;
+  </script>
+
+  <!-- ════════════════════════════════════════════════════════════
+       2 · WELCOME — image-dominant 60/40 split, cream
+       Image fills section height — no aspect-ratio cap.
+       ════════════════════════════════════════════════════════════ -->
+  <section class="bg-brand-cream overflow-hidden">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-[3fr_2fr] items-stretch min-h-[560px] md:min-h-[640px]">
+      <div class="relative min-h-[380px] md:min-h-0">
+        <img
+          src="/photos/welcome-lounge-tilewall.jpg"
+          alt="Coco Cabana rooftop lounge seating with tile wall, rattan pendants, and Oceanside views"
+          class="absolute inset-0 w-full h-full object-cover"
+        />
+      </div>
+      <div class="px-8 sm:px-10 lg:px-14 py-16 sm:py-20 flex flex-col justify-center">
+        <Eyebrow>{venue.address.city}, {venue.address.state}</Eyebrow>
+        <h2 class="font-display text-section-xl leading-display uppercase text-brand-charcoal">
+          Where Oceanside
+        </h2>
+        <p class="accent-text text-accent-xl text-brand-pink mb-6">Comes to Drink Well</p>
+        <p class="text-brand-charcoal/70 leading-relaxed mb-8">
+          Perched above {venue.hotel} at {venue.address.street}, {venue.name} is a
+          rooftop bar built around its own identity — relaxed, elevated, and entirely its own.
+          Stop in for a cocktail, settle in for the evening, or make it the start of a night
+          out in Downtown Oceanside.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <Button href={venue.reservationsUrl} variant="primary" external>Reserve a Table</Button>
+          <Button href={venue.routes.venue} variant="secondary">See the Space</Button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════
+       3 · THE BAR — full-bleed banner, breaks cream→cream rhythm
+       Distinct identity from Welcome: bar program, not venue intro.
+       Matches Park101's dark full-bleed chapter-break between
+       the welcome split and the food/drinks sections.
+       ════════════════════════════════════════════════════════════ -->
+  <section class="relative min-h-[580px] sm:min-h-[640px] flex items-center overflow-hidden">
+    <div class="absolute inset-0">
+      <img
+        src="/photos/bar-rooftop-interior.jpg"
+        alt="Coco Cabana open-air rooftop bar — marble counter, bar stools, hanging greenery, Oceanside views"
+        class="w-full h-full object-cover object-[center_50%]"
+      />
+      <div class="absolute inset-0 bg-gradient-to-r from-brand-charcoal/88 via-brand-charcoal/50 to-transparent"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-brand-charcoal/50 via-transparent to-transparent"></div>
+    </div>
+    <div class="relative z-10 px-6 sm:px-8 lg:px-12 py-24 sm:py-32 max-w-xl text-brand-cream">
+      <Eyebrow tone="dark">The Bar</Eyebrow>
+      <h2 class="font-display leading-display text-section-xl uppercase mb-2">
+        Open Air.<br />Full Bar.
+      </h2>
+      <p class="accent-text text-accent-xl text-brand-pink mb-6">Above Pier View Way</p>
+      <p class="text-brand-cream/80 leading-relaxed mb-8">
+        Caribbean-inspired cocktails crafted from scratch, cold drafts, and a full bar program
+        under open skies — four stories above Downtown Oceanside.
+      </p>
+      <div class="flex flex-wrap gap-4">
+        <Button href={`${venue.routes.menu}#cocktails`} variant="primary">View the Bar Menu</Button>
+        <Button href={venue.reservationsUrl} variant="ghost" external>Reserve</Button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════
+       4 · FOOD — cream, 2×3 grid
+       Eyebrow: "The Kitchen" (not duplicate "Food")
+       ════════════════════════════════════════════════════════════ -->
+  <section class="bg-brand-cream px-6 sm:px-8 lg:px-12 py-20 sm:py-28">
+    <div class="max-w-2xl mx-auto text-center mb-12">
+      <Eyebrow align="center">The Kitchen</Eyebrow>
+      <h2 class="font-display text-section-xl leading-display uppercase text-brand-charcoal">Food</h2>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-10">
+      <MenuCard image="/photos/food/wings.jpg" imageAlt="Crispy fried wings at Coco Cabana" category="food" />
+      <MenuCard name="Spicy Chicken Bowl" image="/photos/food/spicy-chicken-bowl.jpg" imageAlt="Spicy chicken bowl with rice and broccolini" imagePosition="object-[center_80%]" category="food" pending />
+      <MenuCard name="Hawaiian Cubano" image="/photos/food/hawaiian-cubano.jpg" imageAlt="Hawaiian Cubano sandwich with fries" imagePosition="object-[center_75%]" category="food" pending />
+      <MenuCard name="Coconut Shrimp" image="/photos/food/coconut-shrimp-v2.jpg" imageAlt="Coconut shrimp with dipping sauce" category="food" pending />
+      <MenuCard name="Chicken Sando" image="/photos/food/chicken-sando.jpg" imageAlt="Crispy chicken sandwich with slaw and fries" imagePosition="object-[center_75%]" category="food" pending />
+      <MenuCard name="Miss B's Burger" image="/photos/food/miss-bs-burger.jpg" imageAlt="Miss B's Burger with cheese, lettuce, tomato, and fries" imagePosition="object-[center_78%]" category="food" pending />
+    </div>
+    <div class="text-center">
+      <Button href={venue.routes.menu} variant="secondary">View Full Menu</Button>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════
+       4 · COCKTAILS — dark, 4-across
+       ════════════════════════════════════════════════════════════ -->
+  <section class="bg-brand-charcoal px-6 sm:px-8 lg:px-12 py-20 sm:py-28">
+    <div class="max-w-2xl mx-auto text-center mb-12">
+      <Eyebrow align="center" tone="dark">The Bar</Eyebrow>
+      <h2 class="font-display text-section-xl leading-display uppercase text-brand-cream">Cocktails</h2>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto mb-10">
+      <MenuCard name="Caribe Welcome" description="House rum blend, coconut water, apricot brandy, coconut cream, fresh lime" image="/photos/drinks/caribe-welcome.jpg" imageAlt="Caribe Welcome cocktail in a coconut with orchid garnish" category="drinks" tone="dark" />
+      <MenuCard name="Swedish Bikini Team" description="House rum blend, strawberry, cucumber, coconut water, lemon" image="/photos/drinks/swedish-bikini-team.jpg" imageAlt="Swedish Bikini Team cocktail with cucumber ribbon and strawberry" category="drinks" tone="dark" />
+      <MenuCard name="Havana Good Time" image="/photos/drinks/havana-good-time.jpg" imageAlt="Havana Good Time cocktail in a copper flamingo vessel" imagePosition="object-[center_85%]" category="drinks" tone="dark" pending />
+      <MenuCard name="Miami Pound Machine" description="Blanco tequila, passionfruit, bitters" image="/photos/drinks/miami-pound-machine.jpg" imageAlt="Miami Pound Machine cocktail with banana leaf and lime wheel" imagePosition="object-[25%_center]" category="drinks" tone="dark" />
+    </div>
+    <div class="text-center">
+      <Button href={venue.routes.menu + '#cocktails'} variant="ghost">View Full Bar Menu</Button>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════
+       5 · BRUNCH BANNER — full-bleed, distinct identity
+       ════════════════════════════════════════════════════════════ -->
+  <section class="relative min-h-[640px] sm:min-h-[700px] flex items-center overflow-hidden">
+    <div class="absolute inset-0">
+      <img
+        src="/photos/brunch-mimosas-banner.jpg"
+        alt="Coco Cabana bottomless mimosas — Campo Viejo cava flights with copper flamingo, marble table, tile wall"
+        class="w-full h-full object-cover object-center"
+      />
+      <div class="absolute inset-0 bg-gradient-to-r from-brand-charcoal/90 via-brand-charcoal/55 to-transparent"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-brand-charcoal/50 via-transparent to-transparent"></div>
+    </div>
+    <div class="relative z-10 px-6 sm:px-8 lg:px-12 py-24 sm:py-32 max-w-xl text-brand-cream">
+      <Eyebrow tone="dark">Weekend Brunch</Eyebrow>
+      <h2 class="font-display leading-display text-section-xl uppercase mb-2">
+        Brunch on<br />the Rooftop
+      </h2>
+      <p class="accent-text text-accent-xl text-brand-pink mb-6">{venue.brunch.days}</p>
+      <p class="text-brand-cream/80 leading-relaxed mb-2">{venue.brunch.hours}</p>
+      <p class="text-brand-cream/60 text-sm mb-8">{venue.brunch.highlight}</p>
+      <div class="flex flex-wrap gap-4">
+        <Button href={venue.routes.brunch} variant="primary">View Brunch Menu</Button>
+        <Button href={venue.reservationsUrl} variant="ghost" external>Reserve</Button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════
+       6 · THE VIEW — dark, split image-right
+       Real sunset photo — real copy about the views
+       ════════════════════════════════════════════════════════════ -->
+  <section class="bg-brand-charcoal overflow-hidden">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-[2fr_3fr] items-stretch min-h-[520px] md:min-h-[600px]">
+      <div class="px-8 sm:px-10 lg:px-14 py-16 sm:py-20 flex flex-col justify-center md:order-1">
+        <Eyebrow tone="dark">The Rooftop</Eyebrow>
+        <h2 class="font-display text-section-xl leading-display uppercase text-brand-cream mb-4">The View</h2>
+        <p class="accent-text text-accent-xl text-brand-pink mb-6">Above It All</p>
+        <p class="text-brand-cream/70 leading-relaxed mb-8">
+          Four stories above Downtown Oceanside, the views stretch past the rooftops and palm
+          canopy all the way to the Pacific. Sunsets here are something else entirely — settle
+          in early and watch the sky change over the water.
+        </p>
+        <Button href={venue.routes.venue} variant="ghost">Explore the Venue</Button>
+      </div>
+      <div class="relative min-h-[360px] md:min-h-0 md:order-2">
+        <img
+          src="/photos/venue-sunset-view.jpg"
+          alt="Sunset viewed from Coco Cabana rooftop through glass railing, palms silhouetted against orange sky"
+          class="absolute inset-0 w-full h-full object-cover object-[center_65%]"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════
+       8 · THE CABANA — navy, split image-LEFT text-RIGHT
+       Flipped from The View (text-left/image-right) to break
+       the same-layout-twice pattern. Alternating is the standard
+       across the GPH portfolio.
+       ════════════════════════════════════════════════════════════ -->
+  <section id="cabana" class="bg-brand-navy overflow-hidden">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-[3fr_2fr] items-stretch min-h-[520px] md:min-h-[600px]">
+      <div class="relative min-h-[360px] md:min-h-0 md:order-1">
+        <img
+          src="/photos/cabana-lounge-cityview.jpg"
+          alt="Coco Cabana lounge area with pink daybeds, geometric tile wall, and Oceanside city views"
+          class="absolute inset-0 w-full h-full object-cover object-center"
+        />
+      </div>
+      <div class="px-8 sm:px-10 lg:px-14 py-16 sm:py-20 flex flex-col justify-center md:order-2">
+        <Eyebrow tone="dark">The Cabana</Eyebrow>
+        <h2 class="font-display text-section-xl leading-display uppercase text-brand-cream mb-4">Lounge Seating</h2>
+        <p class="accent-text text-accent-xl text-brand-pink mb-6">Stay a While</p>
+        <p class="text-brand-cream/70 leading-relaxed mb-8">
+          The cabana's signature lounge seating is designed for settling in. Rattan pendants
+          overhead, geometric tile walls, pink daybeds, and unobstructed views of the Oceanside
+          skyline — this is the corner of the rooftop you'll want to claim early.
+        </p>
+        <Button href={venue.reservationsUrl} variant="primary" external>Reserve Your Spot</Button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════
+       8 · LIVE MUSIC — full-bleed banner, own distinct photo
+       ════════════════════════════════════════════════════════════ -->
+  <section class="relative min-h-[600px] sm:min-h-[680px] flex items-center overflow-hidden">
+    <div class="absolute inset-0">
+      <img
+        src="/photos/live-music-dj.jpg"
+        alt="DJ set at Coco Cabana with crowd on the rooftop"
+        class="w-full h-full object-cover object-[center_30%]"
+      />
+      <div class="absolute inset-0 bg-gradient-to-r from-brand-charcoal/90 via-brand-charcoal/55 to-transparent"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-brand-charcoal/60 via-transparent to-transparent"></div>
+    </div>
+    <div class="relative z-10 px-6 sm:px-8 lg:px-12 py-24 sm:py-32 max-w-xl text-brand-cream">
+      <Eyebrow tone="dark">Live Music &amp; Events</Eyebrow>
+      <h2 class="font-display leading-display text-section-xl uppercase mb-2">
+        DJ Fridays<br />&amp; Saturdays
+      </h2>
+      <p class="accent-text text-accent-xl text-brand-pink mb-6">Every Weekend</p>
+      <p class="text-brand-cream/80 leading-relaxed mb-8">
+        Live DJ sets every Friday and Saturday night. The rooftop transforms after dark —
+        cocktails, open air, and the Oceanside skyline as your backdrop.
+      </p>
+      <Button href={venue.reservationsUrl} variant="primary" external>Reserve for the Night</Button>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════
+       10 · THE DETAILS — dark, tall-left + 2×2-right mosaic
+       Explicit container height (md:h-[560px]) so both sides fill
+       identically — no gaps. Left image fills container. Right grid
+       uses grid-rows-2 to split height into 2 equal rows. Tiles use
+       wrapper divs (not bare imgs) so h-full works correctly.
+       ════════════════════════════════════════════════════════════ -->
+  <section id="atmosphere" class="bg-brand-charcoal px-6 sm:px-8 lg:px-12 py-20 sm:py-28">
+    <div class="max-w-2xl mx-auto text-center mb-12">
+      <Eyebrow align="center" tone="dark">Atmosphere</Eyebrow>
+      <h2 class="font-display text-section-xl leading-display uppercase text-brand-cream">The Details</h2>
+    </div>
+    <div class="flex flex-col md:flex-row gap-3 max-w-5xl mx-auto md:h-[560px] lg:h-[640px]">
+      <!-- Left: tall image — fixed height mobile, fills container desktop -->
+      <div class="md:flex-1 min-w-0 overflow-hidden h-72 md:h-auto">
+        <img
+          src="/photos/details-neon-night.jpg"
+          alt="Neon pink palm tree sign glowing at Coco Cabana rooftop at night with guest below"
+          class="w-full h-full object-cover object-[center_75%]"
+        />
+      </div>
+      <!-- Right: 2×2 grid — grid-rows-2 splits container height into 2 equal rows -->
+      <div class="md:flex-1 min-w-0 grid grid-cols-2 gap-3 md:grid-rows-2">
+        <div class="overflow-hidden aspect-square md:aspect-auto">
+          <img src="/photos/details-flamingo-taps.jpg" alt="Copper flamingo draft tap handles at Coco Cabana bar" class="w-full h-full object-cover object-center" />
+        </div>
+        <div class="overflow-hidden aspect-square md:aspect-auto">
+          <img src="/photos/details-coconut-cups.jpg" alt="Coco Cabana branded coconut cups with copper flamingo vessel" class="w-full h-full object-cover object-center" />
+        </div>
+        <div class="overflow-hidden aspect-square md:aspect-auto">
+          <img src="/photos/details-pendant-interior.jpg" alt="Coco Cabana cabana interior with rattan pendant lamps and tropical plants" class="w-full h-full object-cover object-[center_40%]" />
+        </div>
+        <div class="overflow-hidden aspect-square md:aspect-auto">
+          <img src="/photos/details-ursula-cocktail.jpg" alt="Coco Cabana cocktail in front of the illuminated gold pineapple wall display" class="w-full h-full object-cover object-[center_30%]" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════
+       10 · PRIVATE EVENTS — cream, split image-left
+       Real lifestyle photo showing a group enjoying the space
+       ════════════════════════════════════════════════════════════ -->
+  <section class="bg-brand-cream overflow-hidden">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-[3fr_2fr] items-stretch min-h-[520px] md:min-h-[580px]">
+      <div class="relative min-h-[360px] md:min-h-0">
+        <img
+          src="/photos/events-group-lifestyle.jpg"
+          alt="Group celebrating at Coco Cabana rooftop bar with cocktails and the gold pineapple wall backdrop"
+          class="absolute inset-0 w-full h-full object-cover object-[center_40%]"
+        />
+      </div>
+      <div class="px-8 sm:px-10 lg:px-14 py-16 sm:py-20 flex flex-col justify-center">
+        <Eyebrow>Private Events</Eyebrow>
+        <h2 class="font-display text-section-xl leading-display uppercase text-brand-charcoal">Private Events</h2>
+        <p class="accent-text text-accent-xl text-brand-pink mb-6">in Downtown Oceanside</p>
+        <p class="text-brand-charcoal/70 leading-relaxed mb-6">
+          From birthdays to celebrations, {venue.name} sets the scene for a night to remember.
+          Reach out to start planning.
+        </p>
+        <div class="mb-8">
+          <TickList items={['Birthday Parties', 'Celebrations & Milestones', 'Corporate Gatherings', 'Rehearsal Dinners']} />
+        </div>
+        <Button href={venue.routes.privateEvents} variant="dark">Inquire About Events</Button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════
+       11 · FIND US — charcoal (breaks cream stack from Private Events)
+       ════════════════════════════════════════════════════════════ -->
+  <section id="hours" class="bg-brand-charcoal px-6 sm:px-8 lg:px-12 py-20 sm:py-28">
+    <div class="max-w-2xl mx-auto text-center mb-12">
+      <Eyebrow align="center" tone="dark">Visit</Eyebrow>
+      <h2 class="font-display text-section-xl leading-display uppercase text-brand-cream">Find Us</h2>
+      <p class="accent-text text-accent-xl text-brand-pink">in Downtown Oceanside</p>
+    </div>
+
+    <div class="max-w-5xl mx-auto grid md:grid-cols-5 gap-px bg-brand-cream/10 border border-brand-cream/10">
+      <div class="md:col-span-2 bg-brand-charcoal p-8 sm:p-10 flex flex-col justify-center">
+        <p class="uppercase tracking-label text-xs text-brand-pink mb-2">Address</p>
+        <a href={venue.mapsUrl} target="_blank" rel="noopener noreferrer" class="block text-lg text-brand-cream hover:text-brand-pink transition-colors mb-6">
+          {venue.address.street}<br />
+          {venue.address.city}, {venue.address.state} {venue.address.zip}
+        </a>
+        <p class="uppercase tracking-label text-xs text-brand-pink mb-2">Call</p>
+        <a href={venue.phoneHref} class="block text-lg text-brand-cream hover:text-brand-pink transition-colors mb-6">{venue.phone}</a>
+        <p class="uppercase tracking-label text-xs text-brand-pink mb-2">Hours</p>
+        <div class="space-y-1 mb-8">
+          {venue.hours.schedule.map(row => (
+            <div class="flex justify-between gap-4 text-sm">
+              <span class="text-brand-cream/60">{row.days}</span>
+              <span class:list={[row.hours === 'Closed' ? 'text-brand-cream/30' : 'text-brand-cream']}>{row.hours}</span>
+            </div>
+          ))}
+        </div>
+        <div class="flex flex-wrap gap-4">
+          <Button href={venue.reservationsUrl} variant="primary" external>Reserve a Table</Button>
+          <Button href={venue.mapsUrl} variant="ghost" external>Get Directions</Button>
+        </div>
+      </div>
+      <div class="md:col-span-3 aspect-[4/3] md:aspect-auto w-full h-full overflow-hidden min-h-[360px]">
+        <iframe
+          title={`Map to ${venue.fullName}`}
+          src={venue.mapsEmbedUrl}
+          class="w-full h-full border-0"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════
+       12 · RESERVE CTA BAND
+       ════════════════════════════════════════════════════════════ -->
+  <section class="bg-brand-charcoal border-t border-brand-cream/10 px-6 sm:px-8 lg:px-12 py-16 sm:py-20 text-center">
+    <h2 class="font-display text-section-xl leading-display uppercase text-brand-cream mb-2">Reserve</h2>
+    <p class="accent-text text-accent-xl text-brand-pink mb-6">Your Table</p>
+    <p class="text-brand-cream/60 mb-8">
+      {venue.address.street}, {venue.address.city}, {venue.address.state} &middot; {venue.phone}
+    </p>
+    <Button href={venue.reservationsUrl} variant="primary" external>Reserve Now</Button>
+  </section>
+
+</Layout>

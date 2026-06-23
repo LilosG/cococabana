@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500;1,600&family=Jost:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+/* ──────────────────────────────────────────────────────────
+   DESIGN TOKENS — pulled directly from Cococabana reference photos.
+   Palette is a deliberate departure from Park 101: this is a colorful
+   rooftop lounge, not a sports bar. Confirm/adjust before locking.
+   ────────────────────────────────────────────────────────── */
+@theme {
+  /* Core palette */
+  --color-brand-blush: #cfb8ae;       /* CONFIRMED — sampled from logo file. Now a soft secondary neutral. */
+  --color-brand-blush-dark: #b89a8e;
+  --color-brand-cream: #faf5ea;       /* warm sand/stucco white — primary light anchor */
+  --color-brand-white: #ffffff;
+  --color-brand-charcoal: #2b2420;    /* warm near-black — primary dark anchor/text */
+
+  /* PRIMARY ACCENT — pink/rose, sampled and rebuilt directly from the leaf
+     sculpture + neon photos (the explicitly confirmed primary references —
+     not the cushion, which was only ever secondary/confirmatory evidence).
+     This shade passes AA contrast directly on charcoal (4.52:1) without
+     needing a separate light tint. On cream it's 3.10:1 (large-text AA) —
+     fine for display/accent text, but button labels are small, so Button.astro
+     uses charcoal text on this color instead of cream to keep contrast solid
+     (4.52:1) without darkening the brand color itself. */
+  --color-brand-pink: #cc6f8d;
+  --color-brand-pink-dark: #b3577a;   /* hover/active state */
+
+  /* SECONDARY ACCENT — navy/slate blue, sampled directly from the tile wall photo
+     (previously a guess at #1c3a5e; now confirmed against the real fixture). */
+  --color-brand-navy: #3c4e60;
+
+  /* TERTIARY — copper, real bar fixtures. Small accents/dividers only now that
+     pink carries the primary-CTA role. */
+  --color-brand-copper: #b8743f;
+  --color-brand-copper-dark: #9c5f31;
+  --color-brand-sage: #8a9b6e;        /* succulent strands, used sparingly */
+
+  /* Typography tracking/leading tokens (proven pattern from Park 101 — never use arbitrary values inline) */
+  --tracking-eyebrow-lg: 0.32em;
+  --tracking-label: 0.25em;
+  --tracking-stat: 0.22em;
+  --tracking-feature: 0.15em;
+  --tracking-button: 0.12em;
+  --tracking-button-outline: 0.1em;
+
+  --leading-ultra: 0.88;
+  --leading-display: 0.92;
+
+  /* Fluid type scale */
+  --text-hero: clamp(2.75rem, 6vw, 6rem);
+  --text-section-xl: clamp(2.25rem, 4.5vw, 4rem);
+  --text-accent-xl: clamp(2rem, 4vw, 3.25rem);
+
+  /* Font families — INTERIM pairing, chosen to match the established
+     portfolio voice (confident sans + italic serif accent, seen across
+     Park101/Louisiana Purchase/Miss B's/Coco Maya) so the build reads
+     as finished rather than templated. Swappable in one place once
+     Mike confirms a final pairing — this is not a locked decision. */
+  --font-display: 'Jost', sans-serif;       /* headlines, nav, buttons, uppercase tracked copy */
+  --font-body: 'Jost', sans-serif;          /* paragraph copy */
+  --font-accent: 'Cormorant Garamond', serif; /* italic emphasis phrases — the recurring portfolio device */
+}
+
+/* ──────────────────────────────────────────────────────────
+   BASE LAYER — every element-selector rule lives here.
+   This is non-negotiable: unlayered CSS beats @layer utilities
+   regardless of specificity, and that exact bug ate hours on
+   Park 101. Nothing outside @layer base/components/utilities, ever.
+   ────────────────────────────────────────────────────────── */
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-brand-cream);
+    color: var(--color-brand-navy);
+    font-family: var(--font-body);
+    font-weight: 300;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    margin: 0;
+  }
+
+  img, video {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+/* ──────────────────────────────────────────────────────────
+   COMPONENTS LAYER — the recurring "accent phrase" treatment used
+   across the whole GPH portfolio: italic serif, brand-colored.
+   ────────────────────────────────────────────────────────── */
+@layer components {
+  .accent-text {
+    font-family: var(--font-accent);
+    font-style: italic;
+    font-weight: 500;
+  }
+}

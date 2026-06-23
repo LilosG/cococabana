@@ -1,0 +1,24 @@
+---
+// The small tracked label + short accent rule beneath it is a recurring
+// signature across the whole portfolio (Park101's "FOOD WORTH STAYING FOR",
+// Miss B's "PRIVATE EVENTS", Coco Maya's "PRIVATE EVENTS" — all use this
+// exact device). Centralized here so it's consistent everywhere it appears.
+//
+// brand-pink passes AA contrast directly on both cream and charcoal at this
+// shade (4.52:1 on charcoal), so no separate light-tint variant is needed.
+
+interface Props {
+  align?: 'left' | 'center';
+  tone?: 'light' | 'dark';
+}
+
+const { align = 'left', tone = 'light' } = Astro.props;
+const alignClass = align === 'center' ? 'items-center' : 'items-start';
+---
+
+<div class:list={['flex flex-col gap-3 mb-4', alignClass]}>
+  <p class="uppercase tracking-eyebrow-lg text-xs text-brand-pink">
+    <slot />
+  </p>
+  <span class="block w-8 h-px bg-brand-pink"></span>
+</div>

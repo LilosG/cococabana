@@ -1,0 +1,57 @@
+---
+import { venue } from '../data/venue';
+import Button from './Button.astro';
+
+const year = new Date().getFullYear();
+---
+
+<footer class="bg-brand-charcoal text-brand-cream">
+  <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-16 grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
+    <div>
+      <img
+        src="/cococabana-logo-transparent.png"
+        alt={`${venue.name} ${venue.tagline}`}
+        class="h-16 w-auto mb-4"
+      />
+      <p class="text-brand-cream/70 text-sm max-w-xs leading-relaxed">
+        Rooftop bar atop {venue.hotel} in Downtown Oceanside.
+      </p>
+    </div>
+
+    <div>
+      <h3 class="uppercase tracking-label text-xs text-brand-pink mb-4">Explore</h3>
+      <ul class="space-y-3 text-sm">
+        <li><a href="/" class="hover:text-brand-pink transition-colors">Home</a></li>
+        <li><a href={venue.routes.venue} class="hover:text-brand-pink transition-colors">The Venue</a></li>
+        <li><a href={venue.routes.menu} class="hover:text-brand-pink transition-colors">Menu</a></li>
+        <li><a href={venue.routes.brunch} class="hover:text-brand-pink transition-colors">Brunch</a></li>
+        <li><a href={venue.routes.privateEvents} class="hover:text-brand-pink transition-colors">Private Events</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="uppercase tracking-label text-xs text-brand-pink mb-4">Visit</h3>
+      <a href={venue.mapsUrl} target="_blank" rel="noopener noreferrer" class="text-sm leading-relaxed hover:text-brand-pink transition-colors">
+        {venue.address.street}<br />
+        {venue.address.city}, {venue.address.state} {venue.address.zip}
+      </a>
+      <p class="text-sm mt-3">
+        <a href={venue.phoneHref} class="hover:text-brand-pink transition-colors">{venue.phone}</a>
+      </p>
+      <p class="text-sm mt-3 text-brand-cream/70">
+        {venue.hours.shortSummary}
+      </p>
+
+    </div>
+
+    <div>
+      <h3 class="uppercase tracking-label text-xs text-brand-pink mb-4">Reserve</h3>
+      <Button href={venue.reservationsUrl} variant="primary" external>Book a Table</Button>
+    </div>
+  </div>
+
+  <div class="border-t border-brand-cream/10 px-6 sm:px-8 lg:px-12 py-6 text-xs text-brand-cream/50 flex flex-col sm:flex-row justify-between gap-2">
+    <p>&copy; {year} {venue.name}. All rights reserved.</p>
+    <p>Part of the Grind &amp; Prosper Hospitality portfolio.</p>
+  </div>
+</footer>

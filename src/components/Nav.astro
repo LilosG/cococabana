@@ -1,0 +1,172 @@
+---
+import { venue } from '../data/venue';
+
+interface Props {
+  transparent?: boolean;
+}
+
+const { transparent = false } = Astro.props;
+
+// Initial link color — JS toggles these on scroll for transparent pages
+const linkColor = transparent
+  ? 'text-brand-cream hover:text-brand-pink'
+  : 'text-brand-charcoal hover:text-brand-pink';
+
+const navLinks = [
+  { href: '/menu#food',             label: 'Food'           },
+  { href: '/menu#cocktails',        label: 'Cocktails'      },
+  { href: venue.routes.brunch,      label: 'Brunch'         },
+  { href: '/venue#cabana',          label: 'The Cabana'     },
+  { href: venue.routes.venue,       label: 'The Venue'      },
+  { href: venue.routes.privateEvents, label: 'Private Events' },
+];
+---
+
+<!--
+  Safelist — classes toggled dynamically by scroll JS:
+  text-brand-cream text-brand-pink
+-->
+<nav
+  id="main-nav"
+  data-transparent={transparent ? 'true' : 'false'}
+  class:list={[
+    'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
+    transparent ? 'bg-transparent' : 'bg-brand-cream shadow-sm',
+  ]}
+>
+  <div class="h-20 grid grid-cols-[auto_1fr_auto] items-center px-6 sm:px-8 lg:px-12 gap-4">
+
+    <!-- Logo — brightness-0 applied by JS when nav is solid/cream -->
+    <a href="/" class="shrink-0">
+      <img
+        id="nav-logo"
+        src="/cococabana-logo-transparent.png"
+        alt={`${venue.name} – ${venue.tagline}`}
+        class:list={['h-12 sm:h-14 w-auto transition-all duration-300']}
+      />
+    </a>
+
+    <!-- Desktop nav: centered links -->
+    <div class="hidden sm:flex items-center justify-center gap-4 lg:gap-6 flex-wrap">
+      {navLinks.map((link) => (
+        <a
+          href={link.href}
+          data-nav-link
+          class:list={['text-xs uppercase tracking-label transition-colors whitespace-nowrap', linkColor]}
+        >
+          {link.label}
+        </a>
+      ))}
+    </div>
+
+    <!-- Right zone: Order + Reserve -->
+    <div class="hidden sm:flex items-center gap-3 justify-self-end">
+      <!-- Order button — outline style, pink-aware for both nav states -->
+      <a
+        href={venue.orderUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        data-nav-order
+        class:list={[
+          'text-xs uppercase tracking-label border px-4 py-2.5 transition-colors whitespace-nowrap',
+          transparent
+            ? 'border-brand-cream/70 text-brand-cream hover:border-brand-pink hover:text-brand-pink'
+            : 'border-brand-pink text-brand-pink hover:bg-brand-pink hover:text-brand-cream',
+        ]}
+      >
+        Order
+      </a>
+      <!-- Reserve — pink filled, readable on any background -->
+      <a
+        href={venue.reservationsUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-xs uppercase tracking-label bg-brand-pink text-brand-cream border border-brand-pink px-5 py-2.5 hover:bg-brand-pink/90 transition-colors whitespace-nowrap"
+      >
+        Reserve
+      </a>
+    </div>
+
+    <!-- Mobile: Reserve stays visible, rest collapses to hamburger -->
+    <div class="flex sm:hidden items-center gap-3 col-start-3 justify-self-end">
+      <a
+        href={venue.reservationsUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-xs uppercase tracking-label bg-brand-pink text-brand-cream border border-brand-pink px-4 py-2 hover:bg-brand-pink/90 transition-colors"
+      >
+        Reserve
+      </a>
+      <button
+        id="nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+        class:list={['flex flex-col justify-center gap-1.5 w-8 h-8 shrink-0 transition-colors', linkColor]}
+      >
+        <span class="sr-only">Menu</span>
+        <span class="block w-6 h-px bg-current"></span>
+        <span class="block w-6 h-px bg-current"></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu panel — always solid cream -->
+  <div id="mobile-menu" class="hidden sm:hidden bg-brand-cream border-t border-brand-charcoal/10">
+    <div class="flex flex-col px-6 py-6 gap-5">
+      {navLinks.map((link) => (
+        <a href={link.href} class="text-sm uppercase tracking-label text-brand-charcoal hover:text-brand-pink transition-colors">
+          {link.label}
+        </a>
+      ))}
+      <a
+        href={venue.orderUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-sm uppercase tracking-label text-brand-pink hover:text-brand-pink/80 transition-colors"
+      >
+        Order Online
+      </a>
+    </div>
+  </div>
+</nav>
+
+<script>
+  const nav = document.getElementById('main-nav') as HTMLElement | null;
+  const isTransparent = nav?.dataset.transparent === 'true';
+
+  // ── Scroll-based text color only (transparent pages only) ──────────
+  // Background stays transparent throughout. Over the hero = cream text.
+  // Past the hero = brand-pink text (readable on cream sections below).
+  if (isTransparent && nav) {
+    const navLinks  = Array.from(nav.querySelectorAll('[data-nav-link]'));
+    const toggle    = document.getElementById('nav-toggle');
+    const THRESHOLD = window.innerHeight * 0.65;
+
+    function updateNav(): void {
+      const scrolled = window.scrollY > THRESHOLD;
+
+      navLinks.forEach(el => {
+        el.classList.toggle('text-brand-cream', !scrolled);
+        el.classList.toggle('text-brand-pink',   scrolled);
+      });
+
+      if (toggle) {
+        toggle.classList.toggle('text-brand-cream', !scrolled);
+        toggle.classList.toggle('text-brand-pink',   scrolled);
+      }
+    }
+
+    window.addEventListener('scroll', updateNav, { passive: true });
+    updateNav();
+  }
+
+  // ── Mobile hamburger toggle ───────────────────────────────────────────
+  const toggle = document.getElementById('nav-toggle');
+  const menu   = document.getElementById('mobile-menu');
+  toggle?.addEventListener('click', () => {
+    const expanded = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', String(!expanded));
+    menu?.classList.toggle('hidden');
+  });
+</script>

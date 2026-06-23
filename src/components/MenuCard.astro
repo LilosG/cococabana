@@ -1,0 +1,71 @@
+---
+// Matches the food/drink card pattern from the portfolio reference (Louisiana
+// Purchase): image, category eyebrow, item name, short ingredient list.
+// Previously this was a bare image grid with no caption — that was the miss.
+//
+// `name` is intentionally optional. A pending card with no confirmed name
+// must NOT fabricate one ("Dish 2", "Dish 3"...) — that read as templated
+// filler sitting on a live page. When pending and no name is given, the
+// card renders a single honest "more coming soon" state instead of faking
+// a per-item identity.
+//
+// `tone` matches the dark/light pattern already used in ImagePlaceholder
+// and Eyebrow. Without it, dropping this card on a charcoal section left
+// the name/description rendered in dark-on-dark charcoal text — invisible.
+//
+// No price field — pricing was never approved and reads cheap on this kind
+// of site. Removed entirely rather than just hidden.
+//
+// Aspect ratio differs by category: food shot wide/top-down (4:3), drinks
+// shot tall (3:4) — matches how the real photography actually comes in.
+
+interface Props {
+  image?: string;
+  imageAlt?: string;
+  imagePosition?: string;
+  category?: 'food' | 'drinks';
+  name?: string;
+  description?: string;
+  pending?: boolean;
+  tone?: 'light' | 'dark';
+}
+
+const { image, imageAlt = '', imagePosition = 'object-center', category = 'food', name, description, pending = false, tone = 'light' } = Astro.props;
+const categoryLabel = category === 'drinks' ? 'the bar' : 'the kitchen';
+const imageAspect = category === 'drinks' ? 'aspect-[3/4]' : 'aspect-[4/3]';
+
+const placeholderClasses =
+  tone === 'dark'
+    ? 'bg-gradient-to-br from-brand-blush/15 to-brand-cream/10 border-brand-cream/15'
+    : 'bg-gradient-to-br from-brand-blush/25 to-brand-charcoal/10 border-brand-charcoal/10';
+const placeholderLabelClasses = tone === 'dark' ? 'text-brand-cream/50' : 'text-brand-charcoal/40';
+const placeholderSubLabelClasses = tone === 'dark' ? 'text-brand-cream/30' : 'text-brand-charcoal/25';
+const nameClasses = tone === 'dark' ? 'text-brand-cream' : 'text-brand-charcoal';
+const descriptionClasses = tone === 'dark' ? 'text-brand-cream/60' : 'text-brand-charcoal/60';
+const pendingClasses = tone === 'dark' ? 'text-brand-cream/40' : 'text-brand-charcoal/40';
+---
+
+<div class="flex flex-col">
+  {image ? (
+    <img src={image} alt={imageAlt} class:list={['w-full object-cover mb-4', imageAspect, imagePosition]} />
+  ) : (
+    <div class:list={['w-full mb-4 flex items-center justify-center border', imageAspect, placeholderClasses]}>
+      <span class:list={['text-xs uppercase tracking-label text-center px-4', placeholderLabelClasses]}>
+        Photo pending<br /><span class={placeholderSubLabelClasses}>[{category}]</span>
+      </span>
+    </div>
+  )}
+
+  {name ? (
+    <>
+      <h3 class:list={['uppercase tracking-feature text-sm', nameClasses]}>{name}</h3>
+      {pending ? (
+        <p class:list={['text-xs italic mt-1', pendingClasses]}>Description pending</p>
+      ) : description ? (
+        <p class:list={['text-xs mt-1 leading-relaxed', descriptionClasses]}>{description}</p>
+      ) : null}
+    </>
+  ) : image ? null : (
+    <p class:list={['text-xs italic mt-1 text-center', pendingClasses]}>More from {categoryLabel} — coming soon</p>
+  )}
+</div>
