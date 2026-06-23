@@ -70,19 +70,16 @@ import { venue } from '../data/venue';
     </div>
   </section>
 
-  <script>
-    // Dynamic "Hours Today" based on client's local day
-    const schedule: Record<number, { hours: string; day: string }> = {
-      0: { hours: '10AM – 9PM',    day: 'Sunday'    },
-      1: { hours: 'Closed',        day: 'Monday'    },
-      2: { hours: 'Closed',        day: 'Tuesday'   },
-      3: { hours: 'Closed',        day: 'Wednesday' },
-      4: { hours: '5PM – 10PM',    day: 'Thursday'  },
-      5: { hours: '11AM – 12AM',   day: 'Friday'    },
-      6: { hours: '10AM – 12AM',   day: 'Saturday'  },
-    };
-    const today = new Date().getDay();
-    const todayInfo = schedule[today];
+  <script define:vars={{ hoursSchedule: [
+    { day: 'Sunday',    hours: '10AM – 9PM'  },
+    { day: 'Monday',    hours: 'Closed'      },
+    { day: 'Tuesday',   hours: 'Closed'      },
+    { day: 'Wednesday', hours: 'Closed'      },
+    { day: 'Thursday',  hours: '5PM – 10PM'  },
+    { day: 'Friday',    hours: '11AM – 12AM' },
+    { day: 'Saturday',  hours: '10AM – 12AM' },
+  ]}}>
+    const todayInfo = hoursSchedule[new Date().getDay()];
     const hoursEl = document.getElementById('info-hours');
     const dayEl   = document.getElementById('info-day');
     if (hoursEl && todayInfo) hoursEl.textContent = todayInfo.hours;
