@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
 import Button from '../components/Button.astro';
 import Eyebrow from '../components/Eyebrow.astro';
 import MenuCard from '../components/MenuCard.astro';
@@ -11,32 +12,23 @@ import { venue } from '../data/venue';
   description={`Weekend brunch at ${venue.name} — ${venue.brunch.days}, ${venue.brunch.hours}. ${venue.brunch.highlight}. Rooftop dining above Downtown Oceanside at ${venue.hotel}.`}
   transparentNav={true}
 >
-
-  <!-- HERO -->
-  <section class="relative min-h-[80vh] flex items-end overflow-hidden">
-    <div class="absolute inset-0">
-      <img
-        src="/photos/brunch-hero.jpg"
-        alt="Coco Cabana weekend brunch spread — colorful plates, eggs, French toast, mimosas on marble table"
-        class="w-full h-full object-cover object-[center_15%]"
-        fetchpriority="high"
-      />
-      <div class="absolute inset-0 bg-gradient-to-t from-brand-charcoal/90 via-brand-charcoal/30 to-transparent"></div>
-      <div class="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-brand-charcoal/40 to-transparent"></div>
+  <PageHero
+    image="/photos/brunch-hero.jpg"
+    imageAlt="Coco Cabana weekend brunch spread — colorful plates, eggs, French toast, mimosas on marble table"
+    imagePosition="object-[center_15%]"
+    heightClass="min-h-[80vh]"
+  >
+    <Eyebrow tone="dark">Weekend Brunch</Eyebrow>
+    <h1 class="font-display leading-ultra text-hero uppercase mb-2">Brunch</h1>
+    <p class="accent-text text-accent-xl text-brand-pink mb-4">on the Rooftop</p>
+    <p class="text-brand-cream/70 text-sm uppercase tracking-label mb-8">
+      {venue.brunch.days} &middot; {venue.brunch.hours}
+    </p>
+    <div class="flex flex-wrap gap-4">
+      <Button href={venue.reservationsUrl} variant="primary" external>Reserve a Table</Button>
+      <Button href="#brunch-menu" variant="ghost">View the Menu</Button>
     </div>
-    <div class="relative z-10 px-6 sm:px-8 lg:px-12 pb-20 sm:pb-24 w-full text-brand-cream">
-      <Eyebrow tone="dark">Weekend Brunch</Eyebrow>
-      <h1 class="font-display leading-ultra text-hero uppercase mb-2">Brunch</h1>
-      <p class="accent-text text-accent-xl text-brand-pink mb-4">on the Rooftop</p>
-      <p class="text-brand-cream/70 text-sm uppercase tracking-label mb-8">
-        {venue.brunch.days} &middot; {venue.brunch.hours}
-      </p>
-      <div class="flex flex-wrap gap-4">
-        <Button href={venue.reservationsUrl} variant="primary" external>Reserve a Table</Button>
-        <Button href="#brunch-menu" variant="ghost">View the Menu</Button>
-      </div>
-    </div>
-  </section>
+  </PageHero>
 
   <!-- INFO STRIP -->
   <section class="bg-brand-charcoal text-brand-cream">
@@ -56,7 +48,7 @@ import { venue } from '../data/venue';
     </div>
   </section>
 
-  <!-- BRUNCH MENU SECTION -->
+  <!-- BRUNCH MENU -->
   <section id="brunch-menu" class="bg-brand-cream px-6 sm:px-8 lg:px-12 py-20 sm:py-28">
     <div class="max-w-2xl mx-auto text-center mb-14">
       <Eyebrow align="center">The Menu</Eyebrow>
@@ -65,36 +57,11 @@ import { venue } from '../data/venue';
         {venue.brunch.days} &middot; {venue.brunch.hours}
       </p>
     </div>
-
     <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
-      <MenuCard
-        image="/photos/brunch-chicken-waffle.jpg"
-        imageAlt="Chicken and waffle with maple syrup, fresh fruit, and home fries"
-        name="Chicken & Waffle"
-        category="food"
-        pending
-      />
-      <MenuCard
-        image="/photos/brunch-avocado-toast.jpg"
-        imageAlt="Avocado toast with fried egg, heirloom tomatoes, and microgreens"
-        name="Avocado Toast"
-        category="food"
-        pending
-      />
-      <MenuCard
-        image="/photos/brunch-dishes-overhead.jpg"
-        imageAlt="Coco Cabana brunch spread with French toast, eggs, and tropical dishes"
-        name="Brunch Spread"
-        category="food"
-        pending
-      />
-      <MenuCard
-        image="/photos/brunch-mimosas.jpg"
-        imageAlt="Bottomless mimosa flight with Campo Viejo cava, pineapple bucket and copper flamingo"
-        name="Bottomless Mimosas"
-        description="Campo Viejo Cava · 2-Hour Bottomless · Classic, Tropical & Citrus"
-        category="drinks"
-      />
+      <MenuCard image="/photos/brunch-chicken-waffle.jpg" imageAlt="Chicken and waffle with maple syrup, fresh fruit, and home fries" name="Chicken & Waffle" category="food" />
+      <MenuCard image="/photos/brunch-avocado-toast.jpg" imageAlt="Avocado toast with fried egg, heirloom tomatoes, and microgreens" name="Avocado Toast" category="food" />
+      <MenuCard image="/photos/brunch-dishes-overhead.jpg" imageAlt="Coco Cabana brunch spread with French toast, eggs, and tropical dishes" name="Brunch Spread" category="food" />
+      <MenuCard image="/photos/brunch-mimosas.jpg" imageAlt="Bottomless mimosa flight with Campo Viejo cava, pineapple bucket and copper flamingo" name="Bottomless Mimosas" description="Campo Viejo Cava · 2-Hour Bottomless · Classic, Tropical & Citrus" category="drinks" />
     </div>
   </section>
 
@@ -107,5 +74,4 @@ import { venue } from '../data/venue';
     </p>
     <Button href={venue.reservationsUrl} variant="primary" external>Reserve Now</Button>
   </section>
-
 </Layout>
