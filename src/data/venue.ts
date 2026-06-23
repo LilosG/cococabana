@@ -25,11 +25,11 @@ export const venue = {
   },
 
   reservationsUrl:
-    'https://tables.toasttab.com/restaurants/92e5306b-e932-4406-876b-91277626cb5c',
+    'https://tables.toasttab.com/restaurants/92e5306b-e932-4406-876b-91277626cb5c/findTime?toast_sg=0ad2b6f7-a902-4be0-97b4-0532bea5a475&toast_ss=6e5433f4-a2dc-4d75-8c25-8ad93cd2b639&toast_src=website_link&utm_source=undefined&utm_content=home&utm_medium=toast_sites&utm_term=nav&utm_campaign=undefined',
 
   // Update with the actual Toast online ordering URL when available
   orderUrl:
-    'https://order.toasttab.com/online/coco-cabana-408-pier-view-way',
+    'https://cococabanaoside.com/order',
 
   coordinates: {
     latitude: 33.1956,
