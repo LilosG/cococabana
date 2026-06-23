@@ -26,11 +26,10 @@ interface Props {
   category?: 'food' | 'drinks';
   name?: string;
   description?: string;
-  pending?: boolean;
   tone?: 'light' | 'dark';
 }
 
-const { image, imageAlt = '', imagePosition = 'object-center', category = 'food', name, description, pending = false, tone = 'light' } = Astro.props;
+const { image, imageAlt = '', imagePosition = 'object-center', category = 'food', name, description, tone = 'light' } = Astro.props;
 const categoryLabel = category === 'drinks' ? 'the bar' : 'the kitchen';
 const imageAspect = category === 'drinks' ? 'aspect-[3/4]' : 'aspect-[4/3]';
 
@@ -42,7 +41,6 @@ const placeholderLabelClasses = tone === 'dark' ? 'text-brand-cream/50' : 'text-
 const placeholderSubLabelClasses = tone === 'dark' ? 'text-brand-cream/30' : 'text-brand-charcoal/25';
 const nameClasses = tone === 'dark' ? 'text-brand-cream' : 'text-brand-charcoal';
 const descriptionClasses = tone === 'dark' ? 'text-brand-cream/60' : 'text-brand-charcoal/60';
-const pendingClasses = tone === 'dark' ? 'text-brand-cream/40' : 'text-brand-charcoal/40';
 ---
 
 <div class="flex flex-col">
@@ -50,22 +48,16 @@ const pendingClasses = tone === 'dark' ? 'text-brand-cream/40' : 'text-brand-cha
     <img src={image} alt={imageAlt} class:list={['w-full object-cover mb-4', imageAspect, imagePosition]} />
   ) : (
     <div class:list={['w-full mb-4 flex items-center justify-center border', imageAspect, placeholderClasses]}>
-      <span class:list={['text-xs uppercase tracking-label text-center px-4', placeholderLabelClasses]}>
-        Photo pending<br /><span class={placeholderSubLabelClasses}>[{category}]</span>
-      </span>
+
     </div>
   )}
 
   {name ? (
     <>
       <h3 class:list={['uppercase tracking-feature text-sm', nameClasses]}>{name}</h3>
-      {pending ? (
-        <p class:list={['text-xs italic mt-1', pendingClasses]}>Description pending</p>
-      ) : description ? (
+      {description && (
         <p class:list={['text-xs mt-1 leading-relaxed', descriptionClasses]}>{description}</p>
-      ) : null}
+      )}
     </>
-  ) : image ? null : (
-    <p class:list={['text-xs italic mt-1 text-center', pendingClasses]}>More from {categoryLabel} — coming soon</p>
-  )}
+  ) : null}
 </div>
