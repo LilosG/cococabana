@@ -1,0 +1,39 @@
+---
+interface Props {
+  image: string;
+  imageAlt: string;
+  imagePosition?: string;
+  category: string;
+  title: string;
+  description: string;
+  detail?: string;
+}
+
+const {
+  image,
+  imageAlt,
+  imagePosition = 'object-center',
+  category,
+  title,
+  description,
+  detail,
+} = Astro.props;
+---
+
+<article class="flex flex-col bg-brand-cream border border-brand-charcoal/8 overflow-hidden">
+  <div class="aspect-[4/3] overflow-hidden">
+    <img
+      src={image}
+      alt={imageAlt}
+      class:list={['w-full h-full object-cover hover:scale-105 transition-transform duration-500', imagePosition]}
+    />
+  </div>
+  <div class="p-6 flex flex-col flex-1">
+    <p class="text-xs uppercase tracking-label text-brand-pink mb-2">{category}</p>
+    <h3 class="font-display uppercase text-sm tracking-feature text-brand-charcoal mb-3 leading-snug">{title}</h3>
+    <p class="text-brand-charcoal/60 text-sm leading-relaxed mb-4 flex-1">{description}</p>
+    {detail && (
+      <p class="text-xs uppercase tracking-label text-brand-charcoal/40 pt-4 border-t border-brand-charcoal/10">{detail}</p>
+    )}
+  </div>
+</article>

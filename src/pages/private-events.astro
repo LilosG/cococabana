@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import PageHero from '../components/PageHero.astro';
 import SplitSection from '../components/SplitSection.astro';
 import FullBleedBanner from '../components/FullBleedBanner.astro';
+import EventCard from '../components/EventCard.astro';
 import Button from '../components/Button.astro';
 import Eyebrow from '../components/Eyebrow.astro';
 import TickList from '../components/TickList.astro';
@@ -12,7 +13,7 @@ import { venue } from '../data/venue';
 <Layout
   transparentNav={true}
   title={`Private Events | ${venue.fullName} | ${venue.address.city}, ${venue.address.state}`}
-  description={`Host your private event at ${venue.name} — rooftop bar atop ${venue.hotel} in Downtown ${venue.address.city}. Birthdays, celebrations, corporate gatherings, and rehearsal dinners.`}
+  description={`Host your private event at ${venue.name} — rooftop bar atop ${venue.hotel} in Downtown ${venue.address.city}. Birthdays, bachelorettes, celebrations, corporate gatherings, and live music events.`}
 >
   <PageHero
     image="/photos/events-crowd-hero.jpg"
@@ -24,11 +25,11 @@ import { venue } from '../data/venue';
       Your Event.<br />Our Rooftop.
     </h1>
     <p class="text-brand-cream/80 leading-relaxed max-w-xl mb-8">
-      From birthdays to corporate gatherings, {venue.name} sets the scene for a night to remember above Downtown {venue.address.city}.
+      From birthdays to brand events, {venue.name} sets the scene for a night to remember above Downtown {venue.address.city}.
     </p>
     <div class="flex flex-wrap gap-4">
       <Button href={venue.phoneHref} variant="primary">Call to Inquire</Button>
-      <Button href="#what-we-host" variant="ghost">What We Host</Button>
+      <Button href="#events-grid" variant="ghost">What We Host</Button>
     </div>
   </PageHero>
 
@@ -54,7 +55,7 @@ import { venue } from '../data/venue';
     </div>
   </section>
 
-  <!-- WHAT WE HOST -->
+  <!-- WHAT WE HOST SPLIT -->
   <SplitSection
     id="what-we-host"
     image="/photos/events-group-lifestyle.jpg"
@@ -66,13 +67,76 @@ import { venue } from '../data/venue';
     <Eyebrow>What We Host</Eyebrow>
     <h2 class="font-display text-section-xl leading-display uppercase text-brand-charcoal mb-6">Built for the Occasion</h2>
     <div class="mb-8">
-      <TickList items={['Birthday Parties', 'Celebrations & Milestones', 'Corporate Gatherings', 'Rehearsal Dinners', 'Brand Events']} />
+      <TickList items={['Birthday Parties', 'Bachelorette Parties', 'Baby Showers', 'Milestone Celebrations', 'Live Music Events', 'Corporate & Brand']} />
     </div>
     <p class="text-brand-charcoal/60 leading-relaxed mb-8">
       Call us directly to discuss availability, capacity, and what we can put together for your event. Every event is different — we'll make it work.
     </p>
     <Button href={venue.phoneHref} variant="primary">Call to Inquire</Button>
   </SplitSection>
+
+  <!-- EVENTS GRID -->
+  <section id="events-grid" class="bg-brand-charcoal px-6 sm:px-8 lg:px-12 py-20 sm:py-28">
+    <div class="max-w-2xl mx-auto text-center mb-12">
+      <Eyebrow align="center" tone="dark">The Occasions</Eyebrow>
+      <h2 class="font-display text-section-xl leading-display uppercase text-brand-cream">Every Reason to Celebrate</h2>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+      <EventCard
+        image="/photos/events-group-lifestyle.jpg"
+        imageAlt="Group celebrating birthdays at Coco Cabana rooftop with cocktails"
+        imagePosition="object-[center_40%]"
+        category="Birthdays"
+        title="Birthday Parties"
+        description="Celebrate above Downtown Oceanside — full bar, rooftop views, and a night your crew won't forget."
+        detail="Rooftop · Full Bar · Custom Experience"
+      />
+      <EventCard
+        image="/photos/events-rooftop-dining.jpg"
+        imageAlt="Women dining and celebrating on Coco Cabana rooftop with cocktails and palm views"
+        imagePosition="object-[center_40%]"
+        category="Celebrations"
+        title="Bachelorette Parties"
+        description="Caribbean cocktails, cabana seating, and a rooftop setting that does all the work for you."
+        detail="Rooftop · Cocktail Packages Available"
+      />
+      <EventCard
+        image="/photos/brunch-mimosa-flight.jpg"
+        imageAlt="Campo Viejo cava mimosa flight on marble table with flamingo and tropical plants"
+        category="Daytime Events"
+        title="Baby Showers"
+        description="Bottomless mimosas, brunch plates, and an open-air rooftop for a celebration worth showing up for."
+        detail="Sat & Sun · Brunch Hours Available"
+      />
+      <EventCard
+        image="/photos/events-crowd-hero.jpg"
+        imageAlt="Packed Coco Cabana rooftop at golden hour — full venue energy"
+        imagePosition="object-[center_40%]"
+        category="Milestones"
+        title="Milestone Celebrations"
+        description="Anniversaries, retirements, graduations — any reason to get the people you love on a rooftop."
+        detail="Flexible Configurations · Any Size"
+      />
+      <EventCard
+        image="/photos/events-rooftop-crowd.jpg"
+        imageAlt="DJ facing the crowd at Coco Cabana rooftop — palms, open sky, packed venue"
+        imagePosition="object-[center_25%]"
+        category="After Dark"
+        title="Live Music Events"
+        description="Private DJ sets, open bar, and the Oceanside skyline. The rooftop after dark is an experience of its own."
+        detail="DJ Available · Fri & Sat Nights"
+      />
+      <EventCard
+        image="/photos/live-music-dj.jpg"
+        imageAlt="DJ set at Coco Cabana rooftop with crowd and palm trees at golden hour"
+        imagePosition="object-[center_30%]"
+        category="Corporate"
+        title="Corporate & Brand"
+        description="Client entertainment, team celebrations, and brand activations — a venue that makes the impression for you."
+        detail="Custom Packages · Any Weekday"
+      />
+    </div>
+  </section>
 
   <!-- ATMOSPHERE BANNER -->
   <FullBleedBanner
