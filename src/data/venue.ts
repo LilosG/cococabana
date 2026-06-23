@@ -31,6 +31,18 @@ export const venue = {
   orderUrl:
     'https://order.toasttab.com/online/coco-cabana-408-pier-view-way',
 
+  coordinates: {
+    latitude: 33.1956,
+    longitude: -117.3795,
+  },
+
+  schemaHours: [
+    { dayOfWeek: 'Thursday',  opens: '17:00', closes: '22:00' },
+    { dayOfWeek: 'Friday',    opens: '11:00', closes: '23:59' },
+    { dayOfWeek: 'Saturday',  opens: '10:00', closes: '23:59' },
+    { dayOfWeek: 'Sunday',    opens: '10:00', closes: '21:00' },
+  ],
+
   mapsUrl:
     'https://www.google.com/maps/place/?q=408+Pier+View+Way,+Oceanside,+CA+92054',
   mapsEmbedUrl:
