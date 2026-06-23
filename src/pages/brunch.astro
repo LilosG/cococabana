@@ -61,9 +61,12 @@ import { venue } from '../data/venue';
 
     <!-- Food -->
     <div class="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-20">
-      <MenuCard image="/photos/brunch-chicken-waffle.jpg" imageAlt="Chicken and waffle with maple syrup and fresh fruit" name="Chicken & Waffle" category="food" />
-      <MenuCard image="/photos/brunch-avocado-toast.jpg" imageAlt="Avocado toast with fried egg, heirloom tomatoes, microgreens" name="Avocado Toast" category="food" />
-      <MenuCard image="/photos/brunch-dishes-overhead.jpg" imageAlt="Coco Cabana brunch spread with French toast and tropical dishes" name="Brunch Spread" category="food" />
+      <MenuCard name="Chicken & Waffle" image="/photos/brunch-chicken-waffle-v2.jpg" imageAlt="Coco Cabana chicken and waffle with hash browns, fresh fruit and whipped cream" category="food" />
+      <MenuCard name="Avocado Toast" image="/photos/brunch-avocado-toast-v2.jpg" imageAlt="Avocado toast with fried egg, heirloom tomatoes and microgreens on sourdough" category="food" />
+      <MenuCard name="Chilaquiles" image="/photos/brunch-chilaquiles.jpg" imageAlt="Chilaquiles with tri-color tortilla chips, crema, pickled onion and cotija" category="food" />
+      <MenuCard name="Biscuits & Gravy" image="/photos/brunch-biscuits-gravy.jpg" imageAlt="Biscuits and gravy with fried egg and green onion — rooftop brunch at Coco Cabana" category="food" />
+      <MenuCard name="Eggs & Hash" image="/photos/brunch-eggs-hash.jpg" imageAlt="Scrambled eggs over roasted hash with disco balls and palms in background" category="food" />
+      <MenuCard name="Malasadas" image="/photos/brunch-malasadas.jpg" imageAlt="Portuguese malasadas dusted with sugar served with mimosas and pink disco ball" imagePosition="object-bottom" category="food" />
     </div>
 
     <!-- Drinks -->
@@ -72,8 +75,10 @@ import { venue } from '../data/venue';
         <Eyebrow align="center">The Bar</Eyebrow>
         <h3 class="font-display text-2xl leading-display uppercase text-brand-charcoal">Bottomless Mimosas</h3>
       </div>
-      <div class="max-w-xs mx-auto">
-        <MenuCard image="/photos/brunch-mimosas.jpg" imageAlt="Bottomless mimosa flight with Campo Viejo cava and copper flamingo" name="Bottomless Mimosas" description="Campo Viejo Cava · 2-Hour Bottomless · Classic, Tropical & Citrus" category="drinks" />
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto">
+        <MenuCard name="Mimosa Flight" image="/photos/brunch-mimosa-flight.jpg" imageAlt="Three Campo Viejo cava mimosa flutes — classic, tropical and citrus varieties" description="Campo Viejo Cava · Classic, Tropical & Citrus" category="drinks" />
+        <MenuCard name="Campo Viejo Cava" image="/photos/brunch-mimosa-setup.jpg" imageAlt="Campo Viejo cava bottles with mimosa flight on marble table with flamingo and tropical plants" description="2-Hour Bottomless · While You Dine" category="drinks" />
+        <MenuCard name="The Signature" image="/photos/brunch-cocktails-signature.jpg" imageAlt="Coco Cabana branded coconut cups with copper flamingo vessel and colorful straws" description="Coco Cabana coconut cups — the rooftop signature" category="drinks" />
       </div>
     </div>
   </section>
