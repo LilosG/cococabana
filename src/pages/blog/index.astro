@@ -1,33 +1,14 @@
 ---
+import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import PageHero from '../../components/PageHero.astro';
 import Button from '../../components/Button.astro';
 import Eyebrow from '../../components/Eyebrow.astro';
 import { venue } from '../../data/venue';
 
-const placeholderPosts = [
-  {
-    slug: 'best-rooftop-bars-oceanside',
-    title: 'The Best Rooftop Bars in Oceanside, CA',
-    excerpt: 'Oceanside\'s rooftop bar scene is growing — here\'s what makes Coco Cabana the one worth the trip.',
-    date: 'June 2026',
-    category: 'Local Guide',
-  },
-  {
-    slug: 'bottomless-mimosas-oceanside',
-    title: 'Where to Find Bottomless Mimosas in Oceanside',
-    excerpt: 'Weekend brunch in Oceanside starts here — Campo Viejo cava, a rooftop view, and a 2-hour limit.',
-    date: 'June 2026',
-    category: 'Brunch',
-  },
-  {
-    slug: 'private-events-oceanside-rooftop',
-    title: 'Planning a Private Event on a Rooftop in Oceanside',
-    excerpt: 'Everything you need to know about booking Coco Cabana for your next birthday, celebration, or corporate event.',
-    date: 'May 2026',
-    category: 'Private Events',
-  },
-];
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime()
+);
 ---
 
 <Layout
@@ -51,19 +32,34 @@ const placeholderPosts = [
       <Eyebrow align="center">The Blog</Eyebrow>
       <h2 class="font-display text-section-xl leading-display uppercase text-brand-charcoal">Latest Posts</h2>
     </div>
-    <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-      {placeholderPosts.map(post => (
-        <article class="flex flex-col">
-          <div class="bg-brand-charcoal/5 aspect-[4/3] w-full mb-4 flex items-center justify-center">
-            <span class="text-xs uppercase tracking-label text-brand-charcoal/30">{post.category}</span>
-          </div>
-          <p class="text-xs uppercase tracking-label text-brand-pink mb-2">{post.category} &middot; {post.date}</p>
-          <h3 class="font-display uppercase text-sm tracking-feature text-brand-charcoal mb-3 leading-snug">{post.title}</h3>
-          <p class="text-brand-charcoal/60 text-sm leading-relaxed mb-4">{post.excerpt}</p>
-          <a href={`/blog/${post.slug}`} class="text-xs uppercase tracking-label text-brand-pink hover:text-brand-pink-dark transition-colors mt-auto">Read More →</a>
-        </article>
-      ))}
-    </div>
+
+    {posts.length > 0 ? (
+      <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        {posts.map(post => (
+          <article class="flex flex-col">
+            {post.data.ogImage ? (
+              <img
+                src={post.data.ogImage}
+                alt={post.data.title}
+                class="aspect-[4/3] w-full object-cover mb-4"
+              />
+            ) : (
+              <div class="bg-brand-charcoal/5 aspect-[4/3] w-full mb-4 flex items-center justify-center">
+                <span class="text-xs uppercase tracking-label text-brand-charcoal/30">{post.data.category}</span>
+              </div>
+            )}
+            <p class="text-xs uppercase tracking-label text-brand-pink mb-2">
+              {post.data.category} &middot; {post.data.date.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
+            </p>
+            <h3 class="font-display uppercase text-sm tracking-feature text-brand-charcoal mb-3 leading-snug">{post.data.title}</h3>
+            <p class="text-brand-charcoal/60 text-sm leading-relaxed mb-4">{post.data.description}</p>
+            <a href={`/blog/${post.id}`} class="text-xs uppercase tracking-label text-brand-pink hover:text-brand-pink-dark transition-colors mt-auto">Read More →</a>
+          </article>
+        ))}
+      </div>
+    ) : (
+      <p class="text-center text-brand-charcoal/50 text-sm">Posts coming soon.</p>
+    )}
   </section>
 
   <section class="bg-brand-charcoal px-6 sm:px-8 lg:px-12 py-16 sm:py-20 text-center">

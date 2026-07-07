@@ -1,0 +1,86 @@
+---
+import { getCollection, render } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import Eyebrow from '../../components/Eyebrow.astro';
+import Button from '../../components/Button.astro';
+import { venue } from '../../data/venue';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map(post => ({ params: { slug: post.id }, props: { post } }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+
+const canonicalUrl = `https://cococabanaoside.com/blog/${post.id}`;
+
+const blogPostingSchema: Record<string, unknown> = {
+  "@type": "BlogPosting",
+  "@id": `${canonicalUrl}#article`,
+  "headline": post.data.title,
+  "description": post.data.description,
+  "url": canonicalUrl,
+  "datePublished": post.data.date.toISOString(),
+  "publisher": {
+    "@type": "Organization",
+    "name": venue.fullName,
+    "url": "https://cococabanaoside.com",
+  },
+};
+
+if (post.data.ogImage) {
+  blogPostingSchema["image"] = post.data.ogImage.startsWith('http')
+    ? post.data.ogImage
+    : `https://cococabanaoside.com${post.data.ogImage}`;
+}
+---
+
+<Layout
+  title={`${post.data.title} | ${venue.fullName}`}
+  description={post.data.description}
+  ogImage={post.data.ogImage}
+  extraGraph={[blogPostingSchema]}
+>
+  <!-- POST HEADER -->
+  <section class="bg-brand-navy px-6 sm:px-8 lg:px-12 pt-40 pb-16 sm:pt-48 sm:pb-20">
+    <div class="max-w-2xl mx-auto">
+      <Eyebrow tone="dark">{post.data.category}</Eyebrow>
+      <h1 class="font-display leading-display text-section-xl uppercase text-brand-cream mt-3 mb-4">
+        {post.data.title}
+      </h1>
+      <p class="text-brand-cream/50 text-xs uppercase tracking-label">
+        {post.data.date.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
+      </p>
+    </div>
+  </section>
+
+  {post.data.ogImage && (
+    <div class="bg-brand-charcoal">
+      <img
+        src={post.data.ogImage}
+        alt={post.data.title}
+        class="w-full max-h-[520px] object-cover"
+      />
+    </div>
+  )}
+
+  <!-- POST BODY -->
+  <section class="bg-brand-cream px-6 sm:px-8 lg:px-12 py-16 sm:py-24">
+    <div class="max-w-2xl mx-auto prose prose-sm sm:prose-base prose-headings:font-display prose-headings:uppercase prose-headings:tracking-feature prose-a:text-brand-pink prose-a:no-underline hover:prose-a:underline prose-strong:text-brand-charcoal text-brand-charcoal/80">
+      <Content />
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-brand-charcoal px-6 sm:px-8 lg:px-12 py-16 sm:py-20 text-center">
+    <Eyebrow align="center" tone="dark">{venue.address.city}, {venue.address.state}</Eyebrow>
+    <h2 class="font-display text-section-xl leading-display uppercase text-brand-cream mb-8">
+      Visit the Rooftop
+    </h2>
+    <div class="flex flex-wrap gap-4 justify-center">
+      <Button href={venue.reservationsUrl} variant="primary" external>Reserve a Table</Button>
+      <Button href={venue.routes.menu} variant="ghost">View the Menu</Button>
+    </div>
+  </section>
+</Layout>
