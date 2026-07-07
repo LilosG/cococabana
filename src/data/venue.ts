@@ -71,6 +71,7 @@ export const venue = {
     menu: '/menu',
     venue: '/venue',
     brunch: '/brunch',
+    faq: '/faq',
     contact: '/contact',
     blog: '/blog',
   },
