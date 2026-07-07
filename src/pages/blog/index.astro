@@ -41,6 +41,7 @@ const posts = (await getCollection('blog')).sort(
               <img
                 src={post.data.ogImage}
                 alt={post.data.title}
+                loading="lazy"
                 class="aspect-[4/3] w-full object-cover mb-4"
               />
             ) : (

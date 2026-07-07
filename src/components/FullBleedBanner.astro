@@ -25,6 +25,7 @@ const gradient = gradientDirection === 'left'
     <img
       src={image}
       alt={imageAlt}
+      loading="lazy"
       class:list={['w-full h-full object-cover', imagePosition]}
     />
     <div class:list={['absolute inset-0', gradient]}></div>
