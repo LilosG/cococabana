@@ -1,5 +1,6 @@
 ---
 interface Props {
+  id?: string;
   image: string;
   imageAlt: string;
   imagePosition?: string;
@@ -9,6 +10,7 @@ interface Props {
 }
 
 const {
+  id,
   image,
   imageAlt,
   imagePosition = 'object-center',
@@ -24,7 +26,7 @@ const bgClass = {
 }[tone];
 ---
 
-<section class:list={[bgClass, 'overflow-hidden']}>
+<section {id} class:list={[bgClass, 'overflow-hidden']}>
   <div class:list={['max-w-7xl mx-auto grid md:grid-cols-[3fr_2fr] items-stretch', minHeight]}>
     <div class:list={['relative min-h-[380px] md:min-h-0', imageLeft ? 'md:order-1' : 'md:order-2']}>
       <img
