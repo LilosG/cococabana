@@ -13,7 +13,7 @@ const posts = (await getCollection('blog')).sort(
 
 <Layout
   transparentNav={true}
-  title={`Blog | ${venue.fullName} | Oceanside Rooftop Bar Guide`}
+  title={`Blog | ${venue.fullName} | ${venue.address.city}`}
   description={`Local guides, event updates, and rooftop lifestyle from ${venue.name} — ${venue.hotel}, Downtown ${venue.address.city}.`}
 >
   <PageHero

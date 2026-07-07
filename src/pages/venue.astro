@@ -11,7 +11,7 @@ import { venue } from '../data/venue';
 
 <Layout
   transparentNav={true}
-  title={`The Venue | ${venue.fullName} | Rooftop Bar in ${venue.address.city}, ${venue.address.state}`}
+  title={`The Venue | ${venue.fullName} | ${venue.address.city}, ${venue.address.state}`}
   description={`Explore the rooftop, the cabana, and the live music program at ${venue.name} — ${venue.hotel}, ${venue.address.city}. Open ${venue.hours.shortSummary}.`}
 >
   <PageHero
@@ -44,7 +44,7 @@ import { venue } from '../data/venue';
       </div>
       <div class="px-5 py-8 text-center">
         <p class="accent-text text-2xl text-brand-pink mb-1">DJ Nights</p>
-        <p class="uppercase tracking-stat text-xs text-brand-cream/50">Fri &amp; Sat · Every Weekend</p>
+        <p class="uppercase tracking-stat text-xs text-brand-cream/50">{venue.djNights.days} · {venue.djNights.label}</p>
       </div>
       <div class="px-5 py-8 text-center">
         <p class="accent-text text-2xl text-brand-pink mb-1">Downtown</p>
@@ -117,7 +117,7 @@ import { venue } from '../data/venue';
     <h2 class="font-display leading-display text-section-xl uppercase mb-2">
       Live Music<br />&amp; Events
     </h2>
-    <p class="accent-text text-accent-xl text-brand-pink mb-6">Every Friday &amp; Saturday</p>
+    <p class="accent-text text-accent-xl text-brand-pink mb-6">Every {venue.djNights.days}</p>
     <p class="text-brand-cream/80 leading-relaxed mb-8">
       Live DJ sets every Friday and Saturday night. The rooftop transforms after dark — cocktails, open air, and the Oceanside skyline as your backdrop.
     </p>

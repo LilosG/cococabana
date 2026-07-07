@@ -66,6 +66,11 @@ export const venue = {
     highlight: 'Bottomless Mimosas · 2-Hour Limit',
   },
 
+  djNights: {
+    days: 'Fri & Sat',
+    label: 'Live Every Weekend',
+  },
+
   routes: {
     privateEvents: '/private-events',
     menu: '/menu',
