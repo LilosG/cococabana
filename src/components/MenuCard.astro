@@ -45,7 +45,7 @@ const descriptionClasses = tone === 'dark' ? 'text-brand-cream/60' : 'text-brand
 
 <div class="flex flex-col">
   {image ? (
-    <img src={image} alt={imageAlt} class:list={['w-full object-cover mb-4', imageAspect, imagePosition]} />
+    <img src={image} alt={imageAlt} loading="lazy" class:list={['w-full object-cover mb-4', imageAspect, imagePosition]} />
   ) : (
     <div class:list={['w-full mb-4 flex items-center justify-center border', imageAspect, placeholderClasses]}>
 
