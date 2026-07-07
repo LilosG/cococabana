@@ -120,6 +120,9 @@ import { brunchFood, brunchDrinks } from '../data/brunch';
     <h2 class="font-display text-section-xl leading-display uppercase text-brand-cream mb-2">Reserve</h2>
     <p class="accent-text text-accent-xl text-brand-pink mb-6">Your Brunch Table</p>
     <p class="text-brand-cream/60 mb-8">{venue.brunch.days} &middot; {venue.brunch.hours} &middot; {venue.address.street}, {venue.address.city}</p>
-    <Button href={venue.reservationsUrl} variant="primary" external>Reserve Now</Button>
+    <div class="flex flex-wrap gap-4 justify-center">
+      <Button href={venue.reservationsUrl} variant="primary" external>Reserve Now</Button>
+      <Button href={venue.routes.menu} variant="ghost">View Full Menu</Button>
+    </div>
   </section>
 </Layout>
