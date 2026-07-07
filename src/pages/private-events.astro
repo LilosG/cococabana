@@ -148,7 +148,7 @@ import { privateEvents } from '../data/events';
     <p class="text-brand-cream/60 mb-8">{venue.phone} &middot; {venue.address.street}, {venue.address.city}, {venue.address.state}</p>
     <div class="flex flex-wrap gap-4 justify-center">
       <Button href={venue.phoneHref} variant="primary">Call to Inquire</Button>
-      <Button href={venue.reservationsUrl} variant="ghost" external>Reserve a Table</Button>
+      <Button href={venue.routes.contact} variant="ghost">Contact Us</Button>
     </div>
   </section>
 </Layout>

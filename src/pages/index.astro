@@ -410,6 +410,9 @@ const cocktailItems = menuSections.find(s => s.id === 'cocktails')!.items;
           <Button href={venue.reservationsUrl} variant="primary" external>Reserve a Table</Button>
           <Button href={venue.mapsUrl} variant="ghost" external>Get Directions</Button>
         </div>
+        <p class="text-brand-cream/40 text-xs uppercase tracking-label mt-6">
+          <a href={venue.routes.faq} class="hover:text-brand-pink transition-colors">Have questions? See our FAQ →</a>
+        </p>
       </div>
       <div class="md:col-span-3 aspect-[4/3] md:aspect-auto w-full h-full overflow-hidden min-h-[360px]">
         <iframe
