@@ -159,6 +159,7 @@ import { venue } from '../data/venue';
     <p class="text-brand-cream/60 mb-8">{venue.hotel}, {venue.address.city}, {venue.address.state} &middot; {venue.hours.shortSummary}</p>
     <div class="flex flex-wrap gap-4 justify-center">
       <Button href={venue.reservationsUrl} variant="primary" external>Reserve a Table</Button>
+      <Button href={venue.routes.brunch} variant="ghost">Weekend Brunch</Button>
       <Button href={venue.routes.privateEvents} variant="ghost">Plan a Private Event</Button>
     </div>
   </section>
