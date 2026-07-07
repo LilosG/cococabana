@@ -1,0 +1,95 @@
+// Single source of truth for menu content.
+// Used by both the /menu page template and the Menu structured data schema.
+
+export interface MenuItemData {
+  name?: string; // optional: omit for "coming soon" placeholder cards
+  description?: string;
+  image: string;
+  imageAlt: string;
+  imagePosition?: string;
+}
+
+export interface MenuSectionData {
+  id: string;
+  heading: string;
+  category: 'food' | 'drinks';
+  tone: 'light' | 'dark';
+  items: MenuItemData[];
+}
+
+export const menuSections: MenuSectionData[] = [
+  {
+    id: 'food',
+    heading: 'Food',
+    category: 'food',
+    tone: 'light',
+    items: [
+      {
+        image: '/photos/food/wings.jpg',
+        imageAlt: 'Crispy fried wings at Coco Cabana',
+      },
+      {
+        name: 'Spicy Chicken Bowl',
+        image: '/photos/food/spicy-chicken-bowl.jpg',
+        imageAlt: 'Spicy chicken bowl with rice and broccolini',
+        imagePosition: 'object-[center_80%]',
+      },
+      {
+        name: 'Hawaiian Cubano',
+        image: '/photos/food/hawaiian-cubano.jpg',
+        imageAlt: 'Hawaiian Cubano sandwich with fries',
+        imagePosition: 'object-[center_75%]',
+      },
+      {
+        name: 'Coconut Shrimp',
+        image: '/photos/food/coconut-shrimp-v2.jpg',
+        imageAlt: 'Coconut shrimp with dipping sauce',
+      },
+      {
+        name: 'Chicken Sando',
+        image: '/photos/food/chicken-sando.jpg',
+        imageAlt: 'Crispy chicken sandwich with slaw and fries',
+        imagePosition: 'object-[center_75%]',
+      },
+      {
+        name: "Miss B's Burger",
+        image: '/photos/food/miss-bs-burger.jpg',
+        imageAlt: "Miss B's Burger with cheese, lettuce, tomato, and fries",
+        imagePosition: 'object-[center_78%]',
+      },
+    ],
+  },
+  {
+    id: 'cocktails',
+    heading: 'Cocktails',
+    category: 'drinks',
+    tone: 'dark',
+    items: [
+      {
+        name: 'Caribe Welcome',
+        description: 'House rum blend, coconut water, apricot brandy, coconut cream, fresh lime',
+        image: '/photos/drinks/caribe-welcome.jpg',
+        imageAlt: 'Caribe Welcome cocktail in a coconut with orchid garnish',
+      },
+      {
+        name: 'Swedish Bikini Team',
+        description: 'House rum blend, strawberry, cucumber, coconut water, lemon',
+        image: '/photos/drinks/swedish-bikini-team.jpg',
+        imageAlt: 'Swedish Bikini Team cocktail with cucumber ribbon and strawberry',
+      },
+      {
+        name: 'Havana Good Time',
+        image: '/photos/drinks/havana-good-time.jpg',
+        imageAlt: 'Havana Good Time cocktail in a copper flamingo vessel',
+        imagePosition: 'object-[center_85%]',
+      },
+      {
+        name: 'Miami Pound Machine',
+        description: 'Blanco tequila, passionfruit, bitters',
+        image: '/photos/drinks/miami-pound-machine.jpg',
+        imageAlt: 'Miami Pound Machine cocktail with banana leaf and lime wheel',
+        imagePosition: 'object-[25%_center]',
+      },
+    ],
+  },
+];

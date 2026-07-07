@@ -6,12 +6,35 @@ import Button from '../components/Button.astro';
 import Eyebrow from '../components/Eyebrow.astro';
 import MenuCard from '../components/MenuCard.astro';
 import { venue } from '../data/venue';
+import { menuSections } from '../data/menu';
+
+const menuSchema = {
+  "@type": "Menu",
+  "@id": "https://cococabanaoside.com/menu#menu",
+  "name": `${venue.fullName} Menu`,
+  "url": "https://cococabanaoside.com/menu",
+  "hasMenuSection": menuSections.map(section => ({
+    "@type": "MenuSection",
+    "name": section.heading,
+    "hasMenuItem": section.items
+      .filter(item => item.name)
+      .map(item => ({
+        "@type": "MenuItem",
+        "name": item.name,
+        ...(item.description ? { "description": item.description } : {}),
+      })),
+  })),
+};
+
+const foodSection = menuSections.find(s => s.id === 'food')!;
+const cocktailsSection = menuSections.find(s => s.id === 'cocktails')!;
 ---
 
 <Layout
   transparentNav={true}
   title={`Menu | ${venue.fullName} | ${venue.address.city}, ${venue.address.state}`}
   description={`Food and cocktails at ${venue.name} — Caribbean-inspired bar program and rooftop kitchen at ${venue.hotel}, ${venue.address.city}.`}
+  extraGraph={[menuSchema]}
 >
   <PageHero
     image="/photos/menu-flamingo-hero.jpg"
@@ -36,12 +59,17 @@ import { venue } from '../data/venue';
       </p>
     </div>
     <div class="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-10">
-      <MenuCard image="/photos/food/wings.jpg" imageAlt="Crispy fried wings at Coco Cabana" category="food" />
-      <MenuCard name="Spicy Chicken Bowl" image="/photos/food/spicy-chicken-bowl.jpg" imageAlt="Spicy chicken bowl with rice and broccolini" imagePosition="object-[center_80%]" category="food" />
-      <MenuCard name="Hawaiian Cubano" image="/photos/food/hawaiian-cubano.jpg" imageAlt="Hawaiian Cubano sandwich with fries" imagePosition="object-[center_75%]" category="food" />
-      <MenuCard name="Coconut Shrimp" image="/photos/food/coconut-shrimp-v2.jpg" imageAlt="Coconut shrimp with dipping sauce" category="food" />
-      <MenuCard name="Chicken Sando" image="/photos/food/chicken-sando.jpg" imageAlt="Crispy chicken sandwich with slaw and fries" imagePosition="object-[center_75%]" category="food" />
-      <MenuCard name="Miss B's Burger" image="/photos/food/miss-bs-burger.jpg" imageAlt="Miss B's Burger with cheese, lettuce, tomato, and fries" imagePosition="object-[center_78%]" category="food" />
+      {foodSection.items.map(item => (
+        <MenuCard
+          name={item.name}
+          description={item.description}
+          image={item.image}
+          imageAlt={item.imageAlt}
+          imagePosition={item.imagePosition}
+          category={foodSection.category}
+          tone={foodSection.tone}
+        />
+      ))}
     </div>
   </section>
 
@@ -55,10 +83,17 @@ import { venue } from '../data/venue';
       </p>
     </div>
     <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto mb-10">
-      <MenuCard name="Caribe Welcome" description="House rum blend, coconut water, apricot brandy, coconut cream, fresh lime" image="/photos/drinks/caribe-welcome.jpg" imageAlt="Caribe Welcome cocktail in a coconut with orchid garnish" category="drinks" tone="dark" />
-      <MenuCard name="Swedish Bikini Team" description="House rum blend, strawberry, cucumber, coconut water, lemon" image="/photos/drinks/swedish-bikini-team.jpg" imageAlt="Swedish Bikini Team cocktail with cucumber ribbon and strawberry" category="drinks" tone="dark" />
-      <MenuCard name="Havana Good Time" image="/photos/drinks/havana-good-time.jpg" imageAlt="Havana Good Time cocktail in a copper flamingo vessel" imagePosition="object-[center_85%]" category="drinks" tone="dark" />
-      <MenuCard name="Miami Pound Machine" description="Blanco tequila, passionfruit, bitters" image="/photos/drinks/miami-pound-machine.jpg" imageAlt="Miami Pound Machine cocktail with banana leaf and lime wheel" imagePosition="object-[25%_center]" category="drinks" tone="dark" />
+      {cocktailsSection.items.map(item => (
+        <MenuCard
+          name={item.name}
+          description={item.description}
+          image={item.image}
+          imageAlt={item.imageAlt}
+          imagePosition={item.imagePosition}
+          category={cocktailsSection.category}
+          tone={cocktailsSection.tone}
+        />
+      ))}
     </div>
     <div class="text-center">
       <Button href={venue.reservationsUrl} variant="ghost" external>Reserve a Table</Button>

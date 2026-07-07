@@ -9,38 +9,44 @@ interface Props {
   description: string;
   ogImage?: string;
   transparentNav?: boolean;
+  extraGraph?: object[];
 }
 
-const { title, description, ogImage, transparentNav = false } = Astro.props;
+const { title, description, ogImage, transparentNav = false, extraGraph = [] } = Astro.props;
 
 const schema = {
   "@context": "https://schema.org",
-  "@type": "BarOrPub",
-  "name": venue.fullName,
-  "url": "https://cococabanaoside.com",
-  "telephone": venue.phone,
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": venue.address.street,
-    "addressLocality": venue.address.city,
-    "addressRegion": venue.address.state,
-    "postalCode": venue.address.zip,
-    "addressCountry": "US"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": venue.coordinates.latitude,
-    "longitude": venue.coordinates.longitude
-  },
-  "servesCuisine": ["Caribbean", "American"],
-  "priceRange": "$$",
-  "openingHoursSpecification": venue.schemaHours.map(h => ({
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": h.dayOfWeek,
-    "opens": h.opens,
-    "closes": h.closes
-  })),
-  "sameAs": [venue.social.instagram]
+  "@graph": [
+    {
+      "@type": "BarOrPub",
+      "name": venue.fullName,
+      "url": "https://cococabanaoside.com",
+      "telephone": venue.phone,
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": venue.address.street,
+        "addressLocality": venue.address.city,
+        "addressRegion": venue.address.state,
+        "postalCode": venue.address.zip,
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": venue.coordinates.latitude,
+        "longitude": venue.coordinates.longitude
+      },
+      "servesCuisine": ["Caribbean", "American"],
+      "priceRange": "$$",
+      "openingHoursSpecification": venue.schemaHours.map(h => ({
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": h.dayOfWeek,
+        "opens": h.opens,
+        "closes": h.closes
+      })),
+      "sameAs": [venue.social.instagram],
+    },
+    ...extraGraph,
+  ],
 };
 ---
 
