@@ -32,15 +32,19 @@ const phoneColor  = tone === 'dark' ? 'text-brand-cream/40' : 'text-brand-charco
       </p>
     </div>
 
-    <!-- Toast iframe — framed as a white card so the form interior reads cleanly -->
-    <div class="bg-white overflow-hidden" style="box-shadow: 0 2px 24px 0 rgba(0,0,0,0.10);">
-      <iframe
-        src="https://www.toasttab.com/invoice/lead?rx=92e5306b-e932-4406-876b-91277626cb5c&ot=fb59fde7-2560-4025-bb15-abbd63a46f88&form=1"
-        title="Private Event Inquiry Form"
-        loading="lazy"
-        scrolling="no"
-        style="display:block;border:0;width:100%;height:900px;"
-      ></iframe>
+    <!-- Toast iframe — pink accent bar anchors the card to the brand, inner padding gives the form room to breathe -->
+    <div class="relative">
+      <!-- top accent bar -->
+      <div class="h-1 w-full bg-brand-pink"></div>
+      <div class="bg-white px-6 sm:px-10 pt-8 pb-10" style="box-shadow: 0 4px 40px 0 rgba(0,0,0,0.18);">
+        <iframe
+          src="https://www.toasttab.com/invoice/lead?rx=92e5306b-e932-4406-876b-91277626cb5c&ot=fb59fde7-2560-4025-bb15-abbd63a46f88&form=1"
+          title="Private Event Inquiry Form"
+          loading="lazy"
+          scrolling="no"
+          style="display:block;border:0;width:100%;height:900px;"
+        ></iframe>
+      </div>
     </div>
 
     <!-- Phone fallback -->
