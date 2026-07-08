@@ -73,6 +73,10 @@ export const venue = {
 
   routes: {
     privateEvents: '/private-events',
+    privateEventsBirthday: '/private-events/birthday-parties',
+    privateEventsCelebrations: '/private-events/celebrations',
+    privateEventsCorporate: '/private-events/corporate-events',
+    privateEventsRehearsal: '/private-events/rehearsal-dinners',
     menu: '/menu',
     venue: '/venue',
     brunch: '/brunch',
