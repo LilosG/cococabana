@@ -1,0 +1,226 @@
+---
+interface Props {
+  eventType?: string;
+  tone?: 'light' | 'dark';
+  // Set action to your form endpoint (Formspree, Web3Forms, etc.)
+  // e.g. "https://formspree.io/f/YOUR_FORM_ID"
+  action?: string;
+}
+
+const {
+  eventType = '',
+  tone = 'light',
+  action = '#',
+} = Astro.props;
+
+const bg = tone === 'dark' ? 'bg-brand-charcoal' : 'bg-brand-cream';
+const labelColor = tone === 'dark' ? 'text-brand-cream/70' : 'text-brand-charcoal/60';
+const headingColor = tone === 'dark' ? 'text-brand-cream' : 'text-brand-charcoal';
+const inputBg = tone === 'dark' ? 'bg-brand-charcoal border-brand-cream/20 text-brand-cream placeholder:text-brand-cream/30 focus:border-brand-pink' : 'bg-white border-brand-charcoal/20 text-brand-charcoal placeholder:text-brand-charcoal/30 focus:border-brand-pink';
+
+const eventTypes = [
+  'Birthday Party',
+  'Bachelorette Party',
+  'Baby Shower',
+  'Bridal Shower',
+  'Anniversary',
+  'Graduation',
+  'Rehearsal Dinner',
+  'Corporate Event',
+  'Brand Activation',
+  'Other',
+];
+---
+
+<section class:list={[bg, 'px-6 sm:px-8 lg:px-12 py-20 sm:py-28']}>
+  <div class="max-w-3xl mx-auto">
+    <div class="text-center mb-12">
+      <div class="flex flex-col gap-3 mb-4 items-center">
+        <p class="uppercase tracking-eyebrow-lg text-xs text-brand-pink">Private Events</p>
+        <span class="block w-8 h-px bg-brand-pink"></span>
+      </div>
+      <h2 class:list={['font-display text-section-xl leading-display uppercase mb-4', headingColor]}>
+        Start Your Inquiry
+      </h2>
+      <p class:list={['leading-relaxed max-w-xl mx-auto', labelColor]}>
+        Fill out the form below and we'll reach out to confirm availability and talk through the details.
+      </p>
+    </div>
+
+    <form
+      action={action}
+      method="POST"
+      class="grid gap-6 sm:grid-cols-2"
+      id="event-inquiry-form"
+    >
+      <!-- Hidden event type for pre-filled sub-pages -->
+      {eventType && <input type="hidden" name="event_type_preset" value={eventType} />}
+
+      <div class="flex flex-col gap-2">
+        <label for="first-name" class:list={['text-xs uppercase tracking-label', labelColor]}>First Name <span class="text-brand-pink">*</span></label>
+        <input
+          type="text"
+          id="first-name"
+          name="first_name"
+          required
+          autocomplete="given-name"
+          placeholder="First name"
+          class:list={['px-4 py-3 border text-sm outline-none transition-colors duration-200', inputBg]}
+        />
+      </div>
+
+      <div class="flex flex-col gap-2">
+        <label for="last-name" class:list={['text-xs uppercase tracking-label', labelColor]}>Last Name <span class="text-brand-pink">*</span></label>
+        <input
+          type="text"
+          id="last-name"
+          name="last_name"
+          required
+          autocomplete="family-name"
+          placeholder="Last name"
+          class:list={['px-4 py-3 border text-sm outline-none transition-colors duration-200', inputBg]}
+        />
+      </div>
+
+      <div class="flex flex-col gap-2">
+        <label for="email" class:list={['text-xs uppercase tracking-label', labelColor]}>Email <span class="text-brand-pink">*</span></label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+          autocomplete="email"
+          placeholder="your@email.com"
+          class:list={['px-4 py-3 border text-sm outline-none transition-colors duration-200', inputBg]}
+        />
+      </div>
+
+      <div class="flex flex-col gap-2">
+        <label for="phone" class:list={['text-xs uppercase tracking-label', labelColor]}>Phone</label>
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
+          autocomplete="tel"
+          placeholder="(000) 000-0000"
+          class:list={['px-4 py-3 border text-sm outline-none transition-colors duration-200', inputBg]}
+        />
+      </div>
+
+      <div class="flex flex-col gap-2">
+        <label for="event-type" class:list={['text-xs uppercase tracking-label', labelColor]}>Event Type <span class="text-brand-pink">*</span></label>
+        <select
+          id="event-type"
+          name="event_type"
+          required
+          class:list={['px-4 py-3 border text-sm outline-none transition-colors duration-200 appearance-none cursor-pointer', inputBg]}
+        >
+          <option value="" disabled selected={!eventType}>Select event type</option>
+          {eventTypes.map(type => (
+            <option value={type} selected={eventType === type}>{type}</option>
+          ))}
+        </select>
+      </div>
+
+      <div class="flex flex-col gap-2">
+        <label for="event-date" class:list={['text-xs uppercase tracking-label', labelColor]}>Event Date</label>
+        <input
+          type="date"
+          id="event-date"
+          name="event_date"
+          class:list={['px-4 py-3 border text-sm outline-none transition-colors duration-200', inputBg]}
+        />
+      </div>
+
+      <div class="flex flex-col gap-2">
+        <label for="guest-count" class:list={['text-xs uppercase tracking-label', labelColor]}>Estimated Guest Count</label>
+        <select
+          id="guest-count"
+          name="guest_count"
+          class:list={['px-4 py-3 border text-sm outline-none transition-colors duration-200 appearance-none cursor-pointer', inputBg]}
+        >
+          <option value="" disabled selected>Select a range</option>
+          <option value="Under 20">Under 20</option>
+          <option value="20–50">20–50</option>
+          <option value="50–100">50–100</option>
+          <option value="100+">100+</option>
+        </select>
+      </div>
+
+      <div class="flex flex-col gap-2">
+        <label for="how-heard" class:list={['text-xs uppercase tracking-label', labelColor]}>How did you hear about us?</label>
+        <select
+          id="how-heard"
+          name="how_heard"
+          class:list={['px-4 py-3 border text-sm outline-none transition-colors duration-200 appearance-none cursor-pointer', inputBg]}
+        >
+          <option value="" disabled selected>Select an option</option>
+          <option value="Instagram">Instagram</option>
+          <option value="Google">Google</option>
+          <option value="Friend / Word of Mouth">Friend / Word of Mouth</option>
+          <option value="Walked By">Walked By</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+
+      <div class="sm:col-span-2 flex flex-col gap-2">
+        <label for="message" class:list={['text-xs uppercase tracking-label', labelColor]}>Tell Us About Your Event</label>
+        <textarea
+          id="message"
+          name="message"
+          rows="5"
+          placeholder="Share any details about your vision, special requests, or questions..."
+          class:list={['px-4 py-3 border text-sm outline-none transition-colors duration-200 resize-none', inputBg]}
+        ></textarea>
+      </div>
+
+      <div class="sm:col-span-2 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+        <button
+          type="submit"
+          class="inline-flex items-center justify-center px-8 py-3.5 text-sm uppercase tracking-button transition-colors duration-300 bg-brand-pink text-brand-charcoal hover:bg-brand-pink-dark hover:text-brand-cream"
+        >
+          Submit Inquiry
+        </button>
+        <p class:list={['text-xs', labelColor]}>We'll follow up within 1 business day.</p>
+      </div>
+
+      <!-- Success message (shown via JS after submit) -->
+      <div id="form-success" class="sm:col-span-2 hidden">
+        <div class="border border-brand-pink/30 bg-brand-pink/10 px-6 py-4">
+          <p class="font-display uppercase text-sm tracking-feature text-brand-pink mb-1">Inquiry Received</p>
+          <p class:list={['text-sm', labelColor]}>Thanks — we'll be in touch within 1 business day to confirm availability and next steps.</p>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+
+<script>
+  const form = document.getElementById('event-inquiry-form') as HTMLFormElement | null;
+  const success = document.getElementById('form-success');
+
+  form?.addEventListener('submit', async (e) => {
+    const action = form.getAttribute('action');
+    if (!action || action === '#') return; // dev placeholder — let it fall through
+
+    e.preventDefault();
+    const data = new FormData(form);
+
+    try {
+      const res = await fetch(action, {
+        method: 'POST',
+        body: data,
+        headers: { Accept: 'application/json' },
+      });
+
+      if (res.ok) {
+        form.reset();
+        success?.classList.remove('hidden');
+        form.querySelector('button[type="submit"]')?.setAttribute('disabled', 'true');
+      }
+    } catch {
+      // If fetch fails, let the form submit natively
+      form.submit();
+    }
+  });
+</script>

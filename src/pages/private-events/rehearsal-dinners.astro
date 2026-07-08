@@ -6,10 +6,12 @@ import FullBleedBanner from '../../components/FullBleedBanner.astro';
 import Button from '../../components/Button.astro';
 import Eyebrow from '../../components/Eyebrow.astro';
 import TickList from '../../components/TickList.astro';
+import EventInquiryForm from '../../components/EventInquiryForm.astro';
 import { venue } from '../../data/venue';
 import heroImg from '../../assets/photos/cabana-lounge-cityview.jpg';
 import diningImg from '../../assets/photos/events-rooftop-dining.jpg';
 import loungeImg from '../../assets/photos/welcome-lounge-tilewall.jpg';
+import crowdImg from '../../assets/photos/events-crowd-hero.jpg';
 
 const serviceSchema = {
   "@type": "Service",
@@ -54,10 +56,32 @@ const serviceSchema = {
       The rooftop above Downtown {venue.address.city} sets the tone for the wedding weekend — Caribbean cocktails, open air, and a view worth celebrating.
     </p>
     <div class="flex flex-wrap gap-4">
-      <Button href={venue.phoneHref} variant="primary">Call to Inquire</Button>
-      <Button href={venue.routes.contact} variant="ghost">Contact Us</Button>
+      <Button href="#inquiry-form" variant="primary">Submit an Inquiry</Button>
+      <Button href={venue.phoneHref} variant="ghost">Call {venue.phone}</Button>
     </div>
   </PageHero>
+
+  <!-- STATS STRIP -->
+  <section class="bg-brand-charcoal text-brand-cream">
+    <div class="max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-4 divide-x divide-y sm:divide-y-0 divide-brand-cream/10">
+      <div class="px-5 py-8 text-center">
+        <p class="accent-text text-2xl text-brand-pink mb-1">Rooftop</p>
+        <p class="uppercase tracking-stat text-xs text-brand-cream/50">Open Air · 4 Stories Up</p>
+      </div>
+      <div class="px-5 py-8 text-center">
+        <p class="accent-text text-2xl text-brand-pink mb-1">Full Bar</p>
+        <p class="uppercase tracking-stat text-xs text-brand-cream/50">Caribbean Cocktails</p>
+      </div>
+      <div class="px-5 py-8 text-center">
+        <p class="accent-text text-2xl text-brand-pink mb-1">Rooftop</p>
+        <p class="uppercase tracking-stat text-xs text-brand-cream/50">Kitchen Available</p>
+      </div>
+      <div class="px-5 py-8 text-center">
+        <p class="accent-text text-2xl text-brand-pink mb-1">Downtown</p>
+        <p class="uppercase tracking-stat text-xs text-brand-cream/50">{venue.address.city}, {venue.address.state}</p>
+      </div>
+    </div>
+  </section>
 
   <!-- WHY IT WORKS -->
   <SplitSection
@@ -76,13 +100,16 @@ const serviceSchema = {
         'Rooftop kitchen',
         'Cabana lounge seating',
         'Views of the Pacific coastline',
-        'Call to discuss your setup',
+        'Intimate setting for the wedding party',
       ]} />
     </div>
     <p class="text-brand-charcoal/60 leading-relaxed mb-8">
-      Call us directly to talk through your date, party size, and what you're envisioning. We'll put together the details and make it work for your group.
+      Fill out the inquiry form below or call us directly to talk through your date, party size, and what you're envisioning. We'll put together the details and make it work for your group.
     </p>
-    <Button href={venue.phoneHref} variant="primary">Call to Inquire</Button>
+    <div class="flex flex-wrap gap-4">
+      <Button href="#inquiry-form" variant="primary">Submit an Inquiry</Button>
+      <Button href={venue.phoneHref} variant="secondary">Call to Inquire</Button>
+    </div>
   </SplitSection>
 
   <!-- ATMOSPHERE BANNER -->
@@ -101,8 +128,27 @@ const serviceSchema = {
     <p class="text-brand-cream/80 leading-relaxed mb-8">
       Four stories above {venue.address.street} — open air, full bar, and a Pacific coastline view that makes the night before feel just as special as the day itself.
     </p>
-    <Button href={venue.phoneHref} variant="primary">Start Planning</Button>
+    <Button href="#inquiry-form" variant="primary">Start Planning</Button>
   </FullBleedBanner>
+
+  <!-- THE ATMOSPHERE SPLIT -->
+  <SplitSection
+    image={crowdImg}
+    imageAlt="Coco Cabana rooftop packed with guests at golden hour — full venue energy"
+    imagePosition="object-[center_40%]"
+    imageLeft={false}
+    tone="dark"
+  >
+    <Eyebrow tone="dark">The Atmosphere</Eyebrow>
+    <h2 class="font-display text-section-xl leading-display uppercase text-brand-cream mb-6">Set the Tone for the Weekend</h2>
+    <p class="text-brand-cream/70 leading-relaxed mb-6">
+      Palm trees, open sky, cabana seating, and Caribbean cocktails — the rooftop at {venue.name} creates an atmosphere that needs no additional decoration. Just show up and let it do the work.
+    </p>
+    <p class="text-brand-cream/70 leading-relaxed mb-8">
+      Whether you want a low-key dinner with the wedding party or a full rooftop gathering with the whole crew, we can put together something that fits the occasion. Just reach out and we'll make it happen.
+    </p>
+    <Button href="#inquiry-form" variant="primary">Submit an Inquiry</Button>
+  </SplitSection>
 
   <!-- HOW IT WORKS -->
   <section class="bg-brand-cream px-6 sm:px-8 lg:px-12 py-20 sm:py-28">
@@ -113,30 +159,35 @@ const serviceSchema = {
     <div class="max-w-4xl mx-auto grid md:grid-cols-3 gap-8">
       <div class="text-center">
         <p class="accent-text text-4xl text-brand-pink mb-4">01</p>
-        <h3 class="font-display uppercase tracking-feature text-sm text-brand-charcoal mb-3">Call or Inquire</h3>
-        <p class="text-brand-charcoal/60 text-sm leading-relaxed">Reach out to discuss your rehearsal dinner date, party size, and what you'd like the evening to look like.</p>
+        <h3 class="font-display uppercase tracking-feature text-sm text-brand-charcoal mb-3">Inquire Below</h3>
+        <p class="text-brand-charcoal/60 text-sm leading-relaxed">Fill out the inquiry form with your rehearsal dinner date, party size, and what you'd like the evening to look like. Or call us at {venue.phone}.</p>
       </div>
       <div class="text-center">
         <p class="accent-text text-4xl text-brand-pink mb-4">02</p>
         <h3 class="font-display uppercase tracking-feature text-sm text-brand-charcoal mb-3">We Build the Plan</h3>
-        <p class="text-brand-charcoal/60 text-sm leading-relaxed">We'll put together the details — space, bar, and anything else that makes the evening feel right.</p>
+        <p class="text-brand-charcoal/60 text-sm leading-relaxed">We'll follow up within 1 business day to confirm availability and put together the details — space, bar, and anything else that makes the evening feel right.</p>
       </div>
       <div class="text-center">
         <p class="accent-text text-4xl text-brand-pink mb-4">03</p>
         <h3 class="font-display uppercase tracking-feature text-sm text-brand-charcoal mb-3">Enjoy the Rooftop</h3>
-        <p class="text-brand-charcoal/60 text-sm leading-relaxed">Show up, settle in, and let the rooftop do the rest. We'll handle everything so you can enjoy the night.</p>
+        <p class="text-brand-charcoal/60 text-sm leading-relaxed">Show up, settle in, and let the rooftop do the rest. We'll handle everything so you can enjoy the night before the big day.</p>
       </div>
     </div>
   </section>
 
+  <!-- INQUIRY FORM -->
+  <div id="inquiry-form">
+    <EventInquiryForm eventType="Rehearsal Dinner" tone="dark" />
+  </div>
+
   <!-- CTA -->
-  <section class="bg-brand-charcoal px-6 sm:px-8 lg:px-12 py-16 sm:py-20 text-center">
-    <Eyebrow align="center" tone="dark">Start Planning</Eyebrow>
-    <h2 class="font-display text-section-xl leading-display uppercase text-brand-cream mb-2">Let's Talk</h2>
-    <p class="text-brand-cream/60 mb-8">{venue.phone} &middot; {venue.address.street}, {venue.address.city}, {venue.address.state}</p>
+  <section class="bg-brand-cream px-6 sm:px-8 lg:px-12 py-16 sm:py-20 text-center">
+    <Eyebrow align="center">Prefer to Call?</Eyebrow>
+    <h2 class="font-display text-section-xl leading-display uppercase text-brand-charcoal mb-2">Reach Out Directly</h2>
+    <p class="text-brand-charcoal/60 mb-8">{venue.phone} &middot; {venue.address.street}, {venue.address.city}, {venue.address.state}</p>
     <div class="flex flex-wrap gap-4 justify-center">
       <Button href={venue.phoneHref} variant="primary">Call to Inquire</Button>
-      <Button href={venue.routes.contact} variant="ghost">Contact Us</Button>
+      <Button href={venue.routes.contact} variant="secondary">Contact Page</Button>
       <Button href={venue.routes.privateEvents} variant="ghost">All Private Events</Button>
     </div>
   </section>
