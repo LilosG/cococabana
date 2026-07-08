@@ -1,5 +1,7 @@
 ---
+import { Image } from 'astro:assets';
 import { venue } from '../data/venue';
+import logoImg from '../assets/cococabana-logo-transparent.png';
 
 interface Props {
   transparent?: boolean;
@@ -39,11 +41,11 @@ const navLinks = [
 
     <!-- Logo — brightness-0 applied by JS when nav is solid/cream -->
     <a href="/" class="shrink-0">
-      <img
+      <Image
         id="nav-logo"
-        src="/cococabana-logo-transparent.png"
+        src={logoImg}
         alt={`${venue.name} – ${venue.tagline}`}
-        class:list={['h-12 sm:h-14 w-auto transition-all duration-300']}
+        class="h-12 sm:h-14 w-auto transition-all duration-300"
       />
     </a>
 

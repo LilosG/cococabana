@@ -6,6 +6,8 @@ import Button from '../../components/Button.astro';
 import Eyebrow from '../../components/Eyebrow.astro';
 import { venue } from '../../data/venue';
 
+import heroAerial from '../../assets/photos/hero-aerial.jpg';
+
 const posts = (await getCollection('blog')).sort(
   (a, b) => b.data.date.getTime() - a.data.date.getTime()
 );
@@ -17,7 +19,7 @@ const posts = (await getCollection('blog')).sort(
   description={`Local guides, event updates, and rooftop lifestyle from ${venue.name} — ${venue.hotel}, Downtown ${venue.address.city}.`}
 >
   <PageHero
-    image="/photos/hero-aerial.jpg"
+    image={heroAerial}
     imageAlt="Aerial view of Coco Cabana rooftop bar over Downtown Oceanside"
   >
     <Eyebrow tone="dark">{venue.address.city}, {venue.address.state}</Eyebrow>
