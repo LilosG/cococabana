@@ -37,10 +37,13 @@ export const venue = {
   },
 
   schemaHours: [
-    { dayOfWeek: 'Thursday',  opens: '17:00', closes: '22:00' },
-    { dayOfWeek: 'Friday',    opens: '11:00', closes: '23:59' },
+    { dayOfWeek: 'Monday',    opens: '15:00', closes: '21:00' },
+    { dayOfWeek: 'Tuesday',   opens: '15:00', closes: '21:00' },
+    { dayOfWeek: 'Wednesday', opens: '15:00', closes: '21:00' },
+    { dayOfWeek: 'Thursday',  opens: '15:00', closes: '22:00' },
+    { dayOfWeek: 'Friday',    opens: '15:00', closes: '23:59' },
     { dayOfWeek: 'Saturday',  opens: '10:00', closes: '23:59' },
-    { dayOfWeek: 'Sunday',    opens: '10:00', closes: '21:00' },
+    { dayOfWeek: 'Sunday',    opens: '10:00', closes: '20:00' },
   ],
 
   mapsUrl:
@@ -50,14 +53,14 @@ export const venue = {
 
   hours: {
     schedule: [
-      { days: 'Monday – Wednesday', hours: 'Closed' },
-      { days: 'Thursday', hours: '5:00 PM – 10:00 PM' },
-      { days: 'Friday', hours: '11:00 AM – 12:00 AM' },
+      { days: 'Monday – Wednesday', hours: '3:00 PM – 9:00 PM' },
+      { days: 'Thursday', hours: '3:00 PM – 10:00 PM' },
+      { days: 'Friday', hours: '3:00 PM – 12:00 AM' },
       { days: 'Saturday', hours: '10:00 AM – 12:00 AM' },
-      { days: 'Sunday', hours: '10:00 AM – 9:00 PM' },
+      { days: 'Sunday', hours: '10:00 AM – 8:00 PM' },
     ],
     // Compact fragment for info strip / footer
-    shortSummary: 'Thu–Sun · Open for Brunch Sat & Sun',
+    shortSummary: 'Open Daily · Brunch Sat & Sun from 10 AM',
   },
 
   brunch: {

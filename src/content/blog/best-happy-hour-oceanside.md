@@ -31,19 +31,19 @@ By those standards, here's where Oceanside delivers.
 
 ## Best Happy Hour in Oceanside: Our Top Pick
 
-### Coco Cabana Rooftop Bar — Thursday Evening
+### Coco Cabana Rooftop Bar — Any Weeknight from 3 PM
 
 **408 Pier View Way, Oceanside, CA 92054**
 
-The honest answer to "best happy hour in Oceanside" is a Thursday evening on the rooftop at [Coco Cabana](/venue). Here's why:
+The honest answer to "best happy hour in Oceanside" is a weeknight on the rooftop at [Coco Cabana](/venue). Here's why:
 
-**Thursday is the sweet spot.** The weekend crowd hasn't arrived. You can walk onto the rooftop at 5:30 PM, settle into cabana lounge seating with a direct view of the Pacific coastline and the Oceanside Pier, and order from the full cocktail menu without competing for a bartender's attention or someone else's table. The rooftop at [The Brick Hotel](/venue) is four stories above Pier View Way — it's open-air, no glass barriers, full sky — and on a Thursday evening in the golden hour, the light from the west hits the pier in a way that makes it genuinely difficult to believe you're just doing drinks after work.
+**The rooftop opens at 3 PM, Monday through Friday.** That's a genuinely rare thing in a cocktail bar at this level. You can walk onto the rooftop at 3:30 PM on a Tuesday, settle into cabana lounge seating with a direct view of the Pacific coastline and the Oceanside Pier, and order from the full cocktail menu without competing for a bartender's attention or someone else's table. The rooftop at [The Brick Hotel](/venue) is four stories above Pier View Way — it's open-air, no glass barriers, full sky — and on a weekday evening in the golden hour, the light from the west hits the pier in a way that makes it genuinely difficult to believe you're just doing drinks after work.
 
 **The cocktail program is the real thing.** The [bar menu](/menu) runs a full Caribbean-inspired cocktail program — rum-forward builds, tropical flavors, fresh citrus, drinks with character. It's not a happy hour special menu of lower-shelf alternatives. It's the same program that runs on Friday night, in the same setting, at a pace slow enough that the bartender can actually make the drink well.
 
 **Golden hour is the real happy hour.** In Oceanside, the sun hits the horizon over the water between roughly 5:30 PM (winter) and 7:45 PM (summer). From the rooftop at Coco Cabana, that's a show. The cocktail in your hand becomes secondary to the view, which is exactly what a great happy hour should feel like — a moment that costs a little money and returns something you didn't expect.
 
-**Thursday hours:** 5:00 PM – 10:00 PM
+**Weeknight hours:** Mon–Wed 3:00 PM – 9:00 PM · Thu 3:00 PM – 10:00 PM · Fri 3:00 PM – 12:00 AM
 
 [View the full cocktail menu](/menu) before you arrive.
 
@@ -53,7 +53,7 @@ The honest answer to "best happy hour in Oceanside" is a Thursday evening on the
 
 ### After-Work Drinks for Two
 
-**Best pick:** Coco Cabana, Thursday evening, arrive by 5:30 PM.
+**Best pick:** Coco Cabana, any weeknight, arrive by 5:30 PM.
 
 Get a table on the rooftop before the light fades, order two cocktails from the Caribbean menu, and let the Oceanside Pier view do the work. It's the best version of "after-work drinks" in North County San Diego — a setting that makes the evening feel earned.
 
@@ -61,9 +61,9 @@ If you're making a night of it, the full cocktail menu is worth working through 
 
 ### Group Happy Hour (6–12 People)
 
-**Best pick:** Coco Cabana, Friday early evening (11 AM opening, calmer before 7 PM).
+**Best pick:** Coco Cabana, Friday early evening (opens 3 PM, calmer before 7 PM).
 
-Friday at Coco Cabana opens at 11 AM, which means the early afternoon and early evening hours have a pre-weekend energy that's looser than Thursday but not yet at full Saturday-night capacity. For a group of 6–12, the rooftop has enough cabana lounge seating to accommodate everyone without feeling crowded, and the cocktail bar can handle group orders efficiently.
+Friday at Coco Cabana opens at 3 PM, which means the early evening hours have a pre-weekend energy that's looser than Saturday night but building toward it. For a group of 6–12, the rooftop has enough cabana lounge seating to accommodate everyone without feeling crowded, and the cocktail bar can handle group orders efficiently.
 
 If your group has a specific celebration in mind — a promotion, a birthday pre-game, a farewell — [private events](/private-events) are available for buyouts. [Reach out](/contact) to discuss what's possible.
 
@@ -85,17 +85,17 @@ For groups celebrating something — a [birthday brunch](/private-events/birthda
 
 ---
 
-## A Thursday Evening at Coco Cabana: How It Plays Out
+## A Weeknight at Coco Cabana: How It Plays Out
 
-For anyone planning a Thursday happy hour visit, here's what to expect:
+For anyone planning a weeknight happy hour visit, here's what to expect:
 
-**5:00 PM** — The rooftop opens. If you arrive right at 5, you'll have your choice of seating — the cabana lounge, the bar top, or a table with a direct view of the pier. The light at this hour is still high in the sky in summer; in winter, golden hour starts earlier.
+**3:00 PM** — The rooftop opens. If you arrive right at 3, you'll have your choice of seating — the cabana lounge, the bar top, or a table with a direct view of the pier. The light at this hour is still high in the sky in summer; in winter, golden hour starts earlier.
 
 **5:30–6:30 PM** — The golden hour window. The sun moves toward the horizon behind the pier. The rooftop is starting to fill with the after-work crowd. This is the ideal hour for a first cocktail — take your time with the [menu](/menu) and pick something Caribbean-forward.
 
-**6:30–8:00 PM** — The rooftop is alive without being overcrowded. A good second drink, a second round for the table, maybe some bar bites. The light has faded but the skyline is still lit. This is the comfortable middle of a Thursday evening on the rooftop.
+**6:30–8:00 PM** — The rooftop is alive without being overcrowded. A good second drink, a second round for the table, maybe some bar bites. The light has faded but the skyline is still lit. This is the comfortable middle of a weeknight on the rooftop.
 
-**8:00–10:00 PM** — The evening winds down on Thursdays. The rooftop closes at 10 PM. If you want to move the night somewhere else in Downtown Oceanside, there are options within walking distance.
+**8:00 PM onward** — The evening continues through 9 PM (Mon–Wed) or 10 PM (Thu). If you want to move the night somewhere else in Downtown Oceanside, there are options within walking distance. Fridays run until midnight.
 
 ---
 
@@ -113,7 +113,7 @@ For context on the broader scene:
 
 ## Practical Planning: Happy Hour at Coco Cabana
 
-**Reservations:** [Reserve a table online](https://tables.toasttab.com/restaurants/92e5306b-e932-4406-876b-91277626cb5c/findTime?toast_sg=0ad2b6f7-a902-4be0-97b4-0532bea5a475&toast_ss=6e5433f4-a2dc-4d75-8c25-8ad93cd2b639&toast_src=website_link&utm_source=undefined&utm_content=home&utm_medium=toast_sites&utm_term=nav&utm_campaign=undefined) or call (858) 304-7725. Walk-ins work on Thursdays; Friday evenings benefit from a reservation.
+**Reservations:** [Reserve a table online](https://tables.toasttab.com/restaurants/92e5306b-e932-4406-876b-91277626cb5c/findTime?toast_sg=0ad2b6f7-a902-4be0-97b4-0532bea5a475&toast_ss=6e5433f4-a2dc-4d75-8c25-8ad93cd2b639&toast_src=website_link&utm_source=undefined&utm_content=home&utm_medium=toast_sites&utm_term=nav&utm_campaign=undefined) or call (858) 304-7725. Walk-ins work on weeknights; Friday evenings benefit from a reservation.
 
 **Parking:** Street parking on Pier View Way and surrounding blocks. City surface lots within a block of The Brick Hotel.
 
@@ -129,7 +129,7 @@ For context on the broader scene:
 The full [cocktail menu](/menu) is available during all open hours. Thursday evenings offer the most relaxed experience — full bar program, great setting, without the weekend crowd.
 
 **What's the best time to visit for happy hour?**
-Thursday between 5:30–7:00 PM for the golden-hour light over the pier. Friday afternoon before the DJ night crowd arrives is the second-best window.
+Any weeknight between 5:30–7:00 PM for the golden-hour light over the pier. The rooftop opens at 3 PM Monday through Friday, so there's no rush to time your arrival around a specific happy hour window.
 
 **Can I book the rooftop for a private happy hour?**
 Yes. [Private event buyouts](/private-events) are available for corporate happy hours, team celebrations, and group events. [Reach out](/contact) to discuss your date and group size.

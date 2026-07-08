@@ -41,11 +41,11 @@ DJ nights run every Friday and Saturday. The crowd that shows up for weekend nig
 
 Weekend brunch is a different version of the same quality. Saturday and Sunday from 10 AM, the rooftop runs a [full brunch program](/brunch) with bottomless mimosas and Caribbean-influenced plates — malasadas, chicken and waffles, eggs, chilaquiles, avocado toast. The combination of the morning light, the coastal view, and continuously poured bottomless mimosas makes brunch here one of the best daytime experiences in North County.
 
-The Thursday evening opening (5 PM) is the underrated option. The weekend crowd hasn't arrived, the seats are available, the cocktail menu is identical, and the golden-hour light hits the pier from the west right around 5:30–7 PM depending on the season. It's the best low-pressure version of the rooftop experience.
+The weeknight opening (3 PM Monday–Thursday) is the underrated option. The weekend crowd hasn't arrived, the seats are available, the cocktail menu is identical, and the golden-hour light hits the pier from the west right around 5:30–7 PM depending on the season. It's the best low-pressure version of the rooftop experience.
 
 For groups planning celebrations, [private events](/private-events) — [birthday parties](/private-events/birthday-parties), [bachelorette parties](/private-events/celebrations), [rehearsal dinners](/private-events/rehearsal-dinners), [corporate events](/private-events/corporate-events) — can be accommodated with rooftop buyouts. [Reach out](/contact) to discuss availability.
 
-**Hours:** Thu 5–10 PM · Fri 11 AM–12 AM · Sat 10 AM–12 AM · Sun 10 AM–9 PM
+**Hours:** Mon–Wed 3–9 PM · Thu 3–10 PM · Fri 3 PM–12 AM · Sat 10 AM–12 AM · Sun 10 AM–8 PM
 
 **Best for:** Date nights, group celebrations, visiting friends who need to see the best of Oceanside, brunch, DJ nights, private events
 

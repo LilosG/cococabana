@@ -45,7 +45,7 @@ The [bar menu](/menu) runs a Caribbean-inspired cocktail program — tropical fl
 
 There's also a full beer and wine selection, so the bar works for anyone who shows up with a group that has mixed preferences. But the cocktails are the reason to come.
 
-The bar runs the full cocktail program Thursday through Sunday. On weekend evenings, there's enough volume on the bar that you get consistent pours without a long wait — the team moves at the pace the night requires.
+The bar runs the full cocktail program seven days a week. On weekend evenings, there's enough volume on the bar that you get consistent pours without a long wait — the team moves at the pace the night requires.
 
 ### DJ Nights — Friday and Saturday
 
@@ -59,11 +59,11 @@ Saturday and Sunday, the rooftop runs from 10 AM with [a full brunch program](/b
 
 Brunch is consistently one of the best daytime drinking and eating experiences in North County San Diego. The combination of the coastal morning light, the bottomless mimosas, and rooftop plates that are actually worth eating turns a Saturday morning into a three-hour event without trying. It's the kind of brunch you end up booking again before you've left.
 
-### Thursday Evenings
+### Weeknights — Monday through Thursday
 
-Thursday is the underrated pick. The rooftop opens at 5 PM and the weekend crowd hasn't arrived yet — you can walk in, get a cabana seat, and order from the full cocktail menu while the golden hour light hits the pier. It's the right setting for a first date, an after-work drink with a colleague, or a pre-dinner cocktail before heading somewhere in Downtown Oceanside for dinner.
+The rooftop opens at 3 PM Monday through Thursday, which makes it one of the few elevated cocktail bars in North County with genuine weeknight availability. The Monday–Wednesday crowd is relaxed — no DJ, no weekend energy, just the full cocktail program and the Pacific view without competing for a seat. Thursday steps up slightly with a close time of 10 PM and the beginning of the week's social momentum.
 
-The pace on Thursdays is more relaxed than the weekend, but the bar and the view are exactly the same.
+Any weeknight is the right pick for a first date, an after-work drink, or a pre-dinner cocktail. The bar and the view are identical to what you get on Saturday — without the crowd.
 
 ---
 
@@ -87,11 +87,11 @@ The pace on Thursdays is more relaxed than the weekend, but the bar and the view
 
 | Day | Hours |
 |---|---|
-| Monday – Wednesday | Closed |
-| Thursday | 5:00 PM – 10:00 PM |
-| Friday | 11:00 AM – 12:00 AM |
+| Monday – Wednesday | 3:00 PM – 9:00 PM |
+| Thursday | 3:00 PM – 10:00 PM |
+| Friday | 3:00 PM – 12:00 AM |
 | Saturday | 10:00 AM – 12:00 AM |
-| Sunday | 10:00 AM – 9:00 PM |
+| Sunday | 10:00 AM – 8:00 PM |
 
 ### Getting There
 
