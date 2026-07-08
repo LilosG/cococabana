@@ -1,3 +1,5 @@
+import keystatic from '@keystatic/astro';
+import react from '@astrojs/react';
 // @ts-check
 import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
@@ -9,6 +11,6 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()]
   },
-  integrations: [sitemap()],
+  integrations: [react(), keystatic(), sitemap()],
   adapter: vercel()
 });
