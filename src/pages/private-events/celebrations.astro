@@ -7,6 +7,9 @@ import Button from '../../components/Button.astro';
 import Eyebrow from '../../components/Eyebrow.astro';
 import TickList from '../../components/TickList.astro';
 import { venue } from '../../data/venue';
+import heroImg from '../../assets/photos/events-rooftop-dining.jpg';
+import mimosaImg from '../../assets/photos/brunch-mimosa-flight.jpg';
+import lifestyleImg from '../../assets/photos/events-group-lifestyle.jpg';
 
 const serviceSchema = {
   "@type": "Service",
@@ -40,7 +43,7 @@ const serviceSchema = {
   extraGraph={[serviceSchema]}
 >
   <PageHero
-    image="/photos/events-rooftop-dining.jpg"
+    image={heroImg}
     imageAlt="Women dining and celebrating on Coco Cabana rooftop with cocktails and palm views"
     imagePosition="object-[center_40%]"
   >
@@ -59,7 +62,7 @@ const serviceSchema = {
 
   <!-- WHAT WE HOST -->
   <SplitSection
-    image="/photos/brunch-mimosa-flight.jpg"
+    image={mimosaImg}
     imageAlt="Campo Viejo cava mimosa flight on marble table with flamingo and tropical plants"
     imageLeft={true}
     tone="light"
@@ -106,7 +109,7 @@ const serviceSchema = {
 
   <!-- ATMOSPHERE BANNER -->
   <FullBleedBanner
-    image="/photos/events-group-lifestyle.jpg"
+    image={lifestyleImg}
     imageAlt="Group celebrating at Coco Cabana rooftop with cocktails and the gold pineapple wall"
     imagePosition="object-[center_40%]"
     gradientDirection="left"

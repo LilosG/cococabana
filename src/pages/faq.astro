@@ -5,6 +5,7 @@ import Eyebrow from '../components/Eyebrow.astro';
 import Button from '../components/Button.astro';
 import { venue } from '../data/venue';
 import { faqs } from '../data/faqs';
+import heroImg from '../assets/photos/welcome-lounge-tilewall.jpg';
 
 const faqSchema = {
   "@type": "FAQPage",
@@ -28,7 +29,7 @@ const faqSchema = {
   extraGraph={[faqSchema]}
 >
   <PageHero
-    image="/photos/welcome-lounge-tilewall.jpg"
+    image={heroImg}
     imageAlt="Coco Cabana rooftop lounge seating with rattan pendants, tile wall, and Oceanside views"
   >
     <Eyebrow tone="dark">{venue.address.city}, {venue.address.state}</Eyebrow>
