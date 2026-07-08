@@ -1,0 +1,48 @@
+---
+interface Props {
+  tone?: 'light' | 'dark';
+  heading?: string;
+  subheading?: string;
+}
+
+const {
+  tone = 'light',
+  heading = 'Start Your Inquiry',
+  subheading = 'Fill out the form below and our team will be in touch to confirm availability and talk through the details.',
+} = Astro.props;
+
+const bg        = tone === 'dark' ? 'bg-brand-charcoal' : 'bg-brand-cream';
+const labelColor = tone === 'dark' ? 'text-brand-cream/60' : 'text-brand-charcoal/60';
+const headingColor = tone === 'dark' ? 'text-brand-cream' : 'text-brand-charcoal';
+const wrapperBg = tone === 'dark' ? 'bg-white/4 border border-brand-cream/10' : 'bg-white border border-brand-charcoal/8';
+---
+
+<section class:list={[bg, 'px-6 sm:px-8 lg:px-12 py-20 sm:py-28']}>
+  <div class="max-w-3xl mx-auto">
+    <div class="text-center mb-10">
+      <div class="flex flex-col gap-3 mb-4 items-center">
+        <p class="uppercase tracking-eyebrow-lg text-xs text-brand-pink">Private Events</p>
+        <span class="block w-8 h-px bg-brand-pink"></span>
+      </div>
+      <h2 class:list={['font-display text-section-xl leading-display uppercase mb-4', headingColor]}>
+        {heading}
+      </h2>
+      <p class:list={['leading-relaxed max-w-xl mx-auto text-sm', labelColor]}>
+        {subheading}
+      </p>
+    </div>
+
+    <div class:list={[wrapperBg, 'overflow-hidden']}>
+      <iframe
+        src="https://www.toasttab.com/invoice/lead?rx=92e5306b-e932-4406-876b-91277626cb5c&ot=fb59fde7-2560-4025-bb15-abbd63a46f88&form=1"
+        title="Private Event Inquiry Form"
+        loading="lazy"
+        style="display:block;border:0;width:100%;height:860px;"
+      ></iframe>
+    </div>
+
+    <p class:list={['text-center text-xs mt-6 uppercase tracking-label', labelColor]}>
+      Prefer to call? Reach us at <a href="tel:+18583047725" class="text-brand-pink hover:underline">(858) 304-7725</a>
+    </p>
+  </div>
+</section>
