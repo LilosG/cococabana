@@ -11,6 +11,7 @@ import ToastEventForm from '../components/ToastEventForm.astro';
 import { venue } from '../data/venue';
 import { privateEvents } from '../data/events';
 import { getPhoto } from '../utils/images';
+import { privateEventsPage } from '../lib/cms';
 
 import eventsCrowdHero from '../assets/photos/events-crowd-hero.jpg';
 import eventsGroupLifestyle from '../assets/photos/events-group-lifestyle.jpg';
@@ -19,24 +20,20 @@ import eventsRooftopCrowd from '../assets/photos/events-rooftop-crowd.jpg';
 
 <Layout
   transparentNav={true}
-  title={`Private Events | ${venue.fullName} | ${venue.address.city}, ${venue.address.state}`}
-  description={`Host your private event at ${venue.name} — rooftop bar atop ${venue.hotel} in Downtown ${venue.address.city}. Birthdays, bachelorettes, celebrations, and corporate gatherings.`}
+  title={privateEventsPage.seoTitle}
+  description={privateEventsPage.seoDescription}
 >
   <PageHero
     image={eventsCrowdHero}
     imageAlt="Coco Cabana rooftop packed with guests at golden hour — bartender at full venue"
     imagePosition="object-[center_40%]"
   >
-    <Eyebrow tone="dark">Private Events</Eyebrow>
-    <h1 class="font-display leading-ultra text-hero uppercase mb-6">
-      Your Event.<br />Our Rooftop.
-    </h1>
-    <p class="text-brand-cream/80 leading-relaxed max-w-xl mb-8">
-      From birthdays to brand events, {venue.name} sets the scene for a night to remember above Downtown {venue.address.city}.
-    </p>
+    <Eyebrow tone="dark">{privateEventsPage.heroEyebrow}</Eyebrow>
+    <h1 class="font-display leading-ultra text-hero uppercase mb-6" set:html={privateEventsPage.heroTitle.replace(/\n/g, '<br />')} />
+    <p class="text-brand-cream/80 leading-relaxed max-w-xl mb-8">{privateEventsPage.heroText}</p>
     <div class="flex flex-wrap gap-4">
-      <Button href="#inquiry-form" variant="primary">Submit an Inquiry</Button>
-      <Button href="#events-grid" variant="ghost">What We Host</Button>
+      <Button href={privateEventsPage.primaryCtaHref} variant="primary">{privateEventsPage.primaryCtaText}</Button>
+      <Button href={privateEventsPage.secondaryCtaHref} variant="ghost">{privateEventsPage.secondaryCtaText}</Button>
     </div>
   </PageHero>
 

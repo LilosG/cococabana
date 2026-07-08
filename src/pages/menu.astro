@@ -8,6 +8,7 @@ import MenuCard from '../components/MenuCard.astro';
 import { venue } from '../data/venue';
 import { menuSections } from '../data/menu';
 import { getPhoto } from '../utils/images';
+import { menuPage } from '../lib/cms';
 
 import menuHeroImg from '../assets/photos/menu-flamingo-hero.jpg';
 import brunchMimosasBanner from '../assets/photos/brunch-mimosas-banner.jpg';
@@ -36,8 +37,8 @@ const cocktailsSection = menuSections.find(s => s.id === 'cocktails')!;
 
 <Layout
   transparentNav={true}
-  title={`Menu | ${venue.fullName} | ${venue.address.city}, ${venue.address.state}`}
-  description={`Food and cocktails at ${venue.name} — Caribbean-inspired bar program and rooftop kitchen at ${venue.hotel}, ${venue.address.city}.`}
+  title={menuPage.seoTitle}
+  description={menuPage.seoDescription}
   extraGraph={[menuSchema]}
 >
   <PageHero
@@ -45,12 +46,10 @@ const cocktailsSection = menuSections.find(s => s.id === 'cocktails')!;
     imageAlt="Coco Cabana signature copper flamingo cocktail vessel with rattan pendants and Oceanside rooftop"
     imagePosition="object-bottom"
   >
-    <Eyebrow tone="dark">{venue.address.city}, {venue.address.state}</Eyebrow>
-    <h1 class="font-display leading-ultra text-hero uppercase mb-6">The Menu</h1>
-    <p class="text-brand-cream/80 leading-relaxed max-w-xl mb-8">
-      Rooftop plates and a craft cocktail program built for {venue.address.city}'s coastline.
-    </p>
-    <Button href={venue.reservationsUrl} variant="primary" external>Reserve a Table</Button>
+    <Eyebrow tone="dark">{menuPage.heroEyebrow}</Eyebrow>
+    <h1 class="font-display leading-ultra text-hero uppercase mb-6">{menuPage.heroTitle}</h1>
+    <p class="text-brand-cream/80 leading-relaxed max-w-xl mb-8">{menuPage.heroText}</p>
+    <Button href={venue.reservationsUrl} variant="primary" external>{menuPage.primaryCtaText}</Button>
   </PageHero>
 
   <!-- FOOD -->

@@ -9,6 +9,7 @@ import MenuCard from '../components/MenuCard.astro';
 import { venue } from '../data/venue';
 import { brunchFood, brunchDrinks } from '../data/brunch';
 import { getPhoto } from '../utils/images';
+import { brunchPage } from '../lib/cms';
 
 import brunchHeroImg from '../assets/photos/brunch-hero.jpg';
 import brunchMimosasBanner from '../assets/photos/brunch-mimosas-banner.jpg';
@@ -16,8 +17,8 @@ import brunchRooftopBanner from '../assets/photos/brunch-rooftop-banner.jpg';
 ---
 
 <Layout
-  title={`Brunch | ${venue.fullName} | ${venue.address.city}, ${venue.address.state}`}
-  description={`Weekend brunch at ${venue.name} — ${venue.brunch.days}, ${venue.brunch.hours}. Rooftop dining above Downtown ${venue.address.city} at ${venue.hotel}.`}
+  title={brunchPage.seoTitle}
+  description={brunchPage.seoDescription}
   transparentNav={true}
 >
   <PageHero
@@ -25,15 +26,15 @@ import brunchRooftopBanner from '../assets/photos/brunch-rooftop-banner.jpg';
     imageAlt="Coco Cabana weekend brunch spread — colorful plates, eggs, French toast on marble table"
     imagePosition="object-top"
   >
-    <Eyebrow tone="dark">Weekend Brunch</Eyebrow>
-    <h1 class="font-display leading-ultra text-hero uppercase mb-2">Brunch</h1>
-    <p class="accent-text text-accent-xl text-brand-pink mb-4">on the Rooftop</p>
+    <Eyebrow tone="dark">{brunchPage.heroEyebrow}</Eyebrow>
+    <h1 class="font-display leading-ultra text-hero uppercase mb-2">{brunchPage.heroTitle}</h1>
+    <p class="accent-text text-accent-xl text-brand-pink mb-4">{brunchPage.heroSubtitle}</p>
     <p class="text-brand-cream/70 text-sm uppercase tracking-label mb-8">
       {venue.brunch.days} &middot; {venue.brunch.hours}
     </p>
     <div class="flex flex-wrap gap-4">
-      <Button href={venue.reservationsUrl} variant="primary" external>Reserve a Table</Button>
-      <Button href="#brunch-menu" variant="ghost">View the Menu</Button>
+      <Button href={venue.reservationsUrl} variant="primary" external>{brunchPage.primaryCtaText}</Button>
+      <Button href={brunchPage.secondaryCtaHref} variant="ghost">{brunchPage.secondaryCtaText}</Button>
     </div>
   </PageHero>
 

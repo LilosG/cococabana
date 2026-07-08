@@ -6,6 +6,7 @@ import Button from '../components/Button.astro';
 import { venue } from '../data/venue';
 import { faqs } from '../data/faqs';
 import heroImg from '../assets/photos/welcome-lounge-tilewall.jpg';
+import { faqPage } from '../lib/cms';
 
 const faqSchema = {
   "@type": "FAQPage",
@@ -24,20 +25,18 @@ const faqSchema = {
 
 <Layout
   transparentNav={true}
-  title={`FAQ | ${venue.fullName} | ${venue.address.city}, ${venue.address.state}`}
-  description={`Frequently asked questions about ${venue.name} — hours, reservations, brunch, parking, pets, and more.`}
+  title={faqPage.seoTitle}
+  description={faqPage.seoDescription}
   extraGraph={[faqSchema]}
 >
   <PageHero
     image={heroImg}
     imageAlt="Coco Cabana rooftop lounge seating with rattan pendants, tile wall, and Oceanside views"
   >
-    <Eyebrow tone="dark">{venue.address.city}, {venue.address.state}</Eyebrow>
-    <h1 class="font-display leading-ultra text-hero uppercase mb-6">FAQ</h1>
-    <p class="text-brand-cream/80 leading-relaxed max-w-xl mb-8">
-      Everything you need to know before your visit.
-    </p>
-    <Button href={venue.reservationsUrl} variant="primary" external>Reserve a Table</Button>
+    <Eyebrow tone="dark">{faqPage.heroEyebrow}</Eyebrow>
+    <h1 class="font-display leading-ultra text-hero uppercase mb-6">{faqPage.heroTitle}</h1>
+    <p class="text-brand-cream/80 leading-relaxed max-w-xl mb-8">{faqPage.heroText}</p>
+    <Button href={venue.reservationsUrl} variant="primary" external>{faqPage.primaryCtaText}</Button>
   </PageHero>
 
   <!-- Q&A LIST -->

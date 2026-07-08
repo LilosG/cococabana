@@ -8,6 +8,7 @@ import MenuCard from '../components/MenuCard.astro';
 import { venue } from '../data/venue';
 import { menuSections } from '../data/menu';
 import { getPhoto } from '../utils/images';
+import { homePage } from '../lib/cms';
 
 import heroAerial from '../assets/photos/hero-aerial.jpg';
 import welcomeLounge from '../assets/photos/welcome-lounge-tilewall.jpg';
@@ -28,8 +29,8 @@ const cocktailItems = menuSections.find(s => s.id === 'cocktails')!.items;
 ---
 
 <Layout
-  title={`${venue.fullName} | ${venue.address.city}, ${venue.address.state}`}
-  description={`${venue.name} — rooftop bar at ${venue.hotel}, ${venue.address.street}, ${venue.address.city}. Caribbean-inspired cocktails, weekend brunch, and DJ nights above Downtown Oceanside.`}
+  title={homePage.seoTitle}
+  description={homePage.seoDescription}
   transparentNav={true}
 >
 
@@ -49,12 +50,12 @@ const cocktailItems = menuSections.find(s => s.id === 'cocktails')!.items;
       <div class="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-brand-charcoal/45 to-transparent"></div>
     </div>
     <div class="relative z-10 px-6 sm:px-8 lg:px-12 pb-20 sm:pb-28 w-full text-brand-cream">
-      <Eyebrow tone="dark">{venue.address.city}, {venue.address.state} &middot; {venue.hotel}</Eyebrow>
-      <h1 class="font-display leading-ultra text-hero uppercase mb-2">{venue.name}</h1>
-      <p class="uppercase tracking-feature text-sm sm:text-base text-brand-cream/80 mb-8">{venue.tagline}</p>
+      <Eyebrow tone="dark">{homePage.heroEyebrow}</Eyebrow>
+      <h1 class="font-display leading-ultra text-hero uppercase mb-2">{homePage.heroTitle}</h1>
+      <p class="uppercase tracking-feature text-sm sm:text-base text-brand-cream/80 mb-8">{homePage.heroSubtitle}</p>
       <div class="flex flex-wrap gap-4">
-        <Button href={venue.reservationsUrl} variant="primary" external>Reserve a Table</Button>
-        <Button href="#hours" variant="ghost">Hours &amp; Location</Button>
+        <Button href={venue.reservationsUrl} variant="primary" external>{homePage.primaryCtaText}</Button>
+        <Button href={homePage.secondaryCtaHref} variant="ghost">{homePage.secondaryCtaText}</Button>
       </div>
     </div>
   </section>
