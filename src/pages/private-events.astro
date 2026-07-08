@@ -7,7 +7,7 @@ import EventCard from '../components/EventCard.astro';
 import Button from '../components/Button.astro';
 import Eyebrow from '../components/Eyebrow.astro';
 import TickList from '../components/TickList.astro';
-import EventInquiryForm from '../components/EventInquiryForm.astro';
+import ToastEventForm from '../components/ToastEventForm.astro';
 import { venue } from '../data/venue';
 import { privateEvents } from '../data/events';
 import { getPhoto } from '../utils/images';
@@ -150,7 +150,7 @@ import eventsRooftopCrowd from '../assets/photos/events-rooftop-crowd.jpg';
 
   <!-- INQUIRY FORM -->
   <div id="inquiry-form">
-    <EventInquiryForm tone="light" />
+    <ToastEventForm tone="light" />
   </div>
 
   <!-- CTA -->
