@@ -8,6 +8,7 @@ import Eyebrow from '../../components/Eyebrow.astro';
 import TickList from '../../components/TickList.astro';
 import ToastEventForm from '../../components/ToastEventForm.astro';
 import { venue } from '../../data/venue';
+import { privateEventCorporateEvents as page } from '../../lib/cms';
 import heroImg from '../../assets/photos/live-music-dj.jpg';
 import rooftopCrowdImg from '../../assets/photos/events-rooftop-crowd.jpg';
 import crowdHeroImg from '../../assets/photos/events-crowd-hero.jpg';
@@ -40,8 +41,8 @@ const serviceSchema = {
 
 <Layout
   transparentNav={true}
-  title={`Corporate Event Venue | ${venue.fullName} | ${venue.address.city}, ${venue.address.state}`}
-  description={`Corporate events and client entertainment at ${venue.name} — rooftop bar atop ${venue.hotel} in Downtown ${venue.address.city}. A venue that makes the impression for you.`}
+  title={page.seoTitle}
+  description={page.seoDescription}
   extraGraph={[serviceSchema]}
 >
   <PageHero
@@ -49,16 +50,12 @@ const serviceSchema = {
     imageAlt="DJ set at Coco Cabana rooftop with crowd and palm trees at golden hour"
     imagePosition="object-[center_30%]"
   >
-    <Eyebrow tone="dark">Corporate & Brand Events</Eyebrow>
-    <h1 class="font-display leading-ultra text-hero uppercase mb-6">
-      A Venue That<br />Makes the Impression
-    </h1>
-    <p class="text-brand-cream/80 leading-relaxed max-w-xl mb-8">
-      Client entertainment, team celebrations, and brand activations — above Downtown {venue.address.city} at {venue.name}.
-    </p>
+    <Eyebrow tone="dark">{page.heroEyebrow}</Eyebrow>
+    <h1 class="font-display leading-ultra text-hero uppercase mb-6" set:html={page.heroTitle.replace(/\n/g, '<br />')} />
+    <p class="text-brand-cream/80 leading-relaxed max-w-xl mb-8">{page.heroText}</p>
     <div class="flex flex-wrap gap-4">
-      <Button href="#inquiry-form" variant="primary">Submit an Inquiry</Button>
-      <Button href={venue.phoneHref} variant="ghost">Call {venue.phone}</Button>
+      <Button href={page.primaryCtaHref} variant="primary">{page.primaryCtaText}</Button>
+      <Button href={venue.phoneHref} variant="ghost">{page.secondaryCtaText}</Button>
     </div>
   </PageHero>
 
