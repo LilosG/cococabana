@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
 import Eyebrow from '../components/Eyebrow.astro';
 import Button from '../components/Button.astro';
 import { venue } from '../data/venue';
@@ -21,18 +22,22 @@ const faqSchema = {
 ---
 
 <Layout
+  transparentNav={true}
   title={`FAQ | ${venue.fullName} | ${venue.address.city}, ${venue.address.state}`}
   description={`Frequently asked questions about ${venue.name} — hours, reservations, brunch, parking, pets, and more.`}
   extraGraph={[faqSchema]}
 >
-  <!-- HEADER -->
-  <section class="bg-brand-navy px-6 sm:px-8 lg:px-12 pt-40 pb-20 sm:pt-48 sm:pb-28 text-center">
-    <Eyebrow align="center" tone="dark">{venue.address.city}, {venue.address.state}</Eyebrow>
-    <h1 class="font-display leading-ultra text-hero uppercase text-brand-cream mb-4">FAQ</h1>
-    <p class="text-brand-cream/70 leading-relaxed max-w-xl mx-auto">
+  <PageHero
+    image="/photos/welcome-lounge-tilewall.jpg"
+    imageAlt="Coco Cabana rooftop lounge seating with rattan pendants, tile wall, and Oceanside views"
+  >
+    <Eyebrow tone="dark">{venue.address.city}, {venue.address.state}</Eyebrow>
+    <h1 class="font-display leading-ultra text-hero uppercase mb-6">FAQ</h1>
+    <p class="text-brand-cream/80 leading-relaxed max-w-xl mb-8">
       Everything you need to know before your visit.
     </p>
-  </section>
+    <Button href={venue.reservationsUrl} variant="primary" external>Reserve a Table</Button>
+  </PageHero>
 
   <!-- Q&A LIST -->
   <section class="bg-brand-cream px-6 sm:px-8 lg:px-12 py-20 sm:py-28">
