@@ -1,0 +1,163 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PageHero from '../../components/PageHero.astro';
+import SplitSection from '../../components/SplitSection.astro';
+import FullBleedBanner from '../../components/FullBleedBanner.astro';
+import Button from '../../components/Button.astro';
+import Eyebrow from '../../components/Eyebrow.astro';
+import TickList from '../../components/TickList.astro';
+import { venue } from '../../data/venue';
+
+const serviceSchema = {
+  "@type": "Service",
+  "@id": "https://cococabanaoside.com/private-events/corporate-events#service",
+  "name": "Corporate Event Venue — Coco Cabana Rooftop Bar",
+  "description": `Corporate events, client entertainment, and brand activations at ${venue.fullName} — rooftop bar atop ${venue.hotel} in Downtown ${venue.address.city}, CA.`,
+  "url": "https://cococabanaoside.com/private-events/corporate-events",
+  "provider": {
+    "@type": "BarOrPub",
+    "name": venue.fullName,
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": venue.address.street,
+      "addressLocality": venue.address.city,
+      "addressRegion": venue.address.state,
+      "postalCode": venue.address.zip,
+    },
+    "telephone": venue.phone,
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": venue.address.city,
+  },
+};
+---
+
+<Layout
+  transparentNav={true}
+  title={`Corporate Event Venue | ${venue.fullName} | ${venue.address.city}, ${venue.address.state}`}
+  description={`Corporate events and client entertainment at ${venue.name} — rooftop bar atop ${venue.hotel} in Downtown ${venue.address.city}. A venue that makes the impression for you.`}
+  extraGraph={[serviceSchema]}
+>
+  <PageHero
+    image="/photos/live-music-dj.jpg"
+    imageAlt="DJ set at Coco Cabana rooftop with crowd and palm trees at golden hour"
+    imagePosition="object-[center_30%]"
+  >
+    <Eyebrow tone="dark">Corporate & Brand Events</Eyebrow>
+    <h1 class="font-display leading-ultra text-hero uppercase mb-6">
+      A Venue That<br />Makes the Impression
+    </h1>
+    <p class="text-brand-cream/80 leading-relaxed max-w-xl mb-8">
+      Client entertainment, team celebrations, and brand activations — above Downtown {venue.address.city} at {venue.name}.
+    </p>
+    <div class="flex flex-wrap gap-4">
+      <Button href={venue.phoneHref} variant="primary">Call to Inquire</Button>
+      <Button href={venue.routes.contact} variant="ghost">Contact Us</Button>
+    </div>
+  </PageHero>
+
+  <!-- WHAT WE HOST -->
+  <SplitSection
+    image="/photos/events-rooftop-crowd.jpg"
+    imageAlt="Packed Coco Cabana rooftop at golden hour — full venue energy"
+    imagePosition="object-[center_25%]"
+    imageLeft={true}
+    tone="light"
+  >
+    <Eyebrow>What We Host</Eyebrow>
+    <h2 class="font-display text-section-xl leading-display uppercase text-brand-charcoal mb-6">Built for Business</h2>
+    <div class="mb-8">
+      <TickList items={[
+        'Client Entertainment',
+        'Team & Company Celebrations',
+        'Brand Activations',
+        'Product Launch Events',
+        'Networking Events',
+        'Weekday Availability',
+      ]} />
+    </div>
+    <p class="text-brand-charcoal/60 leading-relaxed mb-8">
+      Call us directly to discuss your event date, group size, and what you need. We'll put together the details and make the rooftop work for your team.
+    </p>
+    <Button href={venue.phoneHref} variant="primary">Call to Inquire</Button>
+  </SplitSection>
+
+  <!-- STATS STRIP -->
+  <section class="bg-brand-charcoal text-brand-cream">
+    <div class="max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-4 divide-x divide-y sm:divide-y-0 divide-brand-cream/10">
+      <div class="px-5 py-8 text-center">
+        <p class="accent-text text-2xl text-brand-pink mb-1">Rooftop</p>
+        <p class="uppercase tracking-stat text-xs text-brand-cream/50">Exclusive Venue</p>
+      </div>
+      <div class="px-5 py-8 text-center">
+        <p class="accent-text text-2xl text-brand-pink mb-1">Full Bar</p>
+        <p class="uppercase tracking-stat text-xs text-brand-cream/50">Caribbean Cocktails</p>
+      </div>
+      <div class="px-5 py-8 text-center">
+        <p class="accent-text text-2xl text-brand-pink mb-1">Weekdays</p>
+        <p class="uppercase tracking-stat text-xs text-brand-cream/50">Flexible Availability</p>
+      </div>
+      <div class="px-5 py-8 text-center">
+        <p class="accent-text text-2xl text-brand-pink mb-1">Downtown</p>
+        <p class="uppercase tracking-stat text-xs text-brand-cream/50">{venue.address.city}, {venue.address.state}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ATMOSPHERE BANNER -->
+  <FullBleedBanner
+    image="/photos/events-crowd-hero.jpg"
+    imageAlt="Coco Cabana rooftop packed with guests at golden hour — bartender at full venue"
+    imagePosition="object-[center_40%]"
+    gradientDirection="left"
+    minHeight="min-h-[600px] sm:min-h-[680px]"
+  >
+    <Eyebrow tone="dark">The Setting</Eyebrow>
+    <h2 class="font-display leading-display text-section-xl uppercase mb-2">
+      The Rooftop<br />Is Yours
+    </h2>
+    <p class="accent-text text-accent-xl text-brand-pink mb-6">Above Downtown {venue.address.city}</p>
+    <p class="text-brand-cream/80 leading-relaxed mb-8">
+      Four stories above {venue.address.street} — open air, full bar, and a setting that lets the venue make the statement so you don't have to.
+    </p>
+    <Button href={venue.phoneHref} variant="primary">Start Planning</Button>
+  </FullBleedBanner>
+
+  <!-- HOW IT WORKS -->
+  <section class="bg-brand-cream px-6 sm:px-8 lg:px-12 py-20 sm:py-28">
+    <div class="max-w-2xl mx-auto text-center mb-12">
+      <Eyebrow align="center">The Process</Eyebrow>
+      <h2 class="font-display text-section-xl leading-display uppercase text-brand-charcoal">How It Works</h2>
+    </div>
+    <div class="max-w-4xl mx-auto grid md:grid-cols-3 gap-8">
+      <div class="text-center">
+        <p class="accent-text text-4xl text-brand-pink mb-4">01</p>
+        <h3 class="font-display uppercase tracking-feature text-sm text-brand-charcoal mb-3">Call or Inquire</h3>
+        <p class="text-brand-charcoal/60 text-sm leading-relaxed">Reach out to discuss your event date, group size, and what you need from the space.</p>
+      </div>
+      <div class="text-center">
+        <p class="accent-text text-4xl text-brand-pink mb-4">02</p>
+        <h3 class="font-display uppercase tracking-feature text-sm text-brand-charcoal mb-3">We Build the Plan</h3>
+        <p class="text-brand-charcoal/60 text-sm leading-relaxed">We'll put together the details — space, bar, and anything else your event requires.</p>
+      </div>
+      <div class="text-center">
+        <p class="accent-text text-4xl text-brand-pink mb-4">03</p>
+        <h3 class="font-display uppercase tracking-feature text-sm text-brand-charcoal mb-3">Enjoy the Rooftop</h3>
+        <p class="text-brand-charcoal/60 text-sm leading-relaxed">Show up, settle in, and let the rooftop do the rest. We'll handle everything.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-brand-charcoal px-6 sm:px-8 lg:px-12 py-16 sm:py-20 text-center">
+    <Eyebrow align="center" tone="dark">Start Planning</Eyebrow>
+    <h2 class="font-display text-section-xl leading-display uppercase text-brand-cream mb-2">Let's Talk</h2>
+    <p class="text-brand-cream/60 mb-8">{venue.phone} &middot; {venue.address.street}, {venue.address.city}, {venue.address.state}</p>
+    <div class="flex flex-wrap gap-4 justify-center">
+      <Button href={venue.phoneHref} variant="primary">Call to Inquire</Button>
+      <Button href={venue.routes.contact} variant="ghost">Contact Us</Button>
+      <Button href={venue.routes.privateEvents} variant="ghost">All Private Events</Button>
+    </div>
+  </section>
+</Layout>

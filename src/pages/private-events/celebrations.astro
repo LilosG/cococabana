@@ -1,0 +1,162 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PageHero from '../../components/PageHero.astro';
+import SplitSection from '../../components/SplitSection.astro';
+import FullBleedBanner from '../../components/FullBleedBanner.astro';
+import Button from '../../components/Button.astro';
+import Eyebrow from '../../components/Eyebrow.astro';
+import TickList from '../../components/TickList.astro';
+import { venue } from '../../data/venue';
+
+const serviceSchema = {
+  "@type": "Service",
+  "@id": "https://cococabanaoside.com/private-events/celebrations#service",
+  "name": "Private Celebrations Venue — Coco Cabana Rooftop Bar",
+  "description": `Bachelorette parties, baby showers, and milestone celebrations at ${venue.fullName} — rooftop bar atop ${venue.hotel} in Downtown ${venue.address.city}, CA.`,
+  "url": "https://cococabanaoside.com/private-events/celebrations",
+  "provider": {
+    "@type": "BarOrPub",
+    "name": venue.fullName,
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": venue.address.street,
+      "addressLocality": venue.address.city,
+      "addressRegion": venue.address.state,
+      "postalCode": venue.address.zip,
+    },
+    "telephone": venue.phone,
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": venue.address.city,
+  },
+};
+---
+
+<Layout
+  transparentNav={true}
+  title={`Bachelorette Party & Celebration Venue | ${venue.fullName} | ${venue.address.city}, ${venue.address.state}`}
+  description={`Bachelorette parties, baby showers, and milestone celebrations at ${venue.name} — rooftop bar atop ${venue.hotel} in Downtown ${venue.address.city}. Caribbean cocktails, open air, bottomless mimosas for brunch events.`}
+  extraGraph={[serviceSchema]}
+>
+  <PageHero
+    image="/photos/events-rooftop-dining.jpg"
+    imageAlt="Women dining and celebrating on Coco Cabana rooftop with cocktails and palm views"
+    imagePosition="object-[center_40%]"
+  >
+    <Eyebrow tone="dark">Bachelorettes & Celebrations</Eyebrow>
+    <h1 class="font-display leading-ultra text-hero uppercase mb-6">
+      Every Reason<br />to Celebrate
+    </h1>
+    <p class="text-brand-cream/80 leading-relaxed max-w-xl mb-8">
+      Bachelorettes, baby showers, anniversaries, graduations — the rooftop above Downtown {venue.address.city} is the setting every celebration deserves.
+    </p>
+    <div class="flex flex-wrap gap-4">
+      <Button href={venue.phoneHref} variant="primary">Call to Inquire</Button>
+      <Button href={venue.routes.contact} variant="ghost">Contact Us</Button>
+    </div>
+  </PageHero>
+
+  <!-- WHAT WE HOST -->
+  <SplitSection
+    image="/photos/brunch-mimosa-flight.jpg"
+    imageAlt="Campo Viejo cava mimosa flight on marble table with flamingo and tropical plants"
+    imageLeft={true}
+    tone="light"
+  >
+    <Eyebrow>What We Host</Eyebrow>
+    <h2 class="font-display text-section-xl leading-display uppercase text-brand-charcoal mb-6">Built for the Occasion</h2>
+    <div class="mb-8">
+      <TickList items={[
+        'Bachelorette Parties',
+        'Baby Showers',
+        'Bridal Showers',
+        'Anniversaries & Retirements',
+        'Graduation Celebrations',
+        'Any milestone worth a rooftop',
+      ]} />
+    </div>
+    <p class="text-brand-charcoal/60 leading-relaxed mb-8">
+      Weekend daytime events have access to our brunch program — bottomless mimosas and rooftop plates for a celebration worth showing up for.
+    </p>
+    <Button href={venue.phoneHref} variant="primary">Call to Inquire</Button>
+  </SplitSection>
+
+  <!-- MIMOSA STRIP -->
+  <section class="bg-brand-charcoal text-brand-cream">
+    <div class="max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-4 divide-x divide-y sm:divide-y-0 divide-brand-cream/10">
+      <div class="px-5 py-8 text-center">
+        <p class="accent-text text-2xl text-brand-pink mb-1">Rooftop</p>
+        <p class="uppercase tracking-stat text-xs text-brand-cream/50">Open Air · 4 Stories Up</p>
+      </div>
+      <div class="px-5 py-8 text-center">
+        <p class="accent-text text-2xl text-brand-pink mb-1">Full Bar</p>
+        <p class="uppercase tracking-stat text-xs text-brand-cream/50">Caribbean Cocktails</p>
+      </div>
+      <div class="px-5 py-8 text-center">
+        <p class="accent-text text-2xl text-brand-pink mb-1">Bottomless</p>
+        <p class="uppercase tracking-stat text-xs text-brand-cream/50">Mimosas · Sat & Sun Brunch</p>
+      </div>
+      <div class="px-5 py-8 text-center">
+        <p class="accent-text text-2xl text-brand-pink mb-1">Downtown</p>
+        <p class="uppercase tracking-stat text-xs text-brand-cream/50">{venue.address.city}, {venue.address.state}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ATMOSPHERE BANNER -->
+  <FullBleedBanner
+    image="/photos/events-group-lifestyle.jpg"
+    imageAlt="Group celebrating at Coco Cabana rooftop with cocktails and the gold pineapple wall"
+    imagePosition="object-[center_40%]"
+    gradientDirection="left"
+    minHeight="min-h-[600px] sm:min-h-[680px]"
+  >
+    <Eyebrow tone="dark">The Setting</Eyebrow>
+    <h2 class="font-display leading-display text-section-xl uppercase mb-2">
+      The Rooftop<br />Is Yours
+    </h2>
+    <p class="accent-text text-accent-xl text-brand-pink mb-6">Above Downtown {venue.address.city}</p>
+    <p class="text-brand-cream/80 leading-relaxed mb-8">
+      Four stories above {venue.address.street} — open air, full bar, and the kind of view that makes every moment feel like it matters.
+    </p>
+    <Button href={venue.phoneHref} variant="primary">Start Planning</Button>
+  </FullBleedBanner>
+
+  <!-- HOW IT WORKS -->
+  <section class="bg-brand-cream px-6 sm:px-8 lg:px-12 py-20 sm:py-28">
+    <div class="max-w-2xl mx-auto text-center mb-12">
+      <Eyebrow align="center">The Process</Eyebrow>
+      <h2 class="font-display text-section-xl leading-display uppercase text-brand-charcoal">How It Works</h2>
+    </div>
+    <div class="max-w-4xl mx-auto grid md:grid-cols-3 gap-8">
+      <div class="text-center">
+        <p class="accent-text text-4xl text-brand-pink mb-4">01</p>
+        <h3 class="font-display uppercase tracking-feature text-sm text-brand-charcoal mb-3">Call or Inquire</h3>
+        <p class="text-brand-charcoal/60 text-sm leading-relaxed">Reach out to discuss your event date, size, and what you're envisioning for the celebration.</p>
+      </div>
+      <div class="text-center">
+        <p class="accent-text text-4xl text-brand-pink mb-4">02</p>
+        <h3 class="font-display uppercase tracking-feature text-sm text-brand-charcoal mb-3">We Build the Plan</h3>
+        <p class="text-brand-charcoal/60 text-sm leading-relaxed">We'll put together the details — space, bar, and anything else that makes the event feel like yours.</p>
+      </div>
+      <div class="text-center">
+        <p class="accent-text text-4xl text-brand-pink mb-4">03</p>
+        <h3 class="font-display uppercase tracking-feature text-sm text-brand-charcoal mb-3">Enjoy the Rooftop</h3>
+        <p class="text-brand-charcoal/60 text-sm leading-relaxed">Show up, settle in, and let the rooftop do the rest. We'll handle everything.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-brand-charcoal px-6 sm:px-8 lg:px-12 py-16 sm:py-20 text-center">
+    <Eyebrow align="center" tone="dark">Start Planning</Eyebrow>
+    <h2 class="font-display text-section-xl leading-display uppercase text-brand-cream mb-2">Let's Talk</h2>
+    <p class="text-brand-cream/60 mb-8">{venue.phone} &middot; {venue.address.street}, {venue.address.city}, {venue.address.state}</p>
+    <div class="flex flex-wrap gap-4 justify-center">
+      <Button href={venue.phoneHref} variant="primary">Call to Inquire</Button>
+      <Button href={venue.routes.contact} variant="ghost">Contact Us</Button>
+      <Button href={venue.routes.privateEvents} variant="ghost">All Private Events</Button>
+    </div>
+  </section>
+</Layout>

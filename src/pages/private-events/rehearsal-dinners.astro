@@ -1,0 +1,140 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PageHero from '../../components/PageHero.astro';
+import SplitSection from '../../components/SplitSection.astro';
+import FullBleedBanner from '../../components/FullBleedBanner.astro';
+import Button from '../../components/Button.astro';
+import Eyebrow from '../../components/Eyebrow.astro';
+import TickList from '../../components/TickList.astro';
+import { venue } from '../../data/venue';
+
+const serviceSchema = {
+  "@type": "Service",
+  "@id": "https://cococabanaoside.com/private-events/rehearsal-dinners#service",
+  "name": "Rehearsal Dinner Venue — Coco Cabana Rooftop Bar",
+  "description": `Rehearsal dinners at ${venue.fullName} — rooftop bar atop ${venue.hotel} in Downtown ${venue.address.city}, CA. A rooftop above the Pacific sets the tone for the wedding weekend.`,
+  "url": "https://cococabanaoside.com/private-events/rehearsal-dinners",
+  "provider": {
+    "@type": "BarOrPub",
+    "name": venue.fullName,
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": venue.address.street,
+      "addressLocality": venue.address.city,
+      "addressRegion": venue.address.state,
+      "postalCode": venue.address.zip,
+    },
+    "telephone": venue.phone,
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": venue.address.city,
+  },
+};
+---
+
+<Layout
+  transparentNav={true}
+  title={`Rehearsal Dinner Venue | ${venue.fullName} | ${venue.address.city}, ${venue.address.state}`}
+  description={`Rehearsal dinners at ${venue.name} — rooftop bar atop ${venue.hotel} in Downtown ${venue.address.city}. Caribbean cocktails, open air, and a view above the Pacific to set the tone for your wedding weekend.`}
+  extraGraph={[serviceSchema]}
+>
+  <PageHero
+    image="/photos/cabana-lounge-cityview.jpg"
+    imageAlt="Coco Cabana rooftop lounge with pink daybeds, tile wall, and Oceanside city views at dusk"
+  >
+    <Eyebrow tone="dark">Rehearsal Dinners</Eyebrow>
+    <h1 class="font-display leading-ultra text-hero uppercase mb-6">
+      Start the Weekend<br />Above Oceanside
+    </h1>
+    <p class="text-brand-cream/80 leading-relaxed max-w-xl mb-8">
+      The rooftop above Downtown {venue.address.city} sets the tone for the wedding weekend — Caribbean cocktails, open air, and a view worth celebrating.
+    </p>
+    <div class="flex flex-wrap gap-4">
+      <Button href={venue.phoneHref} variant="primary">Call to Inquire</Button>
+      <Button href={venue.routes.contact} variant="ghost">Contact Us</Button>
+    </div>
+  </PageHero>
+
+  <!-- WHY IT WORKS -->
+  <SplitSection
+    image="/photos/events-rooftop-dining.jpg"
+    imageAlt="Women dining and celebrating on Coco Cabana rooftop with cocktails and palm views"
+    imagePosition="object-[center_40%]"
+    imageLeft={true}
+    tone="light"
+  >
+    <Eyebrow>The Venue</Eyebrow>
+    <h2 class="font-display text-section-xl leading-display uppercase text-brand-charcoal mb-6">The Night Before the Big Day</h2>
+    <div class="mb-8">
+      <TickList items={[
+        'Open-air rooftop above Downtown Oceanside',
+        'Full Caribbean cocktail bar',
+        'Rooftop kitchen',
+        'Cabana lounge seating',
+        'Views of the Pacific coastline',
+        'Call to discuss your setup',
+      ]} />
+    </div>
+    <p class="text-brand-charcoal/60 leading-relaxed mb-8">
+      Call us directly to talk through your date, party size, and what you're envisioning. We'll put together the details and make it work for your group.
+    </p>
+    <Button href={venue.phoneHref} variant="primary">Call to Inquire</Button>
+  </SplitSection>
+
+  <!-- ATMOSPHERE BANNER -->
+  <FullBleedBanner
+    image="/photos/welcome-lounge-tilewall.jpg"
+    imageAlt="Coco Cabana rooftop lounge seating with rattan pendants, tile wall, and Oceanside views"
+    imagePosition="object-center"
+    gradientDirection="left"
+    minHeight="min-h-[600px] sm:min-h-[680px]"
+  >
+    <Eyebrow tone="dark">The Setting</Eyebrow>
+    <h2 class="font-display leading-display text-section-xl uppercase mb-2">
+      The Rooftop<br />Is Yours
+    </h2>
+    <p class="accent-text text-accent-xl text-brand-pink mb-6">Above Downtown {venue.address.city}</p>
+    <p class="text-brand-cream/80 leading-relaxed mb-8">
+      Four stories above {venue.address.street} — open air, full bar, and a Pacific coastline view that makes the night before feel just as special as the day itself.
+    </p>
+    <Button href={venue.phoneHref} variant="primary">Start Planning</Button>
+  </FullBleedBanner>
+
+  <!-- HOW IT WORKS -->
+  <section class="bg-brand-cream px-6 sm:px-8 lg:px-12 py-20 sm:py-28">
+    <div class="max-w-2xl mx-auto text-center mb-12">
+      <Eyebrow align="center">The Process</Eyebrow>
+      <h2 class="font-display text-section-xl leading-display uppercase text-brand-charcoal">How It Works</h2>
+    </div>
+    <div class="max-w-4xl mx-auto grid md:grid-cols-3 gap-8">
+      <div class="text-center">
+        <p class="accent-text text-4xl text-brand-pink mb-4">01</p>
+        <h3 class="font-display uppercase tracking-feature text-sm text-brand-charcoal mb-3">Call or Inquire</h3>
+        <p class="text-brand-charcoal/60 text-sm leading-relaxed">Reach out to discuss your rehearsal dinner date, party size, and what you'd like the evening to look like.</p>
+      </div>
+      <div class="text-center">
+        <p class="accent-text text-4xl text-brand-pink mb-4">02</p>
+        <h3 class="font-display uppercase tracking-feature text-sm text-brand-charcoal mb-3">We Build the Plan</h3>
+        <p class="text-brand-charcoal/60 text-sm leading-relaxed">We'll put together the details — space, bar, and anything else that makes the evening feel right.</p>
+      </div>
+      <div class="text-center">
+        <p class="accent-text text-4xl text-brand-pink mb-4">03</p>
+        <h3 class="font-display uppercase tracking-feature text-sm text-brand-charcoal mb-3">Enjoy the Rooftop</h3>
+        <p class="text-brand-charcoal/60 text-sm leading-relaxed">Show up, settle in, and let the rooftop do the rest. We'll handle everything so you can enjoy the night.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-brand-charcoal px-6 sm:px-8 lg:px-12 py-16 sm:py-20 text-center">
+    <Eyebrow align="center" tone="dark">Start Planning</Eyebrow>
+    <h2 class="font-display text-section-xl leading-display uppercase text-brand-cream mb-2">Let's Talk</h2>
+    <p class="text-brand-cream/60 mb-8">{venue.phone} &middot; {venue.address.street}, {venue.address.city}, {venue.address.state}</p>
+    <div class="flex flex-wrap gap-4 justify-center">
+      <Button href={venue.phoneHref} variant="primary">Call to Inquire</Button>
+      <Button href={venue.routes.contact} variant="ghost">Contact Us</Button>
+      <Button href={venue.routes.privateEvents} variant="ghost">All Private Events</Button>
+    </div>
+  </section>
+</Layout>
