@@ -5,25 +5,24 @@ import Button from '../components/Button.astro';
 import Eyebrow from '../components/Eyebrow.astro';
 import ToastEventForm from '../components/ToastEventForm.astro';
 import { venue } from '../data/venue';
+import { contactPage } from '../lib/cms';
 
 import barInterior from '../assets/photos/bar-rooftop-interior.jpg';
 ---
 
 <Layout
   transparentNav={true}
-  title={`Contact | ${venue.fullName} | ${venue.address.city}, ${venue.address.state}`}
-  description={`Reservations, private events, and directions to ${venue.name} — ${venue.hotel}, ${venue.address.street}, ${venue.address.city}, ${venue.address.state}.`}
+  title={contactPage.seoTitle}
+  description={contactPage.seoDescription}
 >
   <PageHero
     image={barInterior}
     imageAlt="Coco Cabana open-air rooftop bar — marble counter, bar stools, hanging greenery, Oceanside views"
   >
-    <Eyebrow tone="dark">{venue.address.city}, {venue.address.state}</Eyebrow>
-    <h1 class="font-display leading-ultra text-hero uppercase mb-6">Get in Touch</h1>
-    <p class="text-brand-cream/80 leading-relaxed max-w-xl mb-8">
-      Reservations, private events, or just finding us — everything you need is below.
-    </p>
-    <Button href={venue.reservationsUrl} variant="primary" external>Reserve a Table</Button>
+    <Eyebrow tone="dark">{contactPage.heroEyebrow}</Eyebrow>
+    <h1 class="font-display leading-ultra text-hero uppercase mb-6">{contactPage.heroTitle}</h1>
+    <p class="text-brand-cream/80 leading-relaxed max-w-xl mb-8">{contactPage.heroText}</p>
+    <Button href={venue.reservationsUrl} variant="primary" external>{contactPage.primaryCtaText}</Button>
   </PageHero>
 
   <!-- 3-COL INFO GRID -->
@@ -32,7 +31,7 @@ import barInterior from '../assets/photos/bar-rooftop-interior.jpg';
       <div>
         <Eyebrow tone="dark">Reservations</Eyebrow>
         <h2 class="font-display text-2xl uppercase text-brand-cream mb-4">Book a Table</h2>
-        <p class="text-brand-cream/60 leading-relaxed mb-6">Reserve online via Toast or call us directly. Walk-ins welcome based on availability.</p>
+        <p class="text-brand-cream/60 leading-relaxed mb-6">Reserve online or call us directly. Walk-ins welcome based on availability.</p>
         <div class="flex flex-col gap-3">
           <Button href={venue.reservationsUrl} variant="primary" external>Reserve Online</Button>
           <Button href={venue.phoneHref} variant="ghost">{venue.phone}</Button>
