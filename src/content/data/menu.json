@@ -7,6 +7,7 @@
       "tone": "light",
       "items": [
         {
+          "name": "Wings",
           "image": "/photos/food/wings.jpg",
           "imageAlt": "Crispy fried wings at Coco Cabana"
         },
