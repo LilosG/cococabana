@@ -7,6 +7,9 @@ import Button from '../../components/Button.astro';
 import Eyebrow from '../../components/Eyebrow.astro';
 import TickList from '../../components/TickList.astro';
 import { venue } from '../../data/venue';
+import heroImg from '../../assets/photos/cabana-lounge-cityview.jpg';
+import diningImg from '../../assets/photos/events-rooftop-dining.jpg';
+import loungeImg from '../../assets/photos/welcome-lounge-tilewall.jpg';
 
 const serviceSchema = {
   "@type": "Service",
@@ -40,7 +43,7 @@ const serviceSchema = {
   extraGraph={[serviceSchema]}
 >
   <PageHero
-    image="/photos/cabana-lounge-cityview.jpg"
+    image={heroImg}
     imageAlt="Coco Cabana rooftop lounge with pink daybeds, tile wall, and Oceanside city views at dusk"
   >
     <Eyebrow tone="dark">Rehearsal Dinners</Eyebrow>
@@ -58,7 +61,7 @@ const serviceSchema = {
 
   <!-- WHY IT WORKS -->
   <SplitSection
-    image="/photos/events-rooftop-dining.jpg"
+    image={diningImg}
     imageAlt="Women dining and celebrating on Coco Cabana rooftop with cocktails and palm views"
     imagePosition="object-[center_40%]"
     imageLeft={true}
@@ -84,7 +87,7 @@ const serviceSchema = {
 
   <!-- ATMOSPHERE BANNER -->
   <FullBleedBanner
-    image="/photos/welcome-lounge-tilewall.jpg"
+    image={loungeImg}
     imageAlt="Coco Cabana rooftop lounge seating with rattan pendants, tile wall, and Oceanside views"
     imagePosition="object-center"
     gradientDirection="left"
