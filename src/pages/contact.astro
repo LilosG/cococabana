@@ -4,6 +4,8 @@ import PageHero from '../components/PageHero.astro';
 import Button from '../components/Button.astro';
 import Eyebrow from '../components/Eyebrow.astro';
 import { venue } from '../data/venue';
+
+import barInterior from '../assets/photos/bar-rooftop-interior.jpg';
 ---
 
 <Layout
@@ -12,7 +14,7 @@ import { venue } from '../data/venue';
   description={`Reservations, private events, and directions to ${venue.name} — ${venue.hotel}, ${venue.address.street}, ${venue.address.city}, ${venue.address.state}.`}
 >
   <PageHero
-    image="/photos/bar-rooftop-interior.jpg"
+    image={barInterior}
     imageAlt="Coco Cabana open-air rooftop bar — marble counter, bar stools, hanging greenery, Oceanside views"
   >
     <Eyebrow tone="dark">{venue.address.city}, {venue.address.state}</Eyebrow>

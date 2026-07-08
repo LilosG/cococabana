@@ -19,8 +19,11 @@
 // Aspect ratio differs by category: food shot wide/top-down (4:3), drinks
 // shot tall (3:4) — matches how the real photography actually comes in.
 
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
 interface Props {
-  image?: string;
+  image?: ImageMetadata;
   imageAlt?: string;
   imagePosition?: string;
   category?: 'food' | 'drinks';
@@ -45,7 +48,7 @@ const descriptionClasses = tone === 'dark' ? 'text-brand-cream/60' : 'text-brand
 
 <div class="flex flex-col">
   {image ? (
-    <img src={image} alt={imageAlt} loading="lazy" class:list={['w-full object-cover mb-4', imageAspect, imagePosition]} />
+    <Image src={image} alt={imageAlt} loading="lazy" class:list={['w-full object-cover mb-4', imageAspect, imagePosition]} />
   ) : (
     <div class:list={['w-full mb-4 flex items-center justify-center border', imageAspect, placeholderClasses]}>
 

@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
 import Button from '../components/Button.astro';
 import Eyebrow from '../components/Eyebrow.astro';
@@ -6,6 +7,21 @@ import TickList from '../components/TickList.astro';
 import MenuCard from '../components/MenuCard.astro';
 import { venue } from '../data/venue';
 import { menuSections } from '../data/menu';
+import { getPhoto } from '../utils/images';
+
+import heroAerial from '../assets/photos/hero-aerial.jpg';
+import welcomeLounge from '../assets/photos/welcome-lounge-tilewall.jpg';
+import barInterior from '../assets/photos/bar-rooftop-interior.jpg';
+import brunchMimosasBanner from '../assets/photos/brunch-mimosas-banner.jpg';
+import sunsetView from '../assets/photos/venue-sunset-view.jpg';
+import cabanaLounge from '../assets/photos/cabana-lounge-cityview.jpg';
+import liveMusicDj from '../assets/photos/live-music-dj.jpg';
+import detailsNeon from '../assets/photos/details-neon-night.jpg';
+import detailsFlamingo from '../assets/photos/details-flamingo-taps.jpg';
+import detailsCoconut from '../assets/photos/details-coconut-cups.jpg';
+import detailsPendant from '../assets/photos/details-pendant-interior.jpg';
+import detailsUrsula from '../assets/photos/details-ursula-cocktail.jpg';
+import eventsGroup from '../assets/photos/events-group-lifestyle.jpg';
 
 const foodItems = menuSections.find(s => s.id === 'food')!.items;
 const cocktailItems = menuSections.find(s => s.id === 'cocktails')!.items;
@@ -22,11 +38,12 @@ const cocktailItems = menuSections.find(s => s.id === 'cocktails')!.items;
        ════════════════════════════════════════════════════════════ -->
   <section class="relative min-h-screen flex items-end overflow-hidden">
     <div class="absolute inset-0">
-      <img
-        src="/photos/hero-aerial.jpg"
+      <Image
+        src={heroAerial}
         alt="Coco Cabana rooftop bar aerial view over Downtown Oceanside, CA"
         class="w-full h-full object-cover"
         fetchpriority="high"
+        loading="eager"
       />
       <div class="absolute inset-0 bg-gradient-to-t from-brand-charcoal/85 via-brand-charcoal/25 to-transparent"></div>
       <div class="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-brand-charcoal/45 to-transparent"></div>
@@ -98,8 +115,8 @@ const cocktailItems = menuSections.find(s => s.id === 'cocktails')!.items;
   <section class="bg-brand-cream overflow-hidden">
     <div class="max-w-7xl mx-auto grid md:grid-cols-[3fr_2fr] items-stretch min-h-[560px] md:min-h-[640px]">
       <div class="relative min-h-[380px] md:min-h-0">
-        <img
-          src="/photos/welcome-lounge-tilewall.jpg"
+        <Image
+          src={welcomeLounge}
           alt="Coco Cabana rooftop lounge seating with tile wall, rattan pendants, and Oceanside views"
           loading="lazy"
           class="absolute inset-0 w-full h-full object-cover"
@@ -133,10 +150,11 @@ const cocktailItems = menuSections.find(s => s.id === 'cocktails')!.items;
        ════════════════════════════════════════════════════════════ -->
   <section class="relative min-h-[580px] sm:min-h-[640px] flex items-center overflow-hidden">
     <div class="absolute inset-0">
-      <img
-        src="/photos/bar-rooftop-interior.jpg"
+      <Image
+        src={barInterior}
         alt="Coco Cabana open-air rooftop bar — marble counter, bar stools, hanging greenery, Oceanside views"
         class="w-full h-full object-cover object-[center_50%]"
+        loading="lazy"
       />
       <div class="absolute inset-0 bg-gradient-to-r from-brand-charcoal/88 via-brand-charcoal/50 to-transparent"></div>
       <div class="absolute inset-0 bg-gradient-to-t from-brand-charcoal/50 via-transparent to-transparent"></div>
@@ -169,7 +187,7 @@ const cocktailItems = menuSections.find(s => s.id === 'cocktails')!.items;
     </div>
     <div class="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-10">
       {foodItems.map(item => (
-        <MenuCard name={item.name} image={item.image} imageAlt={item.imageAlt} imagePosition={item.imagePosition} category="food" />
+        <MenuCard name={item.name} image={getPhoto(item.image)} imageAlt={item.imageAlt} imagePosition={item.imagePosition} category="food" />
       ))}
     </div>
     <div class="text-center">
@@ -187,7 +205,7 @@ const cocktailItems = menuSections.find(s => s.id === 'cocktails')!.items;
     </div>
     <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto mb-10">
       {cocktailItems.map(item => (
-        <MenuCard name={item.name} description={item.description} image={item.image} imageAlt={item.imageAlt} imagePosition={item.imagePosition} category="drinks" tone="dark" />
+        <MenuCard name={item.name} description={item.description} image={getPhoto(item.image)} imageAlt={item.imageAlt} imagePosition={item.imagePosition} category="drinks" tone="dark" />
       ))}
     </div>
     <div class="text-center">
@@ -200,10 +218,11 @@ const cocktailItems = menuSections.find(s => s.id === 'cocktails')!.items;
        ════════════════════════════════════════════════════════════ -->
   <section class="relative min-h-[640px] sm:min-h-[700px] flex items-center overflow-hidden">
     <div class="absolute inset-0">
-      <img
-        src="/photos/brunch-mimosas-banner.jpg"
+      <Image
+        src={brunchMimosasBanner}
         alt="Coco Cabana bottomless mimosas — Campo Viejo cava flights with copper flamingo, marble table, tile wall"
         class="w-full h-full object-cover object-center"
+        loading="lazy"
       />
       <div class="absolute inset-0 bg-gradient-to-r from-brand-charcoal/90 via-brand-charcoal/55 to-transparent"></div>
       <div class="absolute inset-0 bg-gradient-to-t from-brand-charcoal/50 via-transparent to-transparent"></div>
@@ -241,8 +260,8 @@ const cocktailItems = menuSections.find(s => s.id === 'cocktails')!.items;
         <Button href={venue.routes.venue} variant="ghost">Explore the Venue</Button>
       </div>
       <div class="relative min-h-[360px] md:min-h-0 md:order-2">
-        <img
-          src="/photos/venue-sunset-view.jpg"
+        <Image
+          src={sunsetView}
           alt="Sunset viewed from Coco Cabana rooftop through glass railing, palms silhouetted against orange sky"
           loading="lazy"
           class="absolute inset-0 w-full h-full object-cover object-[center_65%]"
@@ -260,8 +279,8 @@ const cocktailItems = menuSections.find(s => s.id === 'cocktails')!.items;
   <section id="cabana" class="bg-brand-navy overflow-hidden">
     <div class="max-w-7xl mx-auto grid md:grid-cols-[3fr_2fr] items-stretch min-h-[520px] md:min-h-[600px]">
       <div class="relative min-h-[360px] md:min-h-0 md:order-1">
-        <img
-          src="/photos/cabana-lounge-cityview.jpg"
+        <Image
+          src={cabanaLounge}
           alt="Coco Cabana lounge area with pink daybeds, geometric tile wall, and Oceanside city views"
           loading="lazy"
           class="absolute inset-0 w-full h-full object-cover object-center"
@@ -286,10 +305,11 @@ const cocktailItems = menuSections.find(s => s.id === 'cocktails')!.items;
        ════════════════════════════════════════════════════════════ -->
   <section class="relative min-h-[600px] sm:min-h-[680px] flex items-center overflow-hidden">
     <div class="absolute inset-0">
-      <img
-        src="/photos/live-music-dj.jpg"
+      <Image
+        src={liveMusicDj}
         alt="DJ set at Coco Cabana with crowd on the rooftop"
         class="w-full h-full object-cover object-[center_30%]"
+        loading="lazy"
       />
       <div class="absolute inset-0 bg-gradient-to-r from-brand-charcoal/90 via-brand-charcoal/55 to-transparent"></div>
       <div class="absolute inset-0 bg-gradient-to-t from-brand-charcoal/60 via-transparent to-transparent"></div>
@@ -323,8 +343,8 @@ const cocktailItems = menuSections.find(s => s.id === 'cocktails')!.items;
     <div class="flex flex-col md:flex-row gap-3 max-w-5xl mx-auto md:h-[560px] lg:h-[640px]">
       <!-- Left: tall image — fixed height mobile, fills container desktop -->
       <div class="md:flex-1 min-w-0 overflow-hidden h-72 md:h-auto">
-        <img
-          src="/photos/details-neon-night.jpg"
+        <Image
+          src={detailsNeon}
           alt="Neon pink palm tree sign glowing at Coco Cabana rooftop at night with guest below"
           loading="lazy"
           class="w-full h-full object-cover object-[center_75%]"
@@ -333,16 +353,16 @@ const cocktailItems = menuSections.find(s => s.id === 'cocktails')!.items;
       <!-- Right: 2×2 grid — grid-rows-2 splits container height into 2 equal rows -->
       <div class="md:flex-1 min-w-0 grid grid-cols-2 gap-3 md:grid-rows-2">
         <div class="overflow-hidden aspect-square md:aspect-auto">
-          <img src="/photos/details-flamingo-taps.jpg" alt="Copper flamingo draft tap handles at Coco Cabana bar" loading="lazy" class="w-full h-full object-cover object-center" />
+          <Image src={detailsFlamingo} alt="Copper flamingo draft tap handles at Coco Cabana bar" loading="lazy" class="w-full h-full object-cover object-center" />
         </div>
         <div class="overflow-hidden aspect-square md:aspect-auto">
-          <img src="/photos/details-coconut-cups.jpg" alt="Coco Cabana branded coconut cups with copper flamingo vessel" loading="lazy" class="w-full h-full object-cover object-center" />
+          <Image src={detailsCoconut} alt="Coco Cabana branded coconut cups with copper flamingo vessel" loading="lazy" class="w-full h-full object-cover object-center" />
         </div>
         <div class="overflow-hidden aspect-square md:aspect-auto">
-          <img src="/photos/details-pendant-interior.jpg" alt="Coco Cabana cabana interior with rattan pendant lamps and tropical plants" loading="lazy" class="w-full h-full object-cover object-[center_40%]" />
+          <Image src={detailsPendant} alt="Coco Cabana cabana interior with rattan pendant lamps and tropical plants" loading="lazy" class="w-full h-full object-cover object-[center_40%]" />
         </div>
         <div class="overflow-hidden aspect-square md:aspect-auto">
-          <img src="/photos/details-ursula-cocktail.jpg" alt="Coco Cabana cocktail in front of the illuminated gold pineapple wall display" loading="lazy" class="w-full h-full object-cover object-[center_30%]" />
+          <Image src={detailsUrsula} alt="Coco Cabana cocktail in front of the illuminated gold pineapple wall display" loading="lazy" class="w-full h-full object-cover object-[center_30%]" />
         </div>
       </div>
     </div>
@@ -355,8 +375,8 @@ const cocktailItems = menuSections.find(s => s.id === 'cocktails')!.items;
   <section class="bg-brand-cream overflow-hidden">
     <div class="max-w-7xl mx-auto grid md:grid-cols-[3fr_2fr] items-stretch min-h-[520px] md:min-h-[580px]">
       <div class="relative min-h-[360px] md:min-h-0">
-        <img
-          src="/photos/events-group-lifestyle.jpg"
+        <Image
+          src={eventsGroup}
           alt="Group celebrating at Coco Cabana rooftop bar with cocktails and the gold pineapple wall backdrop"
           loading="lazy"
           class="absolute inset-0 w-full h-full object-cover object-[center_40%]"

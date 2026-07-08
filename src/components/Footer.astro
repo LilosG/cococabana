@@ -1,6 +1,8 @@
 ---
+import { Image } from 'astro:assets';
 import { venue } from '../data/venue';
 import Button from './Button.astro';
+import logoImg from '../assets/cococabana-logo-transparent.png';
 
 const year = new Date().getFullYear();
 ---
@@ -8,8 +10,8 @@ const year = new Date().getFullYear();
 <footer class="bg-brand-charcoal text-brand-cream">
   <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-16 grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
     <div>
-      <img
-        src="/cococabana-logo-transparent.png"
+      <Image
+        src={logoImg}
         alt={`${venue.name} ${venue.tagline}`}
         loading="lazy"
         class="h-16 w-auto mb-4"

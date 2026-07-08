@@ -1,7 +1,10 @@
 ---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
 interface Props {
   id?: string;
-  image: string;
+  image: ImageMetadata;
   imageAlt: string;
   imagePosition?: string;
   tone?: 'light' | 'dark' | 'navy';
@@ -29,7 +32,7 @@ const bgClass = {
 <section {id} class:list={[bgClass, 'overflow-hidden']}>
   <div class:list={['max-w-7xl mx-auto grid md:grid-cols-[3fr_2fr] items-stretch', minHeight]}>
     <div class:list={['relative min-h-[380px] md:min-h-0', imageLeft ? 'md:order-1' : 'md:order-2']}>
-      <img
+      <Image
         src={image}
         alt={imageAlt}
         loading="lazy"

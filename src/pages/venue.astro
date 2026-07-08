@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
 import PageHero from '../components/PageHero.astro';
 import SplitSection from '../components/SplitSection.astro';
@@ -7,6 +8,18 @@ import Button from '../components/Button.astro';
 import Eyebrow from '../components/Eyebrow.astro';
 import FeatureTagList from '../components/FeatureTagList.astro';
 import { venue } from '../data/venue';
+
+import venueAerialSign from '../assets/photos/venue-aerial-sign.jpg';
+import welcomeLounge from '../assets/photos/welcome-lounge-tilewall.jpg';
+import cabanaLounge from '../assets/photos/cabana-lounge-cityview.jpg';
+import sunsetView from '../assets/photos/venue-sunset-view.jpg';
+import liveMusicDj from '../assets/photos/live-music-dj.jpg';
+import detailsFlamingo from '../assets/photos/details-flamingo-taps.jpg';
+import detailsCoconut from '../assets/photos/details-coconut-cups.jpg';
+import detailsNeon from '../assets/photos/details-neon-night.jpg';
+import detailsPendant from '../assets/photos/details-pendant-interior.jpg';
+import detailsUrsula from '../assets/photos/details-ursula-cocktail.jpg';
+import detailsPineapple from '../assets/photos/details-pineapple-wall.jpg';
 ---
 
 <Layout
@@ -15,7 +28,7 @@ import { venue } from '../data/venue';
   description={`Explore the rooftop, the cabana, and the live music program at ${venue.name} — ${venue.hotel}, ${venue.address.city}. Open ${venue.hours.shortSummary}.`}
 >
   <PageHero
-    image="/photos/venue-aerial-sign.jpg"
+    image={venueAerialSign}
     imageAlt="Aerial view of Coco Cabana rooftop bar — COCOCABANA sign on The Brick Hotel, Downtown Oceanside"
   >
     <Eyebrow tone="dark">{venue.address.city}, {venue.address.state} &middot; {venue.hotel}</Eyebrow>
@@ -55,7 +68,7 @@ import { venue } from '../data/venue';
 
   <!-- THE ROOFTOP -->
   <SplitSection
-    image="/photos/welcome-lounge-tilewall.jpg"
+    image={welcomeLounge}
     imageAlt="Coco Cabana rooftop lounge — rattan pendants, tile wall, city views"
     imageLeft={true}
     tone="light"
@@ -71,7 +84,7 @@ import { venue } from '../data/venue';
 
   <!-- THE CABANA — full-bleed banner -->
   <FullBleedBanner
-    image="/photos/cabana-lounge-cityview.jpg"
+    image={cabanaLounge}
     imageAlt="Coco Cabana lounge seating — pink daybeds, geometric tile wall, Oceanside skyline"
     imagePosition="object-center"
     minHeight="min-h-[640px] sm:min-h-[700px]"
@@ -91,7 +104,7 @@ import { venue } from '../data/venue';
 
   <!-- THE VIEW -->
   <SplitSection
-    image="/photos/venue-sunset-view.jpg"
+    image={sunsetView}
     imageAlt="Sunset viewed from Coco Cabana rooftop — palms silhouetted against orange sky"
     imagePosition="object-[center_65%]"
     imageLeft={false}
@@ -108,7 +121,7 @@ import { venue } from '../data/venue';
 
   <!-- LIVE MUSIC — full-bleed banner -->
   <FullBleedBanner
-    image="/photos/live-music-dj.jpg"
+    image={liveMusicDj}
     imageAlt="DJ set at Coco Cabana rooftop with crowd"
     imagePosition="object-[center_30%]"
     minHeight="min-h-[600px] sm:min-h-[680px]"
@@ -132,22 +145,22 @@ import { venue } from '../data/venue';
     </div>
     <div class="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
       <div class="overflow-hidden aspect-square">
-        <img src="/photos/details-flamingo-taps.jpg" alt="Copper flamingo draft tap handles at Coco Cabana" loading="lazy" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+        <Image src={detailsFlamingo} alt="Copper flamingo draft tap handles at Coco Cabana" loading="lazy" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
       </div>
       <div class="overflow-hidden aspect-square">
-        <img src="/photos/details-coconut-cups.jpg" alt="Coco Cabana branded coconut cups with copper flamingo vessel" loading="lazy" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+        <Image src={detailsCoconut} alt="Coco Cabana branded coconut cups with copper flamingo vessel" loading="lazy" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
       </div>
       <div class="overflow-hidden aspect-square">
-        <img src="/photos/details-neon-night.jpg" alt="Neon pink palm sign glowing at night at Coco Cabana" class="w-full h-full object-cover object-[center_75%] hover:scale-105 transition-transform duration-500" />
+        <Image src={detailsNeon} alt="Neon pink palm sign glowing at night at Coco Cabana" loading="lazy" class="w-full h-full object-cover object-[center_75%] hover:scale-105 transition-transform duration-500" />
       </div>
       <div class="overflow-hidden aspect-square">
-        <img src="/photos/details-pendant-interior.jpg" alt="Rattan pendant lamps and tropical plants at Coco Cabana" class="w-full h-full object-cover object-[center_40%] hover:scale-105 transition-transform duration-500" />
+        <Image src={detailsPendant} alt="Rattan pendant lamps and tropical plants at Coco Cabana" loading="lazy" class="w-full h-full object-cover object-[center_40%] hover:scale-105 transition-transform duration-500" />
       </div>
       <div class="overflow-hidden aspect-square">
-        <img src="/photos/details-ursula-cocktail.jpg" alt="Coco Cabana cocktail in front of the gold pineapple wall" class="w-full h-full object-cover object-[center_30%] hover:scale-105 transition-transform duration-500" />
+        <Image src={detailsUrsula} alt="Coco Cabana cocktail in front of the gold pineapple wall" loading="lazy" class="w-full h-full object-cover object-[center_30%] hover:scale-105 transition-transform duration-500" />
       </div>
       <div class="overflow-hidden aspect-square">
-        <img src="/photos/details-pineapple-wall.jpg" alt="Gold pineapple wall display at Coco Cabana bar" loading="lazy" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+        <Image src={detailsPineapple} alt="Gold pineapple wall display at Coco Cabana bar" loading="lazy" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
       </div>
     </div>
   </section>

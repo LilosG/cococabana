@@ -9,6 +9,11 @@ import Eyebrow from '../components/Eyebrow.astro';
 import TickList from '../components/TickList.astro';
 import { venue } from '../data/venue';
 import { privateEvents } from '../data/events';
+import { getPhoto } from '../utils/images';
+
+import eventsCrowdHero from '../assets/photos/events-crowd-hero.jpg';
+import eventsGroupLifestyle from '../assets/photos/events-group-lifestyle.jpg';
+import eventsRooftopCrowd from '../assets/photos/events-rooftop-crowd.jpg';
 ---
 
 <Layout
@@ -17,7 +22,7 @@ import { privateEvents } from '../data/events';
   description={`Host your private event at ${venue.name} — rooftop bar atop ${venue.hotel} in Downtown ${venue.address.city}. Birthdays, bachelorettes, celebrations, and corporate gatherings.`}
 >
   <PageHero
-    image="/photos/events-crowd-hero.jpg"
+    image={eventsCrowdHero}
     imageAlt="Coco Cabana rooftop packed with guests at golden hour — bartender at full venue"
     imagePosition="object-[center_40%]"
   >
@@ -59,7 +64,7 @@ import { privateEvents } from '../data/events';
   <!-- WHAT WE HOST SPLIT -->
   <SplitSection
     id="what-we-host"
-    image="/photos/events-group-lifestyle.jpg"
+    image={eventsGroupLifestyle}
     imageAlt="Group celebrating at Coco Cabana rooftop with cocktails and the gold pineapple wall"
     imagePosition="object-[center_40%]"
     imageLeft={true}
@@ -85,7 +90,7 @@ import { privateEvents } from '../data/events';
     <div class="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
       {privateEvents.map(event => (
         <EventCard
-          image={event.image}
+          image={getPhoto(event.image)}
           imageAlt={event.imageAlt}
           imagePosition={event.imagePosition}
           category={event.category}
@@ -99,7 +104,7 @@ import { privateEvents } from '../data/events';
 
   <!-- ATMOSPHERE BANNER -->
   <FullBleedBanner
-    image="/photos/events-rooftop-crowd.jpg"
+    image={eventsRooftopCrowd}
     imageAlt="DJ facing the crowd at Coco Cabana rooftop — palms, open sky, packed venue"
     imagePosition="object-[center_25%]"
     gradientDirection="left"
