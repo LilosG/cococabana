@@ -8,6 +8,11 @@ import Eyebrow from '../components/Eyebrow.astro';
 import MenuCard from '../components/MenuCard.astro';
 import { venue } from '../data/venue';
 import { brunchFood, brunchDrinks } from '../data/brunch';
+import { getPhoto } from '../utils/images';
+
+import brunchHeroImg from '../assets/photos/brunch-hero.jpg';
+import brunchMimosasBanner from '../assets/photos/brunch-mimosas-banner.jpg';
+import brunchRooftopBanner from '../assets/photos/brunch-rooftop-banner.jpg';
 ---
 
 <Layout
@@ -16,7 +21,7 @@ import { brunchFood, brunchDrinks } from '../data/brunch';
   transparentNav={true}
 >
   <PageHero
-    image="/photos/brunch-hero.jpg"
+    image={brunchHeroImg}
     imageAlt="Coco Cabana weekend brunch spread — colorful plates, eggs, French toast on marble table"
     imagePosition="object-top"
   >
@@ -63,7 +68,7 @@ import { brunchFood, brunchDrinks } from '../data/brunch';
     <!-- Food -->
     <div class="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-20">
       {brunchFood.map(item => (
-        <MenuCard name={item.name} image={item.image} imageAlt={item.imageAlt} imagePosition={item.imagePosition} category="food" />
+        <MenuCard name={item.name} image={getPhoto(item.image)} imageAlt={item.imageAlt} imagePosition={item.imagePosition} category="food" />
       ))}
     </div>
 
@@ -75,7 +80,7 @@ import { brunchFood, brunchDrinks } from '../data/brunch';
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto">
         {brunchDrinks.map(item => (
-          <MenuCard name={item.name} image={item.image} imageAlt={item.imageAlt} description={item.description} category="drinks" />
+          <MenuCard name={item.name} image={getPhoto(item.image)} imageAlt={item.imageAlt} description={item.description} category="drinks" />
         ))}
       </div>
     </div>
@@ -83,7 +88,7 @@ import { brunchFood, brunchDrinks } from '../data/brunch';
 
   <!-- MIMOSA BANNER -->
   <FullBleedBanner
-    image="/photos/brunch-mimosas-banner.jpg"
+    image={brunchMimosasBanner}
     imageAlt="Coco Cabana bottomless mimosas — Campo Viejo cava flights with copper flamingo on marble table"
     imagePosition="object-center"
     minHeight="min-h-[560px] sm:min-h-[620px]"
@@ -101,7 +106,7 @@ import { brunchFood, brunchDrinks } from '../data/brunch';
 
   <!-- ROOFTOP SPLIT -->
   <SplitSection
-    image="/photos/brunch-rooftop-banner.jpg"
+    image={brunchRooftopBanner}
     imageAlt="Coco Cabana rooftop brunch setup with disco balls, mimosas, and palms"
     imageLeft={true}
     tone="dark"
