@@ -7,6 +7,9 @@ import Button from '../../components/Button.astro';
 import Eyebrow from '../../components/Eyebrow.astro';
 import TickList from '../../components/TickList.astro';
 import { venue } from '../../data/venue';
+import heroImg from '../../assets/photos/live-music-dj.jpg';
+import rooftopCrowdImg from '../../assets/photos/events-rooftop-crowd.jpg';
+import crowdHeroImg from '../../assets/photos/events-crowd-hero.jpg';
 
 const serviceSchema = {
   "@type": "Service",
@@ -40,7 +43,7 @@ const serviceSchema = {
   extraGraph={[serviceSchema]}
 >
   <PageHero
-    image="/photos/live-music-dj.jpg"
+    image={heroImg}
     imageAlt="DJ set at Coco Cabana rooftop with crowd and palm trees at golden hour"
     imagePosition="object-[center_30%]"
   >
@@ -59,7 +62,7 @@ const serviceSchema = {
 
   <!-- WHAT WE HOST -->
   <SplitSection
-    image="/photos/events-rooftop-crowd.jpg"
+    image={rooftopCrowdImg}
     imageAlt="Packed Coco Cabana rooftop at golden hour — full venue energy"
     imagePosition="object-[center_25%]"
     imageLeft={true}
@@ -107,7 +110,7 @@ const serviceSchema = {
 
   <!-- ATMOSPHERE BANNER -->
   <FullBleedBanner
-    image="/photos/events-crowd-hero.jpg"
+    image={crowdHeroImg}
     imageAlt="Coco Cabana rooftop packed with guests at golden hour — bartender at full venue"
     imagePosition="object-[center_40%]"
     gradientDirection="left"
