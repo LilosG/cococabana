@@ -1,3 +1,5 @@
+import brunchData from '../content/data/brunch.json';
+
 export interface BrunchItemData {
   name: string;
   image: string;
@@ -6,57 +8,5 @@ export interface BrunchItemData {
   description?: string;
 }
 
-export const brunchFood: BrunchItemData[] = [
-  {
-    name: 'Chicken & Waffle',
-    image: '/photos/brunch-chicken-waffle-v2.jpg',
-    imageAlt: 'Coco Cabana chicken and waffle with hash browns, fresh fruit and whipped cream',
-  },
-  {
-    name: 'Avocado Toast',
-    image: '/photos/brunch-avocado-toast-v2.jpg',
-    imageAlt: 'Avocado toast with fried egg, heirloom tomatoes and microgreens on sourdough',
-  },
-  {
-    name: 'Chilaquiles',
-    image: '/photos/brunch-chilaquiles.jpg',
-    imageAlt: 'Chilaquiles with tri-color tortilla chips, crema, pickled onion and cotija',
-  },
-  {
-    name: 'Biscuits & Gravy',
-    image: '/photos/brunch-biscuits-gravy.jpg',
-    imageAlt: 'Biscuits and gravy with fried egg and green onion — rooftop brunch at Coco Cabana',
-  },
-  {
-    name: 'Eggs & Hash',
-    image: '/photos/brunch-eggs-hash.jpg',
-    imageAlt: 'Scrambled eggs over roasted hash with disco balls and palms in background',
-  },
-  {
-    name: 'Malasadas',
-    image: '/photos/brunch-malasadas.jpg',
-    imageAlt: 'Portuguese malasadas dusted with sugar served with mimosas and pink disco ball',
-    imagePosition: 'object-bottom',
-  },
-];
-
-export const brunchDrinks: BrunchItemData[] = [
-  {
-    name: 'Mimosa Flight',
-    image: '/photos/brunch-mimosa-flight.jpg',
-    imageAlt: 'Three Campo Viejo cava mimosa flutes — classic, tropical and citrus varieties',
-    description: 'Campo Viejo Cava · Classic, Tropical & Citrus',
-  },
-  {
-    name: 'Campo Viejo Cava',
-    image: '/photos/brunch-mimosa-setup.jpg',
-    imageAlt: 'Campo Viejo cava bottles with mimosa flight on marble table with flamingo and tropical plants',
-    description: '2-Hour Bottomless · While You Dine',
-  },
-  {
-    name: 'The Signature',
-    image: '/photos/brunch-cocktails-signature.jpg',
-    imageAlt: 'Coco Cabana branded coconut cups with copper flamingo vessel and colorful straws',
-    description: 'Coco Cabana coconut cups — the rooftop signature',
-  },
-];
+export const brunchFood = brunchData.brunchFood as BrunchItemData[];
+export const brunchDrinks = brunchData.brunchDrinks as BrunchItemData[];

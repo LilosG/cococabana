@@ -1,0 +1,28 @@
+{
+  "seoTitle": "Private Events | Cococabana Oceanside",
+  "seoDescription": "Host private events, celebrations, corporate events, birthday parties, and rehearsal dinners at Cococabana in Oceanside.",
+  "heroTitle": "Private Events",
+  "heroText": "Plan a rooftop event with food, drinks, views, and a coastal Oceanside backdrop.",
+  "eventTypes": [
+    {
+      "title": "Celebrations",
+      "description": "Private celebrations and social gatherings.",
+      "href": "/private-events/celebrations/"
+    },
+    {
+      "title": "Corporate Events",
+      "description": "Company parties, team events, and business gatherings.",
+      "href": "/private-events/corporate-events/"
+    },
+    {
+      "title": "Rehearsal Dinners",
+      "description": "Wedding weekend events and rehearsal dinners.",
+      "href": "/private-events/rehearsal-dinners/"
+    },
+    {
+      "title": "Birthday Parties",
+      "description": "Birthday dinners, cocktail parties, and group celebrations.",
+      "href": "/private-events/birthday-parties/"
+    }
+  ]
+}

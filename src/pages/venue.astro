@@ -8,6 +8,7 @@ import Button from '../components/Button.astro';
 import Eyebrow from '../components/Eyebrow.astro';
 import FeatureTagList from '../components/FeatureTagList.astro';
 import { venue } from '../data/venue';
+import { venuePage } from '../lib/cms';
 
 import venueAerialSign from '../assets/photos/venue-aerial-sign.jpg';
 import welcomeLounge from '../assets/photos/welcome-lounge-tilewall.jpg';
@@ -24,23 +25,19 @@ import detailsPineapple from '../assets/photos/details-pineapple-wall.jpg';
 
 <Layout
   transparentNav={true}
-  title={`The Venue | ${venue.fullName} | ${venue.address.city}, ${venue.address.state}`}
-  description={`Explore the rooftop, the cabana, and the live music program at ${venue.name} — ${venue.hotel}, ${venue.address.city}. Open ${venue.hours.shortSummary}.`}
+  title={venuePage.seoTitle}
+  description={venuePage.seoDescription}
 >
   <PageHero
     image={venueAerialSign}
     imageAlt="Aerial view of Coco Cabana rooftop bar — COCOCABANA sign on The Brick Hotel, Downtown Oceanside"
   >
-    <Eyebrow tone="dark">{venue.address.city}, {venue.address.state} &middot; {venue.hotel}</Eyebrow>
-    <h1 class="font-display leading-ultra text-hero uppercase mb-6">
-      The Rooftop.<br />The Cabana.
-    </h1>
-    <p class="text-brand-cream/80 leading-relaxed max-w-xl mb-8">
-      Four stories above Downtown Oceanside — open air, full bar, and a rooftop built entirely around its own identity.
-    </p>
+    <Eyebrow tone="dark">{venuePage.heroEyebrow}</Eyebrow>
+    <h1 class="font-display leading-ultra text-hero uppercase mb-6" set:html={venuePage.heroTitle.replace(/\n/g, '<br />')} />
+    <p class="text-brand-cream/80 leading-relaxed max-w-xl mb-8">{venuePage.heroText}</p>
     <div class="flex flex-wrap gap-4">
-      <Button href={venue.reservationsUrl} variant="primary" external>Reserve a Table</Button>
-      <Button href={venue.routes.privateEvents} variant="ghost">Private Events</Button>
+      <Button href={venue.reservationsUrl} variant="primary" external>{venuePage.primaryCtaText}</Button>
+      <Button href={venue.routes.privateEvents} variant="ghost">{venuePage.secondaryCtaText}</Button>
     </div>
   </PageHero>
 

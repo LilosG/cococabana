@@ -1,0 +1,59 @@
+{
+  "faqs": [
+    {
+      "id": "reservations",
+      "question": "Do you take reservations?",
+      "answer": "Yes — reservations are available and recommended, especially for weekend brunch. Use the Reserve button on the site."
+    },
+    {
+      "id": "hours",
+      "question": "What are your hours?",
+      "answer": "Monday – Wednesday: 3:00 PM – 9:00 PM · Thursday: 3:00 PM – 10:00 PM · Friday: 3:00 PM – 12:00 AM · Saturday: 10:00 AM – 12:00 AM · Sunday: 10:00 AM – 8:00 PM"
+    },
+    {
+      "id": "brunch",
+      "question": "Is there a weekend brunch?",
+      "answer": "Yes — Saturday and Sunday, 10:00 AM – 2:00 PM, with bottomless mimosas (2-hour limit, while you dine)."
+    },
+    {
+      "id": "music",
+      "question": "Do you have live music or DJs?",
+      "answer": "Yes — DJ nights every Friday and Saturday."
+    },
+    {
+      "id": "location",
+      "question": "Where is Coco Cabana located?",
+      "answer": "408 Pier View Way, Oceanside, CA 92054 — on the rooftop of The Brick Hotel, four stories up."
+    },
+    {
+      "id": "private-events",
+      "question": "Do you host private events?",
+      "answer": "Yes — call to inquire or visit the Private Events page for what we host."
+    },
+    {
+      "id": "order-online",
+      "question": "Can I order food or drinks online?",
+      "answer": "Yes — use the Order button on the site."
+    },
+    {
+      "id": "walk-ins",
+      "question": "Do you accept walk-ins?",
+      "answer": "Yes — both walk-ins and reservations are welcome."
+    },
+    {
+      "id": "covered-seating",
+      "question": "Is the rooftop covered if it rains?",
+      "answer": "Yes — the rooftop has covered seating areas in addition to open-air seating."
+    },
+    {
+      "id": "parking",
+      "question": "Is parking available?",
+      "answer": "Yes — street parking and nearby parking lots are available around The Brick Hotel."
+    },
+    {
+      "id": "pets",
+      "question": "Are pets allowed?",
+      "answer": "Yes — Coco Cabana is pet-friendly."
+    }
+  ]
+}
