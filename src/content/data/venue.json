@@ -1,5 +1,6 @@
 {
   "name": "Coco Cabana",
+  "url": "https://cococabanaoside.com",
   "fullName": "Coco Cabana Rooftop Bar",
   "wordmark": "COCOCABANA",
   "tagline": "Rooftop Bar",
@@ -23,30 +24,73 @@
     "longitude": -117.3795
   },
   "schemaHours": [
-    { "dayOfWeek": "Monday", "opens": "15:00", "closes": "21:00" },
-    { "dayOfWeek": "Tuesday", "opens": "15:00", "closes": "21:00" },
-    { "dayOfWeek": "Wednesday", "opens": "15:00", "closes": "21:00" },
-    { "dayOfWeek": "Thursday", "opens": "15:00", "closes": "22:00" },
-    { "dayOfWeek": "Friday", "opens": "15:00", "closes": "23:59" },
-    { "dayOfWeek": "Saturday", "opens": "10:00", "closes": "23:59" },
-    { "dayOfWeek": "Sunday", "opens": "10:00", "closes": "20:00" }
+    {
+      "dayOfWeek": "Monday",
+      "opens": "15:00",
+      "closes": "21:00"
+    },
+    {
+      "dayOfWeek": "Tuesday",
+      "opens": "15:00",
+      "closes": "21:00"
+    },
+    {
+      "dayOfWeek": "Wednesday",
+      "opens": "15:00",
+      "closes": "21:00"
+    },
+    {
+      "dayOfWeek": "Thursday",
+      "opens": "15:00",
+      "closes": "22:00"
+    },
+    {
+      "dayOfWeek": "Friday",
+      "opens": "15:00",
+      "closes": "23:59"
+    },
+    {
+      "dayOfWeek": "Saturday",
+      "opens": "10:00",
+      "closes": "23:59"
+    },
+    {
+      "dayOfWeek": "Sunday",
+      "opens": "10:00",
+      "closes": "20:00"
+    }
   ],
   "mapsUrl": "https://www.google.com/maps/place/?q=408+Pier+View+Way,+Oceanside,+CA+92054",
   "mapsEmbedUrl": "https://www.google.com/maps?q=408+Pier+View+Way,+Oceanside,+CA+92054&output=embed",
   "hours": {
     "schedule": [
-      { "days": "Monday – Wednesday", "hours": "3:00 PM – 9:00 PM" },
-      { "days": "Thursday", "hours": "3:00 PM – 10:00 PM" },
-      { "days": "Friday", "hours": "3:00 PM – 12:00 AM" },
-      { "days": "Saturday", "hours": "10:00 AM – 12:00 AM" },
-      { "days": "Sunday", "hours": "10:00 AM – 8:00 PM" }
+      {
+        "days": "Monday \u2013 Wednesday",
+        "hours": "3:00 PM \u2013 9:00 PM"
+      },
+      {
+        "days": "Thursday",
+        "hours": "3:00 PM \u2013 10:00 PM"
+      },
+      {
+        "days": "Friday",
+        "hours": "3:00 PM \u2013 12:00 AM"
+      },
+      {
+        "days": "Saturday",
+        "hours": "10:00 AM \u2013 12:00 AM"
+      },
+      {
+        "days": "Sunday",
+        "hours": "10:00 AM \u2013 8:00 PM"
+      }
     ],
-    "shortSummary": "Open Daily · Brunch Sat & Sun from 10 AM"
+    "shortSummary": "Open Daily \u00b7 Brunch Sat & Sun from 10 AM"
   },
   "brunch": {
     "days": "Saturday & Sunday",
-    "hours": "10:00 AM – 2:00 PM",
-    "highlight": "Bottomless Mimosas · 2-Hour Limit"
+    "hours": "10:00 AM \u2013 2:00 PM",
+    "highlight": "Bottomless Mimosas \u00b7 2-Hour Limit"
   },
   "djNights": {
     "days": "Fri & Sat",

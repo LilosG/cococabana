@@ -1,10 +1,12 @@
 ---
 import { Image } from 'astro:assets';
 import { venue } from '../data/venue';
+import { GPH_NETWORK, GRIND_AND_PROSPER_URL } from '../data/gphNetwork';
 import Button from './Button.astro';
 import logoImg from '../assets/cococabana-logo-transparent.png';
 
 const year = new Date().getFullYear();
+const portfolio = GPH_NETWORK.filter((v) => v.url !== venue.url);
 ---
 
 <footer class="bg-brand-charcoal text-brand-cream">
@@ -55,8 +57,30 @@ const year = new Date().getFullYear();
     </div>
   </div>
 
-  <div class="border-t border-brand-cream/10 px-6 sm:px-8 lg:px-12 py-6 text-xs text-brand-cream/50 flex flex-col sm:flex-row justify-between gap-2">
+  <div class="border-t border-brand-cream/10">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-6">
+      <div class="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-8">
+        <a href={GRIND_AND_PROSPER_URL} target="_blank" rel="noopener noreferrer"
+          class="uppercase tracking-label text-xs text-brand-cream/40 hover:text-brand-pink transition-colors whitespace-nowrap">
+          Grind &amp; Prosper Hospitality
+        </a>
+        <div class="flex flex-wrap gap-x-6 gap-y-2">
+          {portfolio.map((v) => (
+            <a href={v.url} target="_blank" rel="noopener noreferrer"
+              class="text-xs text-brand-cream/30 hover:text-brand-cream/60 transition-colors">
+              {v.name}
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="border-t border-brand-cream/10 px-6 sm:px-8 lg:px-12 py-6 text-xs text-brand-cream/50 flex flex-col sm:flex-row justify-between items-center gap-3">
     <p>&copy; {year} {venue.name}. All rights reserved.</p>
-    <p>Part of the Grind &amp; Prosper Hospitality portfolio.</p>
+    <a href="https://lilosgrowth.com" target="_blank" rel="noopener noreferrer"
+      class="text-brand-cream/50 hover:text-brand-pink text-[13px] transition-colors">
+      Website by Lilos Growth
+    </a>
   </div>
 </footer>
