@@ -49,10 +49,9 @@
       "tone": "dark",
       "items": [
         {
-          "name": "Caribe Welcome",
-          "description": "House rum blend, coconut water, apricot brandy, coconut cream, fresh lime",
-          "image": "/photos/drinks/caribe-welcome.jpg",
-          "imageAlt": "Caribe Welcome cocktail in a coconut with orchid garnish"
+          "name": "Mimosas",
+          "image": "/photos/drinks/mimosas.jpg",
+          "imageAlt": "Mimosas served in champagne flutes with Campo Viejo Cava"
         },
         {
           "name": "Swedish Bikini Team",
@@ -61,10 +60,9 @@
           "imageAlt": "Swedish Bikini Team cocktail with cucumber ribbon and strawberry"
         },
         {
-          "name": "Havana Good Time",
-          "image": "/photos/drinks/havana-good-time.jpg",
-          "imageAlt": "Havana Good Time cocktail in a copper flamingo vessel",
-          "imagePosition": "object-[center_85%]"
+          "name": "Pablo Discobar",
+          "image": "/photos/drinks/pablo-discobar.jpg",
+          "imageAlt": "Pablo Discobar cocktail served in a disco ball ice bucket with champagne"
         },
         {
           "name": "Miami Pound Machine",

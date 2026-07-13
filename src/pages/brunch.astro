@@ -40,14 +40,10 @@ import brunchRooftopBanner from '../assets/photos/brunch-rooftop-banner.jpg';
 
   <!-- INFO STRIP -->
   <section class="bg-brand-charcoal text-brand-cream">
-    <div class="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-brand-cream/10">
+    <div class="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-brand-cream/10">
       <div class="px-6 py-8 text-center">
         <p class="accent-text text-2xl text-brand-pink mb-1">{venue.brunch.days}</p>
         <p class="uppercase tracking-stat text-xs text-brand-cream/50">{venue.brunch.hours}</p>
-      </div>
-      <div class="px-6 py-8 text-center">
-        <p class="accent-text text-2xl text-brand-pink mb-1">Bottomless Mimosas</p>
-        <p class="uppercase tracking-stat text-xs text-brand-cream/50">2-Hour Limit · While You Dine</p>
       </div>
       <div class="px-6 py-8 text-center">
         <p class="accent-text text-2xl text-brand-pink mb-1">Rooftop</p>
@@ -77,7 +73,7 @@ import brunchRooftopBanner from '../assets/photos/brunch-rooftop-banner.jpg';
     <div class="max-w-5xl mx-auto">
       <div class="text-center mb-10">
         <Eyebrow align="center">The Bar</Eyebrow>
-        <h3 class="font-display text-2xl leading-display uppercase text-brand-charcoal">Bottomless Mimosas</h3>
+        <h3 class="font-display text-2xl leading-display uppercase text-brand-charcoal">Mimosas</h3>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto">
         {brunchDrinks.map(item => (
@@ -90,17 +86,17 @@ import brunchRooftopBanner from '../assets/photos/brunch-rooftop-banner.jpg';
   <!-- MIMOSA BANNER -->
   <FullBleedBanner
     image={brunchMimosasBanner}
-    imageAlt="Coco Cabana bottomless mimosas — Campo Viejo cava flights with copper flamingo on marble table"
+    imageAlt="Coco Cabana mimosas — Campo Viejo cava flights with copper flamingo on marble table"
     imagePosition="object-center"
     minHeight="min-h-[560px] sm:min-h-[620px]"
   >
-    <Eyebrow tone="dark">Bottomless Mimosas</Eyebrow>
+    <Eyebrow tone="dark">Mimosas</Eyebrow>
     <h2 class="font-display leading-display text-section-xl uppercase mb-2">
       Campo Viejo<br />Cava
     </h2>
-    <p class="accent-text text-accent-xl text-brand-pink mb-6">2-Hour Bottomless</p>
+    <p class="accent-text text-accent-xl text-brand-pink mb-6">Mimosa Flights</p>
     <p class="text-brand-cream/80 leading-relaxed mb-8">
-      Classic, Tropical &amp; Citrus — bottomless for 2 hours while you dine. Available every {venue.brunch.days} from {venue.brunch.hours}.
+      Classic, Tropical &amp; Citrus — mimosas made with Campo Viejo cava. Available every {venue.brunch.days} from {venue.brunch.hours}.
     </p>
     <Button href={venue.reservationsUrl} variant="primary" external>Reserve Your Table</Button>
   </FullBleedBanner>
@@ -116,7 +112,7 @@ import brunchRooftopBanner from '../assets/photos/brunch-rooftop-banner.jpg';
     <h2 class="font-display text-section-xl leading-display uppercase text-brand-cream mb-4">Brunch Above Oceanside</h2>
     <p class="accent-text text-accent-xl text-brand-pink mb-6">Every Weekend</p>
     <p class="text-brand-cream/70 leading-relaxed mb-8">
-      There's no better setting for a weekend brunch than four stories above Downtown Oceanside. Disco balls, palm trees, and bottomless mimosas — the rooftop is all yours on {venue.brunch.days}.
+      There's no better setting for a weekend brunch than four stories above Downtown Oceanside. Disco balls, palm trees, and mimosas — the rooftop is all yours on {venue.brunch.days}.
     </p>
     <Button href={venue.reservationsUrl} variant="primary" external>Reserve Now</Button>
   </SplitSection>
