@@ -13,9 +13,21 @@ import { privateEvents } from '../data/events';
 import { getPhoto } from '../utils/images';
 import { privateEventsPage } from '../lib/cms';
 
-import eventsCrowdHero from '../assets/photos/events-crowd-hero.jpg';
-import eventsGroupLifestyle from '../assets/photos/events-group-lifestyle.jpg';
-import eventsRooftopCrowd from '../assets/photos/events-rooftop-crowd.jpg';
+const statsHtml = (stats: Array<{ value: string; label: string }>) =>
+  stats
+    .map(
+      (stat) =>
+        `<div class="px-5 py-8 text-center"> <p class="accent-text text-2xl text-brand-pink mb-1">${stat.value}</p> <p class="uppercase tracking-stat text-xs text-brand-cream/50">${stat.label}</p> </div>`,
+    )
+    .join(' ');
+const processHtml = (steps: Array<{ number: string; title: string; text: string }>) =>
+  steps
+    .map(
+      (step) =>
+        `<div class="text-center"> <p class="accent-text text-4xl text-brand-pink mb-4">${step.number}</p> <h3 class="font-display uppercase tracking-feature text-sm text-brand-charcoal mb-3">${step.title}</h3> <p class="text-brand-charcoal/60 text-sm leading-relaxed">${step.text}</p> </div>`,
+    )
+    .join(' ');
+
 ---
 
 <Layout
@@ -24,66 +36,49 @@ import eventsRooftopCrowd from '../assets/photos/events-rooftop-crowd.jpg';
   description={privateEventsPage.seoDescription}
 >
   <PageHero
-    image={eventsCrowdHero}
-    imageAlt="Coco Cabana rooftop packed with guests at golden hour — bartender at full venue"
-    imagePosition="object-[center_40%]"
+    image={getPhoto(privateEventsPage.heroImage.src)}
+    imageAlt={privateEventsPage.heroImage.alt}
+    imagePosition={privateEventsPage.heroImage.position}
   >
     <Eyebrow tone="dark">{privateEventsPage.heroEyebrow}</Eyebrow>
     <h1 class="font-display leading-ultra text-hero uppercase mb-6" set:html={privateEventsPage.heroTitle.replace(/\n/g, '<br />')} />
     <p class="text-brand-cream/80 leading-relaxed max-w-xl mb-8">{privateEventsPage.heroText}</p>
     <div class="flex flex-wrap gap-4">
-      <Button href={privateEventsPage.primaryCtaHref} variant="primary">{privateEventsPage.primaryCtaText}</Button>
-      <Button href={privateEventsPage.secondaryCtaHref} variant="ghost">{privateEventsPage.secondaryCtaText}</Button>
+      <Button href={privateEventsPage.primaryCtaHref as unknown as string} variant="primary">{privateEventsPage.primaryCtaText}</Button>
+      <Button href={privateEventsPage.secondaryCtaHref as unknown as string} variant="ghost">{privateEventsPage.secondaryCtaText}</Button>
     </div>
   </PageHero>
 
   <!-- STATS STRIP -->
   <section class="bg-brand-charcoal text-brand-cream">
     <div class="max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-4 divide-x divide-y sm:divide-y-0 divide-brand-cream/10">
-      <div class="px-5 py-8 text-center">
-        <p class="accent-text text-2xl text-brand-pink mb-1">Rooftop</p>
-        <p class="uppercase tracking-stat text-xs text-brand-cream/50">Exclusive Venue</p>
-      </div>
-      <div class="px-5 py-8 text-center">
-        <p class="accent-text text-2xl text-brand-pink mb-1">Full Bar</p>
-        <p class="uppercase tracking-stat text-xs text-brand-cream/50">Caribbean Cocktails</p>
-      </div>
-      <div class="px-5 py-8 text-center">
-        <p class="accent-text text-2xl text-brand-pink mb-1">Downtown</p>
-        <p class="uppercase tracking-stat text-xs text-brand-cream/50">{venue.address.city}, {venue.address.state}</p>
-      </div>
-      <div class="px-5 py-8 text-center">
-        <p class="accent-text text-2xl text-brand-pink mb-1">Open Air</p>
-        <p class="uppercase tracking-stat text-xs text-brand-cream/50">4 Stories Up</p>
-      </div>
+      <Fragment set:html={statsHtml(privateEventsPage.stats)} />
     </div>
   </section>
 
   <!-- WHAT WE HOST SPLIT -->
   <SplitSection
     id="what-we-host"
-    image={eventsGroupLifestyle}
-    imageAlt="Group celebrating at Coco Cabana rooftop with cocktails and the gold pineapple wall"
-    imagePosition="object-[center_40%]"
+    image={getPhoto(privateEventsPage.whatWeHost.image)}
+    imageAlt={privateEventsPage.whatWeHost.imageAlt}
+    imagePosition={privateEventsPage.whatWeHost.imagePosition}
     imageLeft={true}
     tone="light"
   >
-    <Eyebrow>What We Host</Eyebrow>
-    <h2 class="font-display text-section-xl leading-display uppercase text-brand-charcoal mb-6">Built for the Occasion</h2>
+    <Eyebrow>{privateEventsPage.whatWeHost.eyebrow}</Eyebrow>
+    <h2 class="font-display text-section-xl leading-display uppercase text-brand-charcoal mb-6">{privateEventsPage.whatWeHost.title}</h2>
     <div class="mb-8">
-      <TickList items={['Birthday Parties', 'Bachelorette Parties', 'Baby Showers', 'Milestone Celebrations', 'Live Music Events', 'Corporate & Brand']} />
+      <TickList items={privateEventsPage.eventTypes.map((eventType) => eventType.title)} />
     </div>
-    <p class="text-brand-charcoal/60 leading-relaxed mb-8">
-      Call us directly to discuss availability, capacity, and what we can put together for your event. Every event is different — we'll make it work.
-    </p>
-    <Button href={venue.phoneHref} variant="primary">Call to Inquire</Button>
+    <p class="text-brand-charcoal/60 leading-relaxed mb-8" set:html={privateEventsPage.whatWeHost.text} />
+    <Button href={venue.phoneHref} variant="primary">{privateEventsPage.whatWeHost.ctaText}</Button>
   </SplitSection>
 
   <!-- EVENTS GRID -->
   <section id="events-grid" class="bg-brand-charcoal px-6 sm:px-8 lg:px-12 py-20 sm:py-28">
     <div class="max-w-2xl mx-auto text-center mb-12">
-      <Eyebrow align="center" tone="dark">The Occasions</Eyebrow>
-      <h2 class="font-display text-section-xl leading-display uppercase text-brand-cream">Every Reason to Celebrate</h2>
+      <Eyebrow align="center" tone="dark">{privateEventsPage.eventGrid.eyebrow}</Eyebrow>
+      <h2 class="font-display text-section-xl leading-display uppercase text-brand-cream">{privateEventsPage.eventGrid.title}</h2>
     </div>
     <div class="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
       {privateEvents.map(event => (
@@ -103,45 +98,27 @@ import eventsRooftopCrowd from '../assets/photos/events-rooftop-crowd.jpg';
 
   <!-- ATMOSPHERE BANNER -->
   <FullBleedBanner
-    image={eventsRooftopCrowd}
-    imageAlt="DJ facing the crowd at Coco Cabana rooftop — palms, open sky, packed venue"
-    imagePosition="object-[center_25%]"
-    gradientDirection="left"
-    minHeight="min-h-[600px] sm:min-h-[680px]"
+    image={getPhoto(privateEventsPage.setting.image)}
+    imageAlt={privateEventsPage.setting.imageAlt}
+    imagePosition={privateEventsPage.setting.imagePosition}
+    gradientDirection={privateEventsPage.setting.gradientDirection as 'left'}
+    minHeight={privateEventsPage.setting.minHeight}
   >
-    <Eyebrow tone="dark">The Setting</Eyebrow>
-    <h2 class="font-display leading-display text-section-xl uppercase mb-2">
-      The Rooftop<br />Is Yours
-    </h2>
-    <p class="accent-text text-accent-xl text-brand-pink mb-6">Above Downtown {venue.address.city}</p>
-    <p class="text-brand-cream/80 leading-relaxed mb-8">
-      Four stories above {venue.address.street} — open air, full bar, and a view that makes every event unforgettable.
-    </p>
-    <Button href={venue.phoneHref} variant="primary">Start Planning</Button>
+    <Eyebrow tone="dark">{privateEventsPage.setting.eyebrow}</Eyebrow>
+    <h2 class="font-display leading-display text-section-xl uppercase mb-2" set:html={privateEventsPage.setting.title} />
+    <p class="accent-text text-accent-xl text-brand-pink mb-6">{privateEventsPage.setting.accent}</p>
+    <p class="text-brand-cream/80 leading-relaxed mb-8">{privateEventsPage.setting.text}</p>
+    <Button href={venue.phoneHref} variant="primary">{privateEventsPage.setting.ctaText}</Button>
   </FullBleedBanner>
 
   <!-- HOW IT WORKS -->
   <section class="bg-brand-cream px-6 sm:px-8 lg:px-12 py-20 sm:py-28">
     <div class="max-w-2xl mx-auto text-center mb-12">
-      <Eyebrow align="center">The Process</Eyebrow>
-      <h2 class="font-display text-section-xl leading-display uppercase text-brand-charcoal">How It Works</h2>
+      <Eyebrow align="center">{privateEventsPage.process.eyebrow}</Eyebrow>
+      <h2 class="font-display text-section-xl leading-display uppercase text-brand-charcoal">{privateEventsPage.process.title}</h2>
     </div>
     <div class="max-w-4xl mx-auto grid md:grid-cols-3 gap-8">
-      <div class="text-center">
-        <p class="accent-text text-4xl text-brand-pink mb-4">01</p>
-        <h3 class="font-display uppercase tracking-feature text-sm text-brand-charcoal mb-3">Call or Inquire</h3>
-        <p class="text-brand-charcoal/60 text-sm leading-relaxed">Reach out directly to discuss your event date, size, and what you're envisioning.</p>
-      </div>
-      <div class="text-center">
-        <p class="accent-text text-4xl text-brand-pink mb-4">02</p>
-        <h3 class="font-display uppercase tracking-feature text-sm text-brand-charcoal mb-3">We Build the Plan</h3>
-        <p class="text-brand-charcoal/60 text-sm leading-relaxed">We'll put together the details — space, bar, and anything else that makes the night yours.</p>
-      </div>
-      <div class="text-center">
-        <p class="accent-text text-4xl text-brand-pink mb-4">03</p>
-        <h3 class="font-display uppercase tracking-feature text-sm text-brand-charcoal mb-3">Enjoy the Rooftop</h3>
-        <p class="text-brand-charcoal/60 text-sm leading-relaxed">Show up, settle in, and let the rooftop do the rest. We'll handle everything.</p>
-      </div>
+      <Fragment set:html={processHtml(privateEventsPage.process.steps)} />
     </div>
   </section>
 
@@ -152,12 +129,12 @@ import eventsRooftopCrowd from '../assets/photos/events-rooftop-crowd.jpg';
 
   <!-- CTA -->
   <section class="bg-brand-charcoal px-6 sm:px-8 lg:px-12 py-16 sm:py-20 text-center">
-    <Eyebrow align="center" tone="dark">Prefer to Call?</Eyebrow>
-    <h2 class="font-display text-section-xl leading-display uppercase text-brand-cream mb-2">Reach Out Directly</h2>
-    <p class="text-brand-cream/60 mb-8">{venue.phone} &middot; {venue.address.street}, {venue.address.city}, {venue.address.state}</p>
+    <Eyebrow align="center" tone="dark">{privateEventsPage.finalCta.eyebrow}</Eyebrow>
+    <h2 class="font-display text-section-xl leading-display uppercase text-brand-cream mb-2">{privateEventsPage.finalCta.title}</h2>
+    <p class="text-brand-cream/60 mb-8" set:html={privateEventsPage.finalCta.detail} />
     <div class="flex flex-wrap gap-4 justify-center">
-      <Button href={venue.phoneHref} variant="primary">Call to Inquire</Button>
-      <Button href={venue.routes.contact} variant="ghost">Contact Us</Button>
+      <Button href={venue.phoneHref} variant="primary">{privateEventsPage.finalCta.primaryCtaText}</Button>
+      <Button href={venue.routes.contact} variant="ghost">{privateEventsPage.finalCta.secondaryCtaText}</Button>
     </div>
   </section>
 </Layout>

@@ -2,7 +2,98 @@
   "title": "Celebrations",
   "seoTitle": "Celebrations | Cococabana Oceanside",
   "seoDescription": "Host celebrations at Cococabana in Oceanside with rooftop views, cocktails, food, and a coastal private event setting.",
+  "heroEyebrow": "",
   "heroTitle": "Celebrations",
   "heroText": "A rooftop setting for social celebrations in Oceanside.",
-  "sections": []
+  "primaryCtaText": "",
+  "primaryCtaHref": null,
+  "secondaryCtaText": "",
+  "heroImage": {
+    "src": "/photos/events-rooftop-dining.jpg",
+    "alt": "Women dining and celebrating on Coco Cabana rooftop with cocktails and palm views",
+    "position": "object-[center_40%]"
+  },
+  "stats": [
+    { "value": "Rooftop", "label": "Open Air · 4 Stories Up" },
+    { "value": "Full Bar", "label": "Caribbean Cocktails" },
+    { "value": "Mimosas", "label": "Sat & Sun Brunch" },
+    { "value": "Downtown", "label": "Oceanside, CA" }
+  ],
+  "sections": [
+    {
+      "eyebrow": "What We Host",
+      "title": "Built for the Occasion",
+      "features": [
+        "Bachelorette Parties",
+        "Baby Showers",
+        "Bridal Showers",
+        "Anniversaries & Retirements",
+        "Graduation Celebrations",
+        "Any milestone worth a rooftop"
+      ],
+      "text": [
+        "\nWeekend daytime events have access to our brunch program — mimosas and rooftop plates for a celebration worth showing up for.\n"
+      ],
+      "primaryCtaText": "Submit an Inquiry",
+      "secondaryCtaText": "Call to Inquire",
+      "image": "/photos/brunch-mimosa-flight.jpg",
+      "imageAlt": "Campo Viejo cava mimosa flight on marble table with flamingo and tropical plants",
+      "imagePosition": "object-center"
+    },
+    {
+      "eyebrow": "The Setting",
+      "title": "\nThe Rooftop<br>Is Yours\n",
+      "accent": "Above Downtown Oceanside",
+      "text": [
+        "\nFour stories above 408 Pier View Way — open air, full bar, and the kind of view that makes every moment feel like it matters.\n"
+      ],
+      "primaryCtaText": "Start Planning",
+      "image": "/photos/events-group-lifestyle.jpg",
+      "imageAlt": "Group celebrating at Coco Cabana rooftop with cocktails and the gold pineapple wall",
+      "imagePosition": "object-[center_40%]",
+      "gradientDirection": "left",
+      "minHeight": "min-h-[600px] sm:min-h-[680px]"
+    },
+    {
+      "eyebrow": "The Atmosphere",
+      "title": "A Setting That Does the Work",
+      "text": [
+        "\nPalm trees, cabana seating, signature lighting, and the Pacific coastline — Coco Cabana handles the ambiance so your crew can just enjoy the celebration.\n",
+        "\nPlanning a daytime brunch event? Our weekend brunch program brings mimosas and rooftop plates to the table. Evening events have access to the full cocktail bar and DJ nights every Friday and Saturday.\n"
+      ],
+      "primaryCtaText": "Submit an Inquiry",
+      "image": "/photos/cabana-lounge-cityview.jpg",
+      "imageAlt": "Coco Cabana rooftop lounge with pink daybeds, tile wall, and Oceanside city views at dusk",
+      "imagePosition": "object-center"
+    }
+  ],
+  "process": {
+    "eyebrow": "The Process",
+    "title": "How It Works",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Inquire Below",
+        "text": "Fill out the inquiry form with your event date, party size, and any details. Or call us directly at (858) 304-7725."
+      },
+      {
+        "number": "02",
+        "title": "We Build the Plan",
+        "text": "We'll follow up within 1 business day to confirm availability and put together the details for your celebration."
+      },
+      {
+        "number": "03",
+        "title": "Enjoy the Rooftop",
+        "text": "Show up, settle in, and let the rooftop do the rest. We'll handle everything so you can focus on the celebration."
+      }
+    ]
+  },
+  "finalCta": {
+    "eyebrow": "Prefer to Call?",
+    "title": "Reach Out Directly",
+    "detail": "(858) 304-7725 &middot; 408 Pier View Way, Oceanside, CA",
+    "primaryCtaText": "Call to Inquire",
+    "secondaryCtaText": "Contact Page",
+    "tertiaryCtaText": "All Private Events"
+  }
 }

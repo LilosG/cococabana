@@ -2,7 +2,98 @@
   "title": "Corporate Events",
   "seoTitle": "Corporate Events | Cococabana Oceanside",
   "seoDescription": "Plan corporate events, company parties, and team gatherings at Cococabana in Oceanside.",
+  "heroEyebrow": "",
   "heroTitle": "Corporate Events",
   "heroText": "Host your team on the rooftop with food, drinks, and coastal views.",
-  "sections": []
+  "primaryCtaText": "",
+  "primaryCtaHref": null,
+  "secondaryCtaText": "",
+  "heroImage": {
+    "src": "/photos/live-music-dj.jpg",
+    "alt": "DJ set at Coco Cabana rooftop with crowd and palm trees at golden hour",
+    "position": "object-[center_30%]"
+  },
+  "stats": [
+    { "value": "Rooftop", "label": "Exclusive Venue" },
+    { "value": "Full Bar", "label": "Caribbean Cocktails" },
+    { "value": "Weekdays", "label": "Flexible Availability" },
+    { "value": "Downtown", "label": "Oceanside, CA" }
+  ],
+  "sections": [
+    {
+      "eyebrow": "What We Host",
+      "title": "Built for Business",
+      "features": [
+        "Client Entertainment",
+        "Team & Company Celebrations",
+        "Brand Activations",
+        "Product Launch Events",
+        "Networking Events",
+        "Weekday Availability"
+      ],
+      "text": [
+        "\nFill out the inquiry form below or call us directly to discuss your event date, group size, and what you need. We'll put together the details and make the rooftop work for your team.\n"
+      ],
+      "primaryCtaText": "Submit an Inquiry",
+      "secondaryCtaText": "Call to Inquire",
+      "image": "/photos/events-rooftop-crowd.jpg",
+      "imageAlt": "Packed Coco Cabana rooftop at golden hour — full venue energy",
+      "imagePosition": "object-[center_25%]"
+    },
+    {
+      "eyebrow": "The Setting",
+      "title": "\nThe Rooftop<br>Is Yours\n",
+      "accent": "Above Downtown Oceanside",
+      "text": [
+        "\nFour stories above 408 Pier View Way — open air, full bar, and a setting that lets the venue make the statement so you don't have to.\n"
+      ],
+      "primaryCtaText": "Start Planning",
+      "image": "/photos/events-crowd-hero.jpg",
+      "imageAlt": "Coco Cabana rooftop packed with guests at golden hour — bartender at full venue",
+      "imagePosition": "object-[center_40%]",
+      "gradientDirection": "left",
+      "minHeight": "min-h-[600px] sm:min-h-[680px]"
+    },
+    {
+      "eyebrow": "The Venue",
+      "title": "A Space Worth Showing Up For",
+      "text": [
+        "\nThe rooftop at Coco Cabana is a full open-air venue — cabana lounge seating, a full Caribbean cocktail bar, and a Pacific coastline view that turns any corporate event into something memorable.\n",
+        "\nWhether you're entertaining a client group, celebrating a team milestone, or activating a brand in front of the right crowd — we can build the event around what you need. Reach out and we'll talk through the options.\n"
+      ],
+      "primaryCtaText": "Submit an Inquiry",
+      "image": "/photos/welcome-lounge-tilewall.jpg",
+      "imageAlt": "Coco Cabana rooftop lounge seating with rattan pendants, tile wall, and Oceanside views",
+      "imagePosition": "object-center"
+    }
+  ],
+  "process": {
+    "eyebrow": "The Process",
+    "title": "How It Works",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Inquire Below",
+        "text": "Fill out the inquiry form with your event date, group size, and what you need from the space. Or call us directly at (858) 304-7725."
+      },
+      {
+        "number": "02",
+        "title": "We Build the Plan",
+        "text": "We'll follow up within 1 business day to confirm availability and put together the details — space, bar, and anything else your event requires."
+      },
+      {
+        "number": "03",
+        "title": "Enjoy the Rooftop",
+        "text": "Show up, settle in, and let the rooftop do the rest. We'll handle everything so you can focus on your guests."
+      }
+    ]
+  },
+  "finalCta": {
+    "eyebrow": "Prefer to Call?",
+    "title": "Reach Out Directly",
+    "detail": "(858) 304-7725 &middot; 408 Pier View Way, Oceanside, CA",
+    "primaryCtaText": "Call to Inquire",
+    "secondaryCtaText": "Contact Page",
+    "tertiaryCtaText": "All Private Events"
+  }
 }

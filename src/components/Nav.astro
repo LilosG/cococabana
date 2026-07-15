@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import { venue } from '../data/venue';
+import { navigation } from '../lib/cms';
 import logoImg from '../assets/cococabana-logo-transparent.png';
 
 interface Props {
@@ -14,15 +15,7 @@ const linkColor = transparent
   ? 'text-brand-cream hover:text-brand-pink'
   : 'text-brand-charcoal hover:text-brand-pink';
 
-const navLinks = [
-  { href: venue.routes.menu,          label: 'Menu'           },
-  { href: venue.routes.brunch,        label: 'Brunch'         },
-  { href: venue.routes.venue,         label: 'The Venue'      },
-  { href: venue.routes.privateEvents, label: 'Private Events' },
-  { href: venue.routes.faq,           label: 'FAQ'            },
-  { href: venue.routes.blog,          label: 'Blog'           },
-  { href: venue.routes.contact,       label: 'Contact'        },
-];
+const navLinks = navigation.links;
 ---
 
 <!--
@@ -76,18 +69,14 @@ const navLinks = [
             ? 'border-brand-cream/70 text-brand-cream hover:border-brand-pink hover:text-brand-pink'
             : 'border-brand-pink text-brand-pink hover:bg-brand-pink hover:text-brand-cream',
         ]}
-      >
-        Order
-      </a>
+      >{navigation.orderLabel}</a>
       <!-- Reserve — pink filled, readable on any background -->
       <a
         href={venue.reservationsUrl}
         target="_blank"
         rel="noopener noreferrer"
         class="text-xs uppercase tracking-label bg-brand-pink text-brand-cream border border-brand-pink px-5 py-2.5 hover:bg-brand-pink/90 transition-colors whitespace-nowrap"
-      >
-        Reserve
-      </a>
+      >{navigation.reserveLabel}</a>
     </div>
 
     <!-- Mobile: Reserve stays visible, rest collapses to hamburger -->
@@ -97,9 +86,7 @@ const navLinks = [
         target="_blank"
         rel="noopener noreferrer"
         class="text-xs uppercase tracking-label bg-brand-pink text-brand-cream border border-brand-pink px-4 py-2 hover:bg-brand-pink/90 transition-colors"
-      >
-        Reserve
-      </a>
+      >{navigation.reserveLabel}</a>
       <button
         id="nav-toggle"
         type="button"
@@ -107,7 +94,7 @@ const navLinks = [
         aria-controls="mobile-menu"
         class:list={['flex flex-col justify-center gap-1.5 w-8 h-8 shrink-0 transition-colors', linkColor]}
       >
-        <span class="sr-only">Menu</span>
+        <span class="sr-only">{navigation.mobileMenuLabel}</span>
         <span class="block w-6 h-px bg-current"></span>
         <span class="block w-6 h-px bg-current"></span>
       </button>
@@ -127,9 +114,7 @@ const navLinks = [
         target="_blank"
         rel="noopener noreferrer"
         class="text-sm uppercase tracking-label text-brand-pink hover:text-brand-pink/80 transition-colors"
-      >
-        Order Online
-      </a>
+      >{navigation.orderOnlineLabel}</a>
     </div>
   </div>
 </nav>

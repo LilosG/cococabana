@@ -10,9 +10,6 @@ import { menuSections } from '../data/menu';
 import { getPhoto } from '../utils/images';
 import { menuPage } from '../lib/cms';
 
-import menuHeroImg from '../assets/photos/menu-flamingo-hero.jpg';
-import brunchMimosasBanner from '../assets/photos/brunch-mimosas-banner.jpg';
-
 const menuSchema = {
   "@type": "Menu",
   "@id": "https://cococabanaoside.com/menu#menu",
@@ -42,9 +39,9 @@ const cocktailsSection = menuSections.find(s => s.id === 'cocktails')!;
   extraGraph={[menuSchema]}
 >
   <PageHero
-    image={menuHeroImg}
-    imageAlt="Coco Cabana signature copper flamingo cocktail vessel with rattan pendants and Oceanside rooftop"
-    imagePosition="object-bottom"
+    image={getPhoto(menuPage.heroImage.src)}
+    imageAlt={menuPage.heroImage.alt}
+    imagePosition={menuPage.heroImage.position}
   >
     <Eyebrow tone="dark">{menuPage.heroEyebrow}</Eyebrow>
     <h1 class="font-display leading-ultra text-hero uppercase mb-6">{menuPage.heroTitle}</h1>
@@ -55,11 +52,9 @@ const cocktailsSection = menuSections.find(s => s.id === 'cocktails')!;
   <!-- FOOD -->
   <section id="food" class="bg-brand-cream px-6 sm:px-8 lg:px-12 py-20 sm:py-28">
     <div class="max-w-2xl mx-auto text-center mb-12">
-      <Eyebrow align="center">The Kitchen</Eyebrow>
-      <h2 class="font-display text-section-xl leading-display uppercase text-brand-charcoal mb-4">Food</h2>
-      <p class="text-brand-charcoal/60 leading-relaxed">
-        Rooftop plates built to share — Caribbean-influenced and made for the open air.
-      </p>
+      <Eyebrow align="center">{menuPage.sections[0].eyebrow}</Eyebrow>
+      <h2 class="font-display text-section-xl leading-display uppercase text-brand-charcoal mb-4">{menuPage.sections[0].title}</h2>
+      <p class="text-brand-charcoal/60 leading-relaxed">{menuPage.sections[0].text}</p>
     </div>
     <div class="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-10">
       {foodSection.items.map(item => (
@@ -79,11 +74,9 @@ const cocktailsSection = menuSections.find(s => s.id === 'cocktails')!;
   <!-- COCKTAILS -->
   <section id="cocktails" class="bg-brand-charcoal px-6 sm:px-8 lg:px-12 py-20 sm:py-28">
     <div class="max-w-2xl mx-auto text-center mb-12">
-      <Eyebrow align="center" tone="dark">The Bar</Eyebrow>
-      <h2 class="font-display text-section-xl leading-display uppercase text-brand-cream mb-4">Cocktails</h2>
-      <p class="text-brand-cream/60 leading-relaxed">
-        Caribbean-inspired cocktails crafted from scratch — built for a rooftop above the Pacific.
-      </p>
+      <Eyebrow align="center" tone="dark">{menuPage.sections[1].eyebrow}</Eyebrow>
+      <h2 class="font-display text-section-xl leading-display uppercase text-brand-cream mb-4">{menuPage.sections[1].title}</h2>
+      <p class="text-brand-cream/60 leading-relaxed">{menuPage.sections[1].text}</p>
     </div>
     <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto mb-10">
       {cocktailsSection.items.map(item => (
@@ -99,37 +92,35 @@ const cocktailsSection = menuSections.find(s => s.id === 'cocktails')!;
       ))}
     </div>
     <div class="text-center">
-      <Button href={venue.reservationsUrl} variant="ghost" external>Reserve a Table</Button>
+      <Button href={venue.reservationsUrl} variant="ghost" external>{menuPage.sections[1].ctaText}</Button>
     </div>
   </section>
 
   <!-- BRUNCH CALLOUT BANNER -->
   <FullBleedBanner
-    image={brunchMimosasBanner}
-    imageAlt="Coco Cabana mimosas — Campo Viejo cava flights with copper flamingo on marble table"
-    imagePosition="object-center"
-    minHeight="min-h-[560px] sm:min-h-[620px]"
+    image={getPhoto(menuPage.brunchPromo.image)}
+    imageAlt={menuPage.brunchPromo.imageAlt}
+    imagePosition={menuPage.brunchPromo.imagePosition}
+    minHeight={menuPage.brunchPromo.minHeight}
   >
-    <Eyebrow tone="dark">Weekend Brunch</Eyebrow>
-    <h2 class="font-display leading-display text-section-xl uppercase mb-2">
-      Brunch on<br />the Rooftop
-    </h2>
+    <Eyebrow tone="dark">{menuPage.brunchPromo.eyebrow}</Eyebrow>
+    <h2 class="font-display leading-display text-section-xl uppercase mb-2" set:html={menuPage.brunchPromo.title} />
     <p class="accent-text text-accent-xl text-brand-pink mb-6">{venue.brunch.days}</p>
     <p class="text-brand-cream/80 leading-relaxed mb-2">{venue.brunch.hours}</p>
     <p class="text-brand-cream/60 text-sm mb-8">{venue.brunch.highlight}</p>
     <div class="flex flex-wrap gap-4">
-      <Button href={venue.routes.brunch} variant="primary">View Brunch Menu</Button>
-      <Button href={venue.reservationsUrl} variant="ghost" external>Reserve</Button>
+      <Button href={venue.routes.brunch} variant="primary">{menuPage.brunchPromo.primaryCtaText}</Button>
+      <Button href={venue.reservationsUrl} variant="ghost" external>{menuPage.brunchPromo.secondaryCtaText}</Button>
     </div>
   </FullBleedBanner>
 
   <!-- RESERVE CTA -->
   <section class="bg-brand-cream px-6 sm:px-8 lg:px-12 py-16 sm:py-20 text-center">
-    <h2 class="font-display text-section-xl leading-display uppercase text-brand-charcoal mb-2">Reserve</h2>
-    <p class="accent-text text-accent-xl text-brand-pink mb-8">Your Table</p>
+    <h2 class="font-display text-section-xl leading-display uppercase text-brand-charcoal mb-2">{menuPage.reserve.title}</h2>
+    <p class="accent-text text-accent-xl text-brand-pink mb-8">{menuPage.reserve.accent}</p>
     <div class="flex flex-wrap gap-4 justify-center">
-      <Button href={venue.reservationsUrl} variant="primary" external>Reserve Now</Button>
-      <Button href={venue.routes.venue} variant="secondary">See the Space</Button>
+      <Button href={venue.reservationsUrl} variant="primary" external>{menuPage.reserve.primaryCtaText}</Button>
+      <Button href={venue.routes.venue} variant="secondary">{menuPage.reserve.secondaryCtaText}</Button>
     </div>
   </section>
 </Layout>

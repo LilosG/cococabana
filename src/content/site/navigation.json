@@ -1,0 +1,15 @@
+{
+  "links": [
+    { "href": "/menu", "label": "Menu" },
+    { "href": "/brunch", "label": "Brunch" },
+    { "href": "/venue", "label": "The Venue" },
+    { "href": "/private-events", "label": "Private Events" },
+    { "href": "/faq", "label": "FAQ" },
+    { "href": "/blog", "label": "Blog" },
+    { "href": "/contact", "label": "Contact" }
+  ],
+  "orderLabel": "\nOrder\n",
+  "orderOnlineLabel": "\nOrder Online\n",
+  "reserveLabel": "\nReserve\n",
+  "mobileMenuLabel": "Menu"
+}

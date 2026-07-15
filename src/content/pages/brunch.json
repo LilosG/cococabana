@@ -1,7 +1,56 @@
 {
   "seoTitle": "Brunch | Cococabana Oceanside",
   "seoDescription": "Join Cococabana for brunch in Oceanside with cocktails, rooftop views, and coastal energy.",
+  "heroEyebrow": "",
   "heroTitle": "Brunch",
   "heroText": "Weekend brunch, rooftop cocktails, and coastal views.",
-  "sections": []
+  "heroSubtitle": "",
+  "primaryCtaText": "",
+  "secondaryCtaText": "",
+  "secondaryCtaHref": null,
+  "heroImage": {
+    "src": "/photos/brunch-hero.jpg",
+    "alt": "Coco Cabana weekend brunch spread — colorful plates, eggs, French toast on marble table",
+    "position": "object-top"
+  },
+  "stats": [
+    { "value": "Saturday & Sunday", "label": "10:00 AM – 3:00 PM" },
+    { "value": "Rooftop", "label": "The Brick Hotel, Oceanside" }
+  ],
+  "sections": [
+    {
+      "eyebrow": "The Menu",
+      "title": "Brunch Menu",
+      "detail": " Saturday &amp; Sunday &middot; 10:00 AM – 3:00 PM ",
+      "drinksEyebrow": "The Bar",
+      "drinksTitle": "Mimosas"
+    }
+  ],
+  "mimosaPromo": {
+    "image": "/photos/brunch-mimosas-banner.jpg",
+    "imageAlt": "Coco Cabana mimosas — Campo Viejo cava flights with copper flamingo on marble table",
+    "imagePosition": "object-center",
+    "minHeight": "min-h-[560px] sm:min-h-[620px]",
+    "eyebrow": "Mimosas",
+    "title": "\nCampo Viejo<br>Cava\n",
+    "accent": "Mimosa Flights",
+    "text": "\nClassic, Tropical &amp; Citrus — mimosas made with Campo Viejo cava. Available every Saturday &amp; Sunday from 10:00 AM – 3:00 PM.\n",
+    "ctaText": "Reserve Your Table"
+  },
+  "rooftopPromo": {
+    "image": "/photos/brunch-rooftop-banner.jpg",
+    "imageAlt": "Coco Cabana rooftop brunch setup with disco balls, mimosas, and palms",
+    "eyebrow": "The Setting",
+    "title": "Brunch Above Oceanside",
+    "accent": "Every Weekend",
+    "text": "\nThere's no better setting for a weekend brunch than four stories above Downtown Oceanside. Disco balls, palm trees, and mimosas — the rooftop is all yours on Saturday &amp; Sunday.\n",
+    "ctaText": "Reserve Now"
+  },
+  "reserve": {
+    "title": "Reserve",
+    "accent": "Your Brunch Table",
+    "detail": "Saturday &amp; Sunday &middot; 10:00 AM – 3:00 PM &middot; 408 Pier View Way, Oceanside",
+    "primaryCtaText": "Reserve Now",
+    "secondaryCtaText": "View Full Menu"
+  }
 }

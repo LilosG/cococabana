@@ -1,0 +1,20 @@
+{
+  "description": "\nRooftop bar atop The Brick Hotel in Downtown Oceanside.\n",
+  "exploreHeading": "Explore",
+  "exploreLinks": [
+    { "href": "/", "label": "Home" },
+    { "href": "/venue", "label": "The Venue" },
+    { "href": "/menu", "label": "Menu" },
+    { "href": "/brunch", "label": "Brunch" },
+    { "href": "/private-events", "label": "Private Events" },
+    { "href": "/blog", "label": "Blog" },
+    { "href": "/contact", "label": "Contact" }
+  ],
+  "visitHeading": "Visit",
+  "reserveHeading": "Reserve",
+  "reserveCtaLabel": "Book a Table",
+  "hospitalityLabel": "\nGrind & Prosper Hospitality\n",
+  "copyrightSuffix": "All rights reserved.",
+  "agencyLabel": "\nWebsite by Lilos Growth\n",
+  "agencyUrl": "https://lilosgrowth.com"
+}

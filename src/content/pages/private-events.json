@@ -1,28 +1,107 @@
 {
   "seoTitle": "Private Events | Cococabana Oceanside",
   "seoDescription": "Host private events, celebrations, corporate events, birthday parties, and rehearsal dinners at Cococabana in Oceanside.",
+  "heroEyebrow": "",
   "heroTitle": "Private Events",
   "heroText": "Plan a rooftop event with food, drinks, views, and a coastal Oceanside backdrop.",
+  "primaryCtaText": "",
+  "primaryCtaHref": null,
+  "secondaryCtaText": "",
+  "secondaryCtaHref": null,
+  "heroImage": {
+    "src": "/photos/events-crowd-hero.jpg",
+    "alt": "Coco Cabana rooftop packed with guests at golden hour — bartender at full venue",
+    "position": "object-[center_40%]"
+  },
+  "stats": [
+    { "value": "Rooftop", "label": "Exclusive Venue" },
+    { "value": "Full Bar", "label": "Caribbean Cocktails" },
+    { "value": "Downtown", "label": "Oceanside, CA" },
+    { "value": "Open Air", "label": "4 Stories Up" }
+  ],
   "eventTypes": [
     {
-      "title": "Celebrations",
+      "title": "Birthday Parties",
+      "description": "Private celebrations and social gatherings.",
+      "href": "/private-events/birthday-parties/"
+    },
+    {
+      "title": "Bachelorette Parties",
       "description": "Private celebrations and social gatherings.",
       "href": "/private-events/celebrations/"
     },
     {
-      "title": "Corporate Events",
+      "title": "Baby Showers",
+      "description": "Private celebrations and social gatherings.",
+      "href": "/private-events/celebrations/"
+    },
+    {
+      "title": "Milestone Celebrations",
+      "description": "Private celebrations and social gatherings.",
+      "href": "/private-events/celebrations/"
+    },
+    {
+      "title": "Live Music Events",
+      "description": "Private celebrations and social gatherings.",
+      "href": "/private-events/celebrations/"
+    },
+    {
+      "title": "Corporate & Brand",
       "description": "Company parties, team events, and business gatherings.",
       "href": "/private-events/corporate-events/"
-    },
-    {
-      "title": "Rehearsal Dinners",
-      "description": "Wedding weekend events and rehearsal dinners.",
-      "href": "/private-events/rehearsal-dinners/"
-    },
-    {
-      "title": "Birthday Parties",
-      "description": "Birthday dinners, cocktail parties, and group celebrations.",
-      "href": "/private-events/birthday-parties/"
     }
-  ]
+  ],
+  "whatWeHost": {
+    "image": "/photos/events-group-lifestyle.jpg",
+    "imageAlt": "Group celebrating at Coco Cabana rooftop with cocktails and the gold pineapple wall",
+    "imagePosition": "object-[center_40%]",
+    "eyebrow": "What We Host",
+    "title": "Built for the Occasion",
+    "text": "\nCall us directly to discuss availability, capacity, and what we can put together for your event. Every event is different — we'll make it work.\n",
+    "ctaText": "Call to Inquire"
+  },
+  "eventGrid": {
+    "eyebrow": "The Occasions",
+    "title": "Every Reason to Celebrate"
+  },
+  "setting": {
+    "image": "/photos/events-rooftop-crowd.jpg",
+    "imageAlt": "DJ facing the crowd at Coco Cabana rooftop — palms, open sky, packed venue",
+    "imagePosition": "object-[center_25%]",
+    "gradientDirection": "left",
+    "minHeight": "min-h-[600px] sm:min-h-[680px]",
+    "eyebrow": "The Setting",
+    "title": "\nThe Rooftop<br>Is Yours\n",
+    "accent": "Above Downtown Oceanside",
+    "text": "\nFour stories above 408 Pier View Way — open air, full bar, and a view that makes every event unforgettable.\n",
+    "ctaText": "Start Planning"
+  },
+  "process": {
+    "eyebrow": "The Process",
+    "title": "How It Works",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Call or Inquire",
+        "text": "Reach out directly to discuss your event date, size, and what you're envisioning."
+      },
+      {
+        "number": "02",
+        "title": "We Build the Plan",
+        "text": "We'll put together the details — space, bar, and anything else that makes the night yours."
+      },
+      {
+        "number": "03",
+        "title": "Enjoy the Rooftop",
+        "text": "Show up, settle in, and let the rooftop do the rest. We'll handle everything."
+      }
+    ]
+  },
+  "finalCta": {
+    "eyebrow": "Prefer to Call?",
+    "title": "Reach Out Directly",
+    "detail": "(858) 304-7725 &middot; 408 Pier View Way, Oceanside, CA",
+    "primaryCtaText": "Call to Inquire",
+    "secondaryCtaText": "Contact Us"
+  }
 }

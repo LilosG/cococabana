@@ -2,7 +2,98 @@
   "title": "Birthday Parties",
   "seoTitle": "Birthday Parties | Cococabana Oceanside",
   "seoDescription": "Host birthday parties at Cococabana in Oceanside with rooftop cocktails, food, and coastal views.",
+  "heroEyebrow": "",
   "heroTitle": "Birthday Parties",
   "heroText": "Celebrate birthdays on the rooftop in Oceanside.",
-  "sections": []
+  "primaryCtaText": "",
+  "primaryCtaHref": null,
+  "secondaryCtaText": "",
+  "heroImage": {
+    "src": "/photos/events-crowd-hero.jpg",
+    "alt": "Coco Cabana rooftop packed with guests at golden hour — full venue energy for a birthday celebration",
+    "position": "object-[center_40%]"
+  },
+  "stats": [
+    { "value": "Rooftop", "label": "Open Air · 4 Stories Up" },
+    { "value": "Full Bar", "label": "Caribbean Cocktails" },
+    { "value": "DJ Nights", "label": "Fri & Sat · Live Every Weekend" },
+    { "value": "Downtown", "label": "Oceanside, CA" }
+  ],
+  "sections": [
+    {
+      "eyebrow": "The Venue",
+      "title": "Built for Your Night",
+      "features": [
+        "Open-air rooftop above Downtown Oceanside",
+        "Full Caribbean cocktail bar",
+        "Cabana lounge seating and bar top seating",
+        "DJ nights every Friday & Saturday",
+        "Weekend brunch program available",
+        "Four stories above the Pacific coastline"
+      ],
+      "text": [
+        "\nCall us or fill out the inquiry form below to talk through your date, group size, and what you're envisioning. Every birthday is different — we'll make it work.\n"
+      ],
+      "primaryCtaText": "Submit an Inquiry",
+      "secondaryCtaText": "Call to Inquire",
+      "image": "/photos/events-group-lifestyle.jpg",
+      "imageAlt": "Group celebrating on Coco Cabana rooftop with cocktails and the gold pineapple wall",
+      "imagePosition": "object-[center_40%]"
+    },
+    {
+      "eyebrow": "The Setting",
+      "title": "\nThe Rooftop<br>Is Yours\n",
+      "accent": "Above Downtown Oceanside",
+      "text": [
+        "\nFour stories above 408 Pier View Way — open air, full bar, and a view that turns any birthday into an event worth remembering. DJ nights every Friday and Saturday make it that much better.\n"
+      ],
+      "primaryCtaText": "Start Planning",
+      "image": "/photos/events-rooftop-crowd.jpg",
+      "imageAlt": "DJ facing the crowd at Coco Cabana rooftop — palms, open sky, packed venue",
+      "imagePosition": "object-[center_25%]",
+      "gradientDirection": "left",
+      "minHeight": "min-h-[600px] sm:min-h-[680px]"
+    },
+    {
+      "eyebrow": "The Atmosphere",
+      "title": "A Setting That Does the Work",
+      "text": [
+        "\nPalm trees, cabana seating, signature lighting, and the Pacific coastline — the rooftop at Coco Cabana handles the ambiance so your crew can just enjoy the night.\n",
+        "\nWhether you want a low-key dinner setting or a full rooftop takeover with a DJ, we can put together something that works for your group. Just reach out and we'll talk through the options.\n"
+      ],
+      "primaryCtaText": "Submit an Inquiry",
+      "image": "/photos/cabana-lounge-cityview.jpg",
+      "imageAlt": "Coco Cabana rooftop lounge with pink daybeds, tile wall, and Oceanside city views at dusk",
+      "imagePosition": "object-center"
+    }
+  ],
+  "process": {
+    "eyebrow": "The Process",
+    "title": "How It Works",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Inquire Below",
+        "text": "Fill out the inquiry form with your event date, party size, and any details. Or call us directly at (858) 304-7725."
+      },
+      {
+        "number": "02",
+        "title": "We Build the Plan",
+        "text": "We'll follow up within 1 business day to confirm availability and put together the details for your night."
+      },
+      {
+        "number": "03",
+        "title": "Enjoy the Rooftop",
+        "text": "Show up, settle in, and let the rooftop do the rest. We'll handle everything so you can focus on the birthday."
+      }
+    ]
+  },
+  "finalCta": {
+    "eyebrow": "Prefer to Call?",
+    "title": "Reach Out Directly",
+    "detail": "(858) 304-7725 &middot; 408 Pier View Way, Oceanside, CA",
+    "primaryCtaText": "Call to Inquire",
+    "secondaryCtaText": "Contact Page",
+    "tertiaryCtaText": "All Private Events"
+  }
 }

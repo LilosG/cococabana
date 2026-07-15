@@ -10,20 +10,6 @@ import { menuSections } from '../data/menu';
 import { getPhoto } from '../utils/images';
 import { homePage } from '../lib/cms';
 
-import heroAerial from '../assets/photos/hero-aerial.jpg';
-import welcomeLounge from '../assets/photos/welcome-lounge-tilewall.jpg';
-import barInterior from '../assets/photos/bar-rooftop-interior.jpg';
-import brunchMimosasBanner from '../assets/photos/brunch-mimosas-banner.jpg';
-import sunsetView from '../assets/photos/venue-sunset-view.jpg';
-import cabanaLounge from '../assets/photos/cabana-lounge-cityview.jpg';
-import liveMusicDj from '../assets/photos/live-music-dj.jpg';
-import detailsNeon from '../assets/photos/details-neon-night.jpg';
-import detailsFlamingo from '../assets/photos/details-flamingo-taps.jpg';
-import detailsCoconut from '../assets/photos/details-coconut-cups.jpg';
-import detailsPendant from '../assets/photos/details-pendant-interior.jpg';
-import detailsUrsula from '../assets/photos/details-ursula-cocktail.jpg';
-import eventsGroup from '../assets/photos/events-group-lifestyle.jpg';
-
 const foodItems = menuSections.find(s => s.id === 'food')!.items;
 const cocktailItems = menuSections.find(s => s.id === 'cocktails')!.items;
 ---
@@ -40,9 +26,9 @@ const cocktailItems = menuSections.find(s => s.id === 'cocktails')!.items;
   <section class="relative min-h-screen flex items-end overflow-hidden">
     <div class="absolute inset-0">
       <Image
-        src={heroAerial}
-        alt="Coco Cabana rooftop bar aerial view over Downtown Oceanside, CA"
-        class="w-full h-full object-cover"
+        src={getPhoto(homePage.heroImage.src)}
+        alt={homePage.heroImage.alt}
+        class={homePage.heroImage.position}
         fetchpriority="high"
         loading="eager"
       />
@@ -67,26 +53,26 @@ const cocktailItems = menuSections.find(s => s.id === 'cocktails')!.items;
     <div class="max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-4 divide-x divide-y sm:divide-y-0 divide-brand-cream/10">
       <!-- Hours Today — dynamic via client JS -->
       <div class="px-5 py-8 text-center">
-        <p class="uppercase tracking-stat text-xs text-brand-cream/50 mb-2">Hours Today</p>
-        <p id="info-hours" class="accent-text text-xl sm:text-2xl text-brand-pink leading-tight">Thu–Sun</p>
-        <p id="info-day" class="uppercase tracking-stat text-xs text-brand-cream/40 mt-1">Open</p>
+        <p class="uppercase tracking-stat text-xs text-brand-cream/50 mb-2">{homePage.stats[0].label}</p>
+        <p id="info-hours" class="accent-text text-xl sm:text-2xl text-brand-pink leading-tight">{homePage.stats[0].value}</p>
+        <p id="info-day" class="uppercase tracking-stat text-xs text-brand-cream/40 mt-1">{homePage.stats[0].detail}</p>
       </div>
       <!-- Weekend Brunch -->
       <div class="px-5 py-8 text-center">
-        <p class="uppercase tracking-stat text-xs text-brand-cream/50 mb-2">Weekend Brunch</p>
+        <p class="uppercase tracking-stat text-xs text-brand-cream/50 mb-2">{homePage.stats[1].label}</p>
         <p class="accent-text text-xl sm:text-2xl text-brand-pink leading-tight">{venue.brunch.days}</p>
         <p class="uppercase tracking-stat text-xs text-brand-cream/40 mt-1">{venue.brunch.hours}</p>
       </div>
       <!-- DJ Nights -->
       <div class="px-5 py-8 text-center">
-        <p class="uppercase tracking-stat text-xs text-brand-cream/50 mb-2">DJ Nights</p>
+        <p class="uppercase tracking-stat text-xs text-brand-cream/50 mb-2">{homePage.stats[2].label}</p>
         <p class="accent-text text-xl sm:text-2xl text-brand-pink leading-tight">{venue.djNights.days}</p>
         <p class="uppercase tracking-stat text-xs text-brand-cream/40 mt-1">{venue.djNights.label}</p>
       </div>
       <!-- Location -->
       <div class="px-5 py-8 text-center">
-        <p class="uppercase tracking-stat text-xs text-brand-cream/50 mb-2">Location</p>
-        <p class="accent-text text-xl sm:text-2xl text-brand-pink leading-tight">Oceanside</p>
+        <p class="uppercase tracking-stat text-xs text-brand-cream/50 mb-2">{homePage.stats[3].label}</p>
+        <p class="accent-text text-xl sm:text-2xl text-brand-pink leading-tight">{homePage.stats[3].value}</p>
         <p class="uppercase tracking-stat text-xs text-brand-cream/40 mt-1">{venue.address.street}</p>
       </div>
     </div>
@@ -117,27 +103,20 @@ const cocktailItems = menuSections.find(s => s.id === 'cocktails')!.items;
     <div class="max-w-7xl mx-auto grid md:grid-cols-[3fr_2fr] items-stretch min-h-[560px] md:min-h-[640px]">
       <div class="relative min-h-[380px] md:min-h-0">
         <Image
-          src={welcomeLounge}
-          alt="Coco Cabana rooftop lounge seating with tile wall, rattan pendants, and Oceanside views"
+          src={getPhoto(homePage.welcome.image)}
+          alt={homePage.welcome.imageAlt}
           loading="lazy"
           class="absolute inset-0 w-full h-full object-cover"
         />
       </div>
       <div class="px-8 sm:px-10 lg:px-14 py-16 sm:py-20 flex flex-col justify-center">
-        <Eyebrow>{venue.address.city}, {venue.address.state}</Eyebrow>
-        <h2 class="font-display text-section-xl leading-display uppercase text-brand-charcoal">
-          Where Oceanside
-        </h2>
-        <p class="accent-text text-accent-xl text-brand-pink mb-6">Comes to Drink Well</p>
-        <p class="text-brand-charcoal/70 leading-relaxed mb-8">
-          Perched above {venue.hotel} at {venue.address.street}, {venue.name} is a
-          rooftop bar built around its own identity — relaxed, elevated, and entirely its own.
-          Stop in for a cocktail, settle in for the evening, or make it the start of a night
-          out in Downtown Oceanside.
-        </p>
+        <Eyebrow>{homePage.welcome.eyebrow}</Eyebrow>
+        <h2 class="font-display text-section-xl leading-display uppercase text-brand-charcoal" set:html={homePage.welcome.title} />
+        <p class="accent-text text-accent-xl text-brand-pink mb-6">{homePage.welcome.accent}</p>
+        <p class="text-brand-charcoal/70 leading-relaxed mb-8" set:html={homePage.welcome.text} />
         <div class="flex flex-wrap gap-4">
-          <Button href={venue.reservationsUrl} variant="primary" external>Reserve a Table</Button>
-          <Button href={venue.routes.venue} variant="secondary">See the Space</Button>
+          <Button href={venue.reservationsUrl} variant="primary" external>{homePage.welcome.primaryCtaText}</Button>
+          <Button href={venue.routes.venue} variant="secondary">{homePage.welcome.secondaryCtaText}</Button>
         </div>
       </div>
     </div>
@@ -152,27 +131,22 @@ const cocktailItems = menuSections.find(s => s.id === 'cocktails')!.items;
   <section class="relative min-h-[580px] sm:min-h-[640px] flex items-center overflow-hidden">
     <div class="absolute inset-0">
       <Image
-        src={barInterior}
-        alt="Coco Cabana open-air rooftop bar — marble counter, bar stools, hanging greenery, Oceanside views"
-        class="w-full h-full object-cover object-[center_50%]"
+        src={getPhoto(homePage.bar.image)}
+        alt={homePage.bar.imageAlt}
+        class={homePage.bar.imagePosition}
         loading="lazy"
       />
       <div class="absolute inset-0 bg-gradient-to-r from-brand-charcoal/88 via-brand-charcoal/50 to-transparent"></div>
       <div class="absolute inset-0 bg-gradient-to-t from-brand-charcoal/50 via-transparent to-transparent"></div>
     </div>
     <div class="relative z-10 px-6 sm:px-8 lg:px-12 py-24 sm:py-32 max-w-xl text-brand-cream">
-      <Eyebrow tone="dark">The Bar</Eyebrow>
-      <h2 class="font-display leading-display text-section-xl uppercase mb-2">
-        Open Air.<br />Full Bar.
-      </h2>
-      <p class="accent-text text-accent-xl text-brand-pink mb-6">Above Pier View Way</p>
-      <p class="text-brand-cream/80 leading-relaxed mb-8">
-        Caribbean-inspired cocktails crafted from scratch, cold drafts, and a full bar program
-        under open skies — four stories above Downtown Oceanside.
-      </p>
+      <Eyebrow tone="dark">{homePage.bar.eyebrow}</Eyebrow>
+      <h2 class="font-display leading-display text-section-xl uppercase mb-2" set:html={homePage.bar.title} />
+      <p class="accent-text text-accent-xl text-brand-pink mb-6">{homePage.bar.accent}</p>
+      <p class="text-brand-cream/80 leading-relaxed mb-8" set:html={homePage.bar.text} />
       <div class="flex flex-wrap gap-4">
-        <Button href={`${venue.routes.menu}#cocktails`} variant="primary">View the Bar Menu</Button>
-        <Button href={venue.reservationsUrl} variant="ghost" external>Reserve</Button>
+        <Button href={`${venue.routes.menu}#cocktails`} variant="primary">{homePage.bar.primaryCtaText}</Button>
+        <Button href={venue.reservationsUrl} variant="ghost" external>{homePage.bar.secondaryCtaText}</Button>
       </div>
     </div>
   </section>
@@ -183,8 +157,8 @@ const cocktailItems = menuSections.find(s => s.id === 'cocktails')!.items;
        ════════════════════════════════════════════════════════════ -->
   <section class="bg-brand-cream px-6 sm:px-8 lg:px-12 py-20 sm:py-28">
     <div class="max-w-2xl mx-auto text-center mb-12">
-      <Eyebrow align="center">The Kitchen</Eyebrow>
-      <h2 class="font-display text-section-xl leading-display uppercase text-brand-charcoal">Food</h2>
+      <Eyebrow align="center">{homePage.food.eyebrow}</Eyebrow>
+      <h2 class="font-display text-section-xl leading-display uppercase text-brand-charcoal">{homePage.food.title}</h2>
     </div>
     <div class="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-10">
       {foodItems.map(item => (
@@ -192,7 +166,7 @@ const cocktailItems = menuSections.find(s => s.id === 'cocktails')!.items;
       ))}
     </div>
     <div class="text-center">
-      <Button href={venue.routes.menu} variant="secondary">View Full Menu</Button>
+      <Button href={venue.routes.menu} variant="secondary">{homePage.food.ctaText}</Button>
     </div>
   </section>
 
@@ -201,8 +175,8 @@ const cocktailItems = menuSections.find(s => s.id === 'cocktails')!.items;
        ════════════════════════════════════════════════════════════ -->
   <section class="bg-brand-charcoal px-6 sm:px-8 lg:px-12 py-20 sm:py-28">
     <div class="max-w-2xl mx-auto text-center mb-12">
-      <Eyebrow align="center" tone="dark">The Bar</Eyebrow>
-      <h2 class="font-display text-section-xl leading-display uppercase text-brand-cream">Cocktails</h2>
+      <Eyebrow align="center" tone="dark">{homePage.cocktails.eyebrow}</Eyebrow>
+      <h2 class="font-display text-section-xl leading-display uppercase text-brand-cream">{homePage.cocktails.title}</h2>
     </div>
     <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto mb-10">
       {cocktailItems.map(item => (
@@ -210,7 +184,7 @@ const cocktailItems = menuSections.find(s => s.id === 'cocktails')!.items;
       ))}
     </div>
     <div class="text-center">
-      <Button href={venue.routes.menu + '#cocktails'} variant="ghost">View Full Bar Menu</Button>
+      <Button href={venue.routes.menu + '#cocktails'} variant="ghost">{homePage.cocktails.ctaText}</Button>
     </div>
   </section>
 
@@ -220,25 +194,23 @@ const cocktailItems = menuSections.find(s => s.id === 'cocktails')!.items;
   <section class="relative min-h-[640px] sm:min-h-[700px] flex items-center overflow-hidden">
     <div class="absolute inset-0">
       <Image
-        src={brunchMimosasBanner}
-        alt="Coco Cabana mimosas — Campo Viejo cava flights with copper flamingo, marble table, tile wall"
-        class="w-full h-full object-cover object-center"
+        src={getPhoto(homePage.brunch.image)}
+        alt={homePage.brunch.imageAlt}
+        class={homePage.brunch.imagePosition}
         loading="lazy"
       />
       <div class="absolute inset-0 bg-gradient-to-r from-brand-charcoal/90 via-brand-charcoal/55 to-transparent"></div>
       <div class="absolute inset-0 bg-gradient-to-t from-brand-charcoal/50 via-transparent to-transparent"></div>
     </div>
     <div class="relative z-10 px-6 sm:px-8 lg:px-12 py-24 sm:py-32 max-w-xl text-brand-cream">
-      <Eyebrow tone="dark">Weekend Brunch</Eyebrow>
-      <h2 class="font-display leading-display text-section-xl uppercase mb-2">
-        Brunch on<br />the Rooftop
-      </h2>
+      <Eyebrow tone="dark">{homePage.brunch.eyebrow}</Eyebrow>
+      <h2 class="font-display leading-display text-section-xl uppercase mb-2" set:html={homePage.brunch.title} />
       <p class="accent-text text-accent-xl text-brand-pink mb-6">{venue.brunch.days}</p>
       <p class="text-brand-cream/80 leading-relaxed mb-2">{venue.brunch.hours}</p>
       <p class="text-brand-cream/60 text-sm mb-8">{venue.brunch.highlight}</p>
       <div class="flex flex-wrap gap-4">
-        <Button href={venue.routes.brunch} variant="primary">View Brunch Menu</Button>
-        <Button href={venue.reservationsUrl} variant="ghost" external>Reserve</Button>
+        <Button href={venue.routes.brunch} variant="primary">{homePage.brunch.primaryCtaText}</Button>
+        <Button href={venue.reservationsUrl} variant="ghost" external>{homePage.brunch.secondaryCtaText}</Button>
       </div>
     </div>
   </section>
@@ -250,22 +222,18 @@ const cocktailItems = menuSections.find(s => s.id === 'cocktails')!.items;
   <section class="bg-brand-charcoal overflow-hidden">
     <div class="max-w-7xl mx-auto grid md:grid-cols-[2fr_3fr] items-stretch min-h-[520px] md:min-h-[600px]">
       <div class="px-8 sm:px-10 lg:px-14 py-16 sm:py-20 flex flex-col justify-center md:order-1">
-        <Eyebrow tone="dark">The Rooftop</Eyebrow>
-        <h2 class="font-display text-section-xl leading-display uppercase text-brand-cream mb-4">The View</h2>
-        <p class="accent-text text-accent-xl text-brand-pink mb-6">Above It All</p>
-        <p class="text-brand-cream/70 leading-relaxed mb-8">
-          Four stories above Downtown Oceanside, the views stretch past the rooftops and palm
-          canopy all the way to the Pacific. Sunsets here are something else entirely — settle
-          in early and watch the sky change over the water.
-        </p>
-        <Button href={venue.routes.venue} variant="ghost">Explore the Venue</Button>
+        <Eyebrow tone="dark">{homePage.view.eyebrow}</Eyebrow>
+        <h2 class="font-display text-section-xl leading-display uppercase text-brand-cream mb-4">{homePage.view.title}</h2>
+        <p class="accent-text text-accent-xl text-brand-pink mb-6">{homePage.view.accent}</p>
+        <p class="text-brand-cream/70 leading-relaxed mb-8" set:html={homePage.view.text} />
+        <Button href={venue.routes.venue} variant="ghost">{homePage.view.ctaText}</Button>
       </div>
       <div class="relative min-h-[360px] md:min-h-0 md:order-2">
         <Image
-          src={sunsetView}
-          alt="Sunset viewed from Coco Cabana rooftop through glass railing, palms silhouetted against orange sky"
+          src={getPhoto(homePage.view.image)}
+          alt={homePage.view.imageAlt}
           loading="lazy"
-          class="absolute inset-0 w-full h-full object-cover object-[center_65%]"
+          class={homePage.view.imagePosition}
         />
       </div>
     </div>
@@ -281,22 +249,18 @@ const cocktailItems = menuSections.find(s => s.id === 'cocktails')!.items;
     <div class="max-w-7xl mx-auto grid md:grid-cols-[3fr_2fr] items-stretch min-h-[520px] md:min-h-[600px]">
       <div class="relative min-h-[360px] md:min-h-0 md:order-1">
         <Image
-          src={cabanaLounge}
-          alt="Coco Cabana lounge area with pink daybeds, geometric tile wall, and Oceanside city views"
+          src={getPhoto(homePage.cabana.image)}
+          alt={homePage.cabana.imageAlt}
           loading="lazy"
-          class="absolute inset-0 w-full h-full object-cover object-center"
+          class={homePage.cabana.imagePosition}
         />
       </div>
       <div class="px-8 sm:px-10 lg:px-14 py-16 sm:py-20 flex flex-col justify-center md:order-2">
-        <Eyebrow tone="dark">The Cabana</Eyebrow>
-        <h2 class="font-display text-section-xl leading-display uppercase text-brand-cream mb-4">Lounge Seating</h2>
-        <p class="accent-text text-accent-xl text-brand-pink mb-6">Stay a While</p>
-        <p class="text-brand-cream/70 leading-relaxed mb-8">
-          The cabana's signature lounge seating is designed for settling in. Rattan pendants
-          overhead, geometric tile walls, pink daybeds, and unobstructed views of the Oceanside
-          skyline — this is the corner of the rooftop you'll want to claim early.
-        </p>
-        <Button href={venue.reservationsUrl} variant="primary" external>Reserve Your Spot</Button>
+        <Eyebrow tone="dark">{homePage.cabana.eyebrow}</Eyebrow>
+        <h2 class="font-display text-section-xl leading-display uppercase text-brand-cream mb-4">{homePage.cabana.title}</h2>
+        <p class="accent-text text-accent-xl text-brand-pink mb-6">{homePage.cabana.accent}</p>
+        <p class="text-brand-cream/70 leading-relaxed mb-8" set:html={homePage.cabana.text} />
+        <Button href={venue.reservationsUrl} variant="primary" external>{homePage.cabana.ctaText}</Button>
       </div>
     </div>
   </section>
@@ -307,25 +271,20 @@ const cocktailItems = menuSections.find(s => s.id === 'cocktails')!.items;
   <section class="relative min-h-[600px] sm:min-h-[680px] flex items-center overflow-hidden">
     <div class="absolute inset-0">
       <Image
-        src={liveMusicDj}
-        alt="DJ set at Coco Cabana with crowd on the rooftop"
-        class="w-full h-full object-cover object-[center_30%]"
+        src={getPhoto(homePage.liveMusic.image)}
+        alt={homePage.liveMusic.imageAlt}
+        class={homePage.liveMusic.imagePosition}
         loading="lazy"
       />
       <div class="absolute inset-0 bg-gradient-to-r from-brand-charcoal/90 via-brand-charcoal/55 to-transparent"></div>
       <div class="absolute inset-0 bg-gradient-to-t from-brand-charcoal/60 via-transparent to-transparent"></div>
     </div>
     <div class="relative z-10 px-6 sm:px-8 lg:px-12 py-24 sm:py-32 max-w-xl text-brand-cream">
-      <Eyebrow tone="dark">Live Music &amp; Events</Eyebrow>
-      <h2 class="font-display leading-display text-section-xl uppercase mb-2">
-        DJ Fridays<br />&amp; Saturdays
-      </h2>
-      <p class="accent-text text-accent-xl text-brand-pink mb-6">Every Weekend</p>
-      <p class="text-brand-cream/80 leading-relaxed mb-8">
-        Live DJ sets every Friday and Saturday night. The rooftop transforms after dark —
-        cocktails, open air, and the Oceanside skyline as your backdrop.
-      </p>
-      <Button href={venue.reservationsUrl} variant="primary" external>Reserve for the Night</Button>
+      <Eyebrow tone="dark">{homePage.liveMusic.eyebrow}</Eyebrow>
+      <h2 class="font-display leading-display text-section-xl uppercase mb-2" set:html={homePage.liveMusic.title} />
+      <p class="accent-text text-accent-xl text-brand-pink mb-6">{homePage.liveMusic.accent}</p>
+      <p class="text-brand-cream/80 leading-relaxed mb-8" set:html={homePage.liveMusic.text} />
+      <Button href={venue.reservationsUrl} variant="primary" external>{homePage.liveMusic.ctaText}</Button>
     </div>
   </section>
 
@@ -338,32 +297,32 @@ const cocktailItems = menuSections.find(s => s.id === 'cocktails')!.items;
        ════════════════════════════════════════════════════════════ -->
   <section id="atmosphere" class="bg-brand-charcoal px-6 sm:px-8 lg:px-12 py-20 sm:py-28">
     <div class="max-w-2xl mx-auto text-center mb-12">
-      <Eyebrow align="center" tone="dark">Atmosphere</Eyebrow>
-      <h2 class="font-display text-section-xl leading-display uppercase text-brand-cream">The Details</h2>
+      <Eyebrow align="center" tone="dark">{homePage.atmosphere.eyebrow}</Eyebrow>
+      <h2 class="font-display text-section-xl leading-display uppercase text-brand-cream">{homePage.atmosphere.title}</h2>
     </div>
     <div class="flex flex-col md:flex-row gap-3 max-w-5xl mx-auto md:h-[560px] lg:h-[640px]">
       <!-- Left: tall image — fixed height mobile, fills container desktop -->
       <div class="md:flex-1 min-w-0 overflow-hidden h-72 md:h-auto">
         <Image
-          src={detailsNeon}
-          alt="Neon pink palm tree sign glowing at Coco Cabana rooftop at night with guest below"
+          src={getPhoto(homePage.atmosphere.gallery[0].src)}
+          alt={homePage.atmosphere.gallery[0].alt}
           loading="lazy"
-          class="w-full h-full object-cover object-[center_75%]"
+          class={homePage.atmosphere.gallery[0].class}
         />
       </div>
       <!-- Right: 2×2 grid — grid-rows-2 splits container height into 2 equal rows -->
       <div class="md:flex-1 min-w-0 grid grid-cols-2 gap-3 md:grid-rows-2">
         <div class="overflow-hidden aspect-square md:aspect-auto">
-          <Image src={detailsFlamingo} alt="Copper flamingo draft tap handles at Coco Cabana bar" loading="lazy" class="w-full h-full object-cover object-center" />
+          <Image src={getPhoto(homePage.atmosphere.gallery[1].src)} alt={homePage.atmosphere.gallery[1].alt} loading="lazy" class={homePage.atmosphere.gallery[1].class} />
         </div>
         <div class="overflow-hidden aspect-square md:aspect-auto">
-          <Image src={detailsCoconut} alt="Coco Cabana branded coconut cups with copper flamingo vessel" loading="lazy" class="w-full h-full object-cover object-center" />
+          <Image src={getPhoto(homePage.atmosphere.gallery[2].src)} alt={homePage.atmosphere.gallery[2].alt} loading="lazy" class={homePage.atmosphere.gallery[2].class} />
         </div>
         <div class="overflow-hidden aspect-square md:aspect-auto">
-          <Image src={detailsPendant} alt="Coco Cabana cabana interior with rattan pendant lamps and tropical plants" loading="lazy" class="w-full h-full object-cover object-[center_40%]" />
+          <Image src={getPhoto(homePage.atmosphere.gallery[3].src)} alt={homePage.atmosphere.gallery[3].alt} loading="lazy" class={homePage.atmosphere.gallery[3].class} />
         </div>
         <div class="overflow-hidden aspect-square md:aspect-auto">
-          <Image src={detailsUrsula} alt="Coco Cabana cocktail in front of the illuminated gold pineapple wall display" loading="lazy" class="w-full h-full object-cover object-[center_30%]" />
+          <Image src={getPhoto(homePage.atmosphere.gallery[4].src)} alt={homePage.atmosphere.gallery[4].alt} loading="lazy" class={homePage.atmosphere.gallery[4].class} />
         </div>
       </div>
     </div>
@@ -377,24 +336,21 @@ const cocktailItems = menuSections.find(s => s.id === 'cocktails')!.items;
     <div class="max-w-7xl mx-auto grid md:grid-cols-[3fr_2fr] items-stretch min-h-[520px] md:min-h-[580px]">
       <div class="relative min-h-[360px] md:min-h-0">
         <Image
-          src={eventsGroup}
-          alt="Group celebrating at Coco Cabana rooftop bar with cocktails and the gold pineapple wall backdrop"
+          src={getPhoto(homePage.privateEvents.image)}
+          alt={homePage.privateEvents.imageAlt}
           loading="lazy"
-          class="absolute inset-0 w-full h-full object-cover object-[center_40%]"
+          class={homePage.privateEvents.imagePosition}
         />
       </div>
       <div class="px-8 sm:px-10 lg:px-14 py-16 sm:py-20 flex flex-col justify-center">
-        <Eyebrow>Private Events</Eyebrow>
-        <h2 class="font-display text-section-xl leading-display uppercase text-brand-charcoal">Private Events</h2>
-        <p class="accent-text text-accent-xl text-brand-pink mb-6">in Downtown Oceanside</p>
-        <p class="text-brand-charcoal/70 leading-relaxed mb-6">
-          From birthdays to celebrations, {venue.name} sets the scene for a night to remember.
-          Reach out to start planning.
-        </p>
+        <Eyebrow>{homePage.privateEvents.eyebrow}</Eyebrow>
+        <h2 class="font-display text-section-xl leading-display uppercase text-brand-charcoal">{homePage.privateEvents.title}</h2>
+        <p class="accent-text text-accent-xl text-brand-pink mb-6">{homePage.privateEvents.accent}</p>
+        <p class="text-brand-charcoal/70 leading-relaxed mb-6" set:html={homePage.privateEvents.text} />
         <div class="mb-8">
-          <TickList items={['Birthday Parties', 'Celebrations & Milestones', 'Corporate Gatherings', 'Rehearsal Dinners']} />
+          <TickList items={homePage.privateEvents.features} />
         </div>
-        <Button href={venue.routes.privateEvents} variant="dark">Inquire About Events</Button>
+        <Button href={venue.routes.privateEvents} variant="dark">{homePage.privateEvents.ctaText}</Button>
       </div>
     </div>
   </section>
@@ -404,21 +360,21 @@ const cocktailItems = menuSections.find(s => s.id === 'cocktails')!.items;
        ════════════════════════════════════════════════════════════ -->
   <section id="hours" class="bg-brand-charcoal px-6 sm:px-8 lg:px-12 py-20 sm:py-28">
     <div class="max-w-2xl mx-auto text-center mb-12">
-      <Eyebrow align="center" tone="dark">Visit</Eyebrow>
-      <h2 class="font-display text-section-xl leading-display uppercase text-brand-cream">Find Us</h2>
-      <p class="accent-text text-accent-xl text-brand-pink">in Downtown Oceanside</p>
+      <Eyebrow align="center" tone="dark">{homePage.visit.eyebrow}</Eyebrow>
+      <h2 class="font-display text-section-xl leading-display uppercase text-brand-cream">{homePage.visit.title}</h2>
+      <p class="accent-text text-accent-xl text-brand-pink">{homePage.visit.accent}</p>
     </div>
 
     <div class="max-w-5xl mx-auto grid md:grid-cols-5 gap-px bg-brand-cream/10 border border-brand-cream/10">
       <div class="md:col-span-2 bg-brand-charcoal p-8 sm:p-10 flex flex-col justify-center">
-        <p class="uppercase tracking-label text-xs text-brand-pink mb-2">Address</p>
+        <p class="uppercase tracking-label text-xs text-brand-pink mb-2">{homePage.visit.addressLabel}</p>
         <a href={venue.mapsUrl} target="_blank" rel="noopener noreferrer" class="block text-lg text-brand-cream hover:text-brand-pink transition-colors mb-6">
           {venue.address.street}<br />
           {venue.address.city}, {venue.address.state} {venue.address.zip}
         </a>
-        <p class="uppercase tracking-label text-xs text-brand-pink mb-2">Call</p>
+        <p class="uppercase tracking-label text-xs text-brand-pink mb-2">{homePage.visit.callLabel}</p>
         <a href={venue.phoneHref} class="block text-lg text-brand-cream hover:text-brand-pink transition-colors mb-6">{venue.phone}</a>
-        <p class="uppercase tracking-label text-xs text-brand-pink mb-2">Hours</p>
+        <p class="uppercase tracking-label text-xs text-brand-pink mb-2">{homePage.visit.hoursLabel}</p>
         <div class="space-y-1 mb-8">
           {venue.hours.schedule.map(row => (
             <div class="flex justify-between gap-4 text-sm">
@@ -428,11 +384,11 @@ const cocktailItems = menuSections.find(s => s.id === 'cocktails')!.items;
           ))}
         </div>
         <div class="flex flex-wrap gap-4">
-          <Button href={venue.reservationsUrl} variant="primary" external>Reserve a Table</Button>
-          <Button href={venue.mapsUrl} variant="ghost" external>Get Directions</Button>
+          <Button href={venue.reservationsUrl} variant="primary" external>{homePage.visit.reserveCtaText}</Button>
+          <Button href={venue.mapsUrl} variant="ghost" external>{homePage.visit.directionsCtaText}</Button>
         </div>
         <p class="text-brand-cream/40 text-xs uppercase tracking-label mt-6">
-          <a href={venue.routes.faq} class="hover:text-brand-pink transition-colors">Have questions? See our FAQ →</a>
+          <a href={venue.routes.faq} class="hover:text-brand-pink transition-colors">{homePage.visit.faqCtaText}</a>
         </p>
       </div>
       <div class="md:col-span-3 aspect-[4/3] md:aspect-auto w-full h-full overflow-hidden min-h-[360px]">
@@ -451,12 +407,12 @@ const cocktailItems = menuSections.find(s => s.id === 'cocktails')!.items;
        12 · RESERVE CTA BAND
        ════════════════════════════════════════════════════════════ -->
   <section class="bg-brand-charcoal border-t border-brand-cream/10 px-6 sm:px-8 lg:px-12 py-16 sm:py-20 text-center">
-    <h2 class="font-display text-section-xl leading-display uppercase text-brand-cream mb-2">Reserve</h2>
-    <p class="accent-text text-accent-xl text-brand-pink mb-6">Your Table</p>
+    <h2 class="font-display text-section-xl leading-display uppercase text-brand-cream mb-2">{homePage.reserve.title}</h2>
+    <p class="accent-text text-accent-xl text-brand-pink mb-6">{homePage.reserve.accent}</p>
     <p class="text-brand-cream/60 mb-8">
       {venue.address.street}, {venue.address.city}, {venue.address.state} &middot; {venue.phone}
     </p>
-    <Button href={venue.reservationsUrl} variant="primary" external>Reserve Now</Button>
+    <Button href={venue.reservationsUrl} variant="primary" external>{homePage.reserve.ctaText}</Button>
   </section>
 
 </Layout>
