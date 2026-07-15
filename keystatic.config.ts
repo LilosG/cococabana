@@ -65,6 +65,7 @@ export default config({
       format: { data: 'json' },
       schema: {
         name: fields.text({ label: 'Short Name' }),
+        url: fields.text({ label: 'URL' }),
         fullName: fields.text({ label: 'Full Name' }),
         wordmark: fields.text({ label: 'Wordmark' }),
         tagline: fields.text({ label: 'Tagline' }),
@@ -362,12 +363,14 @@ export default config({
           label: 'Description',
           multiline: true,
         }),
-        pubDate: fields.date({
+        date: fields.date({
           label: 'Publish Date',
-          validation: { isRequired: false },
         }),
-        updatedDate: fields.date({
-          label: 'Updated Date',
+        category: fields.text({
+          label: 'Category',
+        }),
+        ogImage: fields.text({
+          label: 'Open Graph Image',
           validation: { isRequired: false },
         }),
         content: fields.markdoc({
