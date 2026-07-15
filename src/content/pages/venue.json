@@ -1,7 +1,107 @@
 {
   "seoTitle": "Venue | Cococabana Oceanside",
   "seoDescription": "Explore Cococabana's rooftop venue in Oceanside for cocktails, brunch, private events, and coastal views.",
+  "heroEyebrow": "",
   "heroTitle": "The Venue",
   "heroText": "A rooftop setting built for drinks, dining, celebrations, and coastal nights in Oceanside.",
-  "sections": []
+  "primaryCtaText": "",
+  "secondaryCtaText": "",
+  "heroImage": {
+    "src": "/photos/venue-aerial-sign.jpg",
+    "alt": "Aerial view of Coco Cabana rooftop bar — COCOCABANA sign on The Brick Hotel, Downtown Oceanside"
+  },
+  "stats": [
+    { "value": "Rooftop", "label": "4 Stories Up" },
+    { "value": "Open Air", "label": "Full Bar Program" },
+    { "value": "DJ Nights", "label": "Fri &amp; Sat · Live Every Weekend" },
+    { "value": "Downtown", "label": "Oceanside, CA" }
+  ],
+  "sections": [
+    {
+      "eyebrow": "The Space",
+      "title": "The Rooftop",
+      "accent": "Above It All",
+      "text": "\nPerched above The Brick Hotel at 408 Pier View Way, the rooftop is a full open-air experience — Caribbean-inspired cocktails, a complete bar program, and views that stretch past the palm canopy all the way to the Pacific.\n",
+      "tags": ["Open Air", "Full Bar", "Pacific Views", "Downtown Oceanside"],
+      "image": "/photos/welcome-lounge-tilewall.jpg",
+      "imageAlt": "Coco Cabana rooftop lounge — rattan pendants, tile wall, city views",
+      "imagePosition": "object-center"
+    },
+    {
+      "eyebrow": "The Cabana",
+      "title": "\nLounge Seating\n",
+      "accent": "Stay a While",
+      "text": "\nThe cabana's signature lounge seating is designed for settling in — rattan pendants overhead, geometric tile walls, pink daybeds, and unobstructed views of the Oceanside skyline. Claim your corner early.\n",
+      "ctaText": "Reserve Your Spot",
+      "image": "/photos/cabana-lounge-cityview.jpg",
+      "imageAlt": "Coco Cabana lounge seating — pink daybeds, geometric tile wall, Oceanside skyline",
+      "imagePosition": "object-center",
+      "minHeight": "min-h-[640px] sm:min-h-[700px]"
+    },
+    {
+      "eyebrow": "The View",
+      "title": "Sunsets",
+      "accent": "Worth Arriving Early For",
+      "text": "\nFour stories up, the views stretch past the rooftops and palm canopy all the way to the Pacific. Sunsets here are something else entirely — settle in before golden hour and watch the sky change over the water.\n",
+      "tags": ["Pacific Views", "Open Sky", "Golden Hour"],
+      "image": "/photos/venue-sunset-view.jpg",
+      "imageAlt": "Sunset viewed from Coco Cabana rooftop — palms silhouetted against orange sky",
+      "imagePosition": "object-[center_65%]"
+    },
+    {
+      "eyebrow": "After Dark",
+      "title": "\nLive Music<br>&amp; Events\n",
+      "accent": "Every Fri & Sat",
+      "text": "\nLive DJ sets every Friday and Saturday night. The rooftop transforms after dark — cocktails, open air, and the Oceanside skyline as your backdrop.\n",
+      "ctaText": "Reserve for the Night",
+      "image": "/photos/live-music-dj.jpg",
+      "imageAlt": "DJ set at Coco Cabana rooftop with crowd",
+      "imagePosition": "object-[center_30%]",
+      "minHeight": "min-h-[600px] sm:min-h-[680px]"
+    }
+  ],
+  "gallery": {
+    "eyebrow": "The Details",
+    "title": "The Atmosphere",
+    "images": [
+      {
+        "src": "/photos/details-flamingo-taps.jpg",
+        "alt": "Copper flamingo draft tap handles at Coco Cabana",
+        "position": "w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+      },
+      {
+        "src": "/photos/details-coconut-cups.jpg",
+        "alt": "Coco Cabana branded coconut cups with copper flamingo vessel",
+        "position": "w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+      },
+      {
+        "src": "/photos/details-neon-night.jpg",
+        "alt": "Neon pink palm sign glowing at night at Coco Cabana",
+        "position": "w-full h-full object-cover object-[center_75%] hover:scale-105 transition-transform duration-500"
+      },
+      {
+        "src": "/photos/details-pendant-interior.jpg",
+        "alt": "Rattan pendant lamps and tropical plants at Coco Cabana",
+        "position": "w-full h-full object-cover object-[center_40%] hover:scale-105 transition-transform duration-500"
+      },
+      {
+        "src": "/photos/details-ursula-cocktail.jpg",
+        "alt": "Coco Cabana cocktail in front of the gold pineapple wall",
+        "position": "w-full h-full object-cover object-[center_30%] hover:scale-105 transition-transform duration-500"
+      },
+      {
+        "src": "/photos/details-pineapple-wall.jpg",
+        "alt": "Gold pineapple wall display at Coco Cabana bar",
+        "position": "w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+      }
+    ]
+  },
+  "finalCta": {
+    "eyebrow": "Come See It",
+    "title": "Coco Cabana Awaits",
+    "detail": "The Brick Hotel, Oceanside, CA &middot; Open Daily · Brunch Sat &amp; Sun from 10 AM",
+    "primaryCtaText": "Reserve a Table",
+    "secondaryCtaText": "Weekend Brunch",
+    "tertiaryCtaText": "Plan a Private Event"
+  }
 }

@@ -1,7 +1,44 @@
 {
   "seoTitle": "Contact | Cococabana Oceanside",
   "seoDescription": "Contact Cococabana in Oceanside for reservations, private events, and general questions.",
+  "heroEyebrow": "",
   "heroTitle": "Contact Cococabana",
   "heroText": "Reach out for questions, private events, and group inquiries.",
-  "formIntro": "Tell us what you are planning and our team will follow up."
+  "primaryCtaText": "",
+  "heroImage": {
+    "src": "/photos/bar-rooftop-interior.jpg",
+    "alt": "Coco Cabana open-air rooftop bar — marble counter, bar stools, hanging greenery, Oceanside views"
+  },
+  "formIntro": "Tell us what you are planning and our team will follow up.",
+  "cards": [
+    {
+      "eyebrow": "Reservations",
+      "title": "Book a Table",
+      "text": "Reserve online or call us directly. Walk-ins welcome based on availability.",
+      "primaryCtaText": "Reserve Online"
+    },
+    {
+      "eyebrow": "Private Events",
+      "title": "Host an Event",
+      "text": "Birthdays, celebrations, corporate gatherings — fill out the form below or call us to start planning your event on the rooftop.",
+      "primaryCtaText": "Submit an Inquiry",
+      "secondaryCtaText": "Private Events Page"
+    },
+    {
+      "eyebrow": "Find Us",
+      "title": "Visit",
+      "directionsCtaText": "Get Directions"
+    }
+  ],
+  "hours": { "eyebrow": "Hours", "title": "When We're Open" },
+  "eventForm": {
+    "heading": "Plan a Private Event",
+    "subheading": "Birthdays, bachelorettes, corporate gatherings, and more — fill out the form and our team will be in touch within 1 business day."
+  },
+  "social": {
+    "eyebrow": "Follow Along",
+    "text": "Follow us on Instagram for events, specials, and rooftop vibes.",
+    "primaryCtaText": "Follow on Instagram",
+    "secondaryCtaText": "Reserve a Table"
+  }
 }

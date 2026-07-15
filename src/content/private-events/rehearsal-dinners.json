@@ -2,7 +2,98 @@
   "title": "Rehearsal Dinners",
   "seoTitle": "Rehearsal Dinners | Cococabana Oceanside",
   "seoDescription": "Plan rehearsal dinners and wedding weekend events at Cococabana in Oceanside.",
+  "heroEyebrow": "",
   "heroTitle": "Rehearsal Dinners",
   "heroText": "A coastal rooftop setting for wedding weekend gatherings.",
-  "sections": []
+  "primaryCtaText": "",
+  "primaryCtaHref": null,
+  "secondaryCtaText": "",
+  "heroImage": {
+    "src": "/photos/cabana-lounge-cityview.jpg",
+    "alt": "Coco Cabana rooftop lounge with pink daybeds, tile wall, and Oceanside city views at dusk",
+    "position": "object-center"
+  },
+  "stats": [
+    { "value": "Rooftop", "label": "Open Air · 4 Stories Up" },
+    { "value": "Full Bar", "label": "Caribbean Cocktails" },
+    { "value": "Rooftop", "label": "Kitchen Available" },
+    { "value": "Downtown", "label": "Oceanside, CA" }
+  ],
+  "sections": [
+    {
+      "eyebrow": "The Venue",
+      "title": "The Night Before the Big Day",
+      "features": [
+        "Open-air rooftop above Downtown Oceanside",
+        "Full Caribbean cocktail bar",
+        "Rooftop kitchen",
+        "Cabana lounge seating",
+        "Views of the Pacific coastline",
+        "Intimate setting for the wedding party"
+      ],
+      "text": [
+        "\nFill out the inquiry form below or call us directly to talk through your date, party size, and what you're envisioning. We'll put together the details and make it work for your group.\n"
+      ],
+      "primaryCtaText": "Submit an Inquiry",
+      "secondaryCtaText": "Call to Inquire",
+      "image": "/photos/events-rooftop-dining.jpg",
+      "imageAlt": "Women dining and celebrating on Coco Cabana rooftop with cocktails and palm views",
+      "imagePosition": "object-[center_40%]"
+    },
+    {
+      "eyebrow": "The Setting",
+      "title": "\nThe Rooftop<br>Is Yours\n",
+      "accent": "Above Downtown Oceanside",
+      "text": [
+        "\nFour stories above 408 Pier View Way — open air, full bar, and a Pacific coastline view that makes the night before feel just as special as the day itself.\n"
+      ],
+      "primaryCtaText": "Start Planning",
+      "image": "/photos/welcome-lounge-tilewall.jpg",
+      "imageAlt": "Coco Cabana rooftop lounge seating with rattan pendants, tile wall, and Oceanside views",
+      "imagePosition": "object-center",
+      "gradientDirection": "left",
+      "minHeight": "min-h-[600px] sm:min-h-[680px]"
+    },
+    {
+      "eyebrow": "The Atmosphere",
+      "title": "Set the Tone for the Weekend",
+      "text": [
+        "\nPalm trees, open sky, cabana seating, and Caribbean cocktails — the rooftop at Coco Cabana creates an atmosphere that needs no additional decoration. Just show up and let it do the work.\n",
+        "\nWhether you want a low-key dinner with the wedding party or a full rooftop gathering with the whole crew, we can put together something that fits the occasion. Just reach out and we'll make it happen.\n"
+      ],
+      "primaryCtaText": "Submit an Inquiry",
+      "image": "/photos/events-crowd-hero.jpg",
+      "imageAlt": "Coco Cabana rooftop packed with guests at golden hour — full venue energy",
+      "imagePosition": "object-[center_40%]"
+    }
+  ],
+  "process": {
+    "eyebrow": "The Process",
+    "title": "How It Works",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Inquire Below",
+        "text": "Fill out the inquiry form with your rehearsal dinner date, party size, and what you'd like the evening to look like. Or call us at (858) 304-7725."
+      },
+      {
+        "number": "02",
+        "title": "We Build the Plan",
+        "text": "We'll follow up within 1 business day to confirm availability and put together the details — space, bar, and anything else that makes the evening feel right."
+      },
+      {
+        "number": "03",
+        "title": "Enjoy the Rooftop",
+        "text": "Show up, settle in, and let the rooftop do the rest. We'll handle everything so you can enjoy the night before the big day."
+      }
+    ]
+  },
+  "finalCta": {
+    "eyebrow": "Prefer to Call?",
+    "title": "Reach Out Directly",
+    "detail": "(858) 304-7725 &middot; 408 Pier View Way, Oceanside, CA",
+    "primaryCtaText": "Call to Inquire",
+    "secondaryCtaText": "Contact Page",
+    "tertiaryCtaText": "All Private Events"
+  }
 }

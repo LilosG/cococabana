@@ -1,0 +1,23 @@
+---
+import Button from './Button.astro';
+import Eyebrow from './Eyebrow.astro';
+import { venue } from '../data/venue';
+import { privateEventBirthdayParties } from '../lib/cms';
+
+interface Props {
+  page: typeof privateEventBirthdayParties;
+}
+
+const { page } = Astro.props;
+---
+
+{' '}<section class="bg-brand-cream px-6 sm:px-8 lg:px-12 py-16 sm:py-20 text-center">
+  <Eyebrow align="center">{page.finalCta.eyebrow}</Eyebrow>
+  <h2 class="font-display text-section-xl leading-display uppercase text-brand-charcoal mb-2">{page.finalCta.title}</h2>
+  <p class="text-brand-charcoal/60 mb-8" set:html={page.finalCta.detail} />
+  <div class="flex flex-wrap gap-4 justify-center">
+    <Button href={venue.phoneHref} variant="primary">{page.finalCta.primaryCtaText}</Button>
+    <Button href={venue.routes.contact} variant="secondary">{page.finalCta.secondaryCtaText}</Button>
+    <Button href={venue.routes.privateEvents} variant="ghost">{page.finalCta.tertiaryCtaText}</Button>
+  </div>
+</section>

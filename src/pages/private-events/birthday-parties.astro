@@ -1,18 +1,10 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import PageHero from '../../components/PageHero.astro';
-import SplitSection from '../../components/SplitSection.astro';
-import FullBleedBanner from '../../components/FullBleedBanner.astro';
-import Button from '../../components/Button.astro';
-import Eyebrow from '../../components/Eyebrow.astro';
-import TickList from '../../components/TickList.astro';
+import PrivateEventDetail from '../../components/PrivateEventDetail.astro';
+import PrivateEventDetailFinal from '../../components/PrivateEventDetailFinal.astro';
 import ToastEventForm from '../../components/ToastEventForm.astro';
 import { venue } from '../../data/venue';
 import { privateEventBirthdayParties as page } from '../../lib/cms';
-import heroImg from '../../assets/photos/events-crowd-hero.jpg';
-import lifestyleImg from '../../assets/photos/events-group-lifestyle.jpg';
-import rooftopCrowdImg from '../../assets/photos/events-rooftop-crowd.jpg';
-import loungeImg from '../../assets/photos/cabana-lounge-cityview.jpg';
 
 const serviceSchema = {
   "@type": "Service",
@@ -20,169 +12,14 @@ const serviceSchema = {
   "name": "Birthday Party Venue — Coco Cabana Rooftop Bar",
   "description": `Private birthday party venue at ${venue.fullName} — rooftop bar atop ${venue.hotel} in Downtown ${venue.address.city}, CA. Full bar, open air, and a view above the Pacific.`,
   "url": "https://cococabanaoside.com/private-events/birthday-parties",
-  "provider": {
-    "@type": "BarOrPub",
-    "name": venue.fullName,
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": venue.address.street,
-      "addressLocality": venue.address.city,
-      "addressRegion": venue.address.state,
-      "postalCode": venue.address.zip,
-    },
-    "telephone": venue.phone,
-  },
+  "provider": { "@type": "BarOrPub", "name": venue.fullName, "address": { "@type": "PostalAddress", "streetAddress": venue.address.street, "addressLocality": venue.address.city, "addressRegion": venue.address.state, "postalCode": venue.address.zip }, "telephone": venue.phone },
   "areaServed": { "@type": "City", "name": venue.address.city },
 };
 ---
 
-<Layout
-  transparentNav={true}
-  title={page.seoTitle}
-  description={page.seoDescription}
-  extraGraph={[serviceSchema]}
->
-  <PageHero
-    image={heroImg}
-    imageAlt="Coco Cabana rooftop packed with guests at golden hour — full venue energy for a birthday celebration"
-    imagePosition="object-[center_40%]"
-  >
-    <Eyebrow tone="dark">{page.heroEyebrow}</Eyebrow>
-    <h1 class="font-display leading-ultra text-hero uppercase mb-6" set:html={page.heroTitle.replace(/\n/g, '<br />')} />
-    <p class="text-brand-cream/80 leading-relaxed max-w-xl mb-8">{page.heroText}</p>
-    <div class="flex flex-wrap gap-4">
-      <Button href={page.primaryCtaHref} variant="primary">{page.primaryCtaText}</Button>
-      <Button href={venue.phoneHref} variant="ghost">{page.secondaryCtaText}</Button>
-    </div>
-  </PageHero>
-
-  <!-- STATS STRIP -->
-  <section class="bg-brand-charcoal text-brand-cream">
-    <div class="max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-4 divide-x divide-y sm:divide-y-0 divide-brand-cream/10">
-      <div class="px-5 py-8 text-center">
-        <p class="accent-text text-2xl text-brand-pink mb-1">Rooftop</p>
-        <p class="uppercase tracking-stat text-xs text-brand-cream/50">Open Air · 4 Stories Up</p>
-      </div>
-      <div class="px-5 py-8 text-center">
-        <p class="accent-text text-2xl text-brand-pink mb-1">Full Bar</p>
-        <p class="uppercase tracking-stat text-xs text-brand-cream/50">Caribbean Cocktails</p>
-      </div>
-      <div class="px-5 py-8 text-center">
-        <p class="accent-text text-2xl text-brand-pink mb-1">DJ Nights</p>
-        <p class="uppercase tracking-stat text-xs text-brand-cream/50">Fri & Sat · Live Every Weekend</p>
-      </div>
-      <div class="px-5 py-8 text-center">
-        <p class="accent-text text-2xl text-brand-pink mb-1">Downtown</p>
-        <p class="uppercase tracking-stat text-xs text-brand-cream/50">{venue.address.city}, {venue.address.state}</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- THE VENUE -->
-  <SplitSection
-    image={lifestyleImg}
-    imageAlt="Group celebrating on Coco Cabana rooftop with cocktails and the gold pineapple wall"
-    imagePosition="object-[center_40%]"
-    imageLeft={true}
-    tone="light"
-  >
-    <Eyebrow>The Venue</Eyebrow>
-    <h2 class="font-display text-section-xl leading-display uppercase text-brand-charcoal mb-6">Built for Your Night</h2>
-    <div class="mb-8">
-      <TickList items={[
-        'Open-air rooftop above Downtown Oceanside',
-        'Full Caribbean cocktail bar',
-        'Cabana lounge seating and bar top seating',
-        'DJ nights every Friday & Saturday',
-        'Weekend brunch program available',
-        'Four stories above the Pacific coastline',
-      ]} />
-    </div>
-    <p class="text-brand-charcoal/60 leading-relaxed mb-8">
-      Call us or fill out the inquiry form below to talk through your date, group size, and what you're envisioning. Every birthday is different — we'll make it work.
-    </p>
-    <div class="flex flex-wrap gap-4">
-      <Button href="#inquiry-form" variant="primary">Submit an Inquiry</Button>
-      <Button href={venue.phoneHref} variant="secondary">Call to Inquire</Button>
-    </div>
-  </SplitSection>
-
-  <!-- THE SETTING BANNER -->
-  <FullBleedBanner
-    image={rooftopCrowdImg}
-    imageAlt="DJ facing the crowd at Coco Cabana rooftop — palms, open sky, packed venue"
-    imagePosition="object-[center_25%]"
-    gradientDirection="left"
-    minHeight="min-h-[600px] sm:min-h-[680px]"
-  >
-    <Eyebrow tone="dark">The Setting</Eyebrow>
-    <h2 class="font-display leading-display text-section-xl uppercase mb-2">
-      The Rooftop<br />Is Yours
-    </h2>
-    <p class="accent-text text-accent-xl text-brand-pink mb-6">Above Downtown {venue.address.city}</p>
-    <p class="text-brand-cream/80 leading-relaxed mb-8">
-      Four stories above {venue.address.street} — open air, full bar, and a view that turns any birthday into an event worth remembering. DJ nights every Friday and Saturday make it that much better.
-    </p>
-    <Button href="#inquiry-form" variant="primary">Start Planning</Button>
-  </FullBleedBanner>
-
-  <!-- THE LOUNGE SPLIT -->
-  <SplitSection
-    image={loungeImg}
-    imageAlt="Coco Cabana rooftop lounge with pink daybeds, tile wall, and Oceanside city views at dusk"
-    imageLeft={false}
-    tone="dark"
-  >
-    <Eyebrow tone="dark">The Atmosphere</Eyebrow>
-    <h2 class="font-display text-section-xl leading-display uppercase text-brand-cream mb-6">A Setting That Does the Work</h2>
-    <p class="text-brand-cream/70 leading-relaxed mb-6">
-      Palm trees, cabana seating, signature lighting, and the Pacific coastline — the rooftop at {venue.name} handles the ambiance so your crew can just enjoy the night.
-    </p>
-    <p class="text-brand-cream/70 leading-relaxed mb-8">
-      Whether you want a low-key dinner setting or a full rooftop takeover with a DJ, we can put together something that works for your group. Just reach out and we'll talk through the options.
-    </p>
-    <Button href="#inquiry-form" variant="primary">Submit an Inquiry</Button>
-  </SplitSection>
-
-  <!-- HOW IT WORKS -->
-  <section class="bg-brand-cream px-6 sm:px-8 lg:px-12 py-20 sm:py-28">
-    <div class="max-w-2xl mx-auto text-center mb-12">
-      <Eyebrow align="center">The Process</Eyebrow>
-      <h2 class="font-display text-section-xl leading-display uppercase text-brand-charcoal">How It Works</h2>
-    </div>
-    <div class="max-w-4xl mx-auto grid md:grid-cols-3 gap-8">
-      <div class="text-center">
-        <p class="accent-text text-4xl text-brand-pink mb-4">01</p>
-        <h3 class="font-display uppercase tracking-feature text-sm text-brand-charcoal mb-3">Inquire Below</h3>
-        <p class="text-brand-charcoal/60 text-sm leading-relaxed">Fill out the inquiry form with your event date, party size, and any details. Or call us directly at {venue.phone}.</p>
-      </div>
-      <div class="text-center">
-        <p class="accent-text text-4xl text-brand-pink mb-4">02</p>
-        <h3 class="font-display uppercase tracking-feature text-sm text-brand-charcoal mb-3">We Build the Plan</h3>
-        <p class="text-brand-charcoal/60 text-sm leading-relaxed">We'll follow up within 1 business day to confirm availability and put together the details for your night.</p>
-      </div>
-      <div class="text-center">
-        <p class="accent-text text-4xl text-brand-pink mb-4">03</p>
-        <h3 class="font-display uppercase tracking-feature text-sm text-brand-charcoal mb-3">Enjoy the Rooftop</h3>
-        <p class="text-brand-charcoal/60 text-sm leading-relaxed">Show up, settle in, and let the rooftop do the rest. We'll handle everything so you can focus on the birthday.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- INQUIRY FORM -->
+<Layout transparentNav={true} title={page.seoTitle} description={page.seoDescription} extraGraph={[serviceSchema]}>
+  <PrivateEventDetail page={page} />
   <div id="inquiry-form">
     <ToastEventForm tone="dark" />
-  </div>
-
-  <!-- CTA -->
-  <section class="bg-brand-cream px-6 sm:px-8 lg:px-12 py-16 sm:py-20 text-center">
-    <Eyebrow align="center">Prefer to Call?</Eyebrow>
-    <h2 class="font-display text-section-xl leading-display uppercase text-brand-charcoal mb-2">Reach Out Directly</h2>
-    <p class="text-brand-charcoal/60 mb-8">{venue.phone} &middot; {venue.address.street}, {venue.address.city}, {venue.address.state}</p>
-    <div class="flex flex-wrap gap-4 justify-center">
-      <Button href={venue.phoneHref} variant="primary">Call to Inquire</Button>
-      <Button href={venue.routes.contact} variant="secondary">Contact Page</Button>
-      <Button href={venue.routes.privateEvents} variant="ghost">All Private Events</Button>
-    </div>
-  </section>
+  </div> <PrivateEventDetailFinal page={page} />
 </Layout>

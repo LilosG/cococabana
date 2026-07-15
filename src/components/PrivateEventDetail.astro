@@ -1,0 +1,88 @@
+---
+import PageHero from './PageHero.astro';
+import SplitSection from './SplitSection.astro';
+import FullBleedBanner from './FullBleedBanner.astro';
+import Button from './Button.astro';
+import Eyebrow from './Eyebrow.astro';
+import { venue } from '../data/venue';
+import { privateEventBirthdayParties } from '../lib/cms';
+import { getPhoto } from '../utils/images';
+
+interface Props {
+  page: typeof privateEventBirthdayParties;
+}
+
+const { page } = Astro.props;
+
+const statsHtml = (stats: Array<{ value: string; label: string }>) =>
+  stats
+    .map(
+      (stat) =>
+        `<div class="px-5 py-8 text-center"> <p class="accent-text text-2xl text-brand-pink mb-1">${stat.value}</p> <p class="uppercase tracking-stat text-xs text-brand-cream/50">${stat.label}</p> </div>`,
+    )
+    .join(' ');
+const processHtml = (steps: Array<{ number: string; title: string; text: string }>) =>
+  steps
+    .map(
+      (step) =>
+        `<div class="text-center"> <p class="accent-text text-4xl text-brand-pink mb-4">${step.number}</p> <h3 class="font-display uppercase tracking-feature text-sm text-brand-charcoal mb-3">${step.title}</h3> <p class="text-brand-charcoal/60 text-sm leading-relaxed">${step.text}</p> </div>`,
+    )
+    .join(' ');
+const tickListHtml = (items: string[]) =>
+  `<ul class="space-y-3"> ${items
+    .map(
+      (item) =>
+        `<li class="flex items-center gap-3 text-sm"> <span class="block w-4 h-px shrink-0 bg-brand-pink"></span> <span class="text-brand-charcoal/70">${item.replaceAll('&', '&amp;')}</span> </li>`,
+    )
+    .join('')} </ul>`;
+---
+
+<PageHero image={getPhoto(page.heroImage.src)} imageAlt={page.heroImage.alt} imagePosition={page.heroImage.position}>
+  <Eyebrow tone="dark">{page.heroEyebrow}</Eyebrow>
+  <h1 class="font-display leading-ultra text-hero uppercase mb-6" set:html={page.heroTitle.replace(/\n/g, '<br />')} />
+  <p class="text-brand-cream/80 leading-relaxed max-w-xl mb-8">{page.heroText}</p>
+  <div class="flex flex-wrap gap-4">
+    <Button href={page.primaryCtaHref as unknown as string} variant="primary">{page.primaryCtaText}</Button>
+    <Button href={venue.phoneHref} variant="ghost">{page.secondaryCtaText}</Button>
+  </div>
+</PageHero>{' '}
+<section class="bg-brand-charcoal text-brand-cream">
+  <div class="max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-4 divide-x divide-y sm:divide-y-0 divide-brand-cream/10">
+    <Fragment set:html={statsHtml(page.stats)} />
+  </div>
+</section>{' '}
+<SplitSection image={getPhoto(page.sections[0].image)} imageAlt={page.sections[0].imageAlt} imagePosition={page.sections[0].imagePosition} imageLeft={true} tone="light">
+  <Eyebrow>{page.sections[0].eyebrow}</Eyebrow>
+  <h2 class="font-display text-section-xl leading-display uppercase text-brand-charcoal mb-6">{page.sections[0].title}</h2>
+  <div class="mb-8">
+    <Fragment set:html={tickListHtml(page.sections[0].features!)} />
+  </div>
+  <p class="text-brand-charcoal/60 leading-relaxed mb-8" set:html={page.sections[0].text[0]} />
+  <div class="flex flex-wrap gap-4">
+    <Button href="#inquiry-form" variant="primary">{page.sections[0].primaryCtaText}</Button>
+    <Button href={venue.phoneHref} variant="secondary">{page.sections[0].secondaryCtaText}</Button>
+  </div>
+</SplitSection>{' '}
+<FullBleedBanner image={getPhoto(page.sections[1].image)} imageAlt={page.sections[1].imageAlt} imagePosition={page.sections[1].imagePosition} gradientDirection={page.sections[1].gradientDirection as 'left'} minHeight={page.sections[1].minHeight}>
+  <Eyebrow tone="dark">{page.sections[1].eyebrow}</Eyebrow>
+  <h2 class="font-display leading-display text-section-xl uppercase mb-2" set:html={page.sections[1].title} />
+  <p class="accent-text text-accent-xl text-brand-pink mb-6">{page.sections[1].accent}</p>
+  <p class="text-brand-cream/80 leading-relaxed mb-8" set:html={page.sections[1].text[0]} />
+  <Button href="#inquiry-form" variant="primary">{page.sections[1].primaryCtaText}</Button>
+</FullBleedBanner>{' '}
+<SplitSection image={getPhoto(page.sections[2].image)} imageAlt={page.sections[2].imageAlt} imagePosition={page.sections[2].imagePosition} imageLeft={false} tone="dark">
+  <Eyebrow tone="dark">{page.sections[2].eyebrow}</Eyebrow>
+  <h2 class="font-display text-section-xl leading-display uppercase text-brand-cream mb-6">{page.sections[2].title}</h2>
+  <p class="text-brand-cream/70 leading-relaxed mb-6" set:html={page.sections[2].text[0]} />
+  <p class="text-brand-cream/70 leading-relaxed mb-8" set:html={page.sections[2].text[1]} />
+  <Button href="#inquiry-form" variant="primary">{page.sections[2].primaryCtaText}</Button>
+</SplitSection>{' '}
+<section class="bg-brand-cream px-6 sm:px-8 lg:px-12 py-20 sm:py-28">
+  <div class="max-w-2xl mx-auto text-center mb-12">
+    <Eyebrow align="center">{page.process.eyebrow}</Eyebrow>
+    <h2 class="font-display text-section-xl leading-display uppercase text-brand-charcoal">{page.process.title}</h2>
+  </div>
+  <div class="max-w-4xl mx-auto grid md:grid-cols-3 gap-8">
+    <Fragment set:html={processHtml(page.process.steps)} />
+  </div>
+</section>{' '}

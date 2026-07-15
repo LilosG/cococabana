@@ -1,6 +1,20 @@
 {
   "seoTitle": "FAQ | Cococabana Oceanside",
   "seoDescription": "Frequently asked questions about Cococabana in Oceanside.",
+  "heroEyebrow": "",
   "heroTitle": "Frequently Asked Questions",
-  "faqs": []
+  "heroText": "",
+  "primaryCtaText": "",
+  "heroImage": {
+    "src": "/photos/welcome-lounge-tilewall.jpg",
+    "alt": "Coco Cabana rooftop lounge seating with rattan pendants, tile wall, and Oceanside views"
+  },
+  "faqs": [],
+  "finalCta": {
+    "eyebrow": "Ready to Visit?",
+    "title": "\nReserve Your Table\n",
+    "primaryCtaText": "Reserve Now",
+    "secondaryCtaText": "Weekend Brunch",
+    "tertiaryCtaText": "Contact Us"
+  }
 }

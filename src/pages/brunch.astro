@@ -10,10 +10,6 @@ import { venue } from '../data/venue';
 import { brunchFood, brunchDrinks } from '../data/brunch';
 import { getPhoto } from '../utils/images';
 import { brunchPage } from '../lib/cms';
-
-import brunchHeroImg from '../assets/photos/brunch-hero.jpg';
-import brunchMimosasBanner from '../assets/photos/brunch-mimosas-banner.jpg';
-import brunchRooftopBanner from '../assets/photos/brunch-rooftop-banner.jpg';
 ---
 
 <Layout
@@ -22,9 +18,9 @@ import brunchRooftopBanner from '../assets/photos/brunch-rooftop-banner.jpg';
   transparentNav={true}
 >
   <PageHero
-    image={brunchHeroImg}
-    imageAlt="Coco Cabana weekend brunch spread — colorful plates, eggs, French toast on marble table"
-    imagePosition="object-top"
+    image={getPhoto(brunchPage.heroImage.src)}
+    imageAlt={brunchPage.heroImage.alt}
+    imagePosition={brunchPage.heroImage.position}
   >
     <Eyebrow tone="dark">{brunchPage.heroEyebrow}</Eyebrow>
     <h1 class="font-display leading-ultra text-hero uppercase mb-2">{brunchPage.heroTitle}</h1>
@@ -34,7 +30,7 @@ import brunchRooftopBanner from '../assets/photos/brunch-rooftop-banner.jpg';
     </p>
     <div class="flex flex-wrap gap-4">
       <Button href={venue.reservationsUrl} variant="primary" external>{brunchPage.primaryCtaText}</Button>
-      <Button href={brunchPage.secondaryCtaHref} variant="ghost">{brunchPage.secondaryCtaText}</Button>
+      <Button href={brunchPage.secondaryCtaHref as unknown as string} variant="ghost">{brunchPage.secondaryCtaText}</Button>
     </div>
   </PageHero>
 
@@ -42,12 +38,12 @@ import brunchRooftopBanner from '../assets/photos/brunch-rooftop-banner.jpg';
   <section class="bg-brand-charcoal text-brand-cream">
     <div class="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-brand-cream/10">
       <div class="px-6 py-8 text-center">
-        <p class="accent-text text-2xl text-brand-pink mb-1">{venue.brunch.days}</p>
-        <p class="uppercase tracking-stat text-xs text-brand-cream/50">{venue.brunch.hours}</p>
+        <p class="accent-text text-2xl text-brand-pink mb-1">{brunchPage.stats[0].value}</p>
+        <p class="uppercase tracking-stat text-xs text-brand-cream/50">{brunchPage.stats[0].label}</p>
       </div>
       <div class="px-6 py-8 text-center">
-        <p class="accent-text text-2xl text-brand-pink mb-1">Rooftop</p>
-        <p class="uppercase tracking-stat text-xs text-brand-cream/50">{venue.hotel}, {venue.address.city}</p>
+        <p class="accent-text text-2xl text-brand-pink mb-1">{brunchPage.stats[1].value}</p>
+        <p class="uppercase tracking-stat text-xs text-brand-cream/50">{brunchPage.stats[1].label}</p>
       </div>
     </div>
   </section>
@@ -55,11 +51,9 @@ import brunchRooftopBanner from '../assets/photos/brunch-rooftop-banner.jpg';
   <!-- BRUNCH MENU -->
   <section id="brunch-menu" class="bg-brand-cream px-6 sm:px-8 lg:px-12 py-20 sm:py-28">
     <div class="max-w-2xl mx-auto text-center mb-14">
-      <Eyebrow align="center">The Menu</Eyebrow>
-      <h2 class="font-display text-section-xl leading-display uppercase text-brand-charcoal mb-4">Brunch Menu</h2>
-      <p class="text-brand-charcoal/60 leading-relaxed">
-        {venue.brunch.days} &middot; {venue.brunch.hours}
-      </p>
+      <Eyebrow align="center">{brunchPage.sections[0].eyebrow}</Eyebrow>
+      <h2 class="font-display text-section-xl leading-display uppercase text-brand-charcoal mb-4">{brunchPage.sections[0].title}</h2>
+      <p class="text-brand-charcoal/60 leading-relaxed" set:html={brunchPage.sections[0].detail} />
     </div>
 
     <!-- Food -->
@@ -72,8 +66,8 @@ import brunchRooftopBanner from '../assets/photos/brunch-rooftop-banner.jpg';
     <!-- Drinks -->
     <div class="max-w-5xl mx-auto">
       <div class="text-center mb-10">
-        <Eyebrow align="center">The Bar</Eyebrow>
-        <h3 class="font-display text-2xl leading-display uppercase text-brand-charcoal">Mimosas</h3>
+        <Eyebrow align="center">{brunchPage.sections[0].drinksEyebrow}</Eyebrow>
+        <h3 class="font-display text-2xl leading-display uppercase text-brand-charcoal">{brunchPage.sections[0].drinksTitle}</h3>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto">
         {brunchDrinks.map(item => (
@@ -85,46 +79,40 @@ import brunchRooftopBanner from '../assets/photos/brunch-rooftop-banner.jpg';
 
   <!-- MIMOSA BANNER -->
   <FullBleedBanner
-    image={brunchMimosasBanner}
-    imageAlt="Coco Cabana mimosas — Campo Viejo cava flights with copper flamingo on marble table"
-    imagePosition="object-center"
-    minHeight="min-h-[560px] sm:min-h-[620px]"
+    image={getPhoto(brunchPage.mimosaPromo.image)}
+    imageAlt={brunchPage.mimosaPromo.imageAlt}
+    imagePosition={brunchPage.mimosaPromo.imagePosition}
+    minHeight={brunchPage.mimosaPromo.minHeight}
   >
-    <Eyebrow tone="dark">Mimosas</Eyebrow>
-    <h2 class="font-display leading-display text-section-xl uppercase mb-2">
-      Campo Viejo<br />Cava
-    </h2>
-    <p class="accent-text text-accent-xl text-brand-pink mb-6">Mimosa Flights</p>
-    <p class="text-brand-cream/80 leading-relaxed mb-8">
-      Classic, Tropical &amp; Citrus — mimosas made with Campo Viejo cava. Available every {venue.brunch.days} from {venue.brunch.hours}.
-    </p>
-    <Button href={venue.reservationsUrl} variant="primary" external>Reserve Your Table</Button>
+    <Eyebrow tone="dark">{brunchPage.mimosaPromo.eyebrow}</Eyebrow>
+    <h2 class="font-display leading-display text-section-xl uppercase mb-2" set:html={brunchPage.mimosaPromo.title} />
+    <p class="accent-text text-accent-xl text-brand-pink mb-6">{brunchPage.mimosaPromo.accent}</p>
+    <p class="text-brand-cream/80 leading-relaxed mb-8" set:html={brunchPage.mimosaPromo.text} />
+    <Button href={venue.reservationsUrl} variant="primary" external>{brunchPage.mimosaPromo.ctaText}</Button>
   </FullBleedBanner>
 
   <!-- ROOFTOP SPLIT -->
   <SplitSection
-    image={brunchRooftopBanner}
-    imageAlt="Coco Cabana rooftop brunch setup with disco balls, mimosas, and palms"
+    image={getPhoto(brunchPage.rooftopPromo.image)}
+    imageAlt={brunchPage.rooftopPromo.imageAlt}
     imageLeft={true}
     tone="dark"
   >
-    <Eyebrow tone="dark">The Setting</Eyebrow>
-    <h2 class="font-display text-section-xl leading-display uppercase text-brand-cream mb-4">Brunch Above Oceanside</h2>
-    <p class="accent-text text-accent-xl text-brand-pink mb-6">Every Weekend</p>
-    <p class="text-brand-cream/70 leading-relaxed mb-8">
-      There's no better setting for a weekend brunch than four stories above Downtown Oceanside. Disco balls, palm trees, and mimosas — the rooftop is all yours on {venue.brunch.days}.
-    </p>
-    <Button href={venue.reservationsUrl} variant="primary" external>Reserve Now</Button>
+    <Eyebrow tone="dark">{brunchPage.rooftopPromo.eyebrow}</Eyebrow>
+    <h2 class="font-display text-section-xl leading-display uppercase text-brand-cream mb-4">{brunchPage.rooftopPromo.title}</h2>
+    <p class="accent-text text-accent-xl text-brand-pink mb-6">{brunchPage.rooftopPromo.accent}</p>
+    <p class="text-brand-cream/70 leading-relaxed mb-8" set:html={brunchPage.rooftopPromo.text} />
+    <Button href={venue.reservationsUrl} variant="primary" external>{brunchPage.rooftopPromo.ctaText}</Button>
   </SplitSection>
 
   <!-- RESERVE CTA -->
   <section class="bg-brand-charcoal px-6 sm:px-8 lg:px-12 py-16 sm:py-20 text-center">
-    <h2 class="font-display text-section-xl leading-display uppercase text-brand-cream mb-2">Reserve</h2>
-    <p class="accent-text text-accent-xl text-brand-pink mb-6">Your Brunch Table</p>
-    <p class="text-brand-cream/60 mb-8">{venue.brunch.days} &middot; {venue.brunch.hours} &middot; {venue.address.street}, {venue.address.city}</p>
+    <h2 class="font-display text-section-xl leading-display uppercase text-brand-cream mb-2">{brunchPage.reserve.title}</h2>
+    <p class="accent-text text-accent-xl text-brand-pink mb-6">{brunchPage.reserve.accent}</p>
+    <p class="text-brand-cream/60 mb-8" set:html={brunchPage.reserve.detail} />
     <div class="flex flex-wrap gap-4 justify-center">
-      <Button href={venue.reservationsUrl} variant="primary" external>Reserve Now</Button>
-      <Button href={venue.routes.menu} variant="ghost">View Full Menu</Button>
+      <Button href={venue.reservationsUrl} variant="primary" external>{brunchPage.reserve.primaryCtaText}</Button>
+      <Button href={venue.routes.menu} variant="ghost">{brunchPage.reserve.secondaryCtaText}</Button>
     </div>
   </section>
 </Layout>

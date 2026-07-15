@@ -1,7 +1,42 @@
 {
   "seoTitle": "Menu | Cococabana Oceanside",
   "seoDescription": "View Cococabana's food, drinks, cocktails, and brunch menu in Oceanside.",
+  "heroEyebrow": "",
   "heroTitle": "Menu",
   "heroText": "Food, drinks, cocktails, and brunch from the rooftop.",
-  "sections": []
+  "primaryCtaText": "",
+  "heroImage": {
+    "src": "/photos/menu-flamingo-hero.jpg",
+    "alt": "Coco Cabana signature copper flamingo cocktail vessel with rattan pendants and Oceanside rooftop",
+    "position": "object-bottom"
+  },
+  "sections": [
+    {
+      "eyebrow": "The Kitchen",
+      "title": "Food",
+      "text": "\nRooftop plates built to share — Caribbean-influenced and made for the open air.\n"
+    },
+    {
+      "eyebrow": "The Bar",
+      "title": "Cocktails",
+      "text": "\nCaribbean-inspired cocktails crafted from scratch — built for a rooftop above the Pacific.\n",
+      "ctaText": "Reserve a Table"
+    }
+  ],
+  "brunchPromo": {
+    "image": "/photos/brunch-mimosas-banner.jpg",
+    "imageAlt": "Coco Cabana mimosas — Campo Viejo cava flights with copper flamingo on marble table",
+    "imagePosition": "object-center",
+    "minHeight": "min-h-[560px] sm:min-h-[620px]",
+    "eyebrow": "Weekend Brunch",
+    "title": "\nBrunch on<br>the Rooftop\n",
+    "primaryCtaText": "View Brunch Menu",
+    "secondaryCtaText": "Reserve"
+  },
+  "reserve": {
+    "title": "Reserve",
+    "accent": "Your Table",
+    "primaryCtaText": "Reserve Now",
+    "secondaryCtaText": "See the Space"
+  }
 }

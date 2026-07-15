@@ -4,8 +4,153 @@
   "heroEyebrow": "Oceanside Rooftop Restaurant & Bar",
   "heroTitle": "Cococabana",
   "heroText": "Rooftop drinks, brunch, coastal energy, and private events in Oceanside.",
+  "heroSubtitle": "",
   "primaryCtaText": "View Menu",
   "primaryCtaHref": "/menu/",
   "secondaryCtaText": "Plan an Event",
-  "secondaryCtaHref": "/private-events/"
+  "secondaryCtaHref": "/private-events/",
+  "heroImage": {
+    "src": "/photos/hero-aerial.jpg",
+    "alt": "Coco Cabana rooftop bar aerial view over Downtown Oceanside, CA",
+    "position": "w-full h-full object-cover"
+  },
+  "stats": [
+    { "label": "Hours Today", "value": "Thu–Sun", "detail": "Open" },
+    { "label": "Weekend Brunch" },
+    { "label": "DJ Nights" },
+    { "label": "Location", "value": "Oceanside" }
+  ],
+  "welcome": {
+    "image": "/photos/welcome-lounge-tilewall.jpg",
+    "imageAlt": "Coco Cabana rooftop lounge seating with tile wall, rattan pendants, and Oceanside views",
+    "eyebrow": "Oceanside, CA",
+    "title": "\nWhere Oceanside\n",
+    "accent": "Comes to Drink Well",
+    "text": "\nPerched above The Brick Hotel at 408 Pier View Way, Coco Cabana is a\n          rooftop bar built around its own identity — relaxed, elevated, and entirely its own.\n          Stop in for a cocktail, settle in for the evening, or make it the start of a night\n          out in Downtown Oceanside.\n",
+    "primaryCtaText": "Reserve a Table",
+    "secondaryCtaText": "See the Space"
+  },
+  "bar": {
+    "image": "/photos/bar-rooftop-interior.jpg",
+    "imageAlt": "Coco Cabana open-air rooftop bar — marble counter, bar stools, hanging greenery, Oceanside views",
+    "imagePosition": "w-full h-full object-cover object-[center_50%]",
+    "eyebrow": "The Bar",
+    "title": "\nOpen Air.<br>Full Bar.\n",
+    "accent": "Above Pier View Way",
+    "text": "\nCaribbean-inspired cocktails crafted from scratch, cold drafts, and a full bar program\n        under open skies — four stories above Downtown Oceanside.\n",
+    "primaryCtaText": "View the Bar Menu",
+    "secondaryCtaText": "Reserve"
+  },
+  "food": {
+    "eyebrow": "The Kitchen",
+    "title": "Food",
+    "ctaText": "View Full Menu"
+  },
+  "cocktails": {
+    "eyebrow": "The Bar",
+    "title": "Cocktails",
+    "ctaText": "View Full Bar Menu"
+  },
+  "brunch": {
+    "image": "/photos/brunch-mimosas-banner.jpg",
+    "imageAlt": "Coco Cabana mimosas — Campo Viejo cava flights with copper flamingo, marble table, tile wall",
+    "imagePosition": "w-full h-full object-cover object-center",
+    "eyebrow": "Weekend Brunch",
+    "title": "\nBrunch on<br>the Rooftop\n",
+    "primaryCtaText": "View Brunch Menu",
+    "secondaryCtaText": "Reserve"
+  },
+  "view": {
+    "image": "/photos/venue-sunset-view.jpg",
+    "imageAlt": "Sunset viewed from Coco Cabana rooftop through glass railing, palms silhouetted against orange sky",
+    "imagePosition": "absolute inset-0 w-full h-full object-cover object-[center_65%]",
+    "eyebrow": "The Rooftop",
+    "title": "The View",
+    "accent": "Above It All",
+    "text": "\nFour stories above Downtown Oceanside, the views stretch past the rooftops and palm\n          canopy all the way to the Pacific. Sunsets here are something else entirely — settle\n          in early and watch the sky change over the water.\n",
+    "ctaText": "Explore the Venue"
+  },
+  "cabana": {
+    "image": "/photos/cabana-lounge-cityview.jpg",
+    "imageAlt": "Coco Cabana lounge area with pink daybeds, geometric tile wall, and Oceanside city views",
+    "imagePosition": "absolute inset-0 w-full h-full object-cover object-center",
+    "eyebrow": "The Cabana",
+    "title": "Lounge Seating",
+    "accent": "Stay a While",
+    "text": "\nThe cabana's signature lounge seating is designed for settling in. Rattan pendants\n          overhead, geometric tile walls, pink daybeds, and unobstructed views of the Oceanside\n          skyline — this is the corner of the rooftop you'll want to claim early.\n",
+    "ctaText": "Reserve Your Spot"
+  },
+  "liveMusic": {
+    "image": "/photos/live-music-dj.jpg",
+    "imageAlt": "DJ set at Coco Cabana with crowd on the rooftop",
+    "imagePosition": "w-full h-full object-cover object-[center_30%]",
+    "eyebrow": "Live Music & Events",
+    "title": "\nDJ Fridays<br>&amp; Saturdays\n",
+    "accent": "Every Weekend",
+    "text": "\nLive DJ sets every Friday and Saturday night. The rooftop transforms after dark —\n        cocktails, open air, and the Oceanside skyline as your backdrop.\n",
+    "ctaText": "Reserve for the Night"
+  },
+  "atmosphere": {
+    "eyebrow": "Atmosphere",
+    "title": "The Details",
+    "gallery": [
+      {
+        "src": "/photos/details-neon-night.jpg",
+        "alt": "Neon pink palm tree sign glowing at Coco Cabana rooftop at night with guest below",
+        "class": "w-full h-full object-cover object-[center_75%]"
+      },
+      {
+        "src": "/photos/details-flamingo-taps.jpg",
+        "alt": "Copper flamingo draft tap handles at Coco Cabana bar",
+        "class": "w-full h-full object-cover object-center"
+      },
+      {
+        "src": "/photos/details-coconut-cups.jpg",
+        "alt": "Coco Cabana branded coconut cups with copper flamingo vessel",
+        "class": "w-full h-full object-cover object-center"
+      },
+      {
+        "src": "/photos/details-pendant-interior.jpg",
+        "alt": "Coco Cabana cabana interior with rattan pendant lamps and tropical plants",
+        "class": "w-full h-full object-cover object-[center_40%]"
+      },
+      {
+        "src": "/photos/details-ursula-cocktail.jpg",
+        "alt": "Coco Cabana cocktail in front of the illuminated gold pineapple wall display",
+        "class": "w-full h-full object-cover object-[center_30%]"
+      }
+    ]
+  },
+  "privateEvents": {
+    "image": "/photos/events-group-lifestyle.jpg",
+    "imageAlt": "Group celebrating at Coco Cabana rooftop bar with cocktails and the gold pineapple wall backdrop",
+    "imagePosition": "absolute inset-0 w-full h-full object-cover object-[center_40%]",
+    "eyebrow": "Private Events",
+    "title": "Private Events",
+    "accent": "in Downtown Oceanside",
+    "text": "\nFrom birthdays to celebrations, Coco Cabana sets the scene for a night to remember.\n          Reach out to start planning.\n",
+    "features": [
+      "Birthday Parties",
+      "Celebrations & Milestones",
+      "Corporate Gatherings",
+      "Rehearsal Dinners"
+    ],
+    "ctaText": "Inquire About Events"
+  },
+  "visit": {
+    "eyebrow": "Visit",
+    "title": "Find Us",
+    "accent": "in Downtown Oceanside",
+    "addressLabel": "Address",
+    "callLabel": "Call",
+    "hoursLabel": "Hours",
+    "reserveCtaText": "Reserve a Table",
+    "directionsCtaText": "Get Directions",
+    "faqCtaText": "Have questions? See our FAQ →"
+  },
+  "reserve": {
+    "title": "Reserve",
+    "accent": "Your Table",
+    "ctaText": "Reserve Now"
+  }
 }

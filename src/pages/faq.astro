@@ -5,8 +5,8 @@ import Eyebrow from '../components/Eyebrow.astro';
 import Button from '../components/Button.astro';
 import { venue } from '../data/venue';
 import { faqs } from '../data/faqs';
-import heroImg from '../assets/photos/welcome-lounge-tilewall.jpg';
 import { faqPage } from '../lib/cms';
+import { getPhoto } from '../utils/images';
 
 const faqSchema = {
   "@type": "FAQPage",
@@ -30,8 +30,8 @@ const faqSchema = {
   extraGraph={[faqSchema]}
 >
   <PageHero
-    image={heroImg}
-    imageAlt="Coco Cabana rooftop lounge seating with rattan pendants, tile wall, and Oceanside views"
+    image={getPhoto(faqPage.heroImage.src)}
+    imageAlt={faqPage.heroImage.alt}
   >
     <Eyebrow tone="dark">{faqPage.heroEyebrow}</Eyebrow>
     <h1 class="font-display leading-ultra text-hero uppercase mb-6">{faqPage.heroTitle}</h1>
@@ -55,14 +55,12 @@ const faqSchema = {
 
   <!-- CTA -->
   <section class="bg-brand-charcoal px-6 sm:px-8 lg:px-12 py-16 sm:py-20 text-center">
-    <Eyebrow align="center" tone="dark">Ready to Visit?</Eyebrow>
-    <h2 class="font-display text-section-xl leading-display uppercase text-brand-cream mb-8">
-      Reserve Your Table
-    </h2>
+    <Eyebrow align="center" tone="dark">{faqPage.finalCta.eyebrow}</Eyebrow>
+    <h2 class="font-display text-section-xl leading-display uppercase text-brand-cream mb-8">{faqPage.finalCta.title}</h2>
     <div class="flex flex-wrap gap-4 justify-center">
-      <Button href={venue.reservationsUrl} variant="primary" external>Reserve Now</Button>
-      <Button href={venue.routes.brunch} variant="ghost">Weekend Brunch</Button>
-      <Button href={venue.routes.contact} variant="ghost">Contact Us</Button>
+      <Button href={venue.reservationsUrl} variant="primary" external>{faqPage.finalCta.primaryCtaText}</Button>
+      <Button href={venue.routes.brunch} variant="ghost">{faqPage.finalCta.secondaryCtaText}</Button>
+      <Button href={venue.routes.contact} variant="ghost">{faqPage.finalCta.tertiaryCtaText}</Button>
     </div>
   </section>
 </Layout>
