@@ -38,16 +38,19 @@
     {
       "name": "Mimosa Flight",
       "description": "Campo Viejo Cava · Classic, Tropical & Citrus",
+      "image": "/photos/brunchData/brunchDrinks/0/image.jpg",
       "imageAlt": "Three Campo Viejo cava mimosa flutes — classic, tropical and citrus varieties"
     },
     {
       "name": "Campo Viejo Cava",
       "description": "Mimosa Flight · While You Dine",
+      "image": "/photos/brunchData/brunchDrinks/1/image.jpg",
       "imageAlt": "Campo Viejo cava bottles with mimosa flight on marble table with flamingo and tropical plants"
     },
     {
       "name": "The Signature",
       "description": "Coco Cabana coconut cups — the rooftop signature",
+      "image": "/photos/brunchData/brunchDrinks/2/image.jpg",
       "imageAlt": "Coco Cabana branded coconut cups with copper flamingo vessel and colorful straws"
     }
   ]
