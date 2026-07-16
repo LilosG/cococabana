@@ -1,12 +1,9 @@
 {
   "seoTitle": "FAQ | Cococabana Oceanside",
   "seoDescription": "Frequently asked questions about Cococabana in Oceanside.",
-  "heroEyebrow": "",
   "heroTitle": "Frequently Asked Questions",
-  "heroText": "",
-  "primaryCtaText": "",
   "heroImage": {
-    "src": "/photos/welcome/image.jpg",
+    "src": "/photos/heroImage/src.jpg",
     "alt": "Coco Cabana rooftop lounge seating with rattan pendants, tile wall, and Oceanside views"
   },
   "faqs": [],
