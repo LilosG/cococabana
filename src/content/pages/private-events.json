@@ -1,23 +1,30 @@
 {
   "seoTitle": "Private Events | Cococabana Oceanside",
   "seoDescription": "Host private events, celebrations, corporate events, birthday parties, and rehearsal dinners at Cococabana in Oceanside.",
-  "heroEyebrow": "",
   "heroTitle": "Private Events",
   "heroText": "Plan a rooftop event with food, drinks, views, and a coastal Oceanside backdrop.",
-  "primaryCtaText": "",
-  "primaryCtaHref": null,
-  "secondaryCtaText": "",
-  "secondaryCtaHref": null,
   "heroImage": {
     "src": "/photos/privateEventsPage/heroImage/src.jpg",
     "alt": "Coco Cabana rooftop packed with guests at golden hour — bartender at full venue",
     "position": "object-[center_40%]"
   },
   "stats": [
-    { "value": "Rooftop", "label": "Exclusive Venue" },
-    { "value": "Full Bar", "label": "Caribbean Cocktails" },
-    { "value": "Downtown", "label": "Oceanside, CA" },
-    { "value": "Open Air", "label": "4 Stories Up" }
+    {
+      "value": "Rooftop",
+      "label": "Exclusive Venue"
+    },
+    {
+      "value": "Full Bar",
+      "label": "Caribbean Cocktails"
+    },
+    {
+      "value": "Downtown",
+      "label": "Oceanside, CA"
+    },
+    {
+      "value": "Open Air",
+      "label": "4 Stories Up"
+    }
   ],
   "eventTypes": [
     {
@@ -58,7 +65,7 @@
     "eyebrow": "What We Host",
     "title": "Built for the Occasion",
     "text": "\nCall us directly to discuss availability, capacity, and what we can put together for your event. Every event is different — we'll make it work.\n",
-    "ctaText": "Call to Inquire"
+    "ctaText": "email to Inquire"
   },
   "eventGrid": {
     "eyebrow": "The Occasions",
