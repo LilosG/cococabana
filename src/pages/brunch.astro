@@ -18,7 +18,7 @@ import { brunchPage } from '../lib/cms';
   transparentNav={true}
 >
   <PageHero
-    image={getPhoto(brunchPage.heroImage.src)}
+    image={brunchPage.heroImage.src?.trim() ? getPhoto(brunchPage.heroImage.src) : undefined}
     imageAlt={brunchPage.heroImage.alt}
     imagePosition={brunchPage.heroImage.position}
   >
@@ -59,7 +59,7 @@ import { brunchPage } from '../lib/cms';
     <!-- Food -->
     <div class="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-20">
       {brunchFood.map(item => (
-        <MenuCard name={item.name} image={item.image ? getPhoto(item.image) : undefined} imageAlt={item.imageAlt} imagePosition={item.imagePosition} category="food" />
+        <MenuCard name={item.name} image={item.image?.trim() ? getPhoto(item.image) : undefined} imageAlt={item.imageAlt} imagePosition={item.imagePosition} category="food" />
       ))}
     </div>
 
@@ -71,7 +71,7 @@ import { brunchPage } from '../lib/cms';
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto">
         {brunchDrinks.map(item => (
-          <MenuCard name={item.name} image={item.image ? getPhoto(item.image) : undefined} imageAlt={item.imageAlt} description={item.description} category="drinks" />
+          <MenuCard name={item.name} image={item.image?.trim() ? getPhoto(item.image) : undefined} imageAlt={item.imageAlt} description={item.description} category="drinks" />
         ))}
       </div>
     </div>
@@ -79,7 +79,7 @@ import { brunchPage } from '../lib/cms';
 
   <!-- MIMOSA BANNER -->
   <FullBleedBanner
-    image={getPhoto(brunchPage.mimosaPromo.image)}
+    image={brunchPage.mimosaPromo.image?.trim() ? getPhoto(brunchPage.mimosaPromo.image) : undefined}
     imageAlt={brunchPage.mimosaPromo.imageAlt}
     imagePosition={brunchPage.mimosaPromo.imagePosition}
     minHeight={brunchPage.mimosaPromo.minHeight}
@@ -93,7 +93,7 @@ import { brunchPage } from '../lib/cms';
 
   <!-- ROOFTOP SPLIT -->
   <SplitSection
-    image={getPhoto(brunchPage.rooftopPromo.image)}
+    image={brunchPage.rooftopPromo.image?.trim() ? getPhoto(brunchPage.rooftopPromo.image) : undefined}
     imageAlt={brunchPage.rooftopPromo.imageAlt}
     imageLeft={true}
     tone="dark"

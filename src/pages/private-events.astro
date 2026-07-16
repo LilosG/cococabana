@@ -36,7 +36,7 @@ const processHtml = (steps: Array<{ number: string; title: string; text: string 
   description={privateEventsPage.seoDescription}
 >
   <PageHero
-    image={getPhoto(privateEventsPage.heroImage.src)}
+    image={privateEventsPage.heroImage.src?.trim() ? getPhoto(privateEventsPage.heroImage.src) : undefined}
     imageAlt={privateEventsPage.heroImage.alt}
     imagePosition={privateEventsPage.heroImage.position}
   >
@@ -59,7 +59,7 @@ const processHtml = (steps: Array<{ number: string; title: string; text: string 
   <!-- WHAT WE HOST SPLIT -->
   <SplitSection
     id="what-we-host"
-    image={getPhoto(privateEventsPage.whatWeHost.image)}
+    image={privateEventsPage.whatWeHost.image?.trim() ? getPhoto(privateEventsPage.whatWeHost.image) : undefined}
     imageAlt={privateEventsPage.whatWeHost.imageAlt}
     imagePosition={privateEventsPage.whatWeHost.imagePosition}
     imageLeft={true}
@@ -83,7 +83,7 @@ const processHtml = (steps: Array<{ number: string; title: string; text: string 
     <div class="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
       {privateEvents.map(event => (
         <EventCard
-          image={getPhoto(event.image)}
+          image={event.image?.trim() ? getPhoto(event.image) : undefined}
           imageAlt={event.imageAlt}
           imagePosition={event.imagePosition}
           category={event.category}
@@ -98,7 +98,7 @@ const processHtml = (steps: Array<{ number: string; title: string; text: string 
 
   <!-- ATMOSPHERE BANNER -->
   <FullBleedBanner
-    image={getPhoto(privateEventsPage.setting.image)}
+    image={privateEventsPage.setting.image?.trim() ? getPhoto(privateEventsPage.setting.image) : undefined}
     imageAlt={privateEventsPage.setting.imageAlt}
     imagePosition={privateEventsPage.setting.imagePosition}
     gradientDirection={privateEventsPage.setting.gradientDirection as 'left'}

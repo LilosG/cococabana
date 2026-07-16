@@ -4,7 +4,7 @@ import type { ImageMetadata } from 'astro';
 
 interface Props {
   id?: string;
-  image: ImageMetadata;
+  image?: ImageMetadata;
   imageAlt: string;
   imagePosition?: string;
   tone?: 'light' | 'dark' | 'navy';
@@ -32,12 +32,14 @@ const bgClass = {
 <section {id} class:list={[bgClass, 'overflow-hidden']}>
   <div class:list={['max-w-7xl mx-auto grid md:grid-cols-[3fr_2fr] items-stretch', minHeight]}>
     <div class:list={['relative min-h-[380px] md:min-h-0', imageLeft ? 'md:order-1' : 'md:order-2']}>
-      <Image
-        src={image}
-        alt={imageAlt}
-        loading="lazy"
-        class:list={['absolute inset-0 w-full h-full object-cover', imagePosition]}
-      />
+      {image && (
+        <Image
+          src={image}
+          alt={imageAlt}
+          loading="lazy"
+          class:list={['absolute inset-0 w-full h-full object-cover', imagePosition]}
+        />
+      )}
     </div>
     <div class:list={[
       'px-8 sm:px-10 lg:px-14 py-16 sm:py-20 flex flex-col justify-center',

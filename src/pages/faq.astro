@@ -30,7 +30,7 @@ const faqSchema = {
   extraGraph={[faqSchema]}
 >
   <PageHero
-    image={getPhoto(faqPage.heroImage.src)}
+    image={faqPage.heroImage.src?.trim() ? getPhoto(faqPage.heroImage.src) : undefined}
     imageAlt={faqPage.heroImage.alt}
   >
     <Eyebrow tone="dark">{faqPage.heroEyebrow}</Eyebrow>

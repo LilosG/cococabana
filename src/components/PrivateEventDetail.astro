@@ -37,7 +37,7 @@ const tickListHtml = (items: string[]) =>
     .join('')} </ul>`;
 ---
 
-<PageHero image={getPhoto(page.heroImage.src)} imageAlt={page.heroImage.alt} imagePosition={page.heroImage.position}>
+<PageHero image={page.heroImage.src?.trim() ? getPhoto(page.heroImage.src) : undefined} imageAlt={page.heroImage.alt} imagePosition={page.heroImage.position}>
   <Eyebrow tone="dark">{page.heroEyebrow}</Eyebrow>
   <h1 class="font-display leading-ultra text-hero uppercase mb-6" set:html={page.heroTitle.replace(/\n/g, '<br />')} />
   <p class="text-brand-cream/80 leading-relaxed max-w-xl mb-8">{page.heroText}</p>
@@ -51,7 +51,7 @@ const tickListHtml = (items: string[]) =>
     <Fragment set:html={statsHtml(page.stats)} />
   </div>
 </section>{' '}
-<SplitSection image={getPhoto(page.sections[0].image)} imageAlt={page.sections[0].imageAlt} imagePosition={page.sections[0].imagePosition} imageLeft={true} tone="light">
+<SplitSection image={page.sections[0].image?.trim() ? getPhoto(page.sections[0].image) : undefined} imageAlt={page.sections[0].imageAlt} imagePosition={page.sections[0].imagePosition} imageLeft={true} tone="light">
   <Eyebrow>{page.sections[0].eyebrow}</Eyebrow>
   <h2 class="font-display text-section-xl leading-display uppercase text-brand-charcoal mb-6">{page.sections[0].title}</h2>
   <div class="mb-8">
@@ -63,14 +63,14 @@ const tickListHtml = (items: string[]) =>
     <Button href={venue.phoneHref} variant="secondary">{page.sections[0].secondaryCtaText}</Button>
   </div>
 </SplitSection>{' '}
-<FullBleedBanner image={getPhoto(page.sections[1].image)} imageAlt={page.sections[1].imageAlt} imagePosition={page.sections[1].imagePosition} gradientDirection={page.sections[1].gradientDirection as 'left'} minHeight={page.sections[1].minHeight}>
+<FullBleedBanner image={page.sections[1].image?.trim() ? getPhoto(page.sections[1].image) : undefined} imageAlt={page.sections[1].imageAlt} imagePosition={page.sections[1].imagePosition} gradientDirection={page.sections[1].gradientDirection as 'left'} minHeight={page.sections[1].minHeight}>
   <Eyebrow tone="dark">{page.sections[1].eyebrow}</Eyebrow>
   <h2 class="font-display leading-display text-section-xl uppercase mb-2" set:html={page.sections[1].title} />
   <p class="accent-text text-accent-xl text-brand-pink mb-6">{page.sections[1].accent}</p>
   <p class="text-brand-cream/80 leading-relaxed mb-8" set:html={page.sections[1].text[0]} />
   <Button href="#inquiry-form" variant="primary">{page.sections[1].primaryCtaText}</Button>
 </FullBleedBanner>{' '}
-<SplitSection image={getPhoto(page.sections[2].image)} imageAlt={page.sections[2].imageAlt} imagePosition={page.sections[2].imagePosition} imageLeft={false} tone="dark">
+<SplitSection image={page.sections[2].image?.trim() ? getPhoto(page.sections[2].image) : undefined} imageAlt={page.sections[2].imageAlt} imagePosition={page.sections[2].imagePosition} imageLeft={false} tone="dark">
   <Eyebrow tone="dark">{page.sections[2].eyebrow}</Eyebrow>
   <h2 class="font-display text-section-xl leading-display uppercase text-brand-cream mb-6">{page.sections[2].title}</h2>
   <p class="text-brand-cream/70 leading-relaxed mb-6" set:html={page.sections[2].text[0]} />

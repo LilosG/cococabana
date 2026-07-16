@@ -15,7 +15,7 @@ import { getPhoto } from '../utils/images';
   description={contactPage.seoDescription}
 >
   <PageHero
-    image={getPhoto(contactPage.heroImage.src)}
+    image={contactPage.heroImage.src?.trim() ? getPhoto(contactPage.heroImage.src) : undefined}
     imageAlt={contactPage.heroImage.alt}
   >
     <Eyebrow tone="dark">{contactPage.heroEyebrow}</Eyebrow>

@@ -39,7 +39,7 @@ const cocktailsSection = menuSections.find(s => s.id === 'cocktails')!;
   extraGraph={[menuSchema]}
 >
   <PageHero
-    image={getPhoto(menuPage.heroImage.src)}
+    image={menuPage.heroImage.src?.trim() ? getPhoto(menuPage.heroImage.src) : undefined}
     imageAlt={menuPage.heroImage.alt}
     imagePosition={menuPage.heroImage.position}
   >
@@ -61,7 +61,7 @@ const cocktailsSection = menuSections.find(s => s.id === 'cocktails')!;
         <MenuCard
           name={item.name}
           description={item.description}
-          image={getPhoto(item.image)}
+          image={item.image?.trim() ? getPhoto(item.image) : undefined}
           imageAlt={item.imageAlt}
           imagePosition={item.imagePosition}
           category={foodSection.category}
@@ -83,7 +83,7 @@ const cocktailsSection = menuSections.find(s => s.id === 'cocktails')!;
         <MenuCard
           name={item.name}
           description={item.description}
-          image={getPhoto(item.image)}
+          image={item.image?.trim() ? getPhoto(item.image) : undefined}
           imageAlt={item.imageAlt}
           imagePosition={item.imagePosition}
           category={cocktailsSection.category}
@@ -98,7 +98,7 @@ const cocktailsSection = menuSections.find(s => s.id === 'cocktails')!;
 
   <!-- BRUNCH CALLOUT BANNER -->
   <FullBleedBanner
-    image={getPhoto(menuPage.brunchPromo.image)}
+    image={menuPage.brunchPromo.image?.trim() ? getPhoto(menuPage.brunchPromo.image) : undefined}
     imageAlt={menuPage.brunchPromo.imageAlt}
     imagePosition={menuPage.brunchPromo.imagePosition}
     minHeight={menuPage.brunchPromo.minHeight}

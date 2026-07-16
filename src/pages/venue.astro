@@ -18,6 +18,10 @@ const statsHtml = (stats: Array<{ value: string; label: string }>) =>
         `<div class="px-5 py-8 text-center"> <p class="accent-text text-2xl text-brand-pink mb-1">${stat.value}</p> <p class="uppercase tracking-stat text-xs text-brand-cream/50">${stat.label}</p> </div>`,
     )
     .join(' ');
+const galleryImages = venuePage.gallery.images.map((image) => ({
+  ...image,
+  resolved: image.src?.trim() ? getPhoto(image.src) : undefined,
+}));
 ---
 
 <Layout
@@ -26,7 +30,7 @@ const statsHtml = (stats: Array<{ value: string; label: string }>) =>
   description={venuePage.seoDescription}
 >
   <PageHero
-    image={getPhoto(venuePage.heroImage.src)}
+    image={venuePage.heroImage.src?.trim() ? getPhoto(venuePage.heroImage.src) : undefined}
     imageAlt={venuePage.heroImage.alt}
   >
     <Eyebrow tone="dark">{venuePage.heroEyebrow}</Eyebrow>
@@ -47,7 +51,7 @@ const statsHtml = (stats: Array<{ value: string; label: string }>) =>
 
   <!-- THE ROOFTOP -->
   <SplitSection
-    image={getPhoto(venuePage.sections[0].image)}
+    image={venuePage.sections[0].image?.trim() ? getPhoto(venuePage.sections[0].image) : undefined}
     imageAlt={venuePage.sections[0].imageAlt}
     imageLeft={true}
     tone="light"
@@ -61,7 +65,7 @@ const statsHtml = (stats: Array<{ value: string; label: string }>) =>
 
   <!-- THE CABANA — full-bleed banner -->
   <FullBleedBanner
-    image={getPhoto(venuePage.sections[1].image)}
+    image={venuePage.sections[1].image?.trim() ? getPhoto(venuePage.sections[1].image) : undefined}
     imageAlt={venuePage.sections[1].imageAlt}
     imagePosition={venuePage.sections[1].imagePosition}
     minHeight={venuePage.sections[1].minHeight}
@@ -77,7 +81,7 @@ const statsHtml = (stats: Array<{ value: string; label: string }>) =>
 
   <!-- THE VIEW -->
   <SplitSection
-    image={getPhoto(venuePage.sections[2].image)}
+    image={venuePage.sections[2].image?.trim() ? getPhoto(venuePage.sections[2].image) : undefined}
     imageAlt={venuePage.sections[2].imageAlt}
     imagePosition={venuePage.sections[2].imagePosition}
     imageLeft={false}
@@ -92,7 +96,7 @@ const statsHtml = (stats: Array<{ value: string; label: string }>) =>
 
   <!-- LIVE MUSIC — full-bleed banner -->
   <FullBleedBanner
-    image={getPhoto(venuePage.sections[3].image)}
+    image={venuePage.sections[3].image?.trim() ? getPhoto(venuePage.sections[3].image) : undefined}
     imageAlt={venuePage.sections[3].imageAlt}
     imagePosition={venuePage.sections[3].imagePosition}
     minHeight={venuePage.sections[3].minHeight}
@@ -111,24 +115,13 @@ const statsHtml = (stats: Array<{ value: string; label: string }>) =>
       <h2 class="font-display text-section-xl leading-display uppercase text-brand-charcoal">{venuePage.gallery.title}</h2>
     </div>
     <div class="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
-      <div class="overflow-hidden aspect-square">
-        <Image src={getPhoto(venuePage.gallery.images[0].src)} alt={venuePage.gallery.images[0].alt} loading="lazy" class={venuePage.gallery.images[0].position} />
-      </div>
-      <div class="overflow-hidden aspect-square">
-        <Image src={getPhoto(venuePage.gallery.images[1].src)} alt={venuePage.gallery.images[1].alt} loading="lazy" class={venuePage.gallery.images[1].position} />
-      </div>
-      <div class="overflow-hidden aspect-square">
-        <Image src={getPhoto(venuePage.gallery.images[2].src)} alt={venuePage.gallery.images[2].alt} loading="lazy" class={venuePage.gallery.images[2].position} />
-      </div>
-      <div class="overflow-hidden aspect-square">
-        <Image src={getPhoto(venuePage.gallery.images[3].src)} alt={venuePage.gallery.images[3].alt} loading="lazy" class={venuePage.gallery.images[3].position} />
-      </div>
-      <div class="overflow-hidden aspect-square">
-        <Image src={getPhoto(venuePage.gallery.images[4].src)} alt={venuePage.gallery.images[4].alt} loading="lazy" class={venuePage.gallery.images[4].position} />
-      </div>
-      <div class="overflow-hidden aspect-square">
-        <Image src={getPhoto(venuePage.gallery.images[5].src)} alt={venuePage.gallery.images[5].alt} loading="lazy" class={venuePage.gallery.images[5].position} />
-      </div>
+      {galleryImages.slice(0, 6).map((image) => (
+        <div class="overflow-hidden aspect-square">
+          {image.resolved && (
+            <Image src={image.resolved} alt={image.alt} loading="lazy" class={image.position} />
+          )}
+        </div>
+      ))}
     </div>
   </section>
 
