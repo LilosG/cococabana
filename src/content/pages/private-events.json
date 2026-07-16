@@ -9,7 +9,7 @@
   "secondaryCtaText": "",
   "secondaryCtaHref": null,
   "heroImage": {
-    "src": "/photos/events-crowd-hero.jpg",
+    "src": "/photos/privateEventsPage/heroImage/src.jpg",
     "alt": "Coco Cabana rooftop packed with guests at golden hour — bartender at full venue",
     "position": "object-[center_40%]"
   },
@@ -52,7 +52,7 @@
     }
   ],
   "whatWeHost": {
-    "image": "/photos/privateEvents/image.jpg",
+    "image": "/photos/privateEventsPage/whatWeHost/image.jpg",
     "imageAlt": "Group celebrating at Coco Cabana rooftop with cocktails and the gold pineapple wall",
     "imagePosition": "object-[center_40%]",
     "eyebrow": "What We Host",
@@ -65,7 +65,7 @@
     "title": "Every Reason to Celebrate"
   },
   "setting": {
-    "image": "/photos/events-rooftop-crowd.jpg",
+    "image": "/photos/privateEventsPage/setting/image.jpg",
     "imageAlt": "DJ facing the crowd at Coco Cabana rooftop — palms, open sky, packed venue",
     "imagePosition": "object-[center_25%]",
     "gradientDirection": "left",

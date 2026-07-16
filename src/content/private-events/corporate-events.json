@@ -9,7 +9,7 @@
   "primaryCtaHref": null,
   "secondaryCtaText": "",
   "heroImage": {
-    "src": "/photos/liveMusic/image.jpg",
+    "src": "/photos/privateEventPages/corporate-events/heroImage/src.jpg",
     "alt": "DJ set at Coco Cabana rooftop with crowd and palm trees at golden hour",
     "position": "object-[center_30%]"
   },
@@ -36,7 +36,7 @@
       ],
       "primaryCtaText": "Submit an Inquiry",
       "secondaryCtaText": "Call to Inquire",
-      "image": "/photos/events-rooftop-crowd.jpg",
+      "image": "/photos/privateEventPages/corporate-events/sections/0/image.jpg",
       "imageAlt": "Packed Coco Cabana rooftop at golden hour — full venue energy",
       "imagePosition": "object-[center_25%]"
     },
@@ -48,7 +48,7 @@
         "\nFour stories above 408 Pier View Way — open air, full bar, and a setting that lets the venue make the statement so you don't have to.\n"
       ],
       "primaryCtaText": "Start Planning",
-      "image": "/photos/events-crowd-hero.jpg",
+      "image": "/photos/privateEventPages/corporate-events/sections/1/image.jpg",
       "imageAlt": "Coco Cabana rooftop packed with guests at golden hour — bartender at full venue",
       "imagePosition": "object-[center_40%]",
       "gradientDirection": "left",
@@ -62,7 +62,7 @@
         "\nWhether you're entertaining a client group, celebrating a team milestone, or activating a brand in front of the right crowd — we can build the event around what you need. Reach out and we'll talk through the options.\n"
       ],
       "primaryCtaText": "Submit an Inquiry",
-      "image": "/photos/welcome/image.jpg",
+      "image": "/photos/privateEventPages/corporate-events/sections/2/image.jpg",
       "imageAlt": "Coco Cabana rooftop lounge seating with rattan pendants, tile wall, and Oceanside views",
       "imagePosition": "object-center"
     }

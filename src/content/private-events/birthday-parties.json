@@ -9,7 +9,7 @@
   "primaryCtaHref": null,
   "secondaryCtaText": "",
   "heroImage": {
-    "src": "/photos/events-crowd-hero.jpg",
+    "src": "/photos/privateEventPages/birthday-parties/heroImage/src.jpg",
     "alt": "Coco Cabana rooftop packed with guests at golden hour — full venue energy for a birthday celebration",
     "position": "object-[center_40%]"
   },
@@ -36,7 +36,7 @@
       ],
       "primaryCtaText": "Submit an Inquiry",
       "secondaryCtaText": "Call to Inquire",
-      "image": "/photos/privateEvents/image.jpg",
+      "image": "/photos/privateEventPages/birthday-parties/sections/0/image.jpg",
       "imageAlt": "Group celebrating on Coco Cabana rooftop with cocktails and the gold pineapple wall",
       "imagePosition": "object-[center_40%]"
     },
@@ -48,7 +48,7 @@
         "\nFour stories above 408 Pier View Way — open air, full bar, and a view that turns any birthday into an event worth remembering. DJ nights every Friday and Saturday make it that much better.\n"
       ],
       "primaryCtaText": "Start Planning",
-      "image": "/photos/events-rooftop-crowd.jpg",
+      "image": "/photos/privateEventPages/birthday-parties/sections/1/image.jpg",
       "imageAlt": "DJ facing the crowd at Coco Cabana rooftop — palms, open sky, packed venue",
       "imagePosition": "object-[center_25%]",
       "gradientDirection": "left",
@@ -62,7 +62,7 @@
         "\nWhether you want a low-key dinner setting or a full rooftop takeover with a DJ, we can put together something that works for your group. Just reach out and we'll talk through the options.\n"
       ],
       "primaryCtaText": "Submit an Inquiry",
-      "image": "/photos/cabana/image.jpg",
+      "image": "/photos/privateEventPages/birthday-parties/sections/2/image.jpg",
       "imageAlt": "Coco Cabana rooftop lounge with pink daybeds, tile wall, and Oceanside city views at dusk",
       "imagePosition": "object-center"
     }

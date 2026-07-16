@@ -8,35 +8,35 @@
       "items": [
         {
           "name": "Wings",
-          "image": "/photos/food/wings.jpg",
+          "image": "/photos/menuData/menuSections/0/items/0/image.jpg",
           "imageAlt": "Crispy fried wings at Coco Cabana"
         },
         {
           "name": "Spicy Chicken Bowl",
-          "image": "/photos/food/spicy-chicken-bowl.jpg",
+          "image": "/photos/menuData/menuSections/0/items/1/image.jpg",
           "imageAlt": "Spicy chicken bowl with rice and broccolini",
           "imagePosition": "object-[center_80%]"
         },
         {
           "name": "Hawaiian Cubano",
-          "image": "/photos/food/hawaiian-cubano.jpg",
+          "image": "/photos/menuData/menuSections/0/items/2/image.jpg",
           "imageAlt": "Hawaiian Cubano sandwich with fries",
           "imagePosition": "object-[center_75%]"
         },
         {
           "name": "Coconut Shrimp",
-          "image": "/photos/food/coconut-shrimp-v2.jpg",
+          "image": "/photos/menuData/menuSections/0/items/3/image.jpg",
           "imageAlt": "Coconut shrimp with dipping sauce"
         },
         {
           "name": "Chicken Sando",
-          "image": "/photos/food/chicken-sando.jpg",
+          "image": "/photos/menuData/menuSections/0/items/4/image.jpg",
           "imageAlt": "Crispy chicken sandwich with slaw and fries",
           "imagePosition": "object-[center_75%]"
         },
         {
           "name": "Miss B's Burger",
-          "image": "/photos/food/miss-bs-burger.jpg",
+          "image": "/photos/menuData/menuSections/0/items/5/image.jpg",
           "imageAlt": "Miss B's Burger with cheese, lettuce, tomato, and fries",
           "imagePosition": "object-[center_78%]"
         }
@@ -50,24 +50,24 @@
       "items": [
         {
           "name": "Mimosas",
-          "image": "/photos/drinks/mimosas.jpg",
+          "image": "/photos/menuData/menuSections/1/items/0/image.jpg",
           "imageAlt": "Mimosas served in champagne flutes with Campo Viejo Cava"
         },
         {
           "name": "Swedish Bikini Team",
           "description": "House rum blend, strawberry, cucumber, coconut water, lemon",
-          "image": "/photos/drinks/swedish-bikini-team.jpg",
+          "image": "/photos/menuData/menuSections/1/items/1/image.jpg",
           "imageAlt": "Swedish Bikini Team cocktail with cucumber ribbon and strawberry"
         },
         {
           "name": "Pablo Discobar",
-          "image": "/photos/drinks/pablo-discobar.jpg",
+          "image": "/photos/menuData/menuSections/1/items/2/image.jpg",
           "imageAlt": "Pablo Discobar cocktail served in a disco ball ice bucket with champagne"
         },
         {
           "name": "Miami Pound Machine",
           "description": "Blanco tequila, passionfruit, bitters",
-          "image": "/photos/drinks/miami-pound-machine.jpg",
+          "image": "/photos/menuData/menuSections/1/items/3/image.jpg",
           "imageAlt": "Miami Pound Machine cocktail with banana leaf and lime wheel",
           "imagePosition": "object-[25%_center]"
         }

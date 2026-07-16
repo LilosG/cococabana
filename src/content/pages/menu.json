@@ -6,7 +6,7 @@
   "heroText": "Food, drinks, cocktails, and brunch from the rooftop.",
   "primaryCtaText": "",
   "heroImage": {
-    "src": "/photos/menu-flamingo-hero.jpg",
+    "src": "/photos/menu/heroImage/src.jpg",
     "alt": "Coco Cabana signature copper flamingo cocktail vessel with rattan pendants and Oceanside rooftop",
     "position": "object-bottom"
   },
@@ -24,7 +24,7 @@
     }
   ],
   "brunchPromo": {
-    "image": "/photos/brunch/image.jpg",
+    "image": "/photos/menu/brunchPromo/image.jpg",
     "imageAlt": "Coco Cabana mimosas — Campo Viejo cava flights with copper flamingo on marble table",
     "imagePosition": "object-center",
     "minHeight": "min-h-[560px] sm:min-h-[620px]",

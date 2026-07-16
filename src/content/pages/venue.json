@@ -7,7 +7,7 @@
   "primaryCtaText": "",
   "secondaryCtaText": "",
   "heroImage": {
-    "src": "/photos/venue-aerial-sign.jpg",
+    "src": "/photos/venue/heroImage/src.jpg",
     "alt": "Aerial view of Coco Cabana rooftop bar — COCOCABANA sign on The Brick Hotel, Downtown Oceanside"
   },
   "stats": [
@@ -23,7 +23,7 @@
       "accent": "Above It All",
       "text": "\nPerched above The Brick Hotel at 408 Pier View Way, the rooftop is a full open-air experience — Caribbean-inspired cocktails, a complete bar program, and views that stretch past the palm canopy all the way to the Pacific.\n",
       "tags": ["Open Air", "Full Bar", "Pacific Views", "Downtown Oceanside"],
-      "image": "/photos/welcome/image.jpg",
+      "image": "/photos/venue/sections/0/image.jpg",
       "imageAlt": "Coco Cabana rooftop lounge — rattan pendants, tile wall, city views",
       "imagePosition": "object-center"
     },
@@ -33,7 +33,7 @@
       "accent": "Stay a While",
       "text": "\nThe cabana's signature lounge seating is designed for settling in — rattan pendants overhead, geometric tile walls, pink daybeds, and unobstructed views of the Oceanside skyline. Claim your corner early.\n",
       "ctaText": "Reserve Your Spot",
-      "image": "/photos/cabana/image.jpg",
+      "image": "/photos/venue/sections/1/image.jpg",
       "imageAlt": "Coco Cabana lounge seating — pink daybeds, geometric tile wall, Oceanside skyline",
       "imagePosition": "object-center",
       "minHeight": "min-h-[640px] sm:min-h-[700px]"
@@ -44,7 +44,7 @@
       "accent": "Worth Arriving Early For",
       "text": "\nFour stories up, the views stretch past the rooftops and palm canopy all the way to the Pacific. Sunsets here are something else entirely — settle in before golden hour and watch the sky change over the water.\n",
       "tags": ["Pacific Views", "Open Sky", "Golden Hour"],
-      "image": "/photos/view/image.jpg",
+      "image": "/photos/venue/sections/2/image.jpg",
       "imageAlt": "Sunset viewed from Coco Cabana rooftop — palms silhouetted against orange sky",
       "imagePosition": "object-[center_65%]"
     },
@@ -54,7 +54,7 @@
       "accent": "Every Fri & Sat",
       "text": "\nLive DJ sets every Friday and Saturday night. The rooftop transforms after dark — cocktails, open air, and the Oceanside skyline as your backdrop.\n",
       "ctaText": "Reserve for the Night",
-      "image": "/photos/liveMusic/image.jpg",
+      "image": "/photos/venue/sections/3/image.jpg",
       "imageAlt": "DJ set at Coco Cabana rooftop with crowd",
       "imagePosition": "object-[center_30%]",
       "minHeight": "min-h-[600px] sm:min-h-[680px]"
@@ -65,32 +65,32 @@
     "title": "The Atmosphere",
     "images": [
       {
-        "src": "/photos/atmosphere/gallery/1/src.jpg",
+        "src": "/photos/venue/gallery/images/0/src.jpg",
         "alt": "Copper flamingo draft tap handles at Coco Cabana",
         "position": "w-full h-full object-cover hover:scale-105 transition-transform duration-500"
       },
       {
-        "src": "/photos/atmosphere/gallery/2/src.jpg",
+        "src": "/photos/venue/gallery/images/1/src.jpg",
         "alt": "Coco Cabana branded coconut cups with copper flamingo vessel",
         "position": "w-full h-full object-cover hover:scale-105 transition-transform duration-500"
       },
       {
-        "src": "/photos/atmosphere/gallery/0/src.jpg",
+        "src": "/photos/venue/gallery/images/2/src.jpg",
         "alt": "Neon pink palm sign glowing at night at Coco Cabana",
         "position": "w-full h-full object-cover object-[center_75%] hover:scale-105 transition-transform duration-500"
       },
       {
-        "src": "/photos/atmosphere/gallery/3/src.jpg",
+        "src": "/photos/venue/gallery/images/3/src.jpg",
         "alt": "Rattan pendant lamps and tropical plants at Coco Cabana",
         "position": "w-full h-full object-cover object-[center_40%] hover:scale-105 transition-transform duration-500"
       },
       {
-        "src": "/photos/atmosphere/gallery/4/src.jpg",
+        "src": "/photos/venue/gallery/images/4/src.jpg",
         "alt": "Coco Cabana cocktail in front of the gold pineapple wall",
         "position": "w-full h-full object-cover object-[center_30%] hover:scale-105 transition-transform duration-500"
       },
       {
-        "src": "/photos/details-pineapple-wall.jpg",
+        "src": "/photos/venue/gallery/images/5/src.jpg",
         "alt": "Gold pineapple wall display at Coco Cabana bar",
         "position": "w-full h-full object-cover hover:scale-105 transition-transform duration-500"
       }

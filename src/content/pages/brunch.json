@@ -1,22 +1,21 @@
 {
   "seoTitle": "Brunch | Cococabana Oceanside",
   "seoDescription": "Join Cococabana for brunch in Oceanside with cocktails, rooftop views, and coastal energy.",
+  "heroEyebrow": "",
   "heroTitle": "Brunch",
   "heroText": "Weekend brunch, rooftop cocktails, and coastal views.",
+  "heroSubtitle": "",
+  "primaryCtaText": "",
+  "secondaryCtaText": "",
+  "secondaryCtaHref": null,
   "heroImage": {
-    "src": "/photos/heroImage/src.jpg",
+    "src": "/photos/brunch/heroImage/src.jpg",
     "alt": "Coco Cabana weekend brunch spread — colorful plates, eggs, French toast on marble table",
     "position": "object-top"
   },
   "stats": [
-    {
-      "value": "Saturday & Sunday",
-      "label": "10:00 AM – 3:00 PM"
-    },
-    {
-      "value": "Rooftop",
-      "label": "The Brick Hotel, Oceanside"
-    }
+    { "value": "Saturday & Sunday", "label": "10:00 AM – 3:00 PM" },
+    { "value": "Rooftop", "label": "The Brick Hotel, Oceanside" }
   ],
   "sections": [
     {
@@ -28,7 +27,8 @@
     }
   ],
   "mimosaPromo": {
-    "imageAlt": "Cococabana mimosas — Campo Viejo cava flights with copper flamingo on marble table",
+    "image": "/photos/brunch/mimosaPromo/image.jpg",
+    "imageAlt": "Coco Cabana mimosas — Campo Viejo cava flights with copper flamingo on marble table",
     "imagePosition": "object-center",
     "minHeight": "min-h-[560px] sm:min-h-[620px]",
     "eyebrow": "Mimosas",
@@ -38,8 +38,8 @@
     "ctaText": "Reserve Your Table"
   },
   "rooftopPromo": {
-    "image": "/photos/rooftopPromo/image.jpg",
-    "imageAlt": "Cococabana rooftop brunch setup with disco balls, mimosas, and palms",
+    "image": "/photos/brunch/rooftopPromo/image.jpg",
+    "imageAlt": "Coco Cabana rooftop brunch setup with disco balls, mimosas, and palms",
     "eyebrow": "The Setting",
     "title": "Brunch Above Oceanside",
     "accent": "Every Weekend",

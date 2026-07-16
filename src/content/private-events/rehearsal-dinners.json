@@ -9,7 +9,7 @@
   "primaryCtaHref": null,
   "secondaryCtaText": "",
   "heroImage": {
-    "src": "/photos/cabana/image.jpg",
+    "src": "/photos/privateEventPages/rehearsal-dinners/heroImage/src.jpg",
     "alt": "Coco Cabana rooftop lounge with pink daybeds, tile wall, and Oceanside city views at dusk",
     "position": "object-center"
   },
@@ -36,7 +36,7 @@
       ],
       "primaryCtaText": "Submit an Inquiry",
       "secondaryCtaText": "Call to Inquire",
-      "image": "/photos/events-rooftop-dining.jpg",
+      "image": "/photos/privateEventPages/rehearsal-dinners/sections/0/image.jpg",
       "imageAlt": "Women dining and celebrating on Coco Cabana rooftop with cocktails and palm views",
       "imagePosition": "object-[center_40%]"
     },
@@ -48,7 +48,7 @@
         "\nFour stories above 408 Pier View Way — open air, full bar, and a Pacific coastline view that makes the night before feel just as special as the day itself.\n"
       ],
       "primaryCtaText": "Start Planning",
-      "image": "/photos/welcome/image.jpg",
+      "image": "/photos/privateEventPages/rehearsal-dinners/sections/1/image.jpg",
       "imageAlt": "Coco Cabana rooftop lounge seating with rattan pendants, tile wall, and Oceanside views",
       "imagePosition": "object-center",
       "gradientDirection": "left",
@@ -62,7 +62,7 @@
         "\nWhether you want a low-key dinner with the wedding party or a full rooftop gathering with the whole crew, we can put together something that fits the occasion. Just reach out and we'll make it happen.\n"
       ],
       "primaryCtaText": "Submit an Inquiry",
-      "image": "/photos/events-crowd-hero.jpg",
+      "image": "/photos/privateEventPages/rehearsal-dinners/sections/2/image.jpg",
       "imageAlt": "Coco Cabana rooftop packed with guests at golden hour — full venue energy",
       "imagePosition": "object-[center_40%]"
     }

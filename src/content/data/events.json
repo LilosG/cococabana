@@ -1,7 +1,7 @@
 {
   "privateEvents": [
     {
-      "image": "/photos/events-crowd-hero.jpg",
+      "image": "/photos/privateEventsData/privateEvents/0/image.jpg",
       "imageAlt": "Packed Coco Cabana rooftop at golden hour — full venue energy",
       "imagePosition": "object-[center_40%]",
       "category": "Birthdays",
@@ -11,7 +11,7 @@
       "href": "/private-events/birthday-parties"
     },
     {
-      "image": "/photos/events-rooftop-dining.jpg",
+      "image": "/photos/privateEventsData/privateEvents/1/image.jpg",
       "imageAlt": "Women dining and celebrating on Coco Cabana rooftop with cocktails and palm views",
       "imagePosition": "object-[center_40%]",
       "category": "Celebrations",
@@ -21,7 +21,7 @@
       "href": "/private-events/celebrations"
     },
     {
-      "image": "/photos/liveMusic/image.jpg",
+      "image": "/photos/privateEventsData/privateEvents/2/image.jpg",
       "imageAlt": "DJ set at Coco Cabana rooftop with crowd and palm trees at golden hour",
       "imagePosition": "object-[center_30%]",
       "category": "Corporate",
@@ -31,7 +31,7 @@
       "href": "/private-events/corporate-events"
     },
     {
-      "image": "/photos/cabana/image.jpg",
+      "image": "/photos/privateEventsData/privateEvents/3/image.jpg",
       "imageAlt": "Coco Cabana rooftop lounge with pink daybeds, tile wall, and Oceanside city views at dusk",
       "category": "Dinners",
       "title": "Rehearsal Dinners",

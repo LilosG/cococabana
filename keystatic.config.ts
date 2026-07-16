@@ -27,14 +27,15 @@ const optionalMultiline = (
   });
 
 const imageField = (
+  namespace: string,
   label = "Image",
   description = "Choose or upload an image.",
 ) =>
   fields.image({
     label,
     description,
-    directory: "src/assets/photos",
-    publicPath: "/photos/",
+    directory: `src/assets/photos/${namespace}`,
+    publicPath: `/photos/${namespace}/`,
   });
 
 const imagePositionField = optionalText(
@@ -49,11 +50,11 @@ const sharedPhotoPathField = (label = "Image Path") =>
       "References an existing shared photo asset. Do not change this value without providing a new working image path.",
   });
 
-const imageObjectFields = {
-  src: imageField(),
+const imageObjectFields = (namespace: string) => ({
+  src: imageField(namespace),
   alt: textField("Alternative Text", "Describe the image for accessibility."),
   position: imagePositionField,
-};
+});
 
 const statFields = fields.object(
   {
@@ -79,118 +80,126 @@ const linkFields = fields.object(
   { label: "Link", description: "A navigation link and its destination." },
 );
 
-const menuItemFields = fields.object(
-  {
-    name: optionalText("Item Name", "Enter the menu item name."),
-    description: optionalMultiline(
-      "Description",
-      "Add an optional menu item description.",
-    ),
-    image: imageField("Image", "Choose the menu item image."),
-    imageAlt: textField(
-      "Alternative Text",
-      "Describe the image for accessibility.",
-    ),
-    imagePosition: imagePositionField,
-  },
-  {
-    label: "Menu Item",
-    description: "A food or drink item shown on the menu.",
-  },
-);
+const menuItemFields = (namespace: string) =>
+  fields.object(
+    {
+      name: optionalText("Item Name", "Enter the menu item name."),
+      description: optionalMultiline(
+        "Description",
+        "Add an optional menu item description.",
+      ),
+      image: imageField(namespace, "Image", "Choose the menu item image."),
+      imageAlt: textField(
+        "Alternative Text",
+        "Describe the image for accessibility.",
+      ),
+      imagePosition: imagePositionField,
+    },
+    {
+      label: "Menu Item",
+      description: "A food or drink item shown on the menu.",
+    },
+  );
 
-const brunchItemFields = fields.object(
-  {
-    name: textField("Item Name", "Enter the brunch item name."),
-    description: optionalMultiline(
-      "Description",
-      "Add an optional brunch item description.",
-    ),
-    image: imageField("Image", "Choose the brunch item image."),
-    imageAlt: textField(
-      "Alternative Text",
-      "Describe the image for accessibility.",
-    ),
-    imagePosition: imagePositionField,
-  },
-  {
-    label: "Brunch Item",
-    description: "A food or drink item shown on the brunch menu.",
-  },
-);
+const brunchItemFields = (namespace: string) =>
+  fields.object(
+    {
+      name: textField("Item Name", "Enter the brunch item name."),
+      description: optionalMultiline(
+        "Description",
+        "Add an optional brunch item description.",
+      ),
+      image: imageField(namespace, "Image", "Choose the brunch item image."),
+      imageAlt: textField(
+        "Alternative Text",
+        "Describe the image for accessibility.",
+      ),
+      imagePosition: imagePositionField,
+    },
+    {
+      label: "Brunch Item",
+      description: "A food or drink item shown on the brunch menu.",
+    },
+  );
 
-const eventCardFields = fields.object(
-  {
-    image: imageField("Image", "Choose the event card image."),
-    imageAlt: textField(
-      "Alternative Text",
-      "Describe the image for accessibility.",
-    ),
-    imagePosition: imagePositionField,
-    category: textField("Category", "Enter the short event category."),
-    title: textField("Title", "Enter the event card title."),
-    description: multiline("Description", "Enter the event card summary."),
-    detail: textField("Detail", "Enter the short event details."),
-    href: optionalText("Page Link", "Enter the private event page path."),
-  },
-  {
-    label: "Private Event Card",
-    description: "A private event card shown on the site.",
-  },
-);
+const eventCardFields = (namespace: string) =>
+  fields.object(
+    {
+      image: imageField(namespace, "Image", "Choose the event card image."),
+      imageAlt: textField(
+        "Alternative Text",
+        "Describe the image for accessibility.",
+      ),
+      imagePosition: imagePositionField,
+      category: textField("Category", "Enter the short event category."),
+      title: textField("Title", "Enter the event card title."),
+      description: multiline("Description", "Enter the event card summary."),
+      detail: textField("Detail", "Enter the short event details."),
+      href: optionalText("Page Link", "Enter the private event page path."),
+    },
+    {
+      label: "Private Event Card",
+      description: "A private event card shown on the site.",
+    },
+  );
 
-const galleryImageFields = fields.object(
-  {
-    src: imageField(),
-    alt: textField("Alternative Text", "Describe the image for accessibility."),
-    position: optionalText(
-      "Image Position",
-      "Optional CSS classes for image crop and positioning.",
-    ),
-  },
-  {
-    label: "Gallery Image",
-    description: "An image displayed in the venue gallery.",
-  },
-);
+const galleryImageFields = (namespace: string) =>
+  fields.object(
+    {
+      src: imageField(namespace),
+      alt: textField(
+        "Alternative Text",
+        "Describe the image for accessibility.",
+      ),
+      position: optionalText(
+        "Image Position",
+        "Optional CSS classes for image crop and positioning.",
+      ),
+    },
+    {
+      label: "Gallery Image",
+      description: "An image displayed in the venue gallery.",
+    },
+  );
 
-const pageSectionFields = fields.object(
-  {
-    eyebrow: optionalText(
-      "Eyebrow",
-      "Enter the small heading above this section.",
-    ),
-    title: textField("Title", "Enter the section heading."),
-    accent: optionalText(
-      "Accent Text",
-      "Enter optional emphasized heading text.",
-    ),
-    text: multiline("Text", "Enter the section body copy."),
-    tags: fields.array(textField("Tag", "Enter a short feature tag."), {
-      label: "Feature Tags",
-      description: "Add the short feature tags shown in this section.",
-      itemLabel: (props) => props.value || "Tag",
-    }),
-    ctaText: optionalText(
-      "Call to Action Text",
-      "Enter the optional button label.",
-    ),
-    image: imageField(),
-    imageAlt: textField(
-      "Alternative Text",
-      "Describe the image for accessibility.",
-    ),
-    imagePosition: imagePositionField,
-    minHeight: optionalText(
-      "Minimum Height",
-      "Optional CSS class that controls section height.",
-    ),
-  },
-  {
-    label: "Page Section",
-    description: "A content section on the venue page.",
-  },
-);
+const pageSectionFields = (namespace: string) =>
+  fields.object(
+    {
+      eyebrow: optionalText(
+        "Eyebrow",
+        "Enter the small heading above this section.",
+      ),
+      title: textField("Title", "Enter the section heading."),
+      accent: optionalText(
+        "Accent Text",
+        "Enter optional emphasized heading text.",
+      ),
+      text: multiline("Text", "Enter the section body copy."),
+      tags: fields.array(textField("Tag", "Enter a short feature tag."), {
+        label: "Feature Tags",
+        description: "Add the short feature tags shown in this section.",
+        itemLabel: (props) => props.value || "Tag",
+      }),
+      ctaText: optionalText(
+        "Call to Action Text",
+        "Enter the optional button label.",
+      ),
+      image: imageField(namespace),
+      imageAlt: textField(
+        "Alternative Text",
+        "Describe the image for accessibility.",
+      ),
+      imagePosition: imagePositionField,
+      minHeight: optionalText(
+        "Minimum Height",
+        "Optional CSS class that controls section height.",
+      ),
+    },
+    {
+      label: "Page Section",
+      description: "A content section on the venue page.",
+    },
+  );
 
 const processFields = fields.object(
   {
@@ -517,7 +526,7 @@ export default config({
               heading: textField("Heading", "Enter the section heading."),
               category: textField("Category", "Enter food or drinks."),
               tone: textField("Color Theme", "Enter light or dark."),
-              items: fields.array(menuItemFields, {
+              items: fields.array(menuItemFields("menuData"), {
                 label: "Menu Items",
                 description: "Add the food or drink items in this section.",
                 itemLabel: (props) => props.fields.name.value || "Menu Item",
@@ -542,12 +551,12 @@ export default config({
       path: "src/content/data/brunch",
       format: { data: "json" },
       schema: {
-        brunchFood: fields.array(brunchItemFields, {
+        brunchFood: fields.array(brunchItemFields("brunchData"), {
           label: "Brunch Food",
           description: "Manage the brunch food items.",
           itemLabel: (props) => props.fields.name.value || "Brunch Food Item",
         }),
-        brunchDrinks: fields.array(brunchItemFields, {
+        brunchDrinks: fields.array(brunchItemFields("brunchData"), {
           label: "Brunch Drinks",
           description: "Manage the brunch drink items.",
           itemLabel: (props) => props.fields.name.value || "Brunch Drink",
@@ -560,7 +569,7 @@ export default config({
       path: "src/content/data/events",
       format: { data: "json" },
       schema: {
-        privateEvents: fields.array(eventCardFields, {
+        privateEvents: fields.array(eventCardFields("privateEventsData"), {
           label: "Private Event Cards",
           description:
             "Manage the event cards shown on the private events landing page.",
@@ -736,7 +745,7 @@ export default config({
           "Secondary Button Link",
           "Enter the secondary hero destination.",
         ),
-        heroImage: fields.object(imageObjectFields, {
+        heroImage: fields.object(imageObjectFields("home"), {
           label: "Hero Image",
           description: "The main image displayed at the top of the home page.",
         }),
@@ -747,7 +756,7 @@ export default config({
         }),
         welcome: fields.object(
           {
-            image: imageField(),
+            image: imageField("home"),
             imageAlt: textField(
               "Alternative Text",
               "Describe the image for accessibility.",
@@ -766,7 +775,7 @@ export default config({
         ),
         bar: fields.object(
           {
-            image: imageField(),
+            image: imageField("home"),
             imageAlt: textField(
               "Alternative Text",
               "Describe the image for accessibility.",
@@ -805,7 +814,7 @@ export default config({
         ),
         brunch: fields.object(
           {
-            image: imageField(),
+            image: imageField("home"),
             imageAlt: textField(
               "Alternative Text",
               "Describe the image for accessibility.",
@@ -823,7 +832,7 @@ export default config({
         ),
         view: fields.object(
           {
-            image: imageField(),
+            image: imageField("home"),
             imageAlt: textField(
               "Alternative Text",
               "Describe the image for accessibility.",
@@ -842,7 +851,7 @@ export default config({
         ),
         cabana: fields.object(
           {
-            image: imageField(),
+            image: imageField("home"),
             imageAlt: textField(
               "Alternative Text",
               "Describe the image for accessibility.",
@@ -861,7 +870,7 @@ export default config({
         ),
         liveMusic: fields.object(
           {
-            image: imageField(),
+            image: imageField("home"),
             imageAlt: textField(
               "Alternative Text",
               "Describe the image for accessibility.",
@@ -885,7 +894,7 @@ export default config({
             gallery: fields.array(
               fields.object(
                 {
-                  src: imageField(),
+                  src: imageField("home"),
                   alt: textField(
                     "Alternative Text",
                     "Describe the image for accessibility.",
@@ -914,7 +923,7 @@ export default config({
         ),
         privateEvents: fields.object(
           {
-            image: imageField(),
+            image: imageField("home"),
             imageAlt: textField(
               "Alternative Text",
               "Describe the image for accessibility.",
@@ -979,7 +988,7 @@ export default config({
         heroText: multiline("Hero Text"),
         primaryCtaText: optionalText("Primary Button Text"),
         secondaryCtaText: optionalText("Secondary Button Text"),
-        heroImage: fields.object(imageObjectFields, {
+        heroImage: fields.object(imageObjectFields("venue"), {
           label: "Hero Image",
           description: "The main image displayed at the top of the venue page.",
         }),
@@ -988,7 +997,7 @@ export default config({
           description: "Manage the venue quick facts.",
           itemLabel: (props) => props.fields.label.value || "Statistic",
         }),
-        sections: fields.array(pageSectionFields, {
+        sections: fields.array(pageSectionFields("venue"), {
           label: "Sections",
           description: "Manage the main venue page sections.",
           itemLabel: (props) => props.fields.title.value || "Page Section",
@@ -997,7 +1006,7 @@ export default config({
           {
             eyebrow: textField("Eyebrow"),
             title: textField("Title"),
-            images: fields.array(galleryImageFields, {
+            images: fields.array(galleryImageFields("venue"), {
               label: "Images",
               description: "Manage the venue gallery images.",
               itemLabel: (props) => props.fields.alt.value || "Gallery Image",
@@ -1020,7 +1029,7 @@ export default config({
         heroTitle: textField("Hero Title"),
         heroText: multiline("Hero Text"),
         primaryCtaText: optionalText("Primary Button Text"),
-        heroImage: fields.object(imageObjectFields, {
+        heroImage: fields.object(imageObjectFields("menu"), {
           label: "Hero Image",
           description: "The main image displayed at the top of the menu page.",
         }),
@@ -1045,7 +1054,7 @@ export default config({
         ),
         brunchPromo: fields.object(
           {
-            image: imageField(),
+            image: imageField("menu"),
             imageAlt: textField(
               "Alternative Text",
               "Describe the image for accessibility.",
@@ -1094,7 +1103,7 @@ export default config({
         primaryCtaText: optionalText("Primary Button Text"),
         secondaryCtaText: optionalText("Secondary Button Text"),
         secondaryCtaHref: optionalText("Secondary Button Link"),
-        heroImage: fields.object(imageObjectFields, {
+        heroImage: fields.object(imageObjectFields("brunch"), {
           label: "Hero Image",
           description:
             "The main image displayed at the top of the brunch page.",
@@ -1126,7 +1135,7 @@ export default config({
         ),
         mimosaPromo: fields.object(
           {
-            image: imageField(),
+            image: imageField("brunch"),
             imageAlt: textField(
               "Alternative Text",
               "Describe the image for accessibility.",
@@ -1149,7 +1158,7 @@ export default config({
         ),
         rooftopPromo: fields.object(
           {
-            image: imageField(),
+            image: imageField("brunch"),
             imageAlt: textField(
               "Alternative Text",
               "Describe the image for accessibility.",
@@ -1195,7 +1204,7 @@ export default config({
         primaryCtaHref: optionalText("Primary Button Link"),
         secondaryCtaText: optionalText("Secondary Button Text"),
         secondaryCtaHref: optionalText("Secondary Button Link"),
-        heroImage: fields.object(imageObjectFields, {
+        heroImage: fields.object(imageObjectFields("privateEventsPage"), {
           label: "Hero Image",
           description:
             "The main image displayed at the top of the private events page.",
@@ -1225,7 +1234,7 @@ export default config({
         ),
         whatWeHost: fields.object(
           {
-            image: imageField(),
+            image: imageField("privateEventsPage"),
             imageAlt: textField(
               "Alternative Text",
               "Describe the image for accessibility.",
@@ -1250,7 +1259,7 @@ export default config({
         ),
         setting: fields.object(
           {
-            image: imageField(),
+            image: imageField("privateEventsPage"),
             imageAlt: textField(
               "Alternative Text",
               "Describe the image for accessibility.",
@@ -1299,7 +1308,7 @@ export default config({
         primaryCtaText: optionalText("Primary Button Text"),
         heroImage: fields.object(
           {
-            src: imageField(),
+            src: imageField("faq"),
             alt: textField(
               "Alternative Text",
               "Describe the image for accessibility.",
@@ -1344,7 +1353,7 @@ export default config({
         primaryCtaText: optionalText("Primary Button Text"),
         heroImage: fields.object(
           {
-            src: imageField(),
+            src: imageField("contact"),
             alt: textField(
               "Alternative Text",
               "Describe the image for accessibility.",
@@ -1480,8 +1489,12 @@ export default config({
         secondaryCtaText: optionalText("Secondary Button Text"),
         heroImage: fields.object(
           {
-            ...imageObjectFields,
             src: sharedPhotoPathField(),
+            alt: textField(
+              "Alternative Text",
+              "Describe the image for accessibility.",
+            ),
+            position: imagePositionField,
           },
           {
             label: "Hero Image",
