@@ -1,55 +1,53 @@
 {
   "brunchFood": [
     {
-      "name": "Chicken & Waffle",
-      "image": "/photos/brunchData/brunchFood/0/image.jpg",
-      "imageAlt": "Coco Cabana chicken and waffle with hash browns, fresh fruit and whipped cream"
+      "name": "Breakfast Sandwich",
+      "description": "choice of breakfast ham or spice bacon, melted cheddar, sriracha aioli, brioche bun with house pepper potatoes",
+      "imageAlt": "Popular Breakfast Sandwich"
     },
     {
       "name": "Avocado Toast",
+      "description": "grilled sourdough, herb aioli, sliced avocado, seasoned heirloom tomato, micro herb salad, two sunny side eggs & citrus vinaigrette",
       "image": "/photos/brunchData/brunchFood/1/image.jpg",
       "imageAlt": "Avocado toast with fried egg, heirloom tomatoes and microgreens on sourdough"
     },
     {
-      "name": "Chilaquiles",
-      "image": "/photos/brunchData/brunchFood/2/image.jpg",
-      "imageAlt": "Chilaquiles with tri-color tortilla chips, crema, pickled onion and cotija"
+      "name": "Breakfast Burrito",
+      "description": "choice: bacon or ham, scrambled eggs,\npepper & onion potato hash cheddar jack blend,\nsriracha aioli, house crema ",
+      "imageAlt": "Locals favorite, breakfast burrito"
     },
     {
-      "name": "Biscuits & Gravy",
-      "image": "/photos/brunchData/brunchFood/3/image.jpg",
-      "imageAlt": "Biscuits and gravy with fried egg and green onion — rooftop brunch at Coco Cabana"
+      "name": "Breakfast Tacos",
+      "description": "two flour tortillas, scrambled eggs, chimichurri rojo, pico, cotija",
+      "imageAlt": "Tasty Breakfast Tacos"
     },
     {
-      "name": "Eggs & Hash",
-      "image": "/photos/brunchData/brunchFood/4/image.jpg",
-      "imageAlt": "Scrambled eggs over roasted hash with disco balls and palms in background"
+      "name": "Eggs Your Way",
+      "description": "three eggs your way, pepper & onion potato hash, fresh fruit, choice: spiced bacon or ham choice: sourdough or english muffin",
+      "imageAlt": "Yummy eggs your way"
     },
     {
-      "name": "Malasadas",
-      "image": "/photos/brunchData/brunchFood/5/image.jpg",
-      "imageAlt": "Portuguese malasadas dusted with sugar served with mimosas and pink disco ball",
+      "name": "Power Bowl",
+      "description": "little gem, black beans, rice, pineapple salsa, two eggs, cilantro, three tortillas\nadd choice of:  avocado,  kalua pork, chicken, mahi, shrimp, skirt steak ",
+      "imageAlt": "Healthy breakfast bowl",
       "imagePosition": "object-bottom"
     }
   ],
   "brunchDrinks": [
     {
       "name": "Mimosa Flight",
-      "image": "/photos/brunchData/brunchDrinks/0/image.jpg",
-      "imageAlt": "Three Campo Viejo cava mimosa flutes — classic, tropical and citrus varieties",
-      "description": "Campo Viejo Cava · Classic, Tropical & Citrus"
+      "description": "Campo Viejo Cava · Classic, Tropical & Citrus",
+      "imageAlt": "Three Campo Viejo cava mimosa flutes — classic, tropical and citrus varieties"
     },
     {
       "name": "Campo Viejo Cava",
-      "image": "/photos/brunchData/brunchDrinks/1/image.jpg",
-      "imageAlt": "Campo Viejo cava bottles with mimosa flight on marble table with flamingo and tropical plants",
-      "description": "Mimosa Flight · While You Dine"
+      "description": "Mimosa Flight · While You Dine",
+      "imageAlt": "Campo Viejo cava bottles with mimosa flight on marble table with flamingo and tropical plants"
     },
     {
       "name": "The Signature",
-      "image": "/photos/brunchData/brunchDrinks/2/image.jpg",
-      "imageAlt": "Coco Cabana branded coconut cups with copper flamingo vessel and colorful straws",
-      "description": "Coco Cabana coconut cups — the rooftop signature"
+      "description": "Coco Cabana coconut cups — the rooftop signature",
+      "imageAlt": "Coco Cabana branded coconut cups with copper flamingo vessel and colorful straws"
     }
   ]
 }
