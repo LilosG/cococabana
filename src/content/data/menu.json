@@ -31,7 +31,7 @@
           "description": "hand breaded plantain coconut shrimp, sweet chili sauce",
           "image": "/photos/menuData/menuSections/0/items/3/image.jpg",
           "imageAlt": "Coconut shrimp with dipping sauce",
-          "imagePosition": "object-[center_50%]"
+          "imagePosition": "<img src=\"your-image.jpg\" alt=\"Description\" style=\"display: block; margin: auto;\">"
         },
         {
           "name": "Fish and Chips",
