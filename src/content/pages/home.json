@@ -5,11 +5,10 @@
   "heroTitle": "Cococabana",
   "heroText": "Rooftop drinks, brunch, coastal energy, and private events in Oceanside.",
   "primaryCtaText": "View Menu",
-  "primaryCtaHref": "/menu",
+  "primaryCtaHref": "https://cococabanaoside.com/order",
   "secondaryCtaText": "Plan an Event",
   "secondaryCtaHref": "/private-events/",
   "heroImage": {
-    "src": "/photos/home/heroImage/src.jpg",
     "alt": "Coco Cabana rooftop bar aerial view over Downtown Oceanside, CA",
     "position": "w-full h-full object-cover"
   },
@@ -31,17 +30,15 @@
     }
   ],
   "welcome": {
-    "image": "/photos/home/welcome/image.jpg",
     "imageAlt": "Coco Cabana rooftop lounge seating with tile wall, rattan pendants, and Oceanside views",
     "eyebrow": "Oceanside, CA",
     "title": "\nWhere Oceanside\n",
     "accent": "Comes to Drink Well",
-    "text": "\nPerched above The Brick Hotel at 408 Pier View Way, Coco Cabana is a\n          rooftop bar built around its own identity — relaxed, elevated, and entirely its own.\n          Stop in for a cocktail, settle in for the evening, or make it the start of a night\n          out in Downtown Oceanside.\n",
+    "text": "\nPerched above The Brick Hotel at 408 Pier View Way, Coco Cabana is a\nrooftop bar built around its own identity — relaxed, elevated, and entirely its own.\nStop in for a cocktail, settle in for the evening, or make it the start of a night\nout in Downtown Oceanside.\n",
     "primaryCtaText": "Reserve a Table",
     "secondaryCtaText": "See the Space"
   },
   "bar": {
-    "image": "/photos/home/bar/image.jpg",
     "imageAlt": "Coco Cabana open-air rooftop bar — marble counter, bar stools, hanging greenery, Oceanside views",
     "imagePosition": "w-full h-full object-cover object-[center_50%]",
     "eyebrow": "The Bar",
@@ -62,7 +59,6 @@
     "ctaText": "View Full Bar Menu"
   },
   "brunch": {
-    "image": "/photos/home/brunch/image.jpg",
     "imageAlt": "Coco Cabana mimosas — Campo Viejo cava flights with copper flamingo, marble table, tile wall",
     "imagePosition": "w-full h-full object-cover object-center",
     "eyebrow": "Weekend Brunch",
@@ -71,7 +67,6 @@
     "secondaryCtaText": "Reserve"
   },
   "view": {
-    "image": "/photos/home/view/image.jpg",
     "imageAlt": "Sunset viewed from Coco Cabana rooftop through glass railing, palms silhouetted against orange sky",
     "imagePosition": "absolute inset-0 w-full h-full object-cover object-[center_65%]",
     "eyebrow": "The Rooftop",
@@ -81,7 +76,6 @@
     "ctaText": "Explore the Venue"
   },
   "cabana": {
-    "image": "/photos/home/cabana/image.jpg",
     "imageAlt": "Coco Cabana lounge area with pink daybeds, geometric tile wall, and Oceanside city views",
     "imagePosition": "absolute inset-0 w-full h-full object-cover object-center",
     "eyebrow": "The Cabana",
@@ -91,7 +85,6 @@
     "ctaText": "Reserve Your Spot"
   },
   "liveMusic": {
-    "image": "/photos/home/liveMusic/image.jpg",
     "imageAlt": "DJ set at Coco Cabana with crowd on the rooftop",
     "imagePosition": "w-full h-full object-cover object-[center_30%]",
     "eyebrow": "Live Music & Events",
@@ -105,34 +98,28 @@
     "title": "The Details",
     "gallery": [
       {
-        "src": "/photos/home/atmosphere/gallery/0/src.jpg",
         "alt": "Neon pink palm tree sign glowing at Coco Cabana rooftop at night with guest below",
         "class": "w-full h-full object-cover object-[center_75%]"
       },
       {
-        "src": "/photos/home/atmosphere/gallery/1/src.jpg",
         "alt": "Copper flamingo draft tap handles at Coco Cabana bar",
         "class": "w-full h-full object-cover object-center"
       },
       {
-        "src": "/photos/home/atmosphere/gallery/2/src.jpg",
         "alt": "Coco Cabana branded coconut cups with copper flamingo vessel",
         "class": "w-full h-full object-cover object-center"
       },
       {
-        "src": "/photos/home/atmosphere/gallery/3/src.jpg",
         "alt": "Coco Cabana cabana interior with rattan pendant lamps and tropical plants",
         "class": "w-full h-full object-cover object-[center_40%]"
       },
       {
-        "src": "/photos/home/atmosphere/gallery/4/src.jpg",
         "alt": "Coco Cabana cocktail in front of the illuminated gold pineapple wall display",
         "class": "w-full h-full object-cover object-[center_30%]"
       }
     ]
   },
   "privateEvents": {
-    "image": "/photos/home/privateEvents/image.jpg",
     "imageAlt": "Group celebrating at Coco Cabana rooftop bar with cocktails and the gold pineapple wall backdrop",
     "imagePosition": "absolute inset-0 w-full h-full object-cover object-[center_40%]",
     "eyebrow": "Private Events",
