@@ -1,10 +1,9 @@
 {
   "seoTitle": "Contact | Cococabana Oceanside",
   "seoDescription": "Contact Cococabana in Oceanside for reservations, private events, and general questions.",
-  "heroEyebrow": "",
   "heroTitle": "Contact Cococabana",
   "heroText": "Reach out for questions, private events, and group inquiries.",
-  "primaryCtaText": "",
+  "primaryCtaText": "Click Here",
   "heroImage": {
     "src": "/photos/contact/heroImage/src.jpg",
     "alt": "Coco Cabana open-air rooftop bar — marble counter, bar stools, hanging greenery, Oceanside views"
@@ -30,7 +29,10 @@
       "directionsCtaText": "Get Directions"
     }
   ],
-  "hours": { "eyebrow": "Hours", "title": "When We're Open" },
+  "hours": {
+    "eyebrow": "Hours",
+    "title": "When We're Open"
+  },
   "eventForm": {
     "heading": "Plan a Private Event",
     "subheading": "Birthdays, bachelorettes, corporate gatherings, and more — fill out the form and our team will be in touch within 1 business day."
