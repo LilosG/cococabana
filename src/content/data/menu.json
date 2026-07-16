@@ -8,13 +8,15 @@
       "items": [
         {
           "name": "Wings",
+          "description": "8 seasoned baked & fried wings tossed in your choice of sauce. served with a side of ranch",
           "image": "/photos/menuData/menuSections/0/items/0/image.jpg",
           "imageAlt": "Crispy fried wings at Coco Cabana"
         },
         {
-          "name": "Spicy Chicken Bowl",
+          "name": "Crispy Chicken Sandwich",
+          "description": "fried or grilled chicken, jalapeno slaw, pickles, huli huli sauce, toasted bun served w/ fries",
           "image": "/photos/menuData/menuSections/0/items/1/image.jpg",
-          "imageAlt": "Spicy chicken bowl with rice and broccolini",
+          "imageAlt": "Crunchy Chicken Sandwich",
           "imagePosition": "object-[center_80%]"
         },
         {
