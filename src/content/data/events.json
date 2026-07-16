@@ -21,7 +21,7 @@
       "href": "/private-events/celebrations"
     },
     {
-      "image": "/photos/live-music-dj.jpg",
+      "image": "/photos/liveMusic/image.jpg",
       "imageAlt": "DJ set at Coco Cabana rooftop with crowd and palm trees at golden hour",
       "imagePosition": "object-[center_30%]",
       "category": "Corporate",
@@ -31,7 +31,7 @@
       "href": "/private-events/corporate-events"
     },
     {
-      "image": "/photos/cabana-lounge-cityview.jpg",
+      "image": "/photos/cabana/image.jpg",
       "imageAlt": "Coco Cabana rooftop lounge with pink daybeds, tile wall, and Oceanside city views at dusk",
       "category": "Dinners",
       "title": "Rehearsal Dinners",

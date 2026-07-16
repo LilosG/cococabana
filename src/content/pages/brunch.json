@@ -27,7 +27,7 @@
     }
   ],
   "mimosaPromo": {
-    "image": "/photos/brunch-mimosas-banner.jpg",
+    "image": "/photos/brunch/image.jpg",
     "imageAlt": "Coco Cabana mimosas — Campo Viejo cava flights with copper flamingo on marble table",
     "imagePosition": "object-center",
     "minHeight": "min-h-[560px] sm:min-h-[620px]",

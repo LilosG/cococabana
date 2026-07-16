@@ -9,7 +9,7 @@
   "primaryCtaHref": null,
   "secondaryCtaText": "",
   "heroImage": {
-    "src": "/photos/live-music-dj.jpg",
+    "src": "/photos/liveMusic/image.jpg",
     "alt": "DJ set at Coco Cabana rooftop with crowd and palm trees at golden hour",
     "position": "object-[center_30%]"
   },
@@ -62,7 +62,7 @@
         "\nWhether you're entertaining a client group, celebrating a team milestone, or activating a brand in front of the right crowd — we can build the event around what you need. Reach out and we'll talk through the options.\n"
       ],
       "primaryCtaText": "Submit an Inquiry",
-      "image": "/photos/welcome-lounge-tilewall.jpg",
+      "image": "/photos/welcome/image.jpg",
       "imageAlt": "Coco Cabana rooftop lounge seating with rattan pendants, tile wall, and Oceanside views",
       "imagePosition": "object-center"
     }

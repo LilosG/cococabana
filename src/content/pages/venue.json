@@ -23,7 +23,7 @@
       "accent": "Above It All",
       "text": "\nPerched above The Brick Hotel at 408 Pier View Way, the rooftop is a full open-air experience — Caribbean-inspired cocktails, a complete bar program, and views that stretch past the palm canopy all the way to the Pacific.\n",
       "tags": ["Open Air", "Full Bar", "Pacific Views", "Downtown Oceanside"],
-      "image": "/photos/welcome-lounge-tilewall.jpg",
+      "image": "/photos/welcome/image.jpg",
       "imageAlt": "Coco Cabana rooftop lounge — rattan pendants, tile wall, city views",
       "imagePosition": "object-center"
     },
@@ -33,7 +33,7 @@
       "accent": "Stay a While",
       "text": "\nThe cabana's signature lounge seating is designed for settling in — rattan pendants overhead, geometric tile walls, pink daybeds, and unobstructed views of the Oceanside skyline. Claim your corner early.\n",
       "ctaText": "Reserve Your Spot",
-      "image": "/photos/cabana-lounge-cityview.jpg",
+      "image": "/photos/cabana/image.jpg",
       "imageAlt": "Coco Cabana lounge seating — pink daybeds, geometric tile wall, Oceanside skyline",
       "imagePosition": "object-center",
       "minHeight": "min-h-[640px] sm:min-h-[700px]"
@@ -44,7 +44,7 @@
       "accent": "Worth Arriving Early For",
       "text": "\nFour stories up, the views stretch past the rooftops and palm canopy all the way to the Pacific. Sunsets here are something else entirely — settle in before golden hour and watch the sky change over the water.\n",
       "tags": ["Pacific Views", "Open Sky", "Golden Hour"],
-      "image": "/photos/venue-sunset-view.jpg",
+      "image": "/photos/view/image.jpg",
       "imageAlt": "Sunset viewed from Coco Cabana rooftop — palms silhouetted against orange sky",
       "imagePosition": "object-[center_65%]"
     },
@@ -54,7 +54,7 @@
       "accent": "Every Fri & Sat",
       "text": "\nLive DJ sets every Friday and Saturday night. The rooftop transforms after dark — cocktails, open air, and the Oceanside skyline as your backdrop.\n",
       "ctaText": "Reserve for the Night",
-      "image": "/photos/live-music-dj.jpg",
+      "image": "/photos/liveMusic/image.jpg",
       "imageAlt": "DJ set at Coco Cabana rooftop with crowd",
       "imagePosition": "object-[center_30%]",
       "minHeight": "min-h-[600px] sm:min-h-[680px]"
@@ -65,27 +65,27 @@
     "title": "The Atmosphere",
     "images": [
       {
-        "src": "/photos/details-flamingo-taps.jpg",
+        "src": "/photos/atmosphere/gallery/1/src.jpg",
         "alt": "Copper flamingo draft tap handles at Coco Cabana",
         "position": "w-full h-full object-cover hover:scale-105 transition-transform duration-500"
       },
       {
-        "src": "/photos/details-coconut-cups.jpg",
+        "src": "/photos/atmosphere/gallery/2/src.jpg",
         "alt": "Coco Cabana branded coconut cups with copper flamingo vessel",
         "position": "w-full h-full object-cover hover:scale-105 transition-transform duration-500"
       },
       {
-        "src": "/photos/details-neon-night.jpg",
+        "src": "/photos/atmosphere/gallery/0/src.jpg",
         "alt": "Neon pink palm sign glowing at night at Coco Cabana",
         "position": "w-full h-full object-cover object-[center_75%] hover:scale-105 transition-transform duration-500"
       },
       {
-        "src": "/photos/details-pendant-interior.jpg",
+        "src": "/photos/atmosphere/gallery/3/src.jpg",
         "alt": "Rattan pendant lamps and tropical plants at Coco Cabana",
         "position": "w-full h-full object-cover object-[center_40%] hover:scale-105 transition-transform duration-500"
       },
       {
-        "src": "/photos/details-ursula-cocktail.jpg",
+        "src": "/photos/atmosphere/gallery/4/src.jpg",
         "alt": "Coco Cabana cocktail in front of the gold pineapple wall",
         "position": "w-full h-full object-cover object-[center_30%] hover:scale-105 transition-transform duration-500"
       },

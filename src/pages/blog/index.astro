@@ -6,7 +6,7 @@ import Button from '../../components/Button.astro';
 import Eyebrow from '../../components/Eyebrow.astro';
 import { venue } from '../../data/venue';
 
-import heroAerial from '../../assets/photos/hero-aerial.jpg';
+import heroAerial from '../../assets/photos/heroImage/src.jpg';
 
 const posts = (await getCollection('blog')).sort(
   (a, b) => b.data.date.getTime() - a.data.date.getTime()

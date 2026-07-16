@@ -9,7 +9,7 @@
   "primaryCtaHref": null,
   "secondaryCtaText": "",
   "heroImage": {
-    "src": "/photos/cabana-lounge-cityview.jpg",
+    "src": "/photos/cabana/image.jpg",
     "alt": "Coco Cabana rooftop lounge with pink daybeds, tile wall, and Oceanside city views at dusk",
     "position": "object-center"
   },
@@ -48,7 +48,7 @@
         "\nFour stories above 408 Pier View Way — open air, full bar, and a Pacific coastline view that makes the night before feel just as special as the day itself.\n"
       ],
       "primaryCtaText": "Start Planning",
-      "image": "/photos/welcome-lounge-tilewall.jpg",
+      "image": "/photos/welcome/image.jpg",
       "imageAlt": "Coco Cabana rooftop lounge seating with rattan pendants, tile wall, and Oceanside views",
       "imagePosition": "object-center",
       "gradientDirection": "left",
