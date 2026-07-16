@@ -40,7 +40,7 @@ const cocktailItems = menuSections.find(s => s.id === 'cocktails')!.items;
       <h1 class="font-display leading-ultra text-hero uppercase mb-2">{homePage.heroTitle}</h1>
       <p class="uppercase tracking-feature text-sm sm:text-base text-brand-cream/80 mb-8">{homePage.heroSubtitle}</p>
       <div class="flex flex-wrap gap-4">
-        <Button href={venue.reservationsUrl} variant="primary" external>{homePage.primaryCtaText}</Button>
+        <Button href={homePage.primaryCtaHref} variant="primary" external>{homePage.primaryCtaText}</Button>
         <Button href={homePage.secondaryCtaHref} variant="ghost">{homePage.secondaryCtaText}</Button>
       </div>
     </div>
