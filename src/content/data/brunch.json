@@ -3,6 +3,7 @@
     {
       "name": "Breakfast Sandwich",
       "description": "test description ",
+      "image": "/photos/brunchData/brunchFood/0/image.jpg",
       "imageAlt": "Popular Breakfast Sandwich"
     },
     {
@@ -20,11 +21,13 @@
     {
       "name": "Breakfast Tacos",
       "description": "two flour tortillas, scrambled eggs, chimichurri rojo, pico, cotija",
+      "image": "/photos/brunchData/brunchFood/3/image.jpg",
       "imageAlt": "Tasty Breakfast Tacos"
     },
     {
       "name": "Eggs Your Way",
       "description": "three eggs your way, pepper & onion potato hash, fresh fruit, choice: spiced bacon or ham choice: sourdough or english muffin",
+      "image": "/photos/brunchData/brunchFood/4/image.jpg",
       "imageAlt": "Yummy eggs your way"
     },
     {
