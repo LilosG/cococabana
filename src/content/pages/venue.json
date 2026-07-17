@@ -1,20 +1,31 @@
 {
   "seoTitle": "Venue | Cococabana Oceanside",
   "seoDescription": "Explore Cococabana's rooftop venue in Oceanside for cocktails, brunch, private events, and coastal views.",
-  "heroEyebrow": "",
   "heroTitle": "The Venue",
   "heroText": "A rooftop setting built for drinks, dining, celebrations, and coastal nights in Oceanside.",
-  "primaryCtaText": "",
-  "secondaryCtaText": "",
+  "primaryCtaText": "Reservations",
+  "secondaryCtaText": "Private Events",
   "heroImage": {
     "src": "/photos/venue/heroImage/src.jpg",
     "alt": "Aerial view of Coco Cabana rooftop bar — COCOCABANA sign on The Brick Hotel, Downtown Oceanside"
   },
   "stats": [
-    { "value": "Rooftop", "label": "4 Stories Up" },
-    { "value": "Open Air", "label": "Full Bar Program" },
-    { "value": "DJ Nights", "label": "Fri &amp; Sat · Live Every Weekend" },
-    { "value": "Downtown", "label": "Oceanside, CA" }
+    {
+      "value": "Rooftop",
+      "label": "4 Stories Up"
+    },
+    {
+      "value": "Open Air",
+      "label": "Full Bar Program"
+    },
+    {
+      "value": "DJ Nights",
+      "label": "Fri &amp; Sat · Live Every Weekend"
+    },
+    {
+      "value": "Downtown",
+      "label": "Oceanside, CA"
+    }
   ],
   "sections": [
     {
@@ -22,7 +33,12 @@
       "title": "The Rooftop",
       "accent": "Above It All",
       "text": "\nPerched above The Brick Hotel at 408 Pier View Way, the rooftop is a full open-air experience — Caribbean-inspired cocktails, a complete bar program, and views that stretch past the palm canopy all the way to the Pacific.\n",
-      "tags": ["Open Air", "Full Bar", "Pacific Views", "Downtown Oceanside"],
+      "tags": [
+        "Open Air",
+        "Full Bar",
+        "Pacific Views",
+        "Downtown Oceanside"
+      ],
       "image": "/photos/venue/sections/0/image.jpg",
       "imageAlt": "Coco Cabana rooftop lounge — rattan pendants, tile wall, city views",
       "imagePosition": "object-center"
@@ -32,6 +48,7 @@
       "title": "\nLounge Seating\n",
       "accent": "Stay a While",
       "text": "\nThe cabana's signature lounge seating is designed for settling in — rattan pendants overhead, geometric tile walls, pink daybeds, and unobstructed views of the Oceanside skyline. Claim your corner early.\n",
+      "tags": [],
       "ctaText": "Reserve Your Spot",
       "image": "/photos/venue/sections/1/image.jpg",
       "imageAlt": "Coco Cabana lounge seating — pink daybeds, geometric tile wall, Oceanside skyline",
@@ -43,7 +60,11 @@
       "title": "Sunsets",
       "accent": "Worth Arriving Early For",
       "text": "\nFour stories up, the views stretch past the rooftops and palm canopy all the way to the Pacific. Sunsets here are something else entirely — settle in before golden hour and watch the sky change over the water.\n",
-      "tags": ["Pacific Views", "Open Sky", "Golden Hour"],
+      "tags": [
+        "Pacific Views",
+        "Open Sky",
+        "Golden Hour"
+      ],
       "image": "/photos/venue/sections/2/image.jpg",
       "imageAlt": "Sunset viewed from Coco Cabana rooftop — palms silhouetted against orange sky",
       "imagePosition": "object-[center_65%]"
@@ -53,6 +74,7 @@
       "title": "\nLive Music<br>&amp; Events\n",
       "accent": "Every Fri & Sat",
       "text": "\nLive DJ sets every Friday and Saturday night. The rooftop transforms after dark — cocktails, open air, and the Oceanside skyline as your backdrop.\n",
+      "tags": [],
       "ctaText": "Reserve for the Night",
       "image": "/photos/venue/sections/3/image.jpg",
       "imageAlt": "DJ set at Coco Cabana rooftop with crowd",
