@@ -109,7 +109,7 @@
       {
         "src": "/photos/venue/gallery/images/4/src.jpg",
         "alt": "Coco Cabana cocktail in front of the gold pineapple wall",
-        "position": "w-full h-full object-cover object-[center_30%] hover:scale-105 transition-transform duration-500"
+        "position": "w-full h-full object-cover object-[center_50%] hover:scale-105 transition-transform duration-500"
       },
       {
         "src": "/photos/venue/gallery/images/5/src.jpg",
