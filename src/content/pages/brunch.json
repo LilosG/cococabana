@@ -1,21 +1,25 @@
 {
   "seoTitle": "Brunch | Cococabana Oceanside",
   "seoDescription": "Join Cococabana for brunch in Oceanside with cocktails, rooftop views, and coastal energy.",
-  "heroEyebrow": "",
   "heroTitle": "Brunch",
   "heroText": "Weekend brunch, rooftop cocktails, and coastal views.",
-  "heroSubtitle": "",
-  "primaryCtaText": "",
-  "secondaryCtaText": "",
-  "secondaryCtaHref": null,
+  "primaryCtaText": "Reservations",
+  "secondaryCtaText": "View Full Menu",
+  "secondaryCtaHref": "https://cococabanaoside.com/order",
   "heroImage": {
     "src": "/photos/brunch/heroImage/src.jpg",
     "alt": "Coco Cabana weekend brunch spread — colorful plates, eggs, French toast on marble table",
     "position": "object-top"
   },
   "stats": [
-    { "value": "Saturday & Sunday", "label": "10:00 AM – 3:00 PM" },
-    { "value": "Rooftop", "label": "The Brick Hotel, Oceanside" }
+    {
+      "value": "Saturday & Sunday",
+      "label": "10:00 AM – 3:00 PM"
+    },
+    {
+      "value": "Rooftop",
+      "label": "The Brick Hotel, Oceanside"
+    }
   ],
   "sections": [
     {
