@@ -32,7 +32,7 @@
       "eyebrow": "The Space",
       "title": "The Rooftop",
       "accent": "Above It All",
-      "text": "\nPerched above The Brick Hotel at 408 Pier View Way, the rooftop is a full open-air experience — Caribbean-inspired cocktails, a complete bar program, and views that stretch past the palm canopy all the way to the Pacific.\n",
+      "text": "\nPerched above The Brick Hotel at 408 Pier View Way, the rooftop is a full open-air experience — Coastal-inspired cocktails, a complete bar program, and views that stretch past the palm canopy all the way to the Pacific.\n",
       "tags": [
         "Open Air",
         "Full Bar",
@@ -73,7 +73,7 @@
       "eyebrow": "After Dark",
       "title": "\nLive Music<br>&amp; Events\n",
       "accent": "Every Fri & Sat",
-      "text": "\nLive DJ sets every Friday and Saturday night. The rooftop transforms after dark — cocktails, open air, and the Oceanside skyline as your backdrop.\n",
+      "text": "\nLive DJ sets every Friday and Saturday night. The rooftop transforms after dark — cocktails, open air, and the Oceanside skyline as your backdrop. Along with occasional big special live events in our ally.\n",
       "tags": [],
       "ctaText": "Reserve for the Night",
       "image": "/photos/venue/sections/3/image.jpg",
@@ -120,7 +120,7 @@
   },
   "finalCta": {
     "eyebrow": "Come See It",
-    "title": "Coco Cabana Awaits",
+    "title": "Cococabana Awaits",
     "detail": "The Brick Hotel, Oceanside, CA &middot; Open Daily · Brunch Sat &amp; Sun from 10 AM",
     "primaryCtaText": "Reserve a Table",
     "secondaryCtaText": "Weekend Brunch",
