@@ -35,37 +35,62 @@
           "image": "/photos/menuData/menuSections/0/items/4/image.jpg"
         },
         {
+          "name": "Caesar Salad",
+          "description": "little gem, herb caesar dressing, parmesan, garlic crostini",
+          "image": "/photos/menuData/menuSections/0/items/5/image.jpg"
+        },
+        {
+          "name": "Fish Tacos",
+          "description": "choice of crispy beer battered or grilled, cabbage slaw, crema, pico de gallo, cotija, flour tortillas ",
+          "image": "/photos/menuData/menuSections/0/items/6/image.jpg"
+        },
+        {
+          "name": "Poke Bowl",
+          "description": "ahi, cucumbers, avocado, pineapple, mango, cucumber, wonton, jalapeños, crushed wasabi peas drizzled with sriracha aioli & served on seasoned rice",
+          "image": "/photos/menuData/menuSections/0/items/7/image.jpg"
+        },
+        {
           "name": "Crispy Chicken Sandwich",
           "description": "fried or grilled chicken, jalapeno slaw, pickles, huli huli sauce, toasted bun served w/ fries",
-          "image": "/photos/menuData/menuSections/0/items/5/image.jpg",
+          "image": "/photos/menuData/menuSections/0/items/8/image.jpg",
           "imageAlt": "Crunchy Chicken Sandwich",
           "imagePosition": "object-[center_50%]"
         },
         {
+          "name": "Chicken Caeser Wrap",
+          "description": "grilled chicken wrapped with little gem lettuce and caeser dressing, crispy onions, served with fries.",
+          "image": "/photos/menuData/menuSections/0/items/9/image.jpg"
+        },
+        {
           "name": "Miss B's Burger",
           "description": "all natural 1/3 lb. angus beef patty, LTO,\nbread & butter pickles, spiced mustard, toasted brioche bun, choice of cheese: cheddar, swiss or pepper jack",
-          "image": "/photos/menuData/menuSections/0/items/6/image.jpg",
+          "image": "/photos/menuData/menuSections/0/items/10/image.jpg",
           "imageAlt": "Miss B's Burger with cheese, lettuce, tomato, and fries",
           "imagePosition": "object-[center_78%]"
         },
         {
           "name": "Cubano",
           "description": "house braised pulled kalua pork, sliced smoked ham, swiss cheese, sweet pickles, mustard aioli, on a pressed cuban roll",
-          "image": "/photos/menuData/menuSections/0/items/7/image.jpg",
+          "image": "/photos/menuData/menuSections/0/items/11/image.jpg",
           "imageAlt": "Delicioius Cubano sandwich with fries",
           "imagePosition": "object-[center_75%]"
         },
         {
-          "name": "Fish and Chips",
-          "description": "beer battered mahi, served with\nmaui wowee fries, and house tartar sauce",
-          "image": "/photos/menuData/menuSections/0/items/8/image.jpg",
-          "imageAlt": "Crispy Golden Battered Fish and Fries",
-          "imagePosition": "object-[center_75%]"
+          "name": "Skirt Steak",
+          "description": "chimichurri rojo, charred broccolini, arugula, pickled onions, cherry tomatoes, citrus vinaigrette ",
+          "image": "/photos/menuData/menuSections/0/items/12/image.jpg"
         },
         {
-          "name": "Caesar Salad",
-          "description": "little gem, herb caesar dressing, parmesan, garlic crostini",
-          "image": "/photos/menuData/menuSections/0/items/9/image.jpg"
+          "name": "Spicy Chicken Bowl",
+          "description": "grilled honey hot chicken, pineapple pico, mango, seasoned sesame rice, charred broccolini , jalapeño slaw",
+          "image": "/photos/menuData/menuSections/0/items/13/image.jpg"
+        },
+        {
+          "name": "Fish and Chips",
+          "description": "beer battered mahi, served with\nmaui wowee fries, and house tartar sauce",
+          "image": "/photos/menuData/menuSections/0/items/14/image.jpg",
+          "imageAlt": "Crispy Golden Battered Fish and Fries",
+          "imagePosition": "object-[center_75%]"
         }
       ]
     },
