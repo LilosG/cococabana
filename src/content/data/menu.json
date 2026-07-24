@@ -165,7 +165,8 @@
         },
         {
           "name": "Frozen Coconut Margarita",
-          "description": "tequila, coconut, fresh lime juice"
+          "description": "tequila, coconut, fresh lime juice",
+          "image": "/photos/menuData/menuSections/1/items/12/image.jpg"
         }
       ]
     }
