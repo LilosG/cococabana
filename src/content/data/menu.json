@@ -101,27 +101,69 @@
       "tone": "dark",
       "items": [
         {
-          "name": "Mimosas",
-          "image": "/photos/menuData/menuSections/1/items/0/image.jpg",
-          "imageAlt": "Mimosas served in champagne flutes with Campo Viejo Cava"
-        },
-        {
-          "name": "Swedish Bikini Team",
-          "description": "House rum blend, strawberry, cucumber, coconut water, lemon",
-          "image": "/photos/menuData/menuSections/1/items/1/image.jpg",
-          "imageAlt": "Swedish Bikini Team cocktail with cucumber ribbon and strawberry"
-        },
-        {
-          "name": "Pablo Discobar",
-          "image": "/photos/menuData/menuSections/1/items/2/image.jpg",
-          "imageAlt": "Pablo Discobar cocktail served in a disco ball ice bucket with champagne"
+          "name": "Oside Rider",
+          "description": "tamarind mezcal + watermelon + mint + fresh lime ",
+          "image": "/photos/menuData/menuSections/1/items/0/image.jpg"
         },
         {
           "name": "Miami Pound Machine",
           "description": "Blanco tequila, passionfruit, bitters",
-          "image": "/photos/menuData/menuSections/1/items/3/image.jpg",
+          "image": "/photos/menuData/menuSections/1/items/1/image.jpg",
           "imageAlt": "Miami Pound Machine cocktail with banana leaf and lime wheel",
           "imagePosition": "object-[25%_center]"
+        },
+        {
+          "name": "Swedish Bikini Team",
+          "description": "House rum blend, strawberry, cucumber, coconut water, lemon",
+          "image": "/photos/menuData/menuSections/1/items/2/image.jpg",
+          "imageAlt": "Swedish Bikini Team cocktail with cucumber ribbon and strawberry"
+        },
+        {
+          "name": "Shanghai Sally",
+          "description": "vodka + plum sake + lychee + fresh lemon + agave + butterfly pea bitters",
+          "image": "/photos/menuData/menuSections/1/items/3/image.jpg"
+        },
+        {
+          "name": "Pistolero Paloma",
+          "description": "blanco tequila + cantaloupe + fresh lime + grapefruit radler",
+          "image": "/photos/menuData/menuSections/1/items/4/image.jpg"
+        },
+        {
+          "name": "Mango Guava Spritz",
+          "description": "absolut mango + guava + orange + fresh lemon + cava + soda - 14 ( make it a HAVANA A GOOD TIME and upgrade to a flamingo group size ",
+          "image": "/photos/menuData/menuSections/1/items/5/image.jpg"
+        },
+        {
+          "name": "Marquesitas Espresso",
+          "description": "coffee infused rum + vanilla orgeat + kaula+ cold brew + salted mascarpone whip + waffle cone crumble"
+        },
+        {
+          "name": "Mo's Hugo Spritz",
+          "description": "elderflower infused with lemon + cava + soda water "
+        },
+        {
+          "name": "La Arandanita",
+          "description": "blanco tequila + blueberries + jalapeño + lime + agave ",
+          "image": "/photos/menuData/menuSections/1/items/8/image.jpg"
+        },
+        {
+          "name": "Clilantropist",
+          "description": "mezcal + pineapple orange cordial + cilantro + lime",
+          "image": "/photos/menuData/menuSections/1/items/9/image.jpg"
+        },
+        {
+          "name": "Pablo Discobar",
+          "image": "/photos/menuData/menuSections/1/items/10/image.jpg",
+          "imageAlt": "Pablo Discobar cocktail served in a disco ball ice bucket with champagne"
+        },
+        {
+          "name": "Mimosas",
+          "image": "/photos/menuData/menuSections/1/items/11/image.jpg",
+          "imageAlt": "Mimosas served in champagne flutes with Campo Viejo Cava"
+        },
+        {
+          "name": "Frozen Coconut Margarita",
+          "description": "tequila, coconut, fresh lime juice"
         }
       ]
     }
