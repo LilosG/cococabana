@@ -129,7 +129,7 @@ The beachfront stretch has a few spots that do brunch with an ocean-level view �
 
 **Hours:** Saturday and Sunday, 10:00 AM (check [cococabanaoside.com/brunch](/brunch) for current close times)
 
-**Reservations:** [Reserve online](https://tables.toasttab.com/restaurants/92e5306b-e932-4406-876b-91277626cb5c/findTime?toast_sg=0ad2b6f7-a902-4be0-97b4-0532bea5a475&toast_ss=6e5433f4-a2dc-4d75-8c25-8ad93cd2b639&toast_src=website_link&utm_source=undefined&utm_content=home&utm_medium=toast_sites&utm_term=nav&utm_campaign=undefined) or call (858) 304-7725. Reservations are recommended, especially for groups of 4 or more on peak weekend mornings.
+**Reservations:** [Reserve online](https://tables.toasttab.com/restaurants/92e5306b-e932-4406-876b-91277626cb5c/findTime?toast_sg=0ad2b6f7-a902-4be0-97b4-0532bea5a475&toast_ss=6e5433f4-a2dc-4d75-8c25-8ad93cd2b639&toast_src=website_link&utm_source=cococabanaoside.com&utm_content=home&utm_medium=toast_sites&utm_term=nav&utm_campaign=reservations) or call (858) 304-7725. Reservations are recommended, especially for groups of 4 or more on peak weekend mornings.
 
 **Groups and private events:** [Contact us](/contact) for groups planning a celebration, or see the [private events page](/private-events) for buyout options.
 
@@ -162,4 +162,4 @@ Start with the malasadas while you review the rest of the [menu](/brunch). Order
 408 Pier View Way, Oceanside, CA 92054
 (858) 304-7725 · [@cococabanaoside](https://www.instagram.com/cococabanaoside/)
 
-[Reserve a brunch table](https://tables.toasttab.com/restaurants/92e5306b-e932-4406-876b-91277626cb5c/findTime?toast_sg=0ad2b6f7-a902-4be0-97b4-0532bea5a475&toast_ss=6e5433f4-a2dc-4d75-8c25-8ad93cd2b639&toast_src=website_link&utm_source=undefined&utm_content=home&utm_medium=toast_sites&utm_term=nav&utm_campaign=undefined) · [View the brunch menu](/brunch) · [Plan a private brunch event](/private-events/celebrations)
+[Reserve a brunch table](https://tables.toasttab.com/restaurants/92e5306b-e932-4406-876b-91277626cb5c/findTime?toast_sg=0ad2b6f7-a902-4be0-97b4-0532bea5a475&toast_ss=6e5433f4-a2dc-4d75-8c25-8ad93cd2b639&toast_src=website_link&utm_source=cococabanaoside.com&utm_content=home&utm_medium=toast_sites&utm_term=nav&utm_campaign=reservations) · [View the brunch menu](/brunch) · [Plan a private brunch event](/private-events/celebrations)

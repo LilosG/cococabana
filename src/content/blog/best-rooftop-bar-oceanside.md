@@ -99,7 +99,7 @@ Any weeknight is the right pick for a first date, an after-work drink, or a pre-
 
 ### Reservations
 
-[Reserve a table online](https://tables.toasttab.com/restaurants/92e5306b-e932-4406-876b-91277626cb5c/findTime?toast_sg=0ad2b6f7-a902-4be0-97b4-0532bea5a475&toast_ss=6e5433f4-a2dc-4d75-8c25-8ad93cd2b639&toast_src=website_link&utm_source=undefined&utm_content=home&utm_medium=toast_sites&utm_term=nav&utm_campaign=undefined) or call (858) 304-7725. Walk-ins are welcome but seating on weekend evenings fills quickly — a reservation is the smarter call for Friday and Saturday.
+[Reserve a table online](https://tables.toasttab.com/restaurants/92e5306b-e932-4406-876b-91277626cb5c/findTime?toast_sg=0ad2b6f7-a902-4be0-97b4-0532bea5a475&toast_ss=6e5433f4-a2dc-4d75-8c25-8ad93cd2b639&toast_src=website_link&utm_source=cococabanaoside.com&utm_content=home&utm_medium=toast_sites&utm_term=nav&utm_campaign=reservations) or call (858) 304-7725. Walk-ins are welcome but seating on weekend evenings fills quickly — a reservation is the smarter call for Friday and Saturday.
 
 ---
 
