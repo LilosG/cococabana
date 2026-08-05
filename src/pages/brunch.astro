@@ -30,7 +30,7 @@ import { brunchPage } from '../lib/cms';
     </p>
     <div class="flex flex-wrap gap-4">
       <Button href={venue.reservationsUrl} variant="primary" external>{brunchPage.primaryCtaText}</Button>
-      <Button href={brunchPage.secondaryCtaHref as unknown as string} variant="ghost">{brunchPage.secondaryCtaText}</Button>
+      <Button href={venue.orderUrl} variant="ghost" external>{brunchPage.secondaryCtaText}</Button>
     </div>
   </PageHero>
 
@@ -112,7 +112,7 @@ import { brunchPage } from '../lib/cms';
     <p class="text-brand-cream/60 mb-8" set:html={brunchPage.reserve.detail} />
     <div class="flex flex-wrap gap-4 justify-center">
       <Button href={venue.reservationsUrl} variant="primary" external>{brunchPage.reserve.primaryCtaText}</Button>
-      <Button href={venue.routes.menu} variant="ghost">{brunchPage.reserve.secondaryCtaText}</Button>
+      <Button href={venue.orderUrl} variant="ghost" external>{brunchPage.reserve.secondaryCtaText}</Button>
     </div>
   </section>
 </Layout>

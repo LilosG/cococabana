@@ -56,7 +56,7 @@ const atmosphereGrid = atmosphereImages.slice(1, 5);
       <h1 class="font-display leading-ultra text-hero uppercase mb-2">{homePage.heroTitle}</h1>
       <p class="uppercase tracking-feature text-sm sm:text-base text-brand-cream/80 mb-8">{homePage.heroSubtitle}</p>
       <div class="flex flex-wrap gap-4">
-        <Button href={homePage.primaryCtaHref} variant="primary" external>{homePage.primaryCtaText}</Button>
+        <Button href={venue.menuUrl} variant="primary" external>{homePage.primaryCtaText}</Button>
         <Button href={homePage.secondaryCtaHref} variant="ghost">{homePage.secondaryCtaText}</Button>
       </div>
     </div>
@@ -186,7 +186,7 @@ const atmosphereGrid = atmosphereImages.slice(1, 5);
       ))}
     </div>
     <div class="text-center">
-      <Button href={venue.routes.menu} variant="secondary">{homePage.food.ctaText}</Button>
+      <Button href={venue.orderUrl} variant="secondary" external>{homePage.food.ctaText}</Button>
     </div>
   </section>
 
