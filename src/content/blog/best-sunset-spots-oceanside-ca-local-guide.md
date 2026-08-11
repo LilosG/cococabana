@@ -8,7 +8,7 @@ relatedServices:
   - Events
 relatedCities:
   - Oceanside
-faqs:
+faq:
   - question: "What time do sunsets happen in Oceanside?"
     answer: "Oceanside sunsets typically occur between 7:45 PM and 8:15 PM depending on the season, with the latest sunsets in mid-June and earliest around early December."
   - question: "Which sunset spot in Oceanside is best for cocktails?"

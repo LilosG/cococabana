@@ -3,7 +3,7 @@ title: "Rooftop Birthday Party Cost in Oceanside: Complete Pricing Guide for Coc
 description: "Detailed breakdown of rooftop birthday party costs in Oceanside. Food, drinks, venue fees, and how Cococabana compares to other venues."
 date: 2026-07-31
 category: "Events"
-faqs:
+faq:
   - question: "What's the average cost of a rooftop birthday party at Cococabana in Oceanside?"
     answer: "Pricing depends on guest count and selections. Small groups (20-30 people) typically run $800–$1,500 for food and beverage; larger events (50+ guests) range from $2,500–$5,000+. Venue rental fees start at $500 for private space. We'll break down every line item below."
   - question: "Does Cococabana charge a separate venue rental fee for birthday parties?"

@@ -34,13 +34,40 @@ if (post.data.ogImage) {
     ? post.data.ogImage
     : `https://cococabanaoside.com${post.data.ogImage}`;
 }
+
+const faqSchema = post.data.faq && post.data.faq.length > 0 ? {
+  "@type": "FAQPage",
+  "@id": `${canonicalUrl}#faq`,
+  "mainEntity": post.data.faq.map(item => ({
+    "@type": "Question",
+    "name": item.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": item.answer,
+    },
+  })),
+} : null;
+
+const extraGraph = faqSchema ? [blogPostingSchema, faqSchema] : [blogPostingSchema];
+
+// Cross-linking: same category first, then most recent others, excluding self.
+const allPosts = await getCollection('blog');
+const relatedPosts = allPosts
+  .filter(p => p.id !== post.id)
+  .sort((a, b) => {
+    const aMatch = a.data.category === post.data.category ? 1 : 0;
+    const bMatch = b.data.category === post.data.category ? 1 : 0;
+    if (aMatch !== bMatch) return bMatch - aMatch;
+    return b.data.date.getTime() - a.data.date.getTime();
+  })
+  .slice(0, 3);
 ---
 
 <Layout
   title={`${post.data.title} | ${venue.fullName}`}
   description={post.data.description}
   ogImage={post.data.ogImage}
-  extraGraph={[blogPostingSchema]}
+  extraGraph={extraGraph}
 >
   <!-- POST HEADER -->
   <section class="bg-brand-navy px-6 sm:px-8 lg:px-12 pt-40 pb-16 sm:pt-48 sm:pb-20">
@@ -72,6 +99,56 @@ if (post.data.ogImage) {
       <Content />
     </div>
   </section>
+
+  {post.data.faq && post.data.faq.length > 0 && (
+    <section class="bg-brand-charcoal px-6 sm:px-8 lg:px-12 py-16 sm:py-20">
+      <div class="max-w-2xl mx-auto">
+        <Eyebrow tone="dark">FAQ</Eyebrow>
+        <h2 class="font-display text-section-xl leading-display uppercase text-brand-cream mb-8 mt-3">
+          Common Questions
+        </h2>
+        <div class="space-y-6">
+          {post.data.faq.map(item => (
+            <div class="border-b border-brand-cream/10 pb-6">
+              <h3 class="font-display uppercase text-sm tracking-feature text-brand-cream mb-2">{item.question}</h3>
+              <p class="text-brand-cream/70 text-sm leading-relaxed">{item.answer}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  {relatedPosts.length > 0 && (
+    <section class="bg-brand-cream px-6 sm:px-8 lg:px-12 py-16 sm:py-20 border-t border-brand-charcoal/10">
+      <div class="max-w-5xl mx-auto">
+        <Eyebrow align="center">More From the Rooftop</Eyebrow>
+        <h2 class="font-display text-section-xl leading-display uppercase text-brand-charcoal mb-10 mt-3 text-center">
+          More Guides
+        </h2>
+        <div class="grid sm:grid-cols-3 gap-8">
+          {relatedPosts.map(p => (
+            <a href={`/blog/${p.id}`} class="group block">
+              {p.data.ogImage ? (
+                <img
+                  src={p.data.ogImage}
+                  alt={p.data.title}
+                  loading="lazy"
+                  class="aspect-[4/3] w-full object-cover mb-4"
+                />
+              ) : (
+                <div class="bg-brand-charcoal/5 aspect-[4/3] w-full mb-4 flex items-center justify-center">
+                  <span class="text-xs uppercase tracking-label text-brand-charcoal/30">{p.data.category}</span>
+                </div>
+              )}
+              <p class="text-xs uppercase tracking-label text-brand-pink mb-2">{p.data.category}</p>
+              <h3 class="font-display uppercase text-sm tracking-feature text-brand-charcoal leading-snug group-hover:text-brand-pink transition-colors">{p.data.title}</h3>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
 
   <!-- CTA -->
   <section class="bg-brand-charcoal px-6 sm:px-8 lg:px-12 py-16 sm:py-20 text-center">

@@ -8,7 +8,7 @@ relatedServices:
   - "Celebrations"
 relatedCities:
   - "Oceanside"
-faqs:
+faq:
   - question: "What's the minimum spend for a private rooftop buyout at Cococabana?"
     answer: "Minimum spends vary by day and season, starting at $3,500 for weekday events and $6,000+ for weekend dates. Minimums are waived if your guest count reaches 75+ attendees."
   - question: "How many people can the rooftop accommodate for a private event?"
