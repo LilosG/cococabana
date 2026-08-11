@@ -5,7 +5,7 @@ date: 2026-08-11
 category: "Cocktails"
 relatedServices: ["Cocktails", "Happy Hour", "Sunset Views"]
 serviceAreas: ["Oceanside", "Downtown Oceanside"]
-faqs:
+faq:
   - question: "What time does sunset happen in Oceanside?"
     answer: "Sunset times vary by season, ranging from around 4:45 PM in December to 8:15 PM in June. Most rooftop bars have optimal viewing between 6:00 PM and 7:30 PM year-round."
   - question: "Do rooftop bars in Oceanside require reservations for sunset?"

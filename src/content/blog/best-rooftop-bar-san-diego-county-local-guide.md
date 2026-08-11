@@ -3,7 +3,7 @@ title: "Best Rooftop Bars in San Diego County: Where to Drink Above It All"
 description: "Explore San Diego County's best rooftop bars with ocean views, craft cocktails, and skyline vibes. Find your next favorite spot."
 date: 2026-07-25
 category: "Cocktails"
-faqs:
+faq:
   - question: "What's the best rooftop bar in San Diego County for sunset drinks?"
     answer: "Most rooftop bars in San Diego County offer prime sunset viewing between 7 and 8 p.m. depending on the season. Oceanside's rooftop venues benefit from direct western ocean exposure, making them particularly strong for golden-hour cocktails. Arrive 30–45 minutes before sunset to secure a good spot."
   - question: "Do rooftop bars in San Diego County require reservations?"

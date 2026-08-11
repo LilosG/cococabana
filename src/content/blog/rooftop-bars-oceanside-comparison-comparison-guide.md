@@ -9,7 +9,7 @@ relatedServices:
 relatedCities:
   - "Oceanside"
   - "Downtown Oceanside"
-faqs:
+faq:
   - question: "What's the best rooftop bar in Oceanside for sunset views?"
     answer: "Cococabana at The Brick Hotel offers 360-degree views of the Pacific and downtown Oceanside, with Caribbean-inspired cocktails and a Josper oven serving grilled seafood and small plates."
   - question: "Which Oceanside rooftop bar has the best food menu?"
