@@ -6,6 +6,7 @@ export interface MenuItemData {
   image: string;
   imageAlt: string;
   imagePosition?: string;
+  featured?: boolean;
 }
 
 export interface MenuSectionData {

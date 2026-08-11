@@ -16,13 +16,20 @@ interface Props {
 
 const { title, description, ogImage, transparentNav = false, extraGraph = [] } = Astro.props;
 
+const siteUrl = "https://cococabanaoside.com";
+const canonicalUrl = new URL(Astro.url.pathname, siteUrl).toString();
+const defaultOgImage = `${siteUrl}/cococabana-logo.png`;
+const resolvedOgImage = ogImage ?? defaultOgImage;
+
 const schema = {
   "@context": "https://schema.org",
   "@graph": [
     {
       "@type": "BarOrPub",
+      "@id": `${siteUrl}#business`,
       "name": venue.fullName,
-      "url": "https://cococabanaoside.com",
+      "url": siteUrl,
+      "image": defaultOgImage,
       "telephone": venue.phone,
       "address": {
         "@type": "PostalAddress",
@@ -46,6 +53,7 @@ const schema = {
         "closes": h.closes
       })),
       "sameAs": [venue.social.instagram],
+      "hasMenu": `${siteUrl}/menu#menu`,
     },
     ...extraGraph,
   ],
@@ -73,11 +81,19 @@ const schema = {
       />
     </noscript>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={canonicalUrl} />
     <title>{title}</title>
     <meta name="description" content={description} />
-    {ogImage && <meta property="og:image" content={ogImage} />}
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
+    <meta property="og:image" content={resolvedOgImage} />
+    <meta property="og:site_name" content={venue.fullName} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={resolvedOgImage} />
     <script type="application/ld+json" set:html={JSON.stringify(schema)} />
     <Analytics />
   </head>

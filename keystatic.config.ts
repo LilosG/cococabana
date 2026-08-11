@@ -94,6 +94,12 @@ const menuItemFields = (namespace: string) =>
         "Describe the image for accessibility.",
       ),
       imagePosition: imagePositionField,
+      featured: fields.checkbox({
+        label: "Featured on Homepage",
+        description:
+          "Show this item in the homepage preview grid. The full menu page always shows every item regardless of this setting — keep featured items to 6 per section (food / cocktails) so the homepage grid stays curated.",
+        defaultValue: false,
+      }),
     },
     {
       label: "Menu Item",
