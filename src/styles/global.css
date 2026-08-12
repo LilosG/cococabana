@@ -1,5 +1,8 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
+@import "@fontsource-variable/cormorant-garamond/wght.css";
+@import "@fontsource-variable/cormorant-garamond/wght-italic.css";
+@import "@fontsource-variable/jost/wght.css";
 
 /* ──────────────────────────────────────────────────────────
    DESIGN TOKENS — pulled directly from Cococabana reference photos.
@@ -56,9 +59,9 @@
      Park101/Louisiana Purchase/Miss B's/Coco Maya) so the build reads
      as finished rather than templated. Swappable in one place once
      Mike confirms a final pairing — this is not a locked decision. */
-  --font-display: 'Jost', sans-serif;       /* headlines, nav, buttons, uppercase tracked copy */
-  --font-body: 'Jost', sans-serif;          /* paragraph copy */
-  --font-accent: 'Cormorant Garamond', serif; /* italic emphasis phrases — the recurring portfolio device */
+  --font-display: 'Jost Variable', sans-serif;       /* headlines, nav, buttons, uppercase tracked copy */
+  --font-body: 'Jost Variable', sans-serif;          /* paragraph copy */
+  --font-accent: 'Cormorant Garamond Variable', serif; /* italic emphasis phrases — the recurring portfolio device */
 }
 
 /* ──────────────────────────────────────────────────────────

@@ -9,6 +9,7 @@ import { venue } from '../data/venue';
 import { menuSections } from '../data/menu';
 import { getPhoto } from '../utils/images';
 import { homePage } from '../lib/cms';
+import MapEmbed from '../components/MapEmbed.astro';
 
 // Homepage shows a curated preview only — the full menu (all items, every
 // section) lives on /menu and carries the Menu/MenuItem schema. Curation
@@ -429,13 +430,11 @@ const atmosphereGrid = atmosphereImages.slice(1, 5);
         </p>
       </div>
       <div class="md:col-span-3 aspect-[4/3] md:aspect-auto w-full h-full overflow-hidden min-h-[360px]">
-        <iframe
-          title={`Map to ${venue.fullName}`}
+        <MapEmbed
           src={venue.mapsEmbedUrl}
-          class="w-full h-full border-0"
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-        ></iframe>
+          title={`Map to ${venue.fullName}`}
+          iframeClass="w-full h-full border-0"
+        />
       </div>
     </div>
   </section>

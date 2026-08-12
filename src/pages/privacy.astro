@@ -1,0 +1,97 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { venue } from '../data/venue';
+---
+
+<Layout
+  title="Privacy Policy — Cococabana"
+  description="Privacy policy and Notice at Collection for Cococabana, a rooftop bar in Oceanside, CA."
+>
+  <section class="bg-brand-cream py-24 px-6 sm:px-8 lg:px-12">
+    <div class="max-w-3xl mx-auto">
+
+      <h1 class="font-display text-4xl sm:text-5xl text-brand-charcoal mb-4">Privacy Policy</h1>
+      <p class="text-brand-charcoal/50 text-sm mb-12">Last updated: August 2025</p>
+
+      <!-- NOTICE AT COLLECTION -->
+      <h2 id="notice-at-collection" class="font-display text-2xl text-brand-charcoal mt-12 mb-4">Notice at Collection</h2>
+      <p class="text-brand-charcoal/80 leading-relaxed mb-4">
+        This notice describes the personal information we collect and how we use it, as required by the California Consumer Privacy Act (CCPA).
+      </p>
+
+      <h3 class="font-display text-lg text-brand-charcoal mt-8 mb-3">What We Collect</h3>
+      <p class="text-brand-charcoal/80 leading-relaxed mb-4">
+        When you visit this website, we collect internet and network activity information, including: pages you view, the website that referred you here, your approximate location derived from your IP address, and your device and browser type. We also collect online identifiers such as cookie IDs assigned by Google Analytics.
+      </p>
+
+      <h3 class="font-display text-lg text-brand-charcoal mt-8 mb-3">Why We Collect It</h3>
+      <p class="text-brand-charcoal/80 leading-relaxed mb-4">
+        We collect this information solely to measure site traffic and improve this website. We do not use it for any other purpose.
+      </p>
+
+      <h3 class="font-display text-lg text-brand-charcoal mt-8 mb-3">Who Receives It</h3>
+      <p class="text-brand-charcoal/80 leading-relaxed mb-4">
+        This information is processed by Google, acting as a service provider under Google's data processing terms. Google Analytics processes analytics data on our behalf. We do not sell or share this data with any other third party.
+      </p>
+
+      <h3 class="font-display text-lg text-brand-charcoal mt-8 mb-3">What We Do Not Do</h3>
+      <p class="text-brand-charcoal/80 leading-relaxed mb-4">
+        We do not sell personal information. We do not share personal information for cross-context behavioral advertising. Google signals and ads personalization are disabled on this property — no advertising-related data is stored.
+      </p>
+
+      <h3 class="font-display text-lg text-brand-charcoal mt-8 mb-3">Data Retention</h3>
+      <p class="text-brand-charcoal/80 leading-relaxed mb-4">
+        Event-level data is retained for 14 months in Google Analytics, after which it is automatically deleted.
+      </p>
+
+      <h3 id="choices" class="font-display text-lg text-brand-charcoal mt-8 mb-3">Your Choices</h3>
+      <p class="text-brand-charcoal/80 leading-relaxed mb-4">
+        You may opt out of Google Analytics at any time using the <strong>Your Privacy Choices</strong> control in the site footer. Your opt-out is stored locally in your browser with no expiry.
+      </p>
+      <p class="text-brand-charcoal/80 leading-relaxed mb-4">
+        If your browser or browser extension sends a <strong>Global Privacy Control</strong> (GPC) signal, we honor it automatically — Google Analytics will not be loaded on any page visit where GPC is active.
+      </p>
+
+      <h3 class="font-display text-lg text-brand-charcoal mt-8 mb-3">California Residents — Your Rights</h3>
+      <p class="text-brand-charcoal/80 leading-relaxed mb-4">
+        Under the CCPA, California residents have the right to:
+      </p>
+      <ul class="list-disc list-outside pl-6 text-brand-charcoal/80 leading-relaxed space-y-2 mb-4">
+        <li><strong>Know</strong> what personal information we collect about you and how it is used.</li>
+        <li><strong>Delete</strong> personal information we have collected from you, subject to certain exceptions.</li>
+        <li><strong>Correct</strong> inaccurate personal information we hold about you.</li>
+        <li><strong>Opt out</strong> of the sale or sharing of your personal information (we do not sell or share personal information).</li>
+      </ul>
+      <p class="text-brand-charcoal/80 leading-relaxed mb-4">
+        To exercise these rights, or if you have any privacy-related questions, contact us:
+      </p>
+      <address class="not-italic text-brand-charcoal/80 leading-relaxed mb-4">
+        <strong>Cococabana</strong><br />
+        {venue.address.street}<br />
+        {venue.address.city}, {venue.address.state} {venue.address.zip}<br />
+        <a href={venue.phoneHref} class="text-brand-pink hover:underline">{venue.phone}</a>
+      </address>
+
+      <!-- GENERAL PRIVACY POLICY -->
+      <hr class="border-brand-charcoal/10 my-12" />
+
+      <h2 class="font-display text-2xl text-brand-charcoal mt-12 mb-4">General Privacy Policy</h2>
+
+      <h3 class="font-display text-lg text-brand-charcoal mt-8 mb-3">Analytics</h3>
+      <p class="text-brand-charcoal/80 leading-relaxed mb-4">
+        This site uses Google Analytics 4 (GA4) to understand how visitors use the site. Analytics are loaded for all visitors by default, except for visitors who have opted out or whose browser sends a Global Privacy Control signal. All advertising features are disabled; we do not use Google Signals and do not allow ad personalization.
+      </p>
+
+      <h3 class="font-display text-lg text-brand-charcoal mt-8 mb-3">Cookies</h3>
+      <p class="text-brand-charcoal/80 leading-relaxed mb-4">
+        Google Analytics sets first-party cookies to distinguish visitors and sessions. No other cookies are set by this site. No third-party advertising or tracking cookies are used.
+      </p>
+
+      <h3 class="font-display text-lg text-brand-charcoal mt-8 mb-3">Changes to This Policy</h3>
+      <p class="text-brand-charcoal/80 leading-relaxed mb-4">
+        We may update this policy from time to time. The "last updated" date at the top of this page will reflect any changes.
+      </p>
+
+    </div>
+  </section>
+</Layout>

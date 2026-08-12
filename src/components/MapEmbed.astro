@@ -1,0 +1,69 @@
+---
+interface Props {
+  src: string;
+  title: string;
+  iframeClass?: string;
+  placeholderImage?: string;
+}
+
+const { src, title, iframeClass = 'w-full h-full border-0', placeholderImage } = Astro.props;
+const uid = Math.random().toString(36).slice(2, 9);
+---
+
+<div class="map-embed-wrapper w-full h-full relative" data-uid={uid}>
+  {placeholderImage ? (
+    <img
+      src={placeholderImage}
+      alt="Map placeholder"
+      class="w-full h-full object-cover absolute inset-0"
+      loading="lazy"
+    />
+  ) : (
+    <div class="w-full h-full absolute inset-0 bg-brand-charcoal/10 flex items-center justify-center"></div>
+  )}
+  <div class="absolute inset-0 flex flex-col items-center justify-center gap-3">
+    <p class="text-xs text-brand-charcoal/60 text-center px-4">
+      Loading the map connects to Google.
+    </p>
+    <button
+      type="button"
+      class="map-embed-btn bg-brand-charcoal text-brand-cream text-sm font-semibold uppercase tracking-button px-5 py-2.5 rounded hover:bg-brand-navy transition-colors"
+      data-src={src}
+      data-title={title}
+      data-iframe-class={iframeClass}
+      data-uid={uid}
+    >
+      Load map
+    </button>
+  </div>
+</div>
+
+<script is:inline>
+  (function () {
+    function initMapEmbed(btn) {
+      btn.addEventListener('click', function () {
+        var wrapper = document.querySelector('.map-embed-wrapper[data-uid="' + btn.dataset.uid + '"]');
+        if (!wrapper) return;
+        var iframe = document.createElement('iframe');
+        iframe.src = btn.dataset.src;
+        iframe.title = btn.dataset.title;
+        iframe.className = btn.dataset.iframeClass || 'w-full h-full border-0';
+        iframe.loading = 'lazy';
+        iframe.referrerPolicy = 'no-referrer';
+        iframe.style.cssText = 'width:100%;height:100%;border:0;display:block;';
+        wrapper.innerHTML = '';
+        wrapper.appendChild(iframe);
+      }, { once: true });
+    }
+
+    function attachAll() {
+      document.querySelectorAll('.map-embed-btn').forEach(initMapEmbed);
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', attachAll);
+    } else {
+      attachAll();
+    }
+  })();
+</script>

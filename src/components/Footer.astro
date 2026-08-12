@@ -75,7 +75,110 @@ const portfolio = GPH_NETWORK.filter((v) => v.url !== venue.url);
 
   <div class="border-t border-brand-cream/10 px-6 sm:px-8 lg:px-12 py-6 text-xs text-brand-cream/50 flex flex-col sm:flex-row justify-between items-center gap-3">
     <p>&copy; {year} {venue.name}. {footer.copyrightSuffix}</p>
-    <a href={footer.agencyUrl} target="_blank" rel="noopener noreferrer"
-      class="text-brand-cream/50 hover:text-brand-pink text-[13px] transition-colors">{footer.agencyLabel}</a>
+    <div class="flex items-center gap-4">
+      <button
+        type="button"
+        id="lilos-privacy-choices-btn"
+        class="text-brand-cream/50 hover:text-brand-pink text-[13px] transition-colors underline underline-offset-2 cursor-pointer bg-transparent border-0 p-0"
+      >
+        Your Privacy Choices
+      </button>
+      <a href={footer.agencyUrl} target="_blank" rel="noopener noreferrer"
+        class="text-brand-cream/50 hover:text-brand-pink text-[13px] transition-colors">{footer.agencyLabel}</a>
+    </div>
+  </div>
+
+  <!-- Privacy choices inline panel -->
+  <div id="lilos-privacy-panel" hidden class="border-t border-brand-cream/10 bg-brand-charcoal px-6 sm:px-8 lg:px-12 py-6">
+    <div class="max-w-lg">
+      <h3 class="text-brand-cream text-sm font-semibold uppercase tracking-label mb-2">Your Privacy Choices</h3>
+      <p class="text-brand-cream/60 text-xs leading-relaxed mb-4">
+        We use Google Analytics to measure site traffic. You can opt out of analytics at any time.
+        Your choice is saved with no expiry. See our <a href="/privacy" class="underline hover:text-brand-pink transition-colors">Privacy Policy</a> for details.
+      </p>
+      <div class="flex items-center gap-4">
+        <button
+          type="button"
+          id="lilos-privacy-optout-btn"
+          class="text-xs font-semibold uppercase tracking-button px-4 py-2 rounded border border-brand-cream/30 text-brand-cream hover:bg-brand-cream/10 transition-colors"
+        >
+          Opt out
+        </button>
+        <button
+          type="button"
+          id="lilos-privacy-optin-btn"
+          class="text-xs font-semibold uppercase tracking-button px-4 py-2 rounded border border-brand-cream/30 text-brand-cream hover:bg-brand-cream/10 transition-colors"
+        >
+          Opt in
+        </button>
+        <span id="lilos-privacy-status" class="text-xs text-brand-cream/50"></span>
+      </div>
+    </div>
   </div>
 </footer>
+
+<script is:inline>
+  (function () {
+    var NEW_KEY = 'lilos-privacy-v1';
+
+    function readRecord() {
+      try {
+        var raw = localStorage.getItem(NEW_KEY);
+        if (!raw) return null;
+        var parsed = JSON.parse(raw);
+        if (!parsed || typeof parsed.ts !== 'number') return null;
+        return parsed;
+      } catch (e) { return null; }
+    }
+
+    function updateStatus() {
+      var status = document.getElementById('lilos-privacy-status');
+      if (!status) return;
+      var rec = readRecord();
+      var isOptedOut = rec && rec.optOut === true;
+      status.textContent = isOptedOut ? 'You are currently opted out.' : 'You are currently opted in.';
+    }
+
+    function initPanel() {
+      var btn = document.getElementById('lilos-privacy-choices-btn');
+      var panel = document.getElementById('lilos-privacy-panel');
+      var optoutBtn = document.getElementById('lilos-privacy-optout-btn');
+      var optinBtn = document.getElementById('lilos-privacy-optin-btn');
+
+      if (btn && panel) {
+        btn.addEventListener('click', function () {
+          panel.hidden = !panel.hidden;
+          if (!panel.hidden) updateStatus();
+        });
+      }
+
+      if (optoutBtn) {
+        optoutBtn.addEventListener('click', function () {
+          if (window.lilosPrivacy && typeof window.lilosPrivacy.optOut === 'function') {
+            window.lilosPrivacy.optOut();
+          } else {
+            try { localStorage.setItem(NEW_KEY, JSON.stringify({ optOut: true, ts: Date.now() })); } catch (e) {}
+          }
+          updateStatus();
+        });
+      }
+
+      if (optinBtn) {
+        optinBtn.addEventListener('click', function () {
+          if (window.lilosPrivacy && typeof window.lilosPrivacy.optIn === 'function') {
+            window.lilosPrivacy.optIn();
+          } else {
+            try { localStorage.setItem(NEW_KEY, JSON.stringify({ optOut: false, ts: Date.now() })); } catch (e) {}
+          }
+          updateStatus();
+        });
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initPanel);
+    } else {
+      initPanel();
+    }
+  })();
+</script>

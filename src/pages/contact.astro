@@ -4,6 +4,7 @@ import PageHero from '../components/PageHero.astro';
 import Button from '../components/Button.astro';
 import Eyebrow from '../components/Eyebrow.astro';
 import ToastEventForm from '../components/ToastEventForm.astro';
+import MapEmbed from '../components/MapEmbed.astro';
 import { venue } from '../data/venue';
 import { contactPage } from '../lib/cms';
 import { getPhoto } from '../utils/images';
@@ -74,13 +75,11 @@ import { getPhoto } from '../utils/images';
         <p class="text-brand-charcoal/50 text-xs uppercase tracking-label">{venue.hours.shortSummary}</p>
       </div>
       <div class="md:col-span-3 min-h-[400px] overflow-hidden">
-        <iframe
-          title={`Map to ${venue.fullName}`}
+        <MapEmbed
           src={venue.mapsEmbedUrl}
-          class="w-full h-full border-0 min-h-[400px]"
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-        ></iframe>
+          title={`Map to ${venue.fullName}`}
+          iframeClass="w-full h-full border-0 min-h-[400px]"
+        />
       </div>
     </div>
   </section>

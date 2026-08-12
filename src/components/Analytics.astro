@@ -4,44 +4,80 @@ const GA_ID = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
 {GA_ID && (
   <script is:inline define:vars={{ GA_ID }}>
     (function () {
-      var STORAGE_KEY = 'lilos-consent-v1';
-      var MAX_AGE_MS = 365 * 24 * 60 * 60 * 1000;
+      var OLD_KEY = 'lilos-consent-v1';
+      var NEW_KEY = 'lilos-privacy-v1';
 
-      function readStoredConsent() {
+      function readRecord(key) {
         try {
-          var raw = localStorage.getItem(STORAGE_KEY);
+          var raw = localStorage.getItem(key);
           if (!raw) return null;
           var parsed = JSON.parse(raw);
           if (!parsed || typeof parsed.ts !== 'number') return null;
-          if (Date.now() - parsed.ts > MAX_AGE_MS) return null;
           return parsed;
         } catch (e) {
           return null;
         }
       }
 
+      function writeRecord(record) {
+        try {
+          localStorage.setItem(NEW_KEY, JSON.stringify(record));
+        } catch (e) {}
+      }
+
+      // Migrate old key: if new key absent but old key exists, carry over the opt-out decision.
+      function resolveOptOut() {
+        var rec = readRecord(NEW_KEY);
+        if (rec !== null) return rec.optOut === true;
+
+        var old = readRecord(OLD_KEY);
+        if (old !== null) {
+          var migrated = { optOut: old.analytics === false, ts: old.ts };
+          writeRecord(migrated);
+          return migrated.optOut;
+        }
+
+        // No record at all — default opted in.
+        return false;
+      }
+
+      function hasGPC() {
+        return navigator.globalPrivacyControl === true;
+      }
+
       function initAnalytics() {
         if (window.__lilosGA4Loaded) return;
         window.__lilosGA4Loaded = true;
+
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function () { window.dataLayer.push(arguments); };
+
+        window.gtag('consent', 'default', {
+          ad_storage: 'denied',
+          ad_user_data: 'denied',
+          ad_personalization: 'denied',
+          analytics_storage: 'granted'
+        });
+
+        window.gtag('js', new Date());
+        window.gtag('config', GA_ID, {
+          allow_google_signals: false,
+          allow_ad_personalization_signals: false
+        });
 
         var s = document.createElement('script');
         s.async = true;
         s.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(GA_ID);
         document.head.appendChild(s);
 
-        window.dataLayer = window.dataLayer || [];
-        window.gtag = function () { window.dataLayer.push(arguments); };
-        window.gtag('js', new Date());
-        window.gtag('config', GA_ID);
-
         // Toast click-tracking — unchanged from prior implementation.
         document.addEventListener('click', function (e) {
-          const link = e.target.closest('a[href*="toasttab.com"]');
+          var link = e.target.closest('a[href*="toasttab.com"]');
           if (!link) return;
 
-          let eventName = 'toast_link_click';
+          var eventName = 'toast_link_click';
           try {
-            const host = new URL(link.href).hostname;
+            var host = new URL(link.href).hostname;
             if (host.includes('tables.toasttab.com')) eventName = 'reservation_click';
             else if (host.includes('order.toasttab.com')) eventName = 'order_click';
             else if (link.href.includes('invoice/lead')) eventName = 'inquiry_form_click';
@@ -57,12 +93,32 @@ const GA_ID = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
         }, { passive: true });
       }
 
-      var stored = readStoredConsent();
-      if (stored && stored.analytics) {
-        initAnalytics();
-      }
+      // Public API — used by ConsentBanner and footer privacy panel.
+      window.lilosPrivacy = {
+        optOut: function () {
+          writeRecord({ optOut: true, ts: Date.now() });
+          window['ga-disable-' + GA_ID] = true;
+        },
+        optIn: function () {
+          writeRecord({ optOut: false, ts: Date.now() });
+          window['ga-disable-' + GA_ID] = false;
+          initAnalytics();
+        },
+        isOptedOut: function () {
+          var rec = readRecord(NEW_KEY);
+          return rec !== null ? rec.optOut === true : false;
+        },
+      };
 
-      window.addEventListener('lilos-consent-accepted', initAnalytics);
+      // GPC: honor automatically, no stored record written.
+      if (hasGPC()) return;
+
+      var optedOut = resolveOptOut();
+      if (!optedOut) {
+        initAnalytics();
+      } else {
+        window['ga-disable-' + GA_ID] = true;
+      }
     })();
   </script>
 )}
