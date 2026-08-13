@@ -75,7 +75,10 @@ const portfolio = GPH_NETWORK.filter((v) => v.url !== venue.url);
 
   <div class="border-t border-brand-cream/10 px-6 sm:px-8 lg:px-12 py-6 text-xs text-brand-cream/50 flex flex-col sm:flex-row justify-between items-center gap-3">
     <p>&copy; {year} {venue.name}. {footer.copyrightSuffix}</p>
-    <a href={footer.agencyUrl} target="_blank" rel="noopener noreferrer"
-      class="text-brand-cream/50 hover:text-brand-pink text-[13px] transition-colors">{footer.agencyLabel}</a>
+    <div class="flex items-center gap-6">
+      <a href="/privacy#choices" class="text-brand-cream/50 hover:text-brand-pink text-[13px] transition-colors">Your Privacy Choices</a>
+      <a href={footer.agencyUrl} target="_blank" rel="noopener noreferrer"
+        class="text-brand-cream/50 hover:text-brand-pink text-[13px] transition-colors">{footer.agencyLabel}</a>
+    </div>
   </div>
 </footer>

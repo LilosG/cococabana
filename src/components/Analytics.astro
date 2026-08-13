@@ -4,37 +4,72 @@ const GA_ID = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
 {GA_ID && (
   <script is:inline define:vars={{ GA_ID }}>
     (function () {
-      var STORAGE_KEY = 'lilos-consent-v1';
-      var MAX_AGE_MS = 365 * 24 * 60 * 60 * 1000;
+      var NEW_KEY = 'lilos-privacy-v1';
+      var OLD_KEY = 'lilos-consent-v1';
 
-      function readStoredConsent() {
+      // ── 1. Read opt-out record (new key)
+      function readPrivacy() {
         try {
-          var raw = localStorage.getItem(STORAGE_KEY);
+          var raw = localStorage.getItem(NEW_KEY);
           if (!raw) return null;
           var parsed = JSON.parse(raw);
           if (!parsed || typeof parsed.ts !== 'number') return null;
-          if (Date.now() - parsed.ts > MAX_AGE_MS) return null;
           return parsed;
         } catch (e) {
           return null;
         }
       }
 
+      // ── 2. Migrate old consent key → new privacy key
+      function migrateIfNeeded() {
+        if (localStorage.getItem(NEW_KEY)) return; // already migrated
+        try {
+          var oldRaw = localStorage.getItem(OLD_KEY);
+          if (!oldRaw) return;
+          var old = JSON.parse(oldRaw);
+          if (!old || typeof old.ts !== 'number') return;
+          if (old.analytics === false) {
+            localStorage.setItem(NEW_KEY, JSON.stringify({ optOut: true, ts: old.ts }));
+          }
+          // analytics === true or absent → default opted-in, no record written
+        } catch (e) {}
+      }
+
+      // ── 3. GPC check — no DNT
+      function hasGPC() {
+        return navigator.globalPrivacyControl === true;
+      }
+
+      // ── 4. Load GA4
       function initAnalytics() {
         if (window.__lilosGA4Loaded) return;
         window.__lilosGA4Loaded = true;
+
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function () { window.dataLayer.push(arguments); };
+
+        // ── 5. Consent defaults — deny everything ad-related
+        window.gtag('consent', 'default', {
+          ad_storage: 'denied',
+          ad_user_data: 'denied',
+          ad_personalization: 'denied',
+          analytics_storage: 'granted'
+        });
+
+        window.gtag('js', new Date());
+
+        // ── 6. Config — no signals, no ads personalization
+        window.gtag('config', GA_ID, {
+          allow_google_signals: false,
+          allow_ad_personalization_signals: false
+        });
 
         var s = document.createElement('script');
         s.async = true;
         s.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(GA_ID);
         document.head.appendChild(s);
 
-        window.dataLayer = window.dataLayer || [];
-        window.gtag = function () { window.dataLayer.push(arguments); };
-        window.gtag('js', new Date());
-        window.gtag('config', GA_ID);
-
-        // Toast click-tracking — unchanged from prior implementation.
+        // ── 8. Toast click-tracking — unchanged from prior implementation.
         document.addEventListener('click', function (e) {
           const link = e.target.closest('a[href*="toasttab.com"]');
           if (!link) return;
@@ -57,12 +92,44 @@ const GA_ID = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
         }, { passive: true });
       }
 
-      var stored = readStoredConsent();
-      if (stored && stored.analytics) {
-        initAnalytics();
+      // ── 7. window.lilosPrivacy API
+      window.lilosPrivacy = {
+        isOptedOut: function () {
+          var rec = readPrivacy();
+          return rec ? !!rec.optOut : false;
+        },
+        optOut: function () {
+          try {
+            localStorage.setItem(NEW_KEY, JSON.stringify({ optOut: true, ts: Date.now() }));
+          } catch (e) {}
+          window['ga-disable-' + GA_ID] = true;
+        },
+        optIn: function () {
+          try {
+            localStorage.setItem(NEW_KEY, JSON.stringify({ optOut: false, ts: Date.now() }));
+          } catch (e) {}
+          window['ga-disable-' + GA_ID] = false;
+          initAnalytics();
+        },
+      };
+
+      // ── Boot
+      migrateIfNeeded();
+
+      if (hasGPC()) {
+        // Honor GPC — do not load, do not write a stored record
+        return;
       }
 
-      window.addEventListener('lilos-consent-accepted', initAnalytics);
+      var rec = readPrivacy();
+      if (rec && rec.optOut === true) {
+        // Visitor has opted out — apply disable flag and skip loading
+        window['ga-disable-' + GA_ID] = true;
+        return;
+      }
+
+      // Default: opted in (no record, or record with optOut: false)
+      initAnalytics();
     })();
   </script>
 )}
