@@ -1,0 +1,193 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { venue } from '../data/venue';
+---
+
+<Layout
+  title="Privacy Policy — Cococabana Rooftop Bar"
+  description="Privacy policy and data practices for Cococabana Rooftop Bar in Oceanside, CA."
+>
+  <section class="bg-brand-cream px-6 sm:px-8 lg:px-12 py-20 sm:py-28">
+    <div class="max-w-2xl mx-auto">
+
+      <p class="uppercase tracking-label text-xs text-brand-pink mb-4">Legal</p>
+      <h1 class="font-display text-section-xl leading-display uppercase text-brand-charcoal mb-12">
+        Privacy Policy
+      </h1>
+
+      <!-- NOTICE AT COLLECTION -->
+      <div class="prose prose-neutral max-w-none text-brand-charcoal/80 leading-relaxed">
+
+        <h2 class="font-display text-lg uppercase tracking-feature text-brand-charcoal mt-0 mb-4">
+          Notice at Collection
+        </h2>
+
+        <h3 class="font-display text-base uppercase tracking-feature text-brand-charcoal mt-8 mb-3">
+          What We Collect
+        </h3>
+        <p>
+          When you visit this website, we may collect internet and network activity information,
+          including: pages you view, the website that referred you here, your approximate location
+          derived from your IP address, and your device and browser type. We also collect online
+          identifiers such as cookie IDs assigned by Google Analytics.
+        </p>
+
+        <h3 class="font-display text-base uppercase tracking-feature text-brand-charcoal mt-8 mb-3">
+          Why We Collect It
+        </h3>
+        <p>
+          We use this information solely to measure site traffic and understand how visitors use
+          our website so we can improve it. We do not use it for any other purpose.
+        </p>
+
+        <h3 class="font-display text-base uppercase tracking-feature text-brand-charcoal mt-8 mb-3">
+          Who Receives It
+        </h3>
+        <p>
+          This information is transmitted to Google LLC, which processes it on our behalf as a
+          service provider under Google's data processing terms. We do not sell, rent, or share
+          your personal information with any other third party.
+        </p>
+
+        <h3 class="font-display text-base uppercase tracking-feature text-brand-charcoal mt-8 mb-3">
+          What We Do Not Do
+        </h3>
+        <p>
+          We do not sell your personal information. We do not share it for cross-context behavioral
+          advertising. Google Signals and ads personalization are disabled on this Analytics
+          property; no advertising-related data is stored.
+        </p>
+
+        <h3 class="font-display text-base uppercase tracking-feature text-brand-charcoal mt-8 mb-3">
+          Retention
+        </h3>
+        <p>
+          Google Analytics event data is retained for 14 months, after which it is automatically
+          deleted.
+        </p>
+
+        <h3 class="font-display text-base uppercase tracking-feature text-brand-charcoal mt-8 mb-3">
+          Your Choices
+        </h3>
+        <p>
+          You can opt out of Google Analytics measurement at any time using the control below.
+          Your choice is saved in your browser and does not expire. If your browser sends a
+          <a href="https://globalprivacycontrol.org/" target="_blank" rel="noopener noreferrer"
+            class="text-brand-pink underline underline-offset-2">Global Privacy Control</a>
+          signal, we honor it automatically and do not load analytics on your device.
+        </p>
+
+        <h3 class="font-display text-base uppercase tracking-feature text-brand-charcoal mt-8 mb-3">
+          California Residents
+        </h3>
+        <p>
+          If you are a California resident, you have the right to know what personal information
+          we collect about you, the right to delete it, and the right to correct inaccurate
+          information. To exercise any of these rights, please contact us:
+        </p>
+        <address class="not-italic mt-3">
+          <strong class="font-display uppercase tracking-feature text-brand-charcoal">{venue.fullName}</strong><br />
+          {venue.address.street}<br />
+          {venue.address.city}, {venue.address.state} {venue.address.zip}<br />
+          <a href={venue.phoneHref} class="text-brand-pink hover:underline underline-offset-2">{venue.phone}</a>
+        </address>
+
+      </div>
+
+      <!-- PRIVACY CHOICES CONTROL -->
+      <div id="choices" class="mt-16 border-t border-brand-charcoal/10 pt-12">
+        <h2 class="font-display text-lg uppercase tracking-feature text-brand-charcoal mb-2">
+          Your Privacy Choices
+        </h2>
+        <p class="text-brand-charcoal/70 text-sm leading-relaxed mb-6">
+          Use the control below to opt out of Google Analytics on this website.
+          Your choice is stored in your browser and persists across visits.
+        </p>
+
+        <div class="flex items-center gap-4 flex-wrap">
+          <span id="privacy-status" class="text-sm text-brand-charcoal/70 uppercase tracking-label"></span>
+          <button
+            type="button"
+            id="privacy-toggle"
+            class="font-display uppercase tracking-button text-sm font-semibold px-6 py-2.5 rounded border transition-colors"
+          >
+            <!-- label set by script -->
+          </button>
+        </div>
+        <p class="text-xs text-brand-charcoal/40 mt-4 uppercase tracking-label">
+          If your browser sends Global Privacy Control, analytics are disabled automatically — no action needed.
+        </p>
+      </div>
+
+    </div>
+  </section>
+</Layout>
+
+<script is:inline>
+  (function () {
+    var NEW_KEY = 'lilos-privacy-v1';
+
+    function readPrivacy() {
+      try {
+        var raw = localStorage.getItem(NEW_KEY);
+        if (!raw) return null;
+        var parsed = JSON.parse(raw);
+        if (!parsed || typeof parsed.ts !== 'number') return null;
+        return parsed;
+      } catch (e) { return null; }
+    }
+
+    function render() {
+      var statusEl = document.getElementById('privacy-status');
+      var btn = document.getElementById('privacy-toggle');
+      if (!statusEl || !btn) return;
+
+      var isOut = window.lilosPrivacy
+        ? window.lilosPrivacy.isOptedOut()
+        : (function () { var r = readPrivacy(); return r ? !!r.optOut : false; })();
+
+      if (isOut) {
+        statusEl.textContent = 'Analytics: opted out';
+        btn.textContent = 'Opt back in';
+        btn.className = btn.className.replace(/bg-\S+|text-\S+|border-\S+/g, '').trim();
+        btn.style.cssText = 'background:transparent;color:var(--color-brand-charcoal,#2b2420);border-color:rgba(43,36,32,0.3);';
+      } else {
+        statusEl.textContent = 'Analytics: active';
+        btn.textContent = 'Opt out';
+        btn.style.cssText = 'background:var(--color-brand-pink,#cc6f8d);color:#fff;border-color:transparent;';
+      }
+    }
+
+    function init() {
+      render();
+      var btn = document.getElementById('privacy-toggle');
+      if (!btn) return;
+      btn.addEventListener('click', function () {
+        var isOut = window.lilosPrivacy
+          ? window.lilosPrivacy.isOptedOut()
+          : (function () { var r = readPrivacy(); return r ? !!r.optOut : false; })();
+
+        if (isOut) {
+          if (window.lilosPrivacy && typeof window.lilosPrivacy.optIn === 'function') {
+            window.lilosPrivacy.optIn();
+          } else {
+            try { localStorage.setItem(NEW_KEY, JSON.stringify({ optOut: false, ts: Date.now() })); } catch(e) {}
+          }
+        } else {
+          if (window.lilosPrivacy && typeof window.lilosPrivacy.optOut === 'function') {
+            window.lilosPrivacy.optOut();
+          } else {
+            try { localStorage.setItem(NEW_KEY, JSON.stringify({ optOut: true, ts: Date.now() })); } catch(e) {}
+          }
+        }
+        render();
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+  })();
+</script>
