@@ -17,6 +17,11 @@ interface Props {
 const { title, description, ogImage, transparentNav = false, extraGraph = [] } = Astro.props;
 
 const siteUrl = "https://cococabanaoside.com";
+const googleRating = venue.googleRating ? parseFloat(venue.googleRating) : null;
+const reviewCount = parseInt(import.meta.env.PUBLIC_GOOGLE_REVIEW_COUNT || "0", 10);
+const aggregateRating = (googleRating && reviewCount > 0)
+  ? { "@type": "AggregateRating", ratingValue: googleRating, bestRating: 5, worstRating: 1, reviewCount }
+  : null;
 const canonicalUrl = new URL(Astro.url.pathname, siteUrl).toString();
 const defaultOgImage = `${siteUrl}/cococabana-logo.png`;
 const resolvedOgImage = ogImage ?? defaultOgImage;
@@ -52,8 +57,14 @@ const schema = {
         "opens": h.opens,
         "closes": h.closes
       })),
+      "email": venue.email,
       "sameAs": [venue.social.instagram],
       "hasMenu": `${siteUrl}/menu#menu`,
+      "areaServed": [
+        { "@type": "Place", "name": venue.address.neighborhood },
+        { "@type": "City", "name": venue.address.city },
+      ],
+      ...(aggregateRating && { aggregateRating }),
     },
     ...extraGraph,
   ],

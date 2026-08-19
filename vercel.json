@@ -1,0 +1,25 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "astro",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/reservations",               "destination": "/",        "permanent": true },
+    { "source": "/happenings",                 "destination": "/",        "permanent": true },
+    { "source": "/join-our-team",              "destination": "/contact", "permanent": true },
+    { "source": "/tl-weekly-specials",         "destination": "/menu",    "permanent": true },
+    { "source": "/about",                      "destination": "/venue",   "permanent": true },
+    { "source": "/gallery",                    "destination": "/venue",   "permanent": true },
+    { "source": "/accessibility",              "destination": "/contact", "permanent": true },
+    { "source": "/press",                      "destination": "/",        "permanent": true },
+    { "source": "/reviews",                    "destination": "/",        "permanent": true },
+    { "source": "/blog/best-brunch-oceanside", "destination": "/blog",    "permanent": true },
+    { "source": "/events/:path*",              "destination": "/brunch",  "permanent": true },
+    { "source": "/menus/:path*",               "destination": "/menu",    "permanent": true },
+    { "source": "/order/:path*",               "destination": "/menu",    "permanent": true },
+    { "source": "/online/:path*",              "destination": "/menu",    "permanent": true },
+    { "source": "/items/:path*",               "destination": "/menu",    "permanent": true },
+    { "source": "/tracking/:path*",            "destination": "/",        "permanent": true },
+    { "source": "/menu/:path+",               "destination": "/menu",    "permanent": true }
+  ]
+}

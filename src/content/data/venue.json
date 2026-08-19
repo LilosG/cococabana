@@ -7,10 +7,13 @@
   "hotel": "The Brick Hotel",
   "address": {
     "street": "408 Pier View Way",
+    "neighborhood": "Downtown Oceanside",
     "city": "Oceanside",
     "state": "CA",
     "zip": "92054"
   },
+  "email": "info@cococabanaoside.com",
+  "googleRating": "4.4",
   "phone": "(858) 304-7725",
   "phoneHref": "tel:+18583047725",
   "social": {
