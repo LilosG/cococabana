@@ -5,6 +5,7 @@ import Footer from '../components/Footer.astro';
 import Analytics from '../components/Analytics.astro';
 import ConsentBanner from '../components/ConsentBanner.astro';
 import { venue } from '../data/venue';
+import ratingData from '../data/google-rating.json';
 
 interface Props {
   title: string;
@@ -17,10 +18,8 @@ interface Props {
 const { title, description, ogImage, transparentNav = false, extraGraph = [] } = Astro.props;
 
 const siteUrl = "https://cococabanaoside.com";
-const googleRating = venue.googleRating ? parseFloat(venue.googleRating) : null;
-const reviewCount = parseInt(import.meta.env.PUBLIC_GOOGLE_REVIEW_COUNT || "0", 10);
-const aggregateRating = (googleRating && reviewCount > 0)
-  ? { "@type": "AggregateRating", ratingValue: googleRating, bestRating: 5, worstRating: 1, reviewCount }
+const aggregateRating = (ratingData.rating && ratingData.count > 0)
+  ? { "@type": "AggregateRating", ratingValue: ratingData.rating, bestRating: 5, worstRating: 1, reviewCount: ratingData.count }
   : null;
 const canonicalUrl = new URL(Astro.url.pathname, siteUrl).toString();
 const defaultOgImage = `${siteUrl}/cococabana-logo.png`;
