@@ -64,7 +64,9 @@
       "closes": "20:00"
     }
   ],
-  "mapsUrl": "https://www.google.com/maps/place/?q=408+Pier+View+Way,+Oceanside,+CA+92054",
+  "mapsUrl": "https://www.google.com/maps/search/?api=1&query_place_id=ChIJW6E2Ym5v3IARUMXICbrI9-E",
+  "mapsPlaceId": "ChIJW6E2Ym5v3IARUMXICbrI9-E",
+  "gbpUrl": "https://www.google.com/maps/place/?q=place_id:ChIJW6E2Ym5v3IARUMXICbrI9-E",
   "mapsEmbedUrl": "https://www.google.com/maps?q=408+Pier+View+Way,+Oceanside,+CA+92054&output=embed",
   "hours": {
     "schedule": [
