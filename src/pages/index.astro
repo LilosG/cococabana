@@ -10,6 +10,8 @@ import { menuSections } from '../data/menu';
 import { getPhoto } from '../utils/images';
 import { homePage } from '../lib/cms';
 import MapEmbed from '../components/MapEmbed.astro';
+import PromotionModal from '../components/PromotionModal.astro';
+import { PROMOTION_CONFIG } from '../config/promotion';
 
 // Homepage shows a curated preview only — the full menu (all items, every
 // section) lives on /menu and carries the Menu/MenuItem schema. Curation
@@ -43,6 +45,8 @@ const atmosphereGrid = atmosphereImages.slice(1, 5);
   description={homePage.seoDescription}
   transparentNav={true}
 >
+
+  <PromotionModal siteSlug={PROMOTION_CONFIG.venueSlug} />
 
   <!-- ════════════════════════════════════════════════════════════
        1 · HERO
