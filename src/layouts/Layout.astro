@@ -57,7 +57,7 @@ const schema = {
         "closes": h.closes
       })),
       "email": venue.email,
-      "sameAs": [venue.social.instagram, ...(venue.gbpUrl ? [venue.gbpUrl] : [])],
+      "sameAs": [venue.social.instagram, venue.social.facebook, ...(venue.gbpUrl ? [venue.gbpUrl] : [])],
       "hasMap": venue.mapsUrl,
       "hasMenu": `${siteUrl}/menu#menu`,
       "areaServed": [

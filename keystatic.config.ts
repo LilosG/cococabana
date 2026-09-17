@@ -383,10 +383,14 @@ export default config({
               "Instagram Handle",
               "Enter the displayed Instagram handle.",
             ),
+            facebook: fields.url({
+              label: "Facebook URL",
+              description: "Enter the full Facebook profile URL.",
+            }),
           },
           {
             label: "Social Media",
-            description: "The venue social media account.",
+            description: "The venue social media accounts.",
           },
         ),
         reservationsUrl: fields.url({

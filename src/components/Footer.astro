@@ -20,6 +20,32 @@ const portfolio = GPH_NETWORK.filter((v) => v.url !== venue.url);
         class="h-16 w-auto mb-4"
       />
       <p class="text-brand-cream/70 text-sm max-w-xs leading-relaxed">{footer.description}</p>
+      <nav aria-label="Cococabana social media" class="mt-4 -ml-3 flex items-center gap-1">
+        <a
+          href={venue.social.instagram}
+          aria-label="Cococabana Rooftop Bar on Instagram"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex size-11 items-center justify-center rounded-full text-brand-cream/70 transition-colors hover:text-brand-pink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-pink"
+        >
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="size-5">
+            <rect x="2" y="2" width="20" height="20" rx="5" />
+            <circle cx="12" cy="12" r="4" />
+            <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+          </svg>
+        </a>
+        <a
+          href={venue.social.facebook}
+          aria-label="Cococabana Rooftop Bar on Facebook"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex size-11 items-center justify-center rounded-full text-brand-cream/70 transition-colors hover:text-brand-pink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-pink"
+        >
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor" class="size-5">
+            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3V2z" />
+          </svg>
+        </a>
+      </nav>
     </div>
 
     <div>
