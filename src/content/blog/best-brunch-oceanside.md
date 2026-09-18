@@ -3,6 +3,7 @@ title: "Best Brunch in Oceanside, CA: The 2025 Guide"
 description: "A complete guide to the best brunch in Oceanside, CA — rooftop brunch with bottomless mimosas and Pacific views at Coco Cabana, plus everything you need to know about the Oceanside brunch scene, what to order, and how to plan a group brunch."
 date: 2025-02-12
 category: "Brunch"
+ogImage: "/photos/brunch-dishes-overhead.jpg"
 ---
 
 Brunch in Oceanside is better than most people expect, and it's getting better every year. The city's food and drink scene has matured significantly over the past few years — Downtown Oceanside now has a real restaurant culture, not just a collection of tourist-facing spots near the pier — and brunch has followed that trajectory. There are now genuinely excellent options for brunch in Oceanside, and the best of them stack up favorably against anything in the broader San Diego dining scene.

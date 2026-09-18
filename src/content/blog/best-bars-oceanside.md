@@ -3,6 +3,7 @@ title: "The Best Bars in Oceanside, CA: A 2025 Local's Guide"
 description: "The definitive guide to the best bars in Oceanside, CA — from rooftop cocktail bars with Pacific views to craft beer taprooms on Mission Ave, neighborhood dives near the pier, and late-night spots that keep the night going."
 date: 2025-01-22
 category: "Local Guide"
+ogImage: "/photos/bar-open-air-panorama.jpg"
 ---
 
 Oceanside's bar scene has quietly become one of the best in North County San Diego. The city has a mix that most places don't: a real beach-town energy, a growing craft food and drink culture, and a downtown that's dense enough to make a bar-hopping night work without driving between spots. If you've been sleeping on Oceanside as a destination for a great night out, this is your wakeup call.

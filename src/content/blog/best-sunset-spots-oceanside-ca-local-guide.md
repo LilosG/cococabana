@@ -3,6 +3,7 @@ title: "7 Best Sunset Spots in Oceanside, CA for Cocktails and Views"
 description: "Discover the best sunset spots in Oceanside, CA. From rooftop bars to beach breaks, find your perfect evening view."
 date: 2026-07-25
 category: "Local Guide"
+ogImage: "/photos/rooftopPromo/image.jpg"
 relatedServices:
   - Cocktails
   - Events

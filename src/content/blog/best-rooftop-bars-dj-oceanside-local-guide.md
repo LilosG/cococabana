@@ -3,6 +3,7 @@ title: "Best Rooftop Bars with DJ in Oceanside: Your Guide to Weekend Nightlife"
 description: "Discover the best rooftop bars with DJ events in Oceanside. Live music, sunset views, and vibrant crowds await. Find your next night out."
 date: 2026-08-25
 category: "Cocktails"
+ogImage: "/photos/home/liveMusic/image.jpg"
 faqs:
   - question: "Which rooftop bars in Oceanside have live DJ events?"
     answer: "Cococabana at The Brick Hotel is the premier destination for DJ events, featuring weekend sets with 360-degree views of downtown Oceanside and the harbor. Other venues occasionally host DJs, but Cococabana's rooftop is specifically designed for live music with full bar service and Caribbean-inspired cocktails."

@@ -3,6 +3,7 @@ title: "How to Plan a Corporate Event at Cococabana: Oceanside Rooftop Venue Gui
 description: "Step-by-step guide to planning corporate events at Cococabana rooftop bar. Menu options, pricing, sunset timing, and booking tips for Oceanside teams."
 date: 2026-09-01
 category: "Events"
+ogImage: "/photos/privateEventPages/corporate-events/sections/0/image.jpg"
 faqs:
   - question: "What's the capacity for corporate events at Cococabana?"
     answer: "Cococabana can accommodate groups ranging from intimate 20-person meetings to larger 150+ person celebrations. Private event space is available for exclusive bookings."

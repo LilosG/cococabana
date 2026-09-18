@@ -3,6 +3,7 @@ title: "Rooftop Bars in Oceanside: Cococabana vs. Local Competitors"
 description: "Compare Oceanside's rooftop bars: Cococabana's Caribbean vibe and Josper oven, sunset views, and what sets each apart."
 date: 2026-08-07
 category: "Cocktails"
+ogImage: "/photos/venue/gallery/images/0/src.jpg"
 relatedServices:
   - "Cocktails"
   - "Private Events"

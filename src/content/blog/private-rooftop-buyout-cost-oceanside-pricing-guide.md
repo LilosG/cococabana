@@ -3,6 +3,7 @@ title: "Private Rooftop Buyout Cost at Cococabana Oceanside: Pricing, Capacity &
 description: "Complete breakdown of private rooftop event pricing at Cococabana Oceanside. Minimums, capacity, inclusions, and how to budget for your celebration."
 date: 2026-07-31
 category: "Events"
+ogImage: "/photos/privateEventsPage/whatWeHost/image.jpg"
 relatedServices:
   - "Private Events"
   - "Celebrations"

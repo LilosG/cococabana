@@ -3,6 +3,7 @@ title: "How Much Does a Rooftop Date Night Cost at Cococabana in Oceanside?"
 description: "Break down the real cost of a date night at Cococabana rooftop bar. Cocktails, small plates, and honest pricing for Oceanside couples."
 date: 2026-08-17
 category: "Cocktails"
+ogImage: "/photos/venue-pendant-lounge.jpg"
 faqs:
   - question: "What's the average cost per person for a date night at Cococabana?"
     answer: "Plan for $60–$100 per person for cocktails, small plates, and appetizers. This can go higher if you add entrées or premium spirits, or lower if you stick to happy hour pricing."

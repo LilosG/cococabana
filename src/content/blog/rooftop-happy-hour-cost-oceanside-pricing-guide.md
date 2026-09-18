@@ -3,6 +3,7 @@ title: "Rooftop Happy Hour Cost in Oceanside: A Complete Pricing Guide to Cococa
 description: "Compare rooftop happy hour prices in Oceanside. See Cococabana's cocktail and small plate specials, timing, and how it stacks up locally."
 date: 2026-08-25
 category: "Cocktails"
+ogImage: "/photos/drinks/miami-pound-machine.jpg"
 faqs:
   - question: "What time does happy hour start at Cococabana?"
     answer: "Cococabana's happy hour runs daily from 4–6 PM, featuring discounted cocktails and small plates on our rooftop overlooking downtown Oceanside and the Pacific."

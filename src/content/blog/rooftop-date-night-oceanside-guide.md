@@ -3,6 +3,7 @@ title: "The Ultimate Guide to a Rooftop Date Night in Oceanside at Cococabana"
 description: "Plan the perfect rooftop date night in Oceanside. Sunset timing, cocktail picks, booking tips, and what to order at Cococabana."
 date: 2026-08-07
 category: "Local Guide"
+ogImage: "/photos/home/cabana/image.jpg"
 relatedServices: ["Cocktails", "Private Events", "Dining"]
 serviceAreas: ["Oceanside", "Downtown Oceanside"]
 faq:

@@ -3,6 +3,7 @@ title: "Best Private Event Venues in Oceanside: Where to Host Your Next Celebrat
 description: "Find the perfect private event venue in Oceanside. Compare rooftop bars, waterfront spaces, and indoor options for weddings, corporate events, and celebrations."
 date: 2026-07-25
 category: "Events"
+ogImage: "/photos/privateEventsPage/setting/image.jpg"
 relatedServices:
   - Private Events
   - Celebrations

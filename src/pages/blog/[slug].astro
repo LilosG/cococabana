@@ -1,9 +1,14 @@
 ---
 import { getCollection, render } from 'astro:content';
+import { Image } from 'astro:assets';
 import Layout from '../../layouts/Layout.astro';
 import Eyebrow from '../../components/Eyebrow.astro';
 import Button from '../../components/Button.astro';
 import { venue } from '../../data/venue';
+import { getPhoto } from '../../utils/images';
+
+const resolveBlogImage = (path?: string) =>
+  path?.startsWith('/photos/') ? getPhoto(path) : undefined;
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
@@ -12,6 +17,7 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 const { Content } = await render(post);
+const featuredImage = resolveBlogImage(post.data.ogImage);
 
 const canonicalUrl = `https://cococabanaoside.com/blog/${post.id}`;
 
@@ -82,16 +88,27 @@ const relatedPosts = allPosts
     </div>
   </section>
 
-  {post.data.ogImage && (
+  {featuredImage ? (
+    <div class="bg-brand-charcoal">
+      <Image
+        src={featuredImage}
+        alt={post.data.title}
+        layout="full-width"
+        sizes="100vw"
+        loading="eager"
+        class="w-full max-h-[520px] object-cover"
+      />
+    </div>
+  ) : post.data.ogImage ? (
     <div class="bg-brand-charcoal">
       <img
         src={post.data.ogImage}
         alt={post.data.title}
-        loading="lazy"
+        loading="eager"
         class="w-full max-h-[520px] object-cover"
       />
     </div>
-  )}
+  ) : null}
 
   <!-- POST BODY -->
   <section class="bg-brand-cream px-6 sm:px-8 lg:px-12 py-16 sm:py-24">
@@ -129,7 +146,16 @@ const relatedPosts = allPosts
         <div class="grid sm:grid-cols-3 gap-8">
           {relatedPosts.map(p => (
             <a href={`/blog/${p.id}`} class="group block">
-              {p.data.ogImage ? (
+              {resolveBlogImage(p.data.ogImage) ? (
+                <Image
+                  src={resolveBlogImage(p.data.ogImage)!}
+                  alt={p.data.title}
+                  layout="constrained"
+                  sizes="(min-width: 1024px) 320px, (min-width: 640px) 33vw, 100vw"
+                  loading="lazy"
+                  class="aspect-[4/3] w-full object-cover mb-4"
+                />
+              ) : p.data.ogImage ? (
                 <img
                   src={p.data.ogImage}
                   alt={p.data.title}

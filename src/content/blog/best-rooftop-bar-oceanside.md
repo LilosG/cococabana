@@ -3,6 +3,7 @@ title: "The Best Rooftop Bar in Oceanside, CA (2025 Guide)"
 description: "Looking for the best rooftop bar in Oceanside? Coco Cabana sits four stories above Downtown Oceanside with panoramic Pacific views, Caribbean cocktails, DJ nights every weekend, and bottomless brunch. Here's everything you need to know before you go."
 date: 2025-01-15
 category: "Local Guide"
+ogImage: "/photos/venue-open-rooftop.jpg"
 ---
 
 Oceanside doesn't get the credit it deserves. While San Diego proper gets the tourism dollars and Instagram posts, Oceanside has quietly built one of the best food and drink scenes in North County — and the rooftop experience here is genuinely worth the drive from anywhere in Southern California.

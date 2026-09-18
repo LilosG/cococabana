@@ -3,6 +3,7 @@ title: "Caribbean Cocktails in Oceanside: Cococabana vs. The Lobby Tiki Bar"
 description: "Compare Caribbean cocktails in Oceanside. Explore Cococabana's rooftop rum drinks and The Lobby Tiki Bar's tropical offerings."
 date: 2026-09-01
 category: "Cocktails"
+ogImage: "/photos/drinks/pablo-discobar.jpg"
 faqs:
   - question: "What's the difference between Cococabana and The Lobby Tiki Bar in Oceanside?"
     answer: "Cococabana sits atop The Brick Hotel with a rooftop setting and Caribbean-forward cocktails like the Thirst Trap. The Lobby Tiki Bar offers a more casual tiki lounge atmosphere with tropical drinks and a ground-level vibe on South Coast Highway."

@@ -3,6 +3,7 @@ title: "Bachelorette Party on a Rooftop in Oceanside: The Complete Planning Guid
 description: "Step-by-step guide to hosting a bachelorette party on Oceanside's rooftop bars. Reservations, cocktails, DJ setup, and logistics."
 date: 2026-08-17
 category: "Events"
+ogImage: "/photos/privateEventPages/celebrations/sections/0/image.jpg"
 relatedServices:
   - "Private Events"
   - "Cocktail Service"

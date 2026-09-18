@@ -3,6 +3,7 @@ title: "Best Caribbean Small Plates in Oceanside: Where to Find Jerk Butter Oyst
 description: "Discover the best Caribbean small plates in Oceanside, from Cococabana's rooftop to local favorites. Jerk oysters, wagyu skewers, and more."
 date: 2026-07-31
 category: "Local Guide"
+ogImage: "/photos/food/coconut-shrimp-v2.jpg"
 relatedServices:
   - "Small Plates"
   - "Caribbean Cuisine"

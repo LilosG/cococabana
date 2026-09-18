@@ -3,6 +3,7 @@ title: "Best Happy Hour in Oceanside, CA: Where to Go in 2025"
 description: "A complete guide to the best happy hour in Oceanside, CA — including rooftop cocktails with Pacific views, when to go for the best experience, what to order, and how to turn happy hour into a full evening above Downtown Oceanside."
 date: 2025-02-05
 category: "Local Guide"
+ogImage: "/photos/brunch-cocktails-signature.jpg"
 ---
 
 Happy hour in Oceanside is one of those things that's better than it has any right to be for a mid-sized coastal city in North County San Diego. The combination of a beach-town setting, a rapidly improving cocktail culture, and a downtown dense enough to walk between spots means the window between 4 PM and 8 PM on a weekday can be genuinely excellent here — if you know where to go.

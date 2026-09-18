@@ -3,6 +3,7 @@ title: "Best Rooftop Bars in Oceanside for Sunset: Where to Watch the Pacific Dr
 description: "Discover the best rooftop bars in Oceanside for sunset views. Compare top spots and find your ideal evening perch above downtown."
 date: 2026-08-11
 category: "Cocktails"
+ogImage: "/photos/golden-hour-flamingo.jpg"
 relatedServices: ["Cocktails", "Happy Hour", "Sunset Views"]
 serviceAreas: ["Oceanside", "Downtown Oceanside"]
 faq:
