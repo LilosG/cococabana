@@ -27,6 +27,9 @@ const bgClass = {
   dark:  'bg-brand-charcoal',
   navy:  'bg-brand-navy',
 }[tone];
+const imageSizes = imageLeft
+  ? '(min-width: 1280px) 768px, (min-width: 768px) 60vw, 100vw'
+  : '(min-width: 1280px) 512px, (min-width: 768px) 40vw, 100vw';
 ---
 
 <section {id} class:list={[bgClass, 'overflow-hidden']}>
@@ -36,6 +39,8 @@ const bgClass = {
         <Image
           src={image}
           alt={imageAlt}
+          layout="full-width"
+          sizes={imageSizes}
           loading="lazy"
           class:list={['absolute inset-0 w-full h-full object-cover', imagePosition]}
         />

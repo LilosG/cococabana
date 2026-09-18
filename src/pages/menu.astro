@@ -87,6 +87,7 @@ const cocktailsSection = menuSections.find(s => s.id === 'cocktails')!;
           imageAlt={item.imageAlt}
           imagePosition={item.imagePosition}
           category={cocktailsSection.category}
+          imageSizes="(min-width: 1024px) 240px, (min-width: 768px) 25vw, 50vw"
           tone={cocktailsSection.tone}
         />
       ))}

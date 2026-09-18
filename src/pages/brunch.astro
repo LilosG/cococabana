@@ -71,7 +71,7 @@ import { brunchPage } from '../lib/cms';
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto">
         {brunchDrinks.map(item => (
-          <MenuCard name={item.name} image={item.image?.trim() ? getPhoto(item.image) : undefined} imageAlt={item.imageAlt} description={item.description} category="drinks" />
+          <MenuCard name={item.name} image={item.image?.trim() ? getPhoto(item.image) : undefined} imageAlt={item.imageAlt} description={item.description} category="drinks" imageSizes="(min-width: 768px) 240px, (min-width: 640px) 33vw, 100vw" />
         ))}
       </div>
     </div>

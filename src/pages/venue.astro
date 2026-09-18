@@ -118,7 +118,7 @@ const galleryImages = venuePage.gallery.images.map((image) => ({
       {galleryImages.slice(0, 6).map((image) => (
         <div class="overflow-hidden aspect-square">
           {image.resolved && (
-            <Image src={image.resolved} alt={image.alt} loading="lazy" class={image.position} />
+            <Image src={image.resolved} alt={image.alt} layout="constrained" sizes="(min-width: 1024px) 330px, (min-width: 768px) 33vw, 50vw" loading="lazy" class={image.position} />
           )}
         </div>
       ))}

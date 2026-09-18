@@ -8,6 +8,7 @@ import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   site: 'https://cococabanaoside.com',
+  image: { responsiveStyles: true },
   vite: {
     plugins: [tailwindcss()]
   },

@@ -39,6 +39,8 @@ const Tag = href ? 'a' : 'article';
       <Image
         src={image}
         alt={imageAlt}
+        layout="constrained"
+        sizes="(min-width: 1024px) 325px, (min-width: 768px) 33vw, 50vw"
         loading="lazy"
         class:list={['w-full h-full object-cover transition-transform duration-500', imagePosition, href ? 'group-hover:scale-105' : 'hover:scale-105']}
       />

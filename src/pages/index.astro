@@ -57,6 +57,7 @@ const atmosphereGrid = atmosphereImages.slice(1, 5);
         <Image
           src={heroImage}
           alt={homePage.heroImage.alt}
+          layout="full-width"
           class={homePage.heroImage.position}
           fetchpriority="high"
           loading="eager"
@@ -136,6 +137,8 @@ const atmosphereGrid = atmosphereImages.slice(1, 5);
           <Image
             src={welcomeImage}
             alt={homePage.welcome.imageAlt}
+            layout="full-width"
+            sizes="(min-width: 1280px) 768px, (min-width: 768px) 60vw, 100vw"
             loading="lazy"
             class="absolute inset-0 w-full h-full object-cover"
           />
@@ -166,6 +169,7 @@ const atmosphereGrid = atmosphereImages.slice(1, 5);
         <Image
           src={barImage}
           alt={homePage.bar.imageAlt}
+          layout="full-width"
           class={homePage.bar.imagePosition}
           loading="lazy"
         />
@@ -232,6 +236,7 @@ const atmosphereGrid = atmosphereImages.slice(1, 5);
         <Image
           src={brunchImage}
           alt={homePage.brunch.imageAlt}
+          layout="full-width"
           class={homePage.brunch.imagePosition}
           loading="lazy"
         />
@@ -270,6 +275,8 @@ const atmosphereGrid = atmosphereImages.slice(1, 5);
           <Image
             src={viewImage}
             alt={homePage.view.imageAlt}
+            layout="full-width"
+            sizes="(min-width: 1280px) 768px, (min-width: 768px) 60vw, 100vw"
             loading="lazy"
             class={homePage.view.imagePosition}
           />
@@ -291,6 +298,8 @@ const atmosphereGrid = atmosphereImages.slice(1, 5);
           <Image
             src={cabanaImage}
             alt={homePage.cabana.imageAlt}
+            layout="full-width"
+            sizes="(min-width: 1280px) 768px, (min-width: 768px) 60vw, 100vw"
             loading="lazy"
             class={homePage.cabana.imagePosition}
           />
@@ -315,6 +324,7 @@ const atmosphereGrid = atmosphereImages.slice(1, 5);
         <Image
           src={liveMusicImage}
           alt={homePage.liveMusic.imageAlt}
+          layout="full-width"
           class={homePage.liveMusic.imagePosition}
           loading="lazy"
         />
@@ -350,6 +360,8 @@ const atmosphereGrid = atmosphereImages.slice(1, 5);
           <Image
             src={atmosphereFeature.resolved}
             alt={atmosphereFeature.alt}
+            layout="constrained"
+            sizes="(min-width: 1024px) 506px, (min-width: 768px) 50vw, 100vw"
             loading="lazy"
             class={atmosphereFeature.class}
           />
@@ -360,7 +372,7 @@ const atmosphereGrid = atmosphereImages.slice(1, 5);
         {atmosphereGrid.map((image) => (
           <div class="overflow-hidden aspect-square md:aspect-auto">
             {image.resolved && (
-              <Image src={image.resolved} alt={image.alt} loading="lazy" class={image.class} />
+              <Image src={image.resolved} alt={image.alt} layout="constrained" sizes="(min-width: 1024px) 250px, (min-width: 768px) 25vw, 50vw" loading="lazy" class={image.class} />
             )}
           </div>
         ))}
@@ -379,6 +391,8 @@ const atmosphereGrid = atmosphereImages.slice(1, 5);
           <Image
             src={privateEventsImage}
             alt={homePage.privateEvents.imageAlt}
+            layout="full-width"
+            sizes="(min-width: 1280px) 768px, (min-width: 768px) 60vw, 100vw"
             loading="lazy"
             class={homePage.privateEvents.imagePosition}
           />
