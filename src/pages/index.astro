@@ -446,10 +446,10 @@ const atmosphereGrid = atmosphereImages.slice(1, 5);
   <!-- ════════════════════════════════════════════════════════════
        12 · RESERVE CTA BAND
        ════════════════════════════════════════════════════════════ -->
-  <section class="bg-brand-charcoal border-t border-brand-cream/10 px-6 sm:px-8 lg:px-12 py-16 sm:py-20 text-center">
-    <h2 class="font-display text-section-xl leading-display uppercase text-brand-cream mb-2">{homePage.reserve.title}</h2>
-    <p class="accent-text text-accent-xl text-brand-pink mb-6">{homePage.reserve.accent}</p>
-    <p class="text-brand-cream/60 mb-8">
+  <section class="bg-brand-cream px-6 sm:px-8 lg:px-12 py-12 sm:py-14 lg:py-16 text-center">
+    <h2 class="max-w-4xl mx-auto font-display text-[2.5rem] sm:text-5xl lg:text-6xl leading-display uppercase text-brand-charcoal mb-2">{homePage.reserve.title}</h2>
+    <p class="accent-text text-3xl sm:text-4xl text-brand-pink mb-4">{homePage.reserve.accent}</p>
+    <p class="text-brand-charcoal/70 mb-6">
       {venue.address.street}, {venue.address.city}, {venue.address.state} &middot; {venue.phone}
     </p>
     <Button href={venue.reservationsUrl} variant="primary" external>{homePage.reserve.ctaText}</Button>
