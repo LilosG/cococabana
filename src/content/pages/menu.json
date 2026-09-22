@@ -1,13 +1,40 @@
 {
-  "seoTitle": "Menu | Cococabana Oceanside",
-  "seoDescription": "View Cococabana's food, drinks, cocktails, and brunch menu in Oceanside.",
+  "seoTitle": "Rooftop Restaurant & Cocktail Menu | Cococabana Oceanside",
+  "seoDescription": "Explore Cococabana's Caribbean-inspired rooftop restaurant menu, craft cocktails, and weekend brunch above The Brick Hotel in Downtown Oceanside.",
+  "heroEyebrow": "Dining Above Oceanside",
   "heroTitle": "Menu",
-  "heroText": "Food, drinks, cocktails, and brunch from the rooftop.",
+  "heroText": "Rooftop plates and cocktails, served above Downtown Oceanside.",
   "primaryCtaText": "View Full Menu",
   "heroImage": {
     "src": "/photos/menu/heroImage/src.jpg",
     "alt": "Coco Cabana signature copper flamingo cocktail vessel with rattan pendants and Oceanside rooftop",
-    "position": "object-bottom"
+    "focalPosition": "left-lower"
+  },
+  "infoStrip": {
+    "locationLabel": "Location",
+    "locationDetailPrefix": "Above",
+    "brunchLabel": "Weekend Brunch",
+    "kitchen": {
+      "label": "The Kitchen",
+      "value": "Caribbean-Inspired",
+      "detail": "Rooftop Plates"
+    },
+    "setting": {
+      "label": "The Setting",
+      "value": "Open Air",
+      "detail": "Pacific Views"
+    }
+  },
+  "intro": {
+    "eyebrow": "Cococabana",
+    "title": "Rooftop Restaurant & Cocktail Menu in Oceanside",
+    "accent": "Made for the Open Air",
+    "text": [
+      "Perched above The Brick Hotel in Downtown Oceanside, Cococabana brings Caribbean-inspired food and craft cocktails to an open-air rooftop setting. The menu is designed for lingering: shareable plates, satisfying mains, and bright flavors that feel at home near the Pacific.",
+      "Join us for rooftop dining throughout the week, settle in with a cocktail, or make a weekend of it with Saturday and Sunday brunch. Explore the kitchen and bar menus below, then reserve your table when you are ready to head upstairs."
+    ],
+    "image": "/photos/welcome-rooftop-wide.jpg",
+    "imageAlt": "Open-air Cococabana rooftop overlooking Downtown Oceanside and the Pacific"
   },
   "sections": [
     {
@@ -18,10 +45,18 @@
     {
       "eyebrow": "The Bar",
       "title": "Cocktails",
-      "text": "\nCaribbean-inspired cocktails crafted from scratch — built for a rooftop above the Pacific.\n",
-      "ctaText": "Reserve a Table"
+      "text": "\nCaribbean-inspired cocktails crafted from scratch — built for a rooftop above the Pacific.\n"
     }
   ],
+  "cocktailPromo": {
+    "image": "/photos/home/bar/image.jpg",
+    "imageAlt": "Cococabana open-air rooftop bar with marble counters and views across Oceanside",
+    "eyebrow": "The Bar",
+    "title": "Cocktails Above the Coast",
+    "accent": "Mixed for the Rooftop",
+    "text": "The bar pairs fresh, tropical flavors with a full cocktail program made for afternoons in the sun and evenings above Oceanside.",
+    "ctaText": "Reserve a Table"
+  },
   "brunchPromo": {
     "image": "/photos/menu/brunchPromo/image.jpg",
     "imageAlt": "Coco Cabana mimosas — Campo Viejo cava flights with copper flamingo on marble table",

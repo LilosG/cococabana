@@ -43,6 +43,19 @@ const imagePositionField = optionalText(
   "Optional CSS classes that control the image crop and position.",
 );
 
+const heroFocalPositionField = fields.select({
+  label: "Focal Position",
+  description: "Choose which part of the hero image should remain in view.",
+  options: [
+    { label: "Centered", value: "center" },
+    { label: "Top", value: "top" },
+    { label: "Bottom", value: "bottom" },
+    { label: "Lower Left", value: "left-lower" },
+    { label: "Lower Right", value: "right-lower" },
+  ],
+  defaultValue: "center",
+});
+
 const sharedPhotoPathField = (label = "Image Path") =>
   fields.text({
     label,
@@ -1039,17 +1052,76 @@ export default config({
         heroTitle: textField("Hero Title"),
         heroText: multiline("Hero Text"),
         primaryCtaText: optionalText("Primary Button Text"),
-        heroImage: fields.object(imageObjectFields("menu"), {
-          label: "Hero Image",
-          description: "The main image displayed at the top of the menu page.",
-        }),
+        heroImage: fields.object(
+          {
+            src: imageField("menu"),
+            alt: textField(
+              "Alternative Text",
+              "Describe the image for accessibility.",
+            ),
+            focalPosition: heroFocalPositionField,
+          },
+          {
+            label: "Hero Image",
+            description: "The main image displayed at the top of the menu page.",
+          },
+        ),
+        infoStrip: fields.object(
+          {
+            locationLabel: textField("Location Label"),
+            locationDetailPrefix: textField(
+              "Location Detail Prefix",
+              "Enter the short wording shown before the hotel name.",
+            ),
+            brunchLabel: textField("Brunch Label"),
+            kitchen: fields.object(
+              {
+                label: textField("Label"),
+                value: textField("Highlighted Text"),
+                detail: textField("Supporting Text"),
+              },
+              { label: "Kitchen Item" },
+            ),
+            setting: fields.object(
+              {
+                label: textField("Label"),
+                value: textField("Highlighted Text"),
+                detail: textField("Supporting Text"),
+              },
+              { label: "Setting Item" },
+            ),
+          },
+          {
+            label: "Information Strip",
+            description: "Edit the menu-specific labels and highlights below the hero.",
+          },
+        ),
+        intro: fields.object(
+          {
+            eyebrow: textField("Eyebrow"),
+            title: textField("Title"),
+            accent: textField("Accent Text"),
+            text: textList(
+              "Paragraphs",
+              "Add the introductory paragraphs shown above the menu.",
+            ),
+            image: sharedPhotoPathField(),
+            imageAlt: textField(
+              "Alternative Text",
+              "Describe the image for accessibility.",
+            ),
+          },
+          {
+            label: "Menu Introduction",
+            description: "The primary menu heading and restaurant overview.",
+          },
+        ),
         sections: fields.array(
           fields.object(
             {
               eyebrow: textField("Eyebrow"),
               title: textField("Title"),
               text: multiline("Text"),
-              ctaText: optionalText("Button Text"),
             },
             {
               label: "Menu Section",
@@ -1060,6 +1132,24 @@ export default config({
             label: "Sections",
             description: "Manage the menu category introductions.",
             itemLabel: (props) => props.fields.title.value || "Menu Section",
+          },
+        ),
+        cocktailPromo: fields.object(
+          {
+            image: sharedPhotoPathField(),
+            imageAlt: textField(
+              "Alternative Text",
+              "Describe the image for accessibility.",
+            ),
+            eyebrow: textField("Eyebrow"),
+            title: textField("Title"),
+            accent: textField("Accent Text"),
+            text: multiline("Text"),
+            ctaText: textField("Button Text"),
+          },
+          {
+            label: "Cocktail Promotion",
+            description: "The full-width transition between food and cocktails.",
           },
         ),
         brunchPromo: fields.object(

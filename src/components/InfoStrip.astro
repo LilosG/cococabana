@@ -1,0 +1,27 @@
+---
+interface InfoItem {
+  label: string;
+  value: string;
+  detail?: string;
+}
+
+interface Props {
+  items: InfoItem[];
+}
+
+const { items } = Astro.props;
+---
+
+<section class="bg-brand-charcoal text-brand-cream" aria-label="Visitor information">
+  <div class="max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-4 divide-x divide-y sm:divide-y-0 divide-brand-cream/10">
+    {items.map((item) => (
+      <div class="px-5 py-8 text-center">
+        <p class="uppercase tracking-stat text-xs text-brand-cream/50 mb-2">{item.label}</p>
+        <p class="accent-text text-xl sm:text-2xl text-brand-pink leading-tight">{item.value}</p>
+        {item.detail && (
+          <p class="uppercase tracking-stat text-xs text-brand-cream/40 mt-1">{item.detail}</p>
+        )}
+      </div>
+    ))}
+  </div>
+</section>

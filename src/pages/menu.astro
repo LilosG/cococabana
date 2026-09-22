@@ -1,6 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import PageHero from '../components/PageHero.astro';
+import InfoStrip from '../components/InfoStrip.astro';
+import SplitSection from '../components/SplitSection.astro';
 import FullBleedBanner from '../components/FullBleedBanner.astro';
 import Button from '../components/Button.astro';
 import Eyebrow from '../components/Eyebrow.astro';
@@ -9,6 +11,9 @@ import { venue } from '../data/venue';
 import { menuSections } from '../data/menu';
 import { getPhoto } from '../utils/images';
 import { menuPage } from '../lib/cms';
+import type { ComponentProps } from 'astro/types';
+
+type PageHeroFocalPosition = ComponentProps<typeof PageHero>['focalPosition'];
 
 const menuSchema = {
   "@type": "Menu",
@@ -30,6 +35,23 @@ const menuSchema = {
 
 const foodSection = menuSections.find(s => s.id === 'food')!;
 const cocktailsSection = menuSections.find(s => s.id === 'cocktails')!;
+const introImage = menuPage.intro.image?.trim() ? getPhoto(menuPage.intro.image) : undefined;
+const cocktailPromoImage = menuPage.cocktailPromo.image?.trim() ? getPhoto(menuPage.cocktailPromo.image) : undefined;
+const heroFocalPosition = menuPage.heroImage.focalPosition as PageHeroFocalPosition;
+const menuInfoItems = [
+  {
+    label: menuPage.infoStrip.locationLabel,
+    value: venue.address.neighborhood,
+    detail: `${menuPage.infoStrip.locationDetailPrefix} ${venue.hotel}`,
+  },
+  {
+    label: menuPage.infoStrip.brunchLabel,
+    value: venue.brunch.days,
+    detail: venue.brunch.hours,
+  },
+  menuPage.infoStrip.kitchen,
+  menuPage.infoStrip.setting,
+];
 ---
 
 <Layout
@@ -41,13 +63,31 @@ const cocktailsSection = menuSections.find(s => s.id === 'cocktails')!;
   <PageHero
     image={menuPage.heroImage.src?.trim() ? getPhoto(menuPage.heroImage.src) : undefined}
     imageAlt={menuPage.heroImage.alt}
-    imagePosition={menuPage.heroImage.position}
+    focalPosition={heroFocalPosition}
+    heightClass="min-h-[62svh] sm:min-h-[68svh]"
   >
     <Eyebrow tone="dark">{menuPage.heroEyebrow}</Eyebrow>
-    <h1 class="font-display leading-ultra text-hero uppercase mb-6">{menuPage.heroTitle}</h1>
+    <p class="font-display leading-ultra text-hero uppercase mb-4">{menuPage.heroTitle}</p>
     <p class="text-brand-cream/80 leading-relaxed max-w-xl mb-8">{menuPage.heroText}</p>
     <Button href={venue.orderUrl} variant="primary" external>{menuPage.primaryCtaText}</Button>
   </PageHero>
+
+  <InfoStrip items={menuInfoItems} />
+
+  <!-- MENU INTRODUCTION -->
+  <SplitSection
+    image={introImage}
+    imageAlt={menuPage.intro.imageAlt}
+    tone="light"
+    minHeight="min-h-[600px] md:min-h-[660px]"
+  >
+    <Eyebrow>{menuPage.intro.eyebrow}</Eyebrow>
+    <h1 class="font-display text-section-xl leading-display uppercase text-brand-charcoal mb-4">{menuPage.intro.title}</h1>
+    <p class="accent-text text-accent-xl text-brand-pink mb-6">{menuPage.intro.accent}</p>
+    <div class="space-y-4 text-brand-charcoal/70 leading-relaxed">
+      {menuPage.intro.text.map((paragraph) => <p>{paragraph}</p>)}
+    </div>
+  </SplitSection>
 
   <!-- FOOD -->
   <section id="food" class="bg-brand-cream px-6 sm:px-8 lg:px-12 py-20 sm:py-28">
@@ -71,6 +111,18 @@ const cocktailsSection = menuSections.find(s => s.id === 'cocktails')!;
     </div>
   </section>
 
+  <!-- COCKTAIL CHAPTER -->
+  <FullBleedBanner
+    image={cocktailPromoImage}
+    imageAlt={menuPage.cocktailPromo.imageAlt}
+  >
+    <Eyebrow tone="dark">{menuPage.cocktailPromo.eyebrow}</Eyebrow>
+    <h2 class="font-display leading-display text-section-xl uppercase mb-2">{menuPage.cocktailPromo.title}</h2>
+    <p class="accent-text text-accent-xl text-brand-pink mb-6">{menuPage.cocktailPromo.accent}</p>
+    <p class="text-brand-cream/80 leading-relaxed mb-8">{menuPage.cocktailPromo.text}</p>
+    <Button href={venue.reservationsUrl} variant="primary" external>{menuPage.cocktailPromo.ctaText}</Button>
+  </FullBleedBanner>
+
   <!-- COCKTAILS -->
   <section id="cocktails" class="bg-brand-charcoal px-6 sm:px-8 lg:px-12 py-20 sm:py-28">
     <div class="max-w-2xl mx-auto text-center mb-12">
@@ -91,9 +143,6 @@ const cocktailsSection = menuSections.find(s => s.id === 'cocktails')!;
           tone={cocktailsSection.tone}
         />
       ))}
-    </div>
-    <div class="text-center">
-      <Button href={venue.reservationsUrl} variant="ghost" external>{menuPage.sections[1].ctaText}</Button>
     </div>
   </section>
 
