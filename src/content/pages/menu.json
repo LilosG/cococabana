@@ -33,9 +33,19 @@
       "Perched above The Brick Hotel in Downtown Oceanside, Cococabana brings Caribbean-inspired food and craft cocktails to an open-air rooftop setting. The menu is designed for lingering: shareable plates, satisfying mains, and bright flavors that feel at home near the Pacific.",
       "Join us for rooftop dining throughout the week, settle in with a cocktail, or make a weekend of it with Saturday and Sunday brunch. Explore the kitchen and bar menus below, then reserve your table when you are ready to head upstairs."
     ],
-    "image": "/photos/welcome-rooftop-wide.jpg",
-    "imageAlt": "Open-air Cococabana rooftop overlooking Downtown Oceanside and the Pacific",
+    "image": "/photos/menu/cococabana-rooftop-seating-oceanside.jpg",
+    "imageAlt": "Cococabana rooftop dining area with rattan pendant lights, marble tables, tropical landscaping, and Downtown Oceanside views",
     "focal": "center"
+  },
+  "rooftopPromo": {
+    "image": "/photos/menu/cococabana-rooftop-dining-oceanside.jpg",
+    "imageAlt": "Open-air Cococabana rooftop overlooking Downtown Oceanside with bar seating, palms, and rooftop landscaping",
+    "focal": "center",
+    "focalDesktop": "inherit",
+    "eyebrow": "Dining Above Oceanside",
+    "title": "Made for the Rooftop",
+    "accent": "Open Air. Downtown Oceanside.",
+    "text": "Caribbean-inspired plates, cocktails, and weekend brunch served above Pier View Way in the heart of Downtown Oceanside."
   },
   "sections": [
     {

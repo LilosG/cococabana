@@ -1143,6 +1143,25 @@ export default config({
             description: "The primary menu heading and restaurant overview.",
           },
         ),
+        rooftopPromo: fields.object(
+          {
+            image: imageField("menu"),
+            imageAlt: textField(
+              "Alternative Text",
+              "Describe the image for accessibility.",
+            ),
+            ...largeImageFocalFields,
+            eyebrow: textField("Eyebrow"),
+            title: textField("Title"),
+            accent: textField("Accent Text"),
+            text: multiline("Text"),
+          },
+          {
+            label: "Rooftop Promotion",
+            description:
+              "The full-width transition between the menu introduction and food.",
+          },
+        ),
         sections: fields.array(
           fields.object(
             {

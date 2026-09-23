@@ -34,6 +34,7 @@ const menuSchema = {
 const foodSection = menuSections.find(s => s.id === 'food')!;
 const cocktailsSection = menuSections.find(s => s.id === 'cocktails')!;
 const introImage = menuPage.intro.image?.trim() ? getPhoto(menuPage.intro.image) : undefined;
+const rooftopPromoImage = menuPage.rooftopPromo.image?.trim() ? getPhoto(menuPage.rooftopPromo.image) : undefined;
 const cocktailPromoImage = menuPage.cocktailPromo.image?.trim() ? getPhoto(menuPage.cocktailPromo.image) : undefined;
 const menuInfoItems = [
   {
@@ -86,6 +87,18 @@ const menuInfoItems = [
       {menuPage.intro.text.map((paragraph) => <p>{paragraph}</p>)}
     </div>
   </SplitSection>
+
+  <!-- ROOFTOP CHAPTER -->
+  <FullBleedBanner
+    image={rooftopPromoImage}
+    imageAlt={menuPage.rooftopPromo.imageAlt}
+    {...resolveFocalProps(menuPage.rooftopPromo)}
+  >
+    <Eyebrow tone="dark">{menuPage.rooftopPromo.eyebrow}</Eyebrow>
+    <h2 class="font-display leading-display text-section-xl uppercase mb-2">{menuPage.rooftopPromo.title}</h2>
+    <p class="accent-text text-accent-xl text-brand-pink mb-6">{menuPage.rooftopPromo.accent}</p>
+    <p class="text-brand-cream/80 leading-relaxed">{menuPage.rooftopPromo.text}</p>
+  </FullBleedBanner>
 
   <!-- FOOD -->
   <section id="food" class="bg-brand-cream px-6 sm:px-8 lg:px-12 py-20 sm:py-28">
