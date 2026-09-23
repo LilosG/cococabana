@@ -69,8 +69,20 @@ const GA_ID = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
         s.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(GA_ID);
         document.head.appendChild(s);
 
-        // ── 8. Toast click-tracking — unchanged from prior implementation.
+        // ── 8. Delegated link click-tracking.
         document.addEventListener('click', function (e) {
+          const phoneLink = e.target.closest('a[href^="tel:"]');
+          if (phoneLink) {
+            if (typeof gtag === 'function') {
+              gtag('event', 'phone_click', {
+                link_url: phoneLink.href,
+                page_path: window.location.pathname,
+                link_location: phoneLink.dataset.analyticsLocation || 'unknown',
+              });
+            }
+            return;
+          }
+
           const link = e.target.closest('a[href*="toasttab.com"]');
           if (!link) return;
 

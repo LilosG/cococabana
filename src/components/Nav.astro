@@ -43,7 +43,7 @@ const navLinks = navigation.links;
     </a>
 
     <!-- Desktop nav: centered links -->
-    <div class="hidden sm:flex items-center justify-center gap-4 lg:gap-6 flex-wrap">
+    <div class="hidden sm:flex items-center justify-center gap-4 lg:gap-3 xl:gap-6 flex-wrap">
       {navLinks.map((link) => (
         <a
           href={link.href}
@@ -55,8 +55,15 @@ const navLinks = navigation.links;
       ))}
     </div>
 
-    <!-- Right zone: Order + Reserve -->
+    <!-- Right zone: Phone + Order + Reserve -->
     <div class="hidden sm:flex items-center gap-3 justify-self-end">
+      <a
+        href={venue.phoneHref}
+        aria-label={`Call Cococabana at ${venue.phone}`}
+        data-nav-link
+        data-analytics-location="nav_desktop"
+        class:list={['text-xs uppercase tracking-label transition-colors whitespace-nowrap', linkColor]}
+      >{venue.phone}</a>
       <!-- Order button — outline style, pink-aware for both nav states -->
       <a
         href={venue.orderUrl}
@@ -109,6 +116,12 @@ const navLinks = navigation.links;
           {link.label}
         </a>
       ))}
+      <a
+        href={venue.phoneHref}
+        aria-label={`Call Cococabana at ${venue.phone}`}
+        data-analytics-location="nav_mobile"
+        class="inline-flex items-center justify-center self-start border border-brand-pink px-4 py-3 text-sm uppercase tracking-label text-brand-pink hover:bg-brand-pink hover:text-brand-cream transition-colors whitespace-nowrap"
+      >{venue.phone}</a>
       <a
         href={venue.orderUrl}
         target="_blank"
