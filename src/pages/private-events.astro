@@ -12,6 +12,7 @@ import { venue } from '../data/venue';
 import { privateEvents } from '../data/events';
 import { getPhoto } from '../utils/images';
 import { privateEventsPage } from '../lib/cms';
+import { resolveFocalProps } from '../config/image-focal';
 
 const statsHtml = (stats: Array<{ value: string; label: string }>) =>
   stats
@@ -38,7 +39,7 @@ const processHtml = (steps: Array<{ number: string; title: string; text: string 
   <PageHero
     image={privateEventsPage.heroImage.src?.trim() ? getPhoto(privateEventsPage.heroImage.src) : undefined}
     imageAlt={privateEventsPage.heroImage.alt}
-    imagePosition={privateEventsPage.heroImage.position}
+    {...resolveFocalProps(privateEventsPage.heroImage)}
   >
     <Eyebrow tone="dark">{privateEventsPage.heroEyebrow}</Eyebrow>
     <h1 class="font-display leading-ultra text-hero uppercase mb-6" set:html={privateEventsPage.heroTitle.replace(/\n/g, '<br />')} />
@@ -61,7 +62,7 @@ const processHtml = (steps: Array<{ number: string; title: string; text: string 
     id="what-we-host"
     image={privateEventsPage.whatWeHost.image?.trim() ? getPhoto(privateEventsPage.whatWeHost.image) : undefined}
     imageAlt={privateEventsPage.whatWeHost.imageAlt}
-    imagePosition={privateEventsPage.whatWeHost.imagePosition}
+    {...resolveFocalProps(privateEventsPage.whatWeHost)}
     imageLeft={true}
     tone="light"
   >
@@ -100,7 +101,7 @@ const processHtml = (steps: Array<{ number: string; title: string; text: string 
   <FullBleedBanner
     image={privateEventsPage.setting.image?.trim() ? getPhoto(privateEventsPage.setting.image) : undefined}
     imageAlt={privateEventsPage.setting.imageAlt}
-    imagePosition={privateEventsPage.setting.imagePosition}
+    {...resolveFocalProps(privateEventsPage.setting)}
     gradientDirection={privateEventsPage.setting.gradientDirection as 'left'}
     minHeight={privateEventsPage.setting.minHeight}
   >

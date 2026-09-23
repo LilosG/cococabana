@@ -7,7 +7,8 @@
   "secondaryCtaText": "Private Events",
   "heroImage": {
     "src": "/photos/venue/heroImage/src.jpg",
-    "alt": "Aerial view of Coco Cabana rooftop bar — COCOCABANA sign on The Brick Hotel, Downtown Oceanside"
+    "alt": "Aerial view of Coco Cabana rooftop bar — COCOCABANA sign on The Brick Hotel, Downtown Oceanside",
+    "focal": "center"
   },
   "stats": [
     {
@@ -41,7 +42,7 @@
       ],
       "image": "/photos/venue/sections/0/image.jpg",
       "imageAlt": "Coco Cabana rooftop lounge — rattan pendants, tile wall, city views",
-      "imagePosition": "object-center"
+      "focal": "center"
     },
     {
       "eyebrow": "The Cabana",
@@ -52,7 +53,7 @@
       "ctaText": "Reserve Your Spot",
       "image": "/photos/venue/sections/1/image.jpg",
       "imageAlt": "Coco Cabana lounge seating — pink daybeds, geometric tile wall, Oceanside skyline",
-      "imagePosition": "object-center",
+      "focal": "center",
       "minHeight": "min-h-[640px] sm:min-h-[700px]"
     },
     {
@@ -67,7 +68,7 @@
       ],
       "image": "/photos/venue/sections/2/image.jpg",
       "imageAlt": "Sunset viewed from Coco Cabana rooftop — palms silhouetted against orange sky",
-      "imagePosition": "object-[center_65%]"
+      "focal": "lower-center"
     },
     {
       "eyebrow": "After Dark",
@@ -78,7 +79,7 @@
       "ctaText": "Reserve for the Night",
       "image": "/photos/venue/sections/3/image.jpg",
       "imageAlt": "DJ set at Coco Cabana rooftop with crowd",
-      "imagePosition": "object-[center_30%]",
+      "focal": "upper",
       "minHeight": "min-h-[600px] sm:min-h-[680px]"
     }
   ],

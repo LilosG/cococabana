@@ -12,6 +12,8 @@ import { homePage } from '../lib/cms';
 import MapEmbed from '../components/MapEmbed.astro';
 import PromotionModal from '../components/PromotionModal.astro';
 import { PROMOTION_CONFIG } from '../config/promotion';
+import CoverImage from '../components/CoverImage.astro';
+import { resolveFocalProps } from '../config/image-focal';
 
 // Homepage shows a curated preview only — the full menu (all items, every
 // section) lives on /menu and carries the Menu/MenuItem schema. Curation
@@ -54,11 +56,10 @@ const atmosphereGrid = atmosphereImages.slice(1, 5);
   <section class="relative min-h-[90svh] lg:min-h-[86svh] flex items-end overflow-hidden">
     <div class="absolute inset-0">
       {heroImage && (
-        <Image
+        <CoverImage
           src={heroImage}
           alt={homePage.heroImage.alt}
-          layout="full-width"
-          class={homePage.heroImage.position}
+          {...resolveFocalProps(homePage.heroImage)}
           fetchpriority="high"
           loading="eager"
         />
@@ -134,13 +135,12 @@ const atmosphereGrid = atmosphereImages.slice(1, 5);
     <div class="max-w-7xl mx-auto grid md:grid-cols-[3fr_2fr] items-stretch min-h-[560px] md:min-h-[640px]">
       <div class="relative min-h-[380px] md:min-h-0">
         {welcomeImage && (
-          <Image
+          <CoverImage
             src={welcomeImage}
             alt={homePage.welcome.imageAlt}
-            layout="full-width"
+            {...resolveFocalProps(homePage.welcome)}
             sizes="(min-width: 1280px) 768px, (min-width: 768px) 60vw, 100vw"
             loading="lazy"
-            class="absolute inset-0 w-full h-full object-cover"
           />
         )}
       </div>
@@ -166,11 +166,10 @@ const atmosphereGrid = atmosphereImages.slice(1, 5);
   <section class="relative min-h-[580px] sm:min-h-[640px] flex items-center overflow-hidden">
     <div class="absolute inset-0">
       {barImage && (
-        <Image
+        <CoverImage
           src={barImage}
           alt={homePage.bar.imageAlt}
-          layout="full-width"
-          class={homePage.bar.imagePosition}
+          {...resolveFocalProps(homePage.bar)}
           loading="lazy"
         />
       )}
@@ -233,11 +232,10 @@ const atmosphereGrid = atmosphereImages.slice(1, 5);
   <section class="relative min-h-[640px] sm:min-h-[700px] flex items-center overflow-hidden">
     <div class="absolute inset-0">
       {brunchImage && (
-        <Image
+        <CoverImage
           src={brunchImage}
           alt={homePage.brunch.imageAlt}
-          layout="full-width"
-          class={homePage.brunch.imagePosition}
+          {...resolveFocalProps(homePage.brunch)}
           loading="lazy"
         />
       )}
@@ -272,13 +270,12 @@ const atmosphereGrid = atmosphereImages.slice(1, 5);
       </div>
       <div class="relative min-h-[360px] md:min-h-0 md:order-2">
         {viewImage && (
-          <Image
+          <CoverImage
             src={viewImage}
             alt={homePage.view.imageAlt}
-            layout="full-width"
+            {...resolveFocalProps(homePage.view)}
             sizes="(min-width: 1280px) 768px, (min-width: 768px) 60vw, 100vw"
             loading="lazy"
-            class={homePage.view.imagePosition}
           />
         )}
       </div>
@@ -295,13 +292,12 @@ const atmosphereGrid = atmosphereImages.slice(1, 5);
     <div class="max-w-7xl mx-auto grid md:grid-cols-[3fr_2fr] items-stretch min-h-[520px] md:min-h-[600px]">
       <div class="relative min-h-[360px] md:min-h-0 md:order-1">
         {cabanaImage && (
-          <Image
+          <CoverImage
             src={cabanaImage}
             alt={homePage.cabana.imageAlt}
-            layout="full-width"
+            {...resolveFocalProps(homePage.cabana)}
             sizes="(min-width: 1280px) 768px, (min-width: 768px) 60vw, 100vw"
             loading="lazy"
-            class={homePage.cabana.imagePosition}
           />
         )}
       </div>
@@ -321,11 +317,10 @@ const atmosphereGrid = atmosphereImages.slice(1, 5);
   <section class="relative min-h-[600px] sm:min-h-[680px] flex items-center overflow-hidden">
     <div class="absolute inset-0">
       {liveMusicImage && (
-        <Image
+        <CoverImage
           src={liveMusicImage}
           alt={homePage.liveMusic.imageAlt}
-          layout="full-width"
-          class={homePage.liveMusic.imagePosition}
+          {...resolveFocalProps(homePage.liveMusic)}
           loading="lazy"
         />
       )}
@@ -388,13 +383,12 @@ const atmosphereGrid = atmosphereImages.slice(1, 5);
     <div class="max-w-7xl mx-auto grid md:grid-cols-[3fr_2fr] items-stretch min-h-[520px] md:min-h-[580px]">
       <div class="relative min-h-[360px] md:min-h-0">
         {privateEventsImage && (
-          <Image
+          <CoverImage
             src={privateEventsImage}
             alt={homePage.privateEvents.imageAlt}
-            layout="full-width"
+            {...resolveFocalProps(homePage.privateEvents)}
             sizes="(min-width: 1280px) 768px, (min-width: 768px) 60vw, 100vw"
             loading="lazy"
-            class={homePage.privateEvents.imagePosition}
           />
         )}
       </div>

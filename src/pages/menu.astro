@@ -11,9 +11,7 @@ import { venue } from '../data/venue';
 import { menuSections } from '../data/menu';
 import { getPhoto } from '../utils/images';
 import { menuPage } from '../lib/cms';
-import type { ComponentProps } from 'astro/types';
-
-type PageHeroFocalPosition = ComponentProps<typeof PageHero>['focalPosition'];
+import { resolveFocalProps } from '../config/image-focal';
 
 const menuSchema = {
   "@type": "Menu",
@@ -37,7 +35,6 @@ const foodSection = menuSections.find(s => s.id === 'food')!;
 const cocktailsSection = menuSections.find(s => s.id === 'cocktails')!;
 const introImage = menuPage.intro.image?.trim() ? getPhoto(menuPage.intro.image) : undefined;
 const cocktailPromoImage = menuPage.cocktailPromo.image?.trim() ? getPhoto(menuPage.cocktailPromo.image) : undefined;
-const heroFocalPosition = menuPage.heroImage.focalPosition as PageHeroFocalPosition;
 const menuInfoItems = [
   {
     label: menuPage.infoStrip.locationLabel,
@@ -63,7 +60,7 @@ const menuInfoItems = [
   <PageHero
     image={menuPage.heroImage.src?.trim() ? getPhoto(menuPage.heroImage.src) : undefined}
     imageAlt={menuPage.heroImage.alt}
-    focalPosition={heroFocalPosition}
+    {...resolveFocalProps(menuPage.heroImage)}
     heightClass="min-h-[62svh] sm:min-h-[68svh]"
   >
     <Eyebrow tone="dark">{menuPage.heroEyebrow}</Eyebrow>
@@ -78,6 +75,7 @@ const menuInfoItems = [
   <SplitSection
     image={introImage}
     imageAlt={menuPage.intro.imageAlt}
+    {...resolveFocalProps(menuPage.intro)}
     tone="light"
     minHeight="min-h-[600px] md:min-h-[660px]"
   >
@@ -115,6 +113,7 @@ const menuInfoItems = [
   <FullBleedBanner
     image={cocktailPromoImage}
     imageAlt={menuPage.cocktailPromo.imageAlt}
+    {...resolveFocalProps(menuPage.cocktailPromo)}
   >
     <Eyebrow tone="dark">{menuPage.cocktailPromo.eyebrow}</Eyebrow>
     <h2 class="font-display leading-display text-section-xl uppercase mb-2">{menuPage.cocktailPromo.title}</h2>
@@ -150,7 +149,7 @@ const menuInfoItems = [
   <FullBleedBanner
     image={menuPage.brunchPromo.image?.trim() ? getPhoto(menuPage.brunchPromo.image) : undefined}
     imageAlt={menuPage.brunchPromo.imageAlt}
-    imagePosition={menuPage.brunchPromo.imagePosition}
+    {...resolveFocalProps(menuPage.brunchPromo)}
     minHeight={menuPage.brunchPromo.minHeight}
   >
     <Eyebrow tone="dark">{menuPage.brunchPromo.eyebrow}</Eyebrow>

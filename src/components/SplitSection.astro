@@ -1,12 +1,14 @@
 ---
-import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
+import CoverImage from './CoverImage.astro';
+import type { FocalPosition } from '../config/image-focal';
 
 interface Props {
   id?: string;
   image?: ImageMetadata;
   imageAlt: string;
-  imagePosition?: string;
+  focal?: FocalPosition;
+  focalDesktop?: FocalPosition;
   tone?: 'light' | 'dark' | 'navy';
   imageLeft?: boolean;
   minHeight?: string;
@@ -16,7 +18,8 @@ const {
   id,
   image,
   imageAlt,
-  imagePosition = 'object-center',
+  focal = 'center',
+  focalDesktop,
   tone = 'light',
   imageLeft = false,
   minHeight = 'min-h-[560px] md:min-h-[640px]',
@@ -36,13 +39,13 @@ const imageSizes = imageLeft
   <div class:list={['max-w-7xl mx-auto grid md:grid-cols-[3fr_2fr] items-stretch', minHeight]}>
     <div class:list={['relative min-h-[380px] md:min-h-0', imageLeft ? 'md:order-1' : 'md:order-2']}>
       {image && (
-        <Image
+        <CoverImage
           src={image}
           alt={imageAlt}
-          layout="full-width"
+          {focal}
+          {focalDesktop}
           sizes={imageSizes}
           loading="lazy"
-          class:list={['absolute inset-0 w-full h-full object-cover', imagePosition]}
         />
       )}
     </div>

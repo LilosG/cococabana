@@ -10,6 +10,7 @@ import { venue } from '../data/venue';
 import { brunchFood, brunchDrinks } from '../data/brunch';
 import { getPhoto } from '../utils/images';
 import { brunchPage } from '../lib/cms';
+import { resolveFocalProps } from '../config/image-focal';
 ---
 
 <Layout
@@ -20,7 +21,7 @@ import { brunchPage } from '../lib/cms';
   <PageHero
     image={brunchPage.heroImage.src?.trim() ? getPhoto(brunchPage.heroImage.src) : undefined}
     imageAlt={brunchPage.heroImage.alt}
-    imagePosition={brunchPage.heroImage.position}
+    {...resolveFocalProps(brunchPage.heroImage)}
   >
     <Eyebrow tone="dark">{brunchPage.heroEyebrow}</Eyebrow>
     <h1 class="font-display leading-ultra text-hero uppercase mb-2">{brunchPage.heroTitle}</h1>
@@ -81,7 +82,7 @@ import { brunchPage } from '../lib/cms';
   <FullBleedBanner
     image={brunchPage.mimosaPromo.image?.trim() ? getPhoto(brunchPage.mimosaPromo.image) : undefined}
     imageAlt={brunchPage.mimosaPromo.imageAlt}
-    imagePosition={brunchPage.mimosaPromo.imagePosition}
+    {...resolveFocalProps(brunchPage.mimosaPromo)}
     minHeight={brunchPage.mimosaPromo.minHeight}
   >
     <Eyebrow tone="dark">{brunchPage.mimosaPromo.eyebrow}</Eyebrow>
@@ -95,6 +96,7 @@ import { brunchPage } from '../lib/cms';
   <SplitSection
     image={brunchPage.rooftopPromo.image?.trim() ? getPhoto(brunchPage.rooftopPromo.image) : undefined}
     imageAlt={brunchPage.rooftopPromo.imageAlt}
+    {...resolveFocalProps(brunchPage.rooftopPromo)}
     imageLeft={true}
     tone="dark"
   >

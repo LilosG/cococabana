@@ -7,6 +7,7 @@ import { venue } from '../data/venue';
 import { faqs } from '../data/faqs';
 import { faqPage } from '../lib/cms';
 import { getPhoto } from '../utils/images';
+import { resolveFocalProps } from '../config/image-focal';
 
 const faqSchema = {
   "@type": "FAQPage",
@@ -32,6 +33,7 @@ const faqSchema = {
   <PageHero
     image={faqPage.heroImage.src?.trim() ? getPhoto(faqPage.heroImage.src) : undefined}
     imageAlt={faqPage.heroImage.alt}
+    {...resolveFocalProps(faqPage.heroImage)}
   >
     <Eyebrow tone="dark">{faqPage.heroEyebrow}</Eyebrow>
     <h1 class="font-display leading-ultra text-hero uppercase mb-6">{faqPage.heroTitle}</h1>

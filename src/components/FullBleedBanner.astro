@@ -1,11 +1,13 @@
 ---
-import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
+import CoverImage from './CoverImage.astro';
+import type { FocalPosition } from '../config/image-focal';
 
 interface Props {
   image?: ImageMetadata;
   imageAlt: string;
-  imagePosition?: string;
+  focal?: FocalPosition;
+  focalDesktop?: FocalPosition;
   minHeight?: string;
   gradientDirection?: 'left' | 'right';
 }
@@ -13,7 +15,8 @@ interface Props {
 const {
   image,
   imageAlt,
-  imagePosition = 'object-center',
+  focal = 'center',
+  focalDesktop,
   minHeight = 'min-h-[580px] sm:min-h-[640px]',
   gradientDirection = 'left',
 } = Astro.props;
@@ -26,12 +29,12 @@ const gradient = gradientDirection === 'left'
 <section class:list={['relative flex items-center overflow-hidden', minHeight]}>
   <div class="absolute inset-0">
     {image && (
-      <Image
+      <CoverImage
         src={image}
         alt={imageAlt}
-        layout="full-width"
+        {focal}
+        {focalDesktop}
         loading="lazy"
-        class:list={['w-full h-full object-cover', imagePosition]}
       />
     )}
     <div class:list={['absolute inset-0', gradient]}></div>

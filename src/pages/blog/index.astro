@@ -26,6 +26,7 @@ const posts = (await getCollection('blog')).sort(
   <PageHero
     image={heroAerial}
     imageAlt="Aerial view of Coco Cabana rooftop bar over Downtown Oceanside"
+    focal="center"
   >
     <Eyebrow tone="dark">{venue.address.city}, {venue.address.state}</Eyebrow>
     <h1 class="font-display leading-ultra text-hero uppercase mb-6">From the Rooftop</h1>

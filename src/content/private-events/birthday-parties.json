@@ -11,7 +11,7 @@
   "heroImage": {
     "src": "/photos/privateEventPages/birthday-parties/heroImage/src.jpg",
     "alt": "Coco Cabana rooftop packed with guests at golden hour — full venue energy for a birthday celebration",
-    "position": "object-[center_40%]"
+    "focal": "upper-center"
   },
   "stats": [
     { "value": "Rooftop", "label": "Open Air · 4 Stories Up" },
@@ -38,7 +38,7 @@
       "secondaryCtaText": "Call to Inquire",
       "image": "/photos/privateEventPages/birthday-parties/sections/0/image.jpg",
       "imageAlt": "Group celebrating on Coco Cabana rooftop with cocktails and the gold pineapple wall",
-      "imagePosition": "object-[center_40%]"
+      "focal": "upper-center"
     },
     {
       "eyebrow": "The Setting",
@@ -50,7 +50,7 @@
       "primaryCtaText": "Start Planning",
       "image": "/photos/privateEventPages/birthday-parties/sections/1/image.jpg",
       "imageAlt": "DJ facing the crowd at Coco Cabana rooftop — palms, open sky, packed venue",
-      "imagePosition": "object-[center_25%]",
+      "focal": "upper",
       "gradientDirection": "left",
       "minHeight": "min-h-[600px] sm:min-h-[680px]"
     },
@@ -64,7 +64,7 @@
       "primaryCtaText": "Submit an Inquiry",
       "image": "/photos/privateEventPages/birthday-parties/sections/2/image.jpg",
       "imageAlt": "Coco Cabana rooftop lounge with pink daybeds, tile wall, and Oceanside city views at dusk",
-      "imagePosition": "object-center"
+      "focal": "center"
     }
   ],
   "process": {

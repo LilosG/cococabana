@@ -10,7 +10,7 @@
   "heroImage": {
     "src": "/photos/privateEventsPage/heroImage/src.jpg",
     "alt": "Coco Cabana rooftop packed with guests at golden hour — bartender at full venue",
-    "position": "object-[center_40%]"
+    "focal": "upper-center"
   },
   "stats": [
     {
@@ -65,7 +65,7 @@
   "whatWeHost": {
     "image": "/photos/privateEventsPage/whatWeHost/image.jpg",
     "imageAlt": "Group celebrating at Coco Cabana rooftop with cocktails and the gold pineapple wall",
-    "imagePosition": "object-[center_40%]",
+    "focal": "upper-center",
     "eyebrow": "What We Host",
     "title": "Built for the Occasion",
     "text": "Contact us directly to discuss availability, capacity, and what we can put together for your event. Every event is different — we'll make it work.\n",
@@ -78,7 +78,7 @@
   "setting": {
     "image": "/photos/privateEventsPage/setting/image.jpg",
     "imageAlt": "DJ facing the crowd at Coco Cabana rooftop — palms, open sky, packed venue",
-    "imagePosition": "object-[center_35%]",
+    "focal": "upper",
     "gradientDirection": "left",
     "minHeight": "min-h-[600px] sm:min-h-[680px]",
     "eyebrow": "The Setting",

@@ -43,18 +43,43 @@ const imagePositionField = optionalText(
   "Optional CSS classes that control the image crop and position.",
 );
 
-const heroFocalPositionField = fields.select({
+const focalPositionOptions = [
+  { label: "Center", value: "center" },
+  { label: "Top", value: "top" },
+  { label: "Upper", value: "upper" },
+  { label: "Upper Left", value: "upper-left" },
+  { label: "Upper Right", value: "upper-right" },
+  { label: "Upper Center", value: "upper-center" },
+  { label: "Center Left", value: "center-left" },
+  { label: "Center Right", value: "center-right" },
+  { label: "Lower Center", value: "lower-center" },
+  { label: "Lower", value: "lower" },
+  { label: "Lower Left", value: "lower-left" },
+  { label: "Lower Right", value: "lower-right" },
+  { label: "Bottom", value: "bottom" },
+] as const;
+
+const focalPositionField = fields.select({
   label: "Focal Position",
-  description: "Choose which part of the hero image should remain in view.",
-  options: [
-    { label: "Centered", value: "center" },
-    { label: "Top", value: "top" },
-    { label: "Bottom", value: "bottom" },
-    { label: "Lower Left", value: "left-lower" },
-    { label: "Lower Right", value: "right-lower" },
-  ],
+  description: "Choose which part of the image should remain in view.",
+  options: focalPositionOptions,
   defaultValue: "center",
 });
+
+const desktopFocalPositionField = fields.select({
+  label: "Desktop Focal Position",
+  description: "Optionally use a different focal position on desktop screens.",
+  options: [
+    { label: "Same as Mobile", value: "inherit" },
+    ...focalPositionOptions,
+  ],
+  defaultValue: "inherit",
+});
+
+const largeImageFocalFields = {
+  focal: focalPositionField,
+  focalDesktop: desktopFocalPositionField,
+};
 
 const sharedPhotoPathField = (label = "Image Path") =>
   fields.text({
@@ -66,7 +91,7 @@ const sharedPhotoPathField = (label = "Image Path") =>
 const imageObjectFields = (namespace: string) => ({
   src: imageField(namespace),
   alt: textField("Alternative Text", "Describe the image for accessibility."),
-  position: imagePositionField,
+  ...largeImageFocalFields,
 });
 
 const statFields = fields.object(
@@ -208,7 +233,7 @@ const pageSectionFields = (namespace: string) =>
         "Alternative Text",
         "Describe the image for accessibility.",
       ),
-      imagePosition: imagePositionField,
+      ...largeImageFocalFields,
       minHeight: optionalText(
         "Minimum Height",
         "Optional CSS class that controls section height.",
@@ -306,7 +331,7 @@ const privateEventSectionFields = fields.object(
       "Alternative Text",
       "Describe the image for accessibility.",
     ),
-    imagePosition: imagePositionField,
+    ...largeImageFocalFields,
     gradientDirection: optionalText(
       "Gradient Direction",
       "Optional direction used by the image overlay gradient.",
@@ -784,6 +809,7 @@ export default config({
               "Alternative Text",
               "Describe the image for accessibility.",
             ),
+            ...largeImageFocalFields,
             eyebrow: textField("Eyebrow"),
             title: textField("Title"),
             accent: textField("Accent Text"),
@@ -803,7 +829,7 @@ export default config({
               "Alternative Text",
               "Describe the image for accessibility.",
             ),
-            imagePosition: imagePositionField,
+            ...largeImageFocalFields,
             eyebrow: textField("Eyebrow"),
             title: textField("Title"),
             accent: textField("Accent Text"),
@@ -842,7 +868,7 @@ export default config({
               "Alternative Text",
               "Describe the image for accessibility.",
             ),
-            imagePosition: imagePositionField,
+            ...largeImageFocalFields,
             eyebrow: textField("Eyebrow"),
             title: textField("Title"),
             primaryCtaText: textField("Primary Button Text"),
@@ -860,7 +886,7 @@ export default config({
               "Alternative Text",
               "Describe the image for accessibility.",
             ),
-            imagePosition: imagePositionField,
+            ...largeImageFocalFields,
             eyebrow: textField("Eyebrow"),
             title: textField("Title"),
             accent: textField("Accent Text"),
@@ -879,7 +905,7 @@ export default config({
               "Alternative Text",
               "Describe the image for accessibility.",
             ),
-            imagePosition: imagePositionField,
+            ...largeImageFocalFields,
             eyebrow: textField("Eyebrow"),
             title: textField("Title"),
             accent: textField("Accent Text"),
@@ -898,7 +924,7 @@ export default config({
               "Alternative Text",
               "Describe the image for accessibility.",
             ),
-            imagePosition: imagePositionField,
+            ...largeImageFocalFields,
             eyebrow: textField("Eyebrow"),
             title: textField("Title"),
             accent: textField("Accent Text"),
@@ -951,7 +977,7 @@ export default config({
               "Alternative Text",
               "Describe the image for accessibility.",
             ),
-            imagePosition: imagePositionField,
+            ...largeImageFocalFields,
             eyebrow: textField("Eyebrow"),
             title: textField("Title"),
             accent: textField("Accent Text"),
@@ -1059,7 +1085,7 @@ export default config({
               "Alternative Text",
               "Describe the image for accessibility.",
             ),
-            focalPosition: heroFocalPositionField,
+            ...largeImageFocalFields,
           },
           {
             label: "Hero Image",
@@ -1110,6 +1136,7 @@ export default config({
               "Alternative Text",
               "Describe the image for accessibility.",
             ),
+            ...largeImageFocalFields,
           },
           {
             label: "Menu Introduction",
@@ -1141,6 +1168,7 @@ export default config({
               "Alternative Text",
               "Describe the image for accessibility.",
             ),
+            ...largeImageFocalFields,
             eyebrow: textField("Eyebrow"),
             title: textField("Title"),
             accent: textField("Accent Text"),
@@ -1159,7 +1187,7 @@ export default config({
               "Alternative Text",
               "Describe the image for accessibility.",
             ),
-            imagePosition: imagePositionField,
+            ...largeImageFocalFields,
             minHeight: optionalText(
               "Minimum Height",
               "Optional CSS class that controls section height.",
@@ -1240,7 +1268,7 @@ export default config({
               "Alternative Text",
               "Describe the image for accessibility.",
             ),
-            imagePosition: imagePositionField,
+            ...largeImageFocalFields,
             minHeight: optionalText(
               "Minimum Height",
               "Optional CSS class that controls section height.",
@@ -1263,6 +1291,7 @@ export default config({
               "Alternative Text",
               "Describe the image for accessibility.",
             ),
+            ...largeImageFocalFields,
             eyebrow: textField("Eyebrow"),
             title: textField("Title"),
             accent: textField("Accent Text"),
@@ -1339,7 +1368,7 @@ export default config({
               "Alternative Text",
               "Describe the image for accessibility.",
             ),
-            imagePosition: imagePositionField,
+            ...largeImageFocalFields,
             eyebrow: textField("Eyebrow"),
             title: textField("Title"),
             text: multiline("Text"),
@@ -1364,7 +1393,7 @@ export default config({
               "Alternative Text",
               "Describe the image for accessibility.",
             ),
-            imagePosition: imagePositionField,
+            ...largeImageFocalFields,
             gradientDirection: optionalText("Gradient Direction"),
             minHeight: optionalText("Minimum Height"),
             eyebrow: textField("Eyebrow"),
@@ -1413,6 +1442,7 @@ export default config({
               "Alternative Text",
               "Describe the image for accessibility.",
             ),
+            ...largeImageFocalFields,
           },
           {
             label: "Hero Image",
@@ -1458,6 +1488,7 @@ export default config({
               "Alternative Text",
               "Describe the image for accessibility.",
             ),
+            ...largeImageFocalFields,
           },
           {
             label: "Hero Image",
@@ -1594,7 +1625,7 @@ export default config({
               "Alternative Text",
               "Describe the image for accessibility.",
             ),
-            position: imagePositionField,
+            ...largeImageFocalFields,
           },
           {
             label: "Hero Image",

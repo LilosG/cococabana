@@ -12,7 +12,8 @@
   "heroImage": {
     "src": "/photos/home/heroImage/src.jpg",
     "alt": "Cococabana rooftop bar aerial view over Downtown Oceanside, CA",
-    "position": "w-full h-full object-cover"
+    "focal": "center",
+    "focalDesktop": "lower-center"
   },
   "stats": [
     {
@@ -34,6 +35,7 @@
   "welcome": {
     "image": "/photos/home/welcome/image.jpg",
     "imageAlt": "Cococabana rooftop lounge seating with tile wall, rattan pendants, and Oceanside views",
+    "focal": "center",
     "eyebrow": "Oceanside, CA",
     "title": "\nWhere Oceanside\n",
     "accent": "Comes to Drink Well",
@@ -44,7 +46,7 @@
   "bar": {
     "image": "/photos/home/bar/image.jpg",
     "imageAlt": "Cococabana open-air rooftop bar — marble counter, bar stools, hanging greenery, Oceanside views",
-    "imagePosition": "w-full h-full object-cover object-[center_50%]",
+    "focal": "center",
     "eyebrow": "The Bar",
     "title": "\nOpen Air. Full Bar.<br>Oceanside Rooftop Bar\n",
     "accent": "Above Pier View Way",
@@ -65,7 +67,7 @@
   "brunch": {
     "image": "/photos/home/brunch/image.jpg",
     "imageAlt": "Cococabana mimosas — Campo Viejo cava flights with copper flamingo, marble table, tile wall",
-    "imagePosition": "w-full h-full object-cover object-center",
+    "focal": "center",
     "eyebrow": "Weekend Brunch",
     "title": "\nRooftop Brunch<br>Bottomless Mimosas, Oceanside\n",
     "primaryCtaText": "View Brunch Menu",
@@ -74,7 +76,7 @@
   "view": {
     "image": "/photos/home/view/image.jpg",
     "imageAlt": "Sunset viewed from Cococabana rooftop through glass railing, palms silhouetted against orange sky",
-    "imagePosition": "absolute inset-0 w-full h-full object-cover object-[center_65%]",
+    "focal": "lower-center",
     "eyebrow": "The Rooftop",
     "title": "The Rooftop View Above Oceanside",
     "accent": "Above It All",
@@ -84,7 +86,7 @@
   "cabana": {
     "image": "/photos/home/cabana/image.jpg",
     "imageAlt": "Cococabana lounge area with open air,  geometric tile wall, and Oceanside city views",
-    "imagePosition": "absolute inset-0 w-full h-full object-cover object-center",
+    "focal": "center",
     "eyebrow": "The Cabana",
     "title": "Rooftop Lounge Seating in Oceanside",
     "accent": "Stay a While",
@@ -94,7 +96,7 @@
   "liveMusic": {
     "image": "/photos/home/liveMusic/image.jpg",
     "imageAlt": "DJ set at Cococabana with crowd on the rooftop",
-    "imagePosition": "w-full h-full object-cover object-[center_30%]",
+    "focal": "upper",
     "eyebrow": "Live Music & Events",
     "title": "\nOceanside Rooftop DJ Nights<br>Fridays &amp; Saturdays\n",
     "accent": "Every Weekend",
@@ -135,7 +137,7 @@
   "privateEvents": {
     "image": "/photos/home/privateEvents/image.jpg",
     "imageAlt": "Group celebrating at Cococabana rooftop bar with cocktails and the gold pineapple wall backdrop",
-    "imagePosition": "absolute inset-0 w-full h-full object-cover object-[center_40%]",
+    "focal": "upper-center",
     "eyebrow": "Private Events",
     "title": "Private Events at Our Oceanside Rooftop",
     "accent": "in Downtown Oceanside",

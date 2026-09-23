@@ -8,7 +8,7 @@
   "heroImage": {
     "src": "/photos/menu/heroImage/src.jpg",
     "alt": "Coco Cabana signature copper flamingo cocktail vessel with rattan pendants and Oceanside rooftop",
-    "focalPosition": "left-lower"
+    "focal": "lower-left"
   },
   "infoStrip": {
     "locationLabel": "Location",
@@ -34,7 +34,8 @@
       "Join us for rooftop dining throughout the week, settle in with a cocktail, or make a weekend of it with Saturday and Sunday brunch. Explore the kitchen and bar menus below, then reserve your table when you are ready to head upstairs."
     ],
     "image": "/photos/welcome-rooftop-wide.jpg",
-    "imageAlt": "Open-air Cococabana rooftop overlooking Downtown Oceanside and the Pacific"
+    "imageAlt": "Open-air Cococabana rooftop overlooking Downtown Oceanside and the Pacific",
+    "focal": "center"
   },
   "sections": [
     {
@@ -51,6 +52,7 @@
   "cocktailPromo": {
     "image": "/photos/home/bar/image.jpg",
     "imageAlt": "Cococabana open-air rooftop bar with marble counters and views across Oceanside",
+    "focal": "center",
     "eyebrow": "The Bar",
     "title": "Cocktails Above the Coast",
     "accent": "Mixed for the Rooftop",
@@ -60,7 +62,7 @@
   "brunchPromo": {
     "image": "/photos/menu/brunchPromo/image.jpg",
     "imageAlt": "Coco Cabana mimosas — Campo Viejo cava flights with copper flamingo on marble table",
-    "imagePosition": "object-center",
+    "focal": "center",
     "minHeight": "min-h-[560px] sm:min-h-[620px]",
     "eyebrow": "Weekend Brunch",
     "title": "\nBrunch on<br>the Rooftop\n",

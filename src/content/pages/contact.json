@@ -6,7 +6,8 @@
   "primaryCtaText": "Click Here",
   "heroImage": {
     "src": "/photos/contact/heroImage/src.jpg",
-    "alt": "Coco Cabana open-air rooftop bar — marble counter, bar stools, hanging greenery, Oceanside views"
+    "alt": "Coco Cabana open-air rooftop bar — marble counter, bar stools, hanging greenery, Oceanside views",
+    "focal": "center"
   },
   "formIntro": "Tell us what you are planning and our team will follow up.",
   "cards": [

@@ -10,6 +10,7 @@ import FeatureTagList from '../components/FeatureTagList.astro';
 import { venue } from '../data/venue';
 import { venuePage } from '../lib/cms';
 import { getPhoto } from '../utils/images';
+import { resolveFocalProps } from '../config/image-focal';
 
 const statsHtml = (stats: Array<{ value: string; label: string }>) =>
   stats
@@ -32,6 +33,7 @@ const galleryImages = venuePage.gallery.images.map((image) => ({
   <PageHero
     image={venuePage.heroImage.src?.trim() ? getPhoto(venuePage.heroImage.src) : undefined}
     imageAlt={venuePage.heroImage.alt}
+    {...resolveFocalProps(venuePage.heroImage)}
   >
     <Eyebrow tone="dark">{venuePage.heroEyebrow}</Eyebrow>
     <h1 class="font-display leading-ultra text-hero uppercase mb-6" set:html={venuePage.heroTitle.replace(/\n/g, '<br />')} />
@@ -53,6 +55,7 @@ const galleryImages = venuePage.gallery.images.map((image) => ({
   <SplitSection
     image={venuePage.sections[0].image?.trim() ? getPhoto(venuePage.sections[0].image) : undefined}
     imageAlt={venuePage.sections[0].imageAlt}
+    {...resolveFocalProps(venuePage.sections[0])}
     imageLeft={true}
     tone="light"
   >
@@ -67,7 +70,7 @@ const galleryImages = venuePage.gallery.images.map((image) => ({
   <FullBleedBanner
     image={venuePage.sections[1].image?.trim() ? getPhoto(venuePage.sections[1].image) : undefined}
     imageAlt={venuePage.sections[1].imageAlt}
-    imagePosition={venuePage.sections[1].imagePosition}
+    {...resolveFocalProps(venuePage.sections[1])}
     minHeight={venuePage.sections[1].minHeight}
   >
     <Eyebrow tone="dark">{venuePage.sections[1].eyebrow}</Eyebrow>
@@ -83,7 +86,7 @@ const galleryImages = venuePage.gallery.images.map((image) => ({
   <SplitSection
     image={venuePage.sections[2].image?.trim() ? getPhoto(venuePage.sections[2].image) : undefined}
     imageAlt={venuePage.sections[2].imageAlt}
-    imagePosition={venuePage.sections[2].imagePosition}
+    {...resolveFocalProps(venuePage.sections[2])}
     imageLeft={false}
     tone="dark"
   >
@@ -98,7 +101,7 @@ const galleryImages = venuePage.gallery.images.map((image) => ({
   <FullBleedBanner
     image={venuePage.sections[3].image?.trim() ? getPhoto(venuePage.sections[3].image) : undefined}
     imageAlt={venuePage.sections[3].imageAlt}
-    imagePosition={venuePage.sections[3].imagePosition}
+    {...resolveFocalProps(venuePage.sections[3])}
     minHeight={venuePage.sections[3].minHeight}
   >
     <Eyebrow tone="dark">{venuePage.sections[3].eyebrow}</Eyebrow>

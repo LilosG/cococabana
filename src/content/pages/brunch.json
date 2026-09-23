@@ -9,7 +9,7 @@
   "heroImage": {
     "src": "/photos/brunch/heroImage/src.jpg",
     "alt": "Coco Cabana weekend brunch spread — colorful plates, eggs, French toast on marble table",
-    "position": "object-top"
+    "focal": "top"
   },
   "stats": [
     {
@@ -33,7 +33,7 @@
   "mimosaPromo": {
     "image": "/photos/brunch/mimosaPromo/image.jpg",
     "imageAlt": "Cococabana mimosas — Campo Viejo cava flights with copper flamingo on marble table",
-    "imagePosition": "object-center",
+    "focal": "center",
     "minHeight": "min-h-[560px] sm:min-h-[620px]",
     "eyebrow": "Brunch Cocktails",
     "title": "\nCampo Viejo<br>Cava\n",
@@ -44,6 +44,8 @@
   "rooftopPromo": {
     "image": "/photos/brunch/rooftopPromo/image.jpg",
     "imageAlt": "Cococabana rooftop brunch setup with disco balls, mimosas, and palms",
+    "focal": "lower-center",
+    "focalDesktop": "lower",
     "eyebrow": "The Setting",
     "title": "Brunch Above Oceanside",
     "accent": "Every Weekend",

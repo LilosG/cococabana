@@ -11,7 +11,7 @@
   "heroImage": {
     "src": "/photos/privateEventPages/corporate-events/heroImage/src.jpg",
     "alt": "DJ set at Coco Cabana rooftop with crowd and palm trees at golden hour",
-    "position": "object-[center_30%]"
+    "focal": "upper"
   },
   "stats": [
     { "value": "Rooftop", "label": "Exclusive Venue" },
@@ -38,7 +38,7 @@
       "secondaryCtaText": "Call to Inquire",
       "image": "/photos/privateEventPages/corporate-events/sections/0/image.jpg",
       "imageAlt": "Packed Coco Cabana rooftop at golden hour — full venue energy",
-      "imagePosition": "object-[center_25%]"
+      "focal": "upper"
     },
     {
       "eyebrow": "The Setting",
@@ -50,7 +50,7 @@
       "primaryCtaText": "Start Planning",
       "image": "/photos/privateEventPages/corporate-events/sections/1/image.jpg",
       "imageAlt": "Coco Cabana rooftop packed with guests at golden hour — bartender at full venue",
-      "imagePosition": "object-[center_40%]",
+      "focal": "upper-center",
       "gradientDirection": "left",
       "minHeight": "min-h-[600px] sm:min-h-[680px]"
     },
@@ -64,7 +64,7 @@
       "primaryCtaText": "Submit an Inquiry",
       "image": "/photos/privateEventPages/corporate-events/sections/2/image.jpg",
       "imageAlt": "Coco Cabana rooftop lounge seating with rattan pendants, tile wall, and Oceanside views",
-      "imagePosition": "object-center"
+      "focal": "center"
     }
   ],
   "process": {
