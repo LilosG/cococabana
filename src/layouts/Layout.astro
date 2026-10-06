@@ -4,6 +4,7 @@ import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 import Analytics from '../components/Analytics.astro';
 import ConsentBanner from '../components/ConsentBanner.astro';
+import MobileActionBar from '../components/MobileActionBar.astro';
 import { venue } from '../data/venue';
 import ratingData from '../data/google-rating.json';
 
@@ -75,7 +76,7 @@ const schema = {
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="canonical" href={canonicalUrl} />
     <title>{title}</title>
@@ -101,6 +102,7 @@ const schema = {
     </main>
 
     <Footer />
+    <MobileActionBar />
     <ConsentBanner siteName="Cococabana" />
   </body>
 </html>

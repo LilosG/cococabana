@@ -71,19 +71,22 @@ const GA_ID = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
 
         // ── 8. Delegated link click-tracking.
         document.addEventListener('click', function (e) {
-          const phoneLink = e.target.closest('a[href^="tel:"]');
+          const target = e.target instanceof Element ? e.target : null;
+          if (!target) return;
+          const phoneLink = target.closest('a[href^="tel:"]');
           if (phoneLink) {
-            if (typeof gtag === 'function') {
-              gtag('event', 'phone_click', {
+            try {
+              if (typeof window.gtag === 'function') window.gtag('event', 'phone_click', {
                 link_url: phoneLink.href,
                 page_path: window.location.pathname,
                 link_location: phoneLink.dataset.analyticsLocation || 'unknown',
+                ...(phoneLink.dataset.ctaLocation ? { cta_location: phoneLink.dataset.ctaLocation } : {}),
               });
-            }
+            } catch (err) {}
             return;
           }
 
-          const link = e.target.closest('a[href*="toasttab.com"]');
+          const link = target.closest('a[href*="toasttab.com"]');
           if (!link) return;
 
           let eventName = 'toast_link_click';
@@ -95,12 +98,13 @@ const GA_ID = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
             else if (link.href.toLowerCase().includes('gift')) eventName = 'gift_card_click';
           } catch (err) {}
 
-          if (typeof gtag === 'function') {
-            gtag('event', eventName, {
+          try {
+            if (typeof window.gtag === 'function') window.gtag('event', eventName, {
               link_url: link.href,
               page_path: window.location.pathname,
+              ...(link.dataset.ctaLocation ? { cta_location: link.dataset.ctaLocation } : {}),
             });
-          }
+          } catch (err) {}
         }, { passive: true });
       }
 

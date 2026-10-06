@@ -64,6 +64,16 @@
   --font-accent: 'Cormorant Garamond Variable', serif; /* italic emphasis phrases — the recurring portfolio device */
 }
 
+@layer base {
+  :root {
+    --mobile-action-bar-space: calc(3.5rem + env(safe-area-inset-bottom, 0px));
+  }
+
+  @media (max-width: 39.999rem) {
+    body { padding-bottom: max(var(--mobile-action-bar-space), var(--mobile-action-bar-measured, 0px)); }
+  }
+}
+
 /* ──────────────────────────────────────────────────────────
    BASE LAYER — every element-selector rule lives here.
    This is non-negotiable: unlayered CSS beats @layer utilities

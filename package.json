@@ -9,6 +9,7 @@
     "dev": "astro dev",
     "build": "node scripts/fetch-google-rating.mjs && astro build",
     "preview": "astro preview",
+    "test:mobile-bar": "node --test scripts/mobile-action-bar.test.mjs",
     "astro": "astro"
   },
   "dependencies": {
