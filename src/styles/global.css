@@ -64,6 +64,20 @@
   --font-accent: 'Cormorant Garamond Variable', serif; /* italic emphasis phrases — the recurring portfolio device */
 }
 
+@layer base {
+  :root {
+    --mobile-action-bar-space: calc(3.5rem + env(safe-area-inset-bottom, 0px));
+    --mobile-action-bar-clearance: max(var(--mobile-action-bar-space), var(--mobile-action-bar-measured, 0px));
+  }
+
+  html { scroll-padding-bottom: 0px; }
+
+  @media (max-width: 39.999rem) {
+    html { scroll-padding-bottom: var(--mobile-action-bar-clearance); }
+    body { padding-bottom: var(--mobile-action-bar-clearance); }
+  }
+}
+
 /* ──────────────────────────────────────────────────────────
    BASE LAYER — every element-selector rule lives here.
    This is non-negotiable: unlayered CSS beats @layer utilities

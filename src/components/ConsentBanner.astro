@@ -33,7 +33,7 @@ const { siteName, privacyPolicyUrl = '/privacy' } = Astro.props;
     position: fixed;
     left: 0;
     right: 0;
-    bottom: 0;
+    bottom: var(--mobile-action-bar-clearance);
     z-index: 9999;
     background: var(--consent-bg, #14161a);
     color: var(--consent-text, #f4f4f5);
@@ -122,6 +122,9 @@ const { siteName, privacyPolicyUrl = '/privacy' } = Astro.props;
       justify-content: flex-end;
       flex-wrap: wrap;
     }
+  }
+  @media (min-width: 40rem) {
+    .lilos-consent-banner { bottom: 0; }
   }
 </style>
 
