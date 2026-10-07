@@ -40,6 +40,18 @@ const GA_ID = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
         return navigator.globalPrivacyControl === true;
       }
 
+      function mayTrackClick() {
+        try {
+          return !hasGPC()
+            && !readPrivacy()?.optOut
+            && !window.lilosPrivacy?.isOptedOut?.()
+            && window['ga-disable-' + GA_ID] !== true;
+        } catch (e) {
+          // A failed privacy check must never make a click trackable.
+          return false;
+        }
+      }
+
       // ── 4. Load GA4
       function initAnalytics() {
         if (window.__lilosGA4Loaded) return;
@@ -71,6 +83,7 @@ const GA_ID = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
 
         // ── 8. Delegated link click-tracking.
         document.addEventListener('click', function (e) {
+          if (!mayTrackClick()) return;
           const target = e.target instanceof Element ? e.target : null;
           if (!target) return;
           const phoneLink = target.closest('a[href^="tel:"]');

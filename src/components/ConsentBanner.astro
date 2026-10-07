@@ -33,7 +33,7 @@ const { siteName, privacyPolicyUrl = '/privacy' } = Astro.props;
     position: fixed;
     left: 0;
     right: 0;
-    bottom: max(var(--mobile-action-bar-space), var(--mobile-action-bar-measured, 0px));
+    bottom: var(--mobile-action-bar-clearance);
     z-index: 9999;
     background: var(--consent-bg, #14161a);
     color: var(--consent-text, #f4f4f5);

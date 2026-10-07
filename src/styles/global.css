@@ -67,10 +67,14 @@
 @layer base {
   :root {
     --mobile-action-bar-space: calc(3.5rem + env(safe-area-inset-bottom, 0px));
+    --mobile-action-bar-clearance: max(var(--mobile-action-bar-space), var(--mobile-action-bar-measured, 0px));
   }
 
+  html { scroll-padding-bottom: 0px; }
+
   @media (max-width: 39.999rem) {
-    body { padding-bottom: max(var(--mobile-action-bar-space), var(--mobile-action-bar-measured, 0px)); }
+    html { scroll-padding-bottom: var(--mobile-action-bar-clearance); }
+    body { padding-bottom: var(--mobile-action-bar-clearance); }
   }
 }
 
