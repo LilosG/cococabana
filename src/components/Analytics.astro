@@ -99,13 +99,13 @@ const GA_ID = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
             return;
           }
 
-          const link = target.closest('a[href*="toasttab.com"]');
+          const link = target.closest('a[href*="toasttab.com"], a[href*="opentable.com"]');
           if (!link) return;
 
           let eventName = 'toast_link_click';
           try {
             const host = new URL(link.href).hostname;
-            if (host.includes('tables.toasttab.com')) eventName = 'reservation_click';
+            if (host.includes('opentable.com')) eventName = 'reservation_click';
             else if (host.includes('order.toasttab.com')) eventName = 'order_click';
             else if (link.href.includes('invoice/lead')) eventName = 'inquiry_form_click';
             else if (link.href.toLowerCase().includes('gift')) eventName = 'gift_card_click';

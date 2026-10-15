@@ -60,6 +60,7 @@ const schema = {
       "email": venue.email,
       "sameAs": [venue.social.instagram, venue.social.facebook, ...(venue.gbpUrl ? [venue.gbpUrl] : [])],
       "hasMap": venue.mapsUrl,
+      "acceptsReservations": venue.reservationsUrl,
       "hasMenu": `${siteUrl}/menu#menu`,
       "areaServed": [
         { "@type": "Place", "name": venue.address.neighborhood },

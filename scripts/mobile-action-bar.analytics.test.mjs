@@ -18,7 +18,7 @@ class Link {
 
   closest(selector) {
     if (selector === 'a[href^="tel:"]') return this.href.startsWith('tel:') ? this : null;
-    if (selector === 'a[href*="toasttab.com"]') return this.href.includes('toasttab.com') ? this : null;
+    if (selector === 'a[href*="toasttab.com"], a[href*="opentable.com"]') return /toasttab\.com|opentable\.com/.test(this.href) ? this : null;
     return null;
   }
 }
