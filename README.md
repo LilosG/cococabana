@@ -5,7 +5,7 @@ Marketing site for Coco Cabana, the rooftop bar at The Brick Hotel, Oceanside, C
 ## Venue facts
 
 - **Address:** 408 Pier View Way, Oceanside, CA 92054
-- **Phone:** (858) 304-7725
+- **Phone:** (760) 421-5772
 - **Reservations:** [Toast](https://tables.toasttab.com/restaurants/92e5306b-e932-4406-876b-91277626cb5c)
 - **Brand name:** "Coco Cabana" for readable text/SEO/nav. "COCOCABANA" reserved for stylized wordmark treatments only.
 

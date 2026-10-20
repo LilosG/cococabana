@@ -1,4 +1,6 @@
 ---
+import { venue } from '../data/venue';
+
 interface Props {
   tone?: 'light' | 'dark';
   heading?: string;
@@ -49,7 +51,7 @@ const phoneColor  = tone === 'dark' ? 'text-brand-cream/40' : 'text-brand-charco
 
     <!-- Phone fallback -->
     <p class:list={['text-center text-xs mt-6 uppercase tracking-label', phoneColor]}>
-      Prefer to call? <a href="tel:+18583047725" class="text-brand-pink hover:underline">(858) 304-7725</a>
+      Prefer to call? <a href={venue.phoneHref} class="text-brand-pink hover:underline">{venue.phone}</a>
     </p>
 
   </div>

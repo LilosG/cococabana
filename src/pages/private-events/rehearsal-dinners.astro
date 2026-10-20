@@ -12,7 +12,7 @@ const serviceSchema = {
   "name": "Rehearsal Dinner Venue — Coco Cabana Rooftop Bar",
   "description": `Rehearsal dinners at ${venue.fullName} — rooftop bar atop ${venue.hotel} in Downtown ${venue.address.city}, CA. A rooftop above the Pacific sets the tone for the wedding weekend.`,
   "url": "https://cococabanaoside.com/private-events/rehearsal-dinners",
-  "provider": { "@type": "BarOrPub", "name": venue.fullName, "address": { "@type": "PostalAddress", "streetAddress": venue.address.street, "addressLocality": venue.address.city, "addressRegion": venue.address.state, "postalCode": venue.address.zip }, "telephone": venue.phone },
+  "provider": { "@type": "BarOrPub", "name": venue.fullName, "address": { "@type": "PostalAddress", "streetAddress": venue.address.street, "addressLocality": venue.address.city, "addressRegion": venue.address.state, "postalCode": venue.address.zip }, "telephone": venue.phoneHref.replace(/^tel:\+1(\d{3})(\d{3})(\d{4})$/, '+1-$1-$2-$3') },
   "areaServed": { "@type": "City", "name": venue.address.city },
 };
 ---
