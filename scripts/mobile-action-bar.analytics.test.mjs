@@ -18,7 +18,7 @@ class Link {
 
   closest(selector) {
     if (selector === 'a[href^="tel:"]') return this.href.startsWith('tel:') ? this : null;
-    if (selector === 'a[href*="toasttab.com"]') return this.href.includes('toasttab.com') ? this : null;
+    if (selector === 'a[href*="toasttab.com"], a[href*="opentable.com"], a[href*="toast.site"]') return /toasttab\.com|opentable\.com|toast\.site/.test(this.href) ? this : null;
     return null;
   }
 }
@@ -113,4 +113,15 @@ test('throwing analytics leaves native link activation uncancelled', () => {
   assert.equal(site.click(venue.reservationsUrl), false);
   assert.equal(site.click(venue.phoneHref), false);
   assert.deepEqual(site.events(), []);
+});
+
+test('online order clicks fire order_click and lead-form clicks still fire inquiry_form_click', () => {
+  const site = harness();
+  const leadUrl = 'https://www.toasttab.com/invoice/lead?rx=abc&ot=def';
+  site.click(venue.orderUrl);
+  site.click(leadUrl);
+  assert.deepEqual(site.events(), [
+    { name: 'order_click', parameters: { link_url: venue.orderUrl, page_path: '/menu/', cta_location: 'mobile_bottom_bar' } },
+    { name: 'inquiry_form_click', parameters: { link_url: leadUrl, page_path: '/menu/', cta_location: 'mobile_bottom_bar' } },
+  ]);
 });

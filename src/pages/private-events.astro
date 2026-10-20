@@ -46,7 +46,7 @@ const processHtml = (steps: Array<{ number: string; title: string; text: string 
     <p class="text-brand-cream/80 leading-relaxed max-w-xl mb-8">{privateEventsPage.heroText}</p>
     <div class="flex flex-wrap gap-4">
       <Button href={privateEventsPage.primaryCtaHref as unknown as string} variant="primary">{privateEventsPage.primaryCtaText}</Button>
-      <Button href={privateEventsPage.secondaryCtaHref as unknown as string} variant="ghost">{privateEventsPage.secondaryCtaText}</Button>
+      <Button href={venue.reservationsUrl} variant="ghost">{privateEventsPage.secondaryCtaText}</Button>
     </div>
   </PageHero>
 
