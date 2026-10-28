@@ -361,6 +361,7 @@ export default config({
     navigation: {
       Website: [
         "homePage",
+        "giftCardsPage",
         "venuePage",
         "menuPage",
         "brunchPage",
@@ -383,6 +384,21 @@ export default config({
     },
   },
   singletons: {
+    giftCardsPage: singleton({
+      label: "Gift Cards", path: "src/content/pages/gift-cards", format: { data: "json" },
+      schema: {
+        seoTitle: textField("Search Result Title"), seoDescription: multiline("Search Result Description"),
+        heroEyebrow: textField("Hero Label"), heroTitle: multiline("Hero Heading"), heroText: multiline("Hero Text"),
+        heroImage: fields.object(imageObjectFields("giftCards"), { label: "Hero Image" }),
+        intro: fields.object({ eyebrow: textField("Label"), title: multiline("Heading"), accent: textField("Script Accent"), body: multiline("Text"), image: imageField("giftCards"), imageAlt: textField("Image Description"), ...largeImageFocalFields }, { label: "Introduction" }),
+        purchaseUrl: textField("Toast Purchase URL"), balanceUrl: textField("Toast Balance URL"),
+        purchaseLabel: textField("Purchase Label"), balanceLabel: textField("Balance Label"), checkoutNote: multiline("Checkout Note"),
+        stepsHeading: textField("Steps Heading"), steps: fields.array(fields.object({ title: textField("Heading"), body: multiline("Text") }), { label: "Purchase Steps", itemLabel: p => p.fields.title.value }),
+        guidesHeading: textField("Guides Heading"), guides: fields.array(linkFields, { label: "Gift Guides", itemLabel: p => p.fields.label.value }),
+        faqTitle: textField("FAQ Heading"), faqs: fields.array(fields.object({ q: textField("Question"), a: multiline("Answer") }), { label: "Gift Card Questions", itemLabel: p => p.fields.q.value }),
+        final: fields.object({ eyebrow: textField("Label"), title: multiline("Heading"), body: multiline("Text") }, { label: "Closing Invitation" }),
+      },
+    }),
     venueData: singleton({
       label: "Venue / Business Data",
       path: "src/content/data/venue",
@@ -1601,6 +1617,9 @@ export default config({
           description: "Choose the blog post publication date.",
         }),
         category: textField("Category", "Enter the blog post category."),
+        seoTitle: optionalText("Search Result Title"), imageAlt: optionalText("Image Description"), answerSummary: optionalMultiline("Quick Answer"),
+        giftCardCta: fields.checkbox({ label: "Show Gift Card Invitation", defaultValue: false }),
+        faq: fields.array(fields.object({ question: textField("Question"), answer: multiline("Answer") }), { label: "Article FAQs", itemLabel: p => p.fields.question.value }),
         ogImage: optionalText(
           "Open Graph Image",
           "Enter the optional social sharing image path.",

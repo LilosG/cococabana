@@ -106,6 +106,8 @@ const GA_ID = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
           try {
             const host = new URL(link.href).hostname;
             if (host.includes('opentable.com')) eventName = 'reservation_click';
+            else if (new URL(link.href).pathname.includes('/egiftcards/')) eventName = 'gift_card_click';
+            else if (new URL(link.href).pathname.endsWith('/findcard')) eventName = 'gift_card_balance_click';
             else if (host.includes('order.toasttab.com') || host.includes('toast.site')) eventName = 'order_click';
             else if (link.href.includes('invoice/lead')) eventName = 'inquiry_form_click';
             else if (link.href.toLowerCase().includes('gift')) eventName = 'gift_card_click';

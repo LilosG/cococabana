@@ -6,6 +6,7 @@ import Eyebrow from '../../components/Eyebrow.astro';
 import Button from '../../components/Button.astro';
 import { venue } from '../../data/venue';
 import { getPhoto } from '../../utils/images';
+import GiftCardCta from '../../components/GiftCardCta.astro';
 
 const resolveBlogImage = (path?: string) =>
   path?.startsWith('/photos/') ? getPhoto(path) : undefined;
@@ -19,6 +20,7 @@ const { post } = Astro.props;
 const { Content } = await render(post);
 const featuredImage = resolveBlogImage(post.data.ogImage);
 
+const socialImage = featuredImage ? new URL(featuredImage.src, venue.url).href : post.data.ogImage;
 const canonicalUrl = `https://cococabanaoside.com/blog/${post.id}`;
 
 const blogPostingSchema: Record<string, unknown> = {
@@ -35,10 +37,8 @@ const blogPostingSchema: Record<string, unknown> = {
   },
 };
 
-if (post.data.ogImage) {
-  blogPostingSchema["image"] = post.data.ogImage.startsWith('http')
-    ? post.data.ogImage
-    : `https://cococabanaoside.com${post.data.ogImage}`;
+if (socialImage) {
+  blogPostingSchema["image"] = socialImage.startsWith('http') ? socialImage : `https://cococabanaoside.com${socialImage}`;
 }
 
 const faqSchema = post.data.faq && post.data.faq.length > 0 ? {
@@ -54,7 +54,9 @@ const faqSchema = post.data.faq && post.data.faq.length > 0 ? {
   })),
 } : null;
 
-const extraGraph = faqSchema ? [blogPostingSchema, faqSchema] : [blogPostingSchema];
+const extraGraph = [blogPostingSchema, ...(faqSchema ? [faqSchema] : []), { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: venue.url }, { '@type': 'ListItem', position: 2, name: 'Blog', item: `${venue.url}/blog` }, { '@type': 'ListItem', position: 3, name: post.data.title, item: canonicalUrl }] }];
+blogPostingSchema.author = { '@id': `${venue.url}#business` };
+blogPostingSchema.mainEntityOfPage = canonicalUrl;
 
 // Cross-linking: same category first, then most recent others, excluding self.
 const allPosts = await getCollection('blog');
@@ -70,9 +72,9 @@ const relatedPosts = allPosts
 ---
 
 <Layout
-  title={`${post.data.title} | ${venue.fullName}`}
+  title={post.data.seoTitle ?? `${post.data.title} | ${venue.fullName}`}
   description={post.data.description}
-  ogImage={post.data.ogImage}
+  ogImage={socialImage}
   extraGraph={extraGraph}
 >
   <!-- POST HEADER -->
@@ -92,7 +94,7 @@ const relatedPosts = allPosts
     <div class="bg-brand-charcoal">
       <Image
         src={featuredImage}
-        alt={post.data.title}
+        alt={post.data.imageAlt ?? post.data.title}
         layout="full-width"
         sizes="100vw"
         loading="eager"
@@ -113,6 +115,7 @@ const relatedPosts = allPosts
   <!-- POST BODY -->
   <section class="bg-brand-cream px-6 sm:px-8 lg:px-12 py-16 sm:py-24">
     <div class="max-w-2xl mx-auto prose prose-sm sm:prose-base prose-headings:font-display prose-headings:uppercase prose-headings:tracking-feature prose-a:text-brand-pink prose-a:no-underline hover:prose-a:underline prose-strong:text-brand-charcoal text-brand-charcoal/80">
+      {post.data.answerSummary && <aside aria-label="Quick answer" class="not-prose border-l-2 border-brand-pink pl-5 mb-10 text-brand-charcoal leading-relaxed">{post.data.answerSummary}</aside>}
       <Content />
     </div>
   </section>
@@ -175,6 +178,8 @@ const relatedPosts = allPosts
       </div>
     </section>
   )}
+
+  {post.data.giftCardCta && <GiftCardCta />}
 
   <!-- CTA -->
   <section class="bg-brand-charcoal px-6 sm:px-8 lg:px-12 py-16 sm:py-20 text-center">

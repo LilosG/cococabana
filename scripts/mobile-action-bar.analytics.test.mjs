@@ -125,3 +125,11 @@ test('online order clicks fire order_click and lead-form clicks still fire inqui
     { name: 'inquiry_form_click', parameters: { link_url: leadUrl, page_path: '/menu/', cta_location: 'mobile_bottom_bar' } },
   ]);
 });
+
+test('shared gift checkout and balance clicks have distinct gift events', () => {
+  const site = harness();
+  const purchase = 'https://order.toasttab.com/egiftcards/the-brick-project-408-pier-view-way';
+  const balance = 'https://www.toasttab.com//the-brick-project-408-pier-view-way/findcard';
+  site.click(purchase); site.click(balance);
+  assert.deepEqual(site.events().map(event => event.name), ['gift_card_click', 'gift_card_balance_click']);
+});
