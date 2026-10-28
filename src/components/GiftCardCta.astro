@@ -1,0 +1,14 @@
+---
+import { getCollection } from 'astro:content';
+import Button from './Button.astro';
+import Eyebrow from './Eyebrow.astro';
+const { purchase = false } = Astro.props;
+const page = (await getCollection('giftCardsPage'))[0].data;
+---
+<section class="bg-brand-charcoal px-6 sm:px-8 lg:px-12 py-20 text-center text-brand-cream"><div class="max-w-2xl mx-auto">
+  <Eyebrow tone="dark" align="center">{page.final.eyebrow}</Eyebrow>
+  <h2 class="font-display text-section-xl leading-display uppercase whitespace-pre-line mb-5">{page.final.title}</h2>
+  <p class="text-brand-cream/75 leading-relaxed mb-8">{page.final.body}</p>
+  <Button href={purchase ? page.purchaseUrl : '/gift-cards'}>{purchase ? page.purchaseLabel : 'Explore Cococabana Gift Cards'}</Button>
+  {purchase && <p class="text-sm text-brand-cream/70 mt-6"><a class="underline underline-offset-4" href={page.balanceUrl}>{page.balanceLabel}</a><span aria-hidden="true"> · </span><a class="underline underline-offset-4" href="/contact">Contact Cococabana</a></p>}
+</div></section>

@@ -51,13 +51,7 @@ const portfolio = GPH_NETWORK.filter((v) => v.url !== venue.url);
     <div>
       <h3 class="uppercase tracking-label text-xs text-brand-pink mb-4">{footer.exploreHeading}</h3>
       <ul class="space-y-3 text-sm">
-        <li><a href={footer.exploreLinks[0].href} class="hover:text-brand-pink transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-pink">{footer.exploreLinks[0].label}</a></li>
-        <li><a href={footer.exploreLinks[1].href} class="hover:text-brand-pink transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-pink">{footer.exploreLinks[1].label}</a></li>
-        <li><a href={footer.exploreLinks[2].href} class="hover:text-brand-pink transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-pink">{footer.exploreLinks[2].label}</a></li>
-        <li><a href={footer.exploreLinks[3].href} class="hover:text-brand-pink transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-pink">{footer.exploreLinks[3].label}</a></li>
-        <li><a href={footer.exploreLinks[4].href} class="hover:text-brand-pink transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-pink">{footer.exploreLinks[4].label}</a></li>
-        <li><a href={footer.exploreLinks[5].href} class="hover:text-brand-pink transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-pink">{footer.exploreLinks[5].label}</a></li>
-        <li><a href={footer.exploreLinks[6].href} class="hover:text-brand-pink transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-pink">{footer.exploreLinks[6].label}</a></li>
+        {footer.exploreLinks.map(link => <li><a href={link.href} class="hover:text-brand-pink transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-pink">{link.label}</a></li>)}
       </ul>
     </div>
 

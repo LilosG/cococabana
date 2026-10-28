@@ -1,0 +1,78 @@
+{
+  "purchaseUrl": "https://order.toasttab.com/egiftcards/the-brick-project-408-pier-view-way",
+  "balanceUrl": "https://www.toasttab.com//the-brick-project-408-pier-view-way/findcard",
+  "purchaseLabel": "Buy a Gift Card",
+  "balanceLabel": "Check Gift Card Balance",
+  "checkoutNote": "Secure checkout through Toast. Look for “The Lobby Tiki Bar/CocoCabana Gift Card” on the purchase page.",
+  "stepsHeading": "A personal touch. A simple delivery.",
+  "steps": [
+    {
+      "title": "Choose the gift",
+      "body": "Select an amount in the shared The Lobby Tiki Bar/CocoCabana checkout on Toast."
+    },
+    {
+      "title": "Add your message",
+      "body": "Personalize it with their name and a note. Choose email, text or delivery to yourself first."
+    },
+    {
+      "title": "Pick the moment",
+      "body": "Send today or schedule a later delivery. They receive a digital gift card and choose their next visit."
+    }
+  ],
+  "faqTitle": "Gift Card Questions",
+  "faqs": [
+    {
+      "q": "Why does Toast show both venue names?",
+      "a": "Cococabana and The Lobby Tiki Bar share this Toast gift-card checkout. The purchase page is titled “The Lobby Tiki Bar/CocoCabana Gift Card,” so you are in the right place."
+    },
+    {
+      "q": "Can I send the gift card by email or text?",
+      "a": "Yes. Toast offers email, text and delivery to yourself first, with a personal message. Choose today or a later delivery date during checkout."
+    },
+    {
+      "q": "How do I check my gift card balance?",
+      "a": "Use the Check Gift Card Balance link to open the shared Toast balance form. Have your gift card details ready."
+    },
+    {
+      "q": "Does buying a gift card reserve a table?",
+      "a": "No. Gift cards and reservations are separate. Check current menus, hours and event details when arranging your visit."
+    }
+  ],
+  "guidesHeading": "A gift that feels like them.",
+  "seoTitle": "Cococabana Gift Cards | Oceanside Rooftop Dining & Cocktails",
+  "seoDescription": "Give a rooftop afternoon in Oceanside. Buy a Cococabana digital gift card through the shared Lobby Tiki Bar/CocoCabana Toast checkout. Send by email or text.",
+  "heroEyebrow": "Cococabana · Downtown Oceanside",
+  "heroTitle": "Gift Cards.\nGive Them the Rooftop.",
+  "heroText": "Open skies, coastal cocktails and time together above Oceanside. Give them a reason to make a rooftop plan.",
+  "heroImage": {
+    "src": "/photos/giftCards/heroImage/src.jpg",
+    "alt": "Cococabana rooftop lounge with woven pendants and open-air seating",
+    "focal": "center",
+    "focalDesktop": "inherit"
+  },
+  "intro": {
+    "eyebrow": "Give them the view",
+    "title": "Less wrapping.\nMore rooftop time.",
+    "accent": "Their Next Oceanside Escape",
+    "body": "For the friend who loves a sunset, the couple who could use a date night or someone whose ideal weekend starts with brunch. A Cococabana gift card leaves the occasion up to them, with rooftop dining and cocktails above The Brick Hotel on Pier View Way.",
+    "image": "/photos/giftCards/intro/image.jpg",
+    "imageAlt": "Sunset over Oceanside viewed from the Cococabana rooftop",
+    "focal": "center",
+    "focalDesktop": "inherit"
+  },
+  "guides": [
+    {
+      "label": "Restaurant Gift Cards in Oceanside: Give Them the Rooftop",
+      "href": "/blog/restaurant-gift-cards-oceanside-rooftop"
+    },
+    {
+      "label": "A Rooftop Date-Night Gift in Oceanside, Without Picking the Date",
+      "href": "/blog/rooftop-date-night-gift-oceanside"
+    }
+  ],
+  "final": {
+    "eyebrow": "A little possibility, delivered",
+    "title": "Send the gift.\nLet them choose the sunset.",
+    "body": "Give them an excuse to slow down, look out over Oceanside and enjoy being together."
+  }
+}

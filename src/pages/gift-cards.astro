@@ -1,0 +1,33 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+import SplitSection from '../components/SplitSection.astro';
+import Button from '../components/Button.astro';
+import Eyebrow from '../components/Eyebrow.astro';
+import GiftCardCta from '../components/GiftCardCta.astro';
+import { getPhoto } from '../utils/images';
+import { resolveFocalProps } from '../config/image-focal';
+import { venue } from '../data/venue';
+const page = (await getCollection('giftCardsPage'))[0].data;
+const hero = getPhoto(page.heroImage.src);
+const canonical = `${venue.url}/gift-cards`;
+const extraGraph = [
+  { '@type': 'WebPage', '@id': `${canonical}#webpage`, url: canonical, name: page.seoTitle, description: page.seoDescription, about: { '@id': `${venue.url}#business` } },
+  { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: venue.url }, { '@type': 'ListItem', position: 2, name: 'Gift Cards', item: canonical }] },
+  { '@type': 'FAQPage', mainEntity: page.faqs.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
+];
+---
+<Layout title={page.seoTitle} description={page.seoDescription} ogImage={new URL(hero.src, venue.url).href} transparentNav={true} extraGraph={extraGraph}>
+  <PageHero overlay="strong" image={hero} imageAlt={page.heroImage.alt} {...resolveFocalProps(page.heroImage)} heightClass="min-h-[78svh] sm:min-h-[85svh]">
+    <div class="max-w-3xl"><Eyebrow tone="dark">{page.heroEyebrow}</Eyebrow><h1 class="font-display text-hero leading-ultra uppercase whitespace-pre-line mb-5">{page.heroTitle}</h1><p class="max-w-xl text-brand-cream/85 leading-relaxed mb-8">{page.heroText}</p><div class="flex flex-wrap gap-4"><Button href={page.purchaseUrl}>{page.purchaseLabel}</Button><Button href={page.balanceUrl} variant="ghost">{page.balanceLabel}</Button></div></div>
+  </PageHero>
+  <p class="px-6 py-5 text-center text-sm bg-brand-charcoal text-brand-cream/75">{page.checkoutNote}</p>
+  <SplitSection image={getPhoto(page.intro.image)} imageAlt={page.intro.imageAlt} {...resolveFocalProps(page.intro)} imageLeft>
+    <Eyebrow>{page.intro.eyebrow}</Eyebrow><h2 class="font-display text-section-xl leading-display uppercase whitespace-pre-line text-brand-charcoal mb-4">{page.intro.title}</h2><p class="accent-text text-accent-xl text-brand-pink mb-6">{page.intro.accent}</p><p class="text-brand-charcoal/75 leading-relaxed mb-8">{page.intro.body}</p><div><Button href="/menu" variant="secondary">Explore Food & Cocktails</Button></div>
+  </SplitSection>
+  <section class="bg-brand-blush px-6 sm:px-8 lg:px-12 py-20"><div class="max-w-6xl mx-auto"><h2 class="font-display text-section-xl leading-display uppercase text-brand-charcoal mb-12">{page.stepsHeading}</h2><ol class="grid md:grid-cols-3 gap-10">{page.steps.map((step,i) => <li class="border-t border-brand-charcoal/20 pt-6"><span aria-hidden="true" class="text-brand-pink text-3xl font-display">0{i+1}</span><h3 class="font-display text-2xl uppercase my-4">{step.title}</h3><p class="text-brand-charcoal/75 leading-relaxed">{step.body}</p></li>)}</ol></div></section>
+  <section class="bg-brand-cream px-6 sm:px-8 lg:px-12 py-20"><div class="max-w-5xl mx-auto"><h2 class="font-display text-section-xl leading-display uppercase mb-10">{page.guidesHeading}</h2><div class="grid md:grid-cols-2 gap-6">{page.guides.map(guide => <a href={guide.href} class="group border border-brand-charcoal/20 p-8 hover:border-brand-pink transition-colors"><Eyebrow>Rooftop Journal</Eyebrow><h3 class="font-display uppercase text-2xl leading-snug mb-6">{guide.label}</h3><span class="text-sm underline underline-offset-4">Read the guide →</span></a>)}</div></div></section>
+  <section class="bg-brand-navy text-brand-cream px-6 sm:px-8 lg:px-12 py-20"><div class="max-w-3xl mx-auto"><h2 class="font-display text-section-xl leading-display uppercase mb-10">{page.faqTitle}</h2><div class="divide-y divide-brand-cream/15">{page.faqs.map(faq => <details class="py-5"><summary class="cursor-pointer font-display uppercase text-lg">{faq.q}</summary><p class="text-brand-cream/75 mt-4 leading-relaxed">{faq.a}</p></details>)}</div></div></section>
+  <GiftCardCta purchase />
+</Layout>
