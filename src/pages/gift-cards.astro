@@ -19,7 +19,7 @@ const extraGraph = [
 ];
 ---
 <Layout title={page.seoTitle} description={page.seoDescription} ogImage={new URL(hero.src, venue.url).href} transparentNav={true} extraGraph={extraGraph}>
-  <PageHero image={hero} imageAlt={page.heroImage.alt} {...resolveFocalProps(page.heroImage)} heightClass="min-h-[78svh] sm:min-h-[85svh]">
+  <PageHero overlay="strong" image={hero} imageAlt={page.heroImage.alt} {...resolveFocalProps(page.heroImage)} heightClass="min-h-[78svh] sm:min-h-[85svh]">
     <div class="max-w-3xl"><Eyebrow tone="dark">{page.heroEyebrow}</Eyebrow><h1 class="font-display text-hero leading-ultra uppercase whitespace-pre-line mb-5">{page.heroTitle}</h1><p class="max-w-xl text-brand-cream/85 leading-relaxed mb-8">{page.heroText}</p><div class="flex flex-wrap gap-4"><Button href={page.purchaseUrl}>{page.purchaseLabel}</Button><Button href={page.balanceUrl} variant="ghost">{page.balanceLabel}</Button></div></div>
   </PageHero>
   <p class="px-6 py-5 text-center text-sm bg-brand-charcoal text-brand-cream/75">{page.checkoutNote}</p>

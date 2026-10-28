@@ -9,6 +9,7 @@ interface Props {
   focal?: FocalPosition;
   focalDesktop?: FocalPosition;
   heightClass?: string;
+  overlay?: 'gradient' | 'strong';
 }
 
 const {
@@ -17,6 +18,7 @@ const {
   focal = 'center',
   focalDesktop,
   heightClass = 'min-h-[80vh]',
+  overlay = 'gradient',
 } = Astro.props;
 ---
 
@@ -32,7 +34,7 @@ const {
         loading="eager"
       />
     )}
-    <div class="absolute inset-0 bg-gradient-to-t from-brand-charcoal/85 via-brand-charcoal/30 to-transparent"></div>
+    <div class:list={["absolute inset-0", overlay === 'strong' ? 'bg-brand-charcoal/65' : 'bg-gradient-to-t from-brand-charcoal/85 via-brand-charcoal/30 to-transparent']}></div>
     <div class="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-brand-charcoal/40 to-transparent"></div>
   </div>
   <div class="relative z-10 px-6 sm:px-8 lg:px-12 pb-20 sm:pb-24 w-full text-brand-cream">
