@@ -181,8 +181,8 @@ const relatedPosts = allPosts
 
   {post.data.giftCardCta && <GiftCardCta />}
 
-  <!-- CTA -->
-  <section class="bg-brand-charcoal px-6 sm:px-8 lg:px-12 py-16 sm:py-20 text-center">
+  <!-- Non-gifting posts retain their existing visit CTA. -->
+  {!post.data.giftCardCta && <section class="bg-brand-charcoal px-6 sm:px-8 lg:px-12 py-16 sm:py-20 text-center">
     <Eyebrow align="center" tone="dark">{venue.address.city}, {venue.address.state}</Eyebrow>
     <h2 class="font-display text-section-xl leading-display uppercase text-brand-cream mb-8">
       Visit the Rooftop
@@ -191,5 +191,5 @@ const relatedPosts = allPosts
       <Button href={venue.reservationsUrl} variant="primary" external>Reserve a Table</Button>
       <Button href={venue.routes.menu} variant="ghost">View the Menu</Button>
     </div>
-  </section>
+  </section>}
 </Layout>

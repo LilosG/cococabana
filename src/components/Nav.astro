@@ -43,7 +43,7 @@ const navLinks = navigation.links;
     </a>
 
     <!-- Desktop nav: centered links -->
-    <div class="hidden sm:flex items-center justify-center gap-4 lg:gap-3 xl:gap-6 flex-wrap">
+    <div class="hidden xl:flex items-center justify-center gap-4 lg:gap-3 xl:gap-6 flex-wrap">
       {navLinks.map((link) => (
         <a
           href={link.href}
@@ -56,7 +56,7 @@ const navLinks = navigation.links;
     </div>
 
     <!-- Right zone: Phone + Order + Reserve -->
-    <div class="hidden sm:flex items-center gap-3 justify-self-end">
+    <div class="hidden xl:flex items-center gap-3 justify-self-end">
       <a
         href={venue.phoneHref}
         aria-label={`Call Cococabana at ${venue.phone}`}
@@ -87,7 +87,7 @@ const navLinks = navigation.links;
     </div>
 
     <!-- Mobile: Reserve stays visible, rest collapses to hamburger -->
-    <div class="flex sm:hidden items-center gap-3 col-start-3 justify-self-end">
+    <div class="flex xl:hidden items-center gap-3 col-start-3 justify-self-end">
       <a
         href={venue.reservationsUrl}
         target="_blank"
@@ -109,7 +109,7 @@ const navLinks = navigation.links;
   </div>
 
   <!-- Mobile menu panel — always solid cream -->
-  <div id="mobile-menu" class="hidden sm:hidden bg-brand-cream border-t border-brand-charcoal/10">
+  <div id="mobile-menu" class="hidden xl:hidden bg-brand-cream border-t border-brand-charcoal/10">
     <div class="flex flex-col px-6 py-6 gap-5">
       {navLinks.map((link) => (
         <a href={link.href} class="text-sm uppercase tracking-label text-brand-charcoal hover:text-brand-pink transition-colors">
@@ -166,7 +166,7 @@ const navLinks = navigation.links;
   const toggle = document.getElementById('nav-toggle');
   const menu   = document.getElementById('mobile-menu');
   const actionBar = document.getElementById('mobile-action-bar');
-  const desktopNavigation = window.matchMedia('(min-width: 40rem)');
+  const desktopNavigation = window.matchMedia('(min-width: 80rem)');
   let previousBodyOverflow: string | null = null;
 
   function closeMenu(restoreFocus = false): void {
