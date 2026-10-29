@@ -1,100 +1,32 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import LegalPage from '../layouts/LegalPage.astro';
 import { venue } from '../data/venue';
 ---
+<LegalPage title="Privacy Policy" description="How Cococabana Rooftop Bar handles website analytics, customer inquiries, and AI-enabled business messaging, with privacy choices and contact details.">
+    <p>This policy explains how {venue.fullName} (“we,” “us,” or “our”) handles personal information in connection with this website, customer inquiries, and business messaging, including Google Business Profile AI-enabled messaging when available.</p>
 
-<Layout
-  title="Privacy Policy — Cococabana Rooftop Bar"
-  description="Privacy policy and data practices for Cococabana Rooftop Bar in Oceanside, CA."
->
-  <section class="bg-brand-cream px-6 sm:px-8 lg:px-12 py-20 sm:py-28">
-    <div class="max-w-2xl mx-auto">
+    <h2>Information We Collect and Why</h2>
+    <ul>
+      <li><strong>Inquiries and correspondence:</strong> Your name, email address, phone number, message, and details you choose to provide, such as an event date or party size. We use these to answer questions, follow up on requests, and assist with restaurant services.</li>
+      <li><strong>Business messaging:</strong> When you message us, we may receive your phone number, available profile information, messages and attachments you send, and related conversation and delivery information. We use this information to provide automated or staff responses and manage your inquiry.</li>
+      <li><strong>Website activity:</strong> Google Analytics may collect pages viewed, referring websites, approximate location derived from IP address, device and browser information, and online identifiers such as analytics cookie IDs. We use this to measure traffic and interactions, such as reservation, ordering, gift card, and phone link clicks, and improve the website.</li>
+      <li><strong>Privacy preferences:</strong> This website stores your analytics preference locally in your browser so it can honor your choice.</li>
+    </ul>
 
-      <p class="uppercase tracking-label text-xs text-brand-pink mb-4">Legal</p>
-      <h1 class="font-display text-section-xl leading-display uppercase text-brand-charcoal mb-12">
-        Privacy Policy
-      </h1>
+    <h2>Google Business Profile and AI-Enabled Messaging</h2>
+    <p>When available, messaging through our Google Business Profile uses Google's RCS for Business service. An AI agent may answer common questions using our Business Profile and website information. Staff can review conversations, take over a chat, and respond when a question requires personal assistance.</p>
+    <p>Google, its service providers, and participating mobile carriers may process message content and related information to deliver and operate messaging, generate automated responses, and maintain service security. Google's RCS terms also permit processing message content to train AI models for spam detection and prevention. Relevant carriers may have access to messages sent over their networks.</p>
+    <p>See <a href="https://policies.google.com/privacy">Google's Privacy Policy</a> and the <a href="https://developers.google.com/business-communications/rcs-business-messaging/terms-and-policies/tos">RCS for Business terms</a> for Google's applicable practices. Our <a href="/terms#messaging">messaging terms</a> explain automated responses, human assistance, and messaging choices.</p>
+    <p>Please do not send payment card or bank details, passwords, government identification numbers, or sensitive medical information in chat. For allergies or dietary requirements, contact restaurant staff directly before ordering; automated answers should not be relied upon for food safety.</p>
 
-      <!-- NOTICE AT COLLECTION -->
-      <div class="prose prose-neutral max-w-none text-brand-charcoal/80 leading-relaxed">
+    <h2>How Information Is Shared</h2>
+    <p>Information may be processed by authorized restaurant staff and service providers supporting our website, analytics, communications, and customer service. Messaging also involves Google and participating carriers as described above. We may disclose information where required by law or reasonably necessary to protect safety, prevent fraud, or defend legal rights.</p>
+    <p>Our website links to services such as OpenTable for reservations and Toast for ordering, gift cards, and event inquiries. Information you submit through those services is handled under their privacy policies and may also be provided to us to fulfill your request. Review <a href="https://www.opentable.com/legal/privacy-policy">OpenTable's Privacy Policy</a> and <a href="https://pos.toasttab.com/privacy">Toast's Privacy Statement</a> before using those services.</p>
 
-        <h2 class="font-display text-lg uppercase tracking-feature text-brand-charcoal mt-0 mb-4">
-          Notice at Collection
-        </h2>
+    <h2>Website Analytics</h2>
+    <p>Google Analytics is configured with advertising storage, ad user data, ad personalization, Google Signals, and ads personalization signals disabled. We do not use this website analytics data for cross-context behavioral advertising. Google Analytics event data is retained for 14 months, after which it is automatically deleted.</p>
+    <p>You can opt out of Google Analytics measurement on this site using the control below. This browser setting controls this website's analytics; it does not stop a separate messaging conversation, delete prior messages, or change privacy settings on Google, OpenTable, Toast, or other services.</p>
 
-        <h3 class="font-display text-base uppercase tracking-feature text-brand-charcoal mt-8 mb-3">
-          What We Collect
-        </h3>
-        <p>
-          When you visit this website, we may collect internet and network activity information,
-          including: pages you view, the website that referred you here, your approximate location
-          derived from your IP address, and your device and browser type. We also collect online
-          identifiers such as cookie IDs assigned by Google Analytics.
-        </p>
-
-        <h3 class="font-display text-base uppercase tracking-feature text-brand-charcoal mt-8 mb-3">
-          Why We Collect It
-        </h3>
-        <p>
-          We use this information solely to measure site traffic and understand how visitors use
-          our website so we can improve it. We do not use it for any other purpose.
-        </p>
-
-        <h3 class="font-display text-base uppercase tracking-feature text-brand-charcoal mt-8 mb-3">
-          Who Receives It
-        </h3>
-        <p>
-          This information is transmitted to Google LLC, which processes it on our behalf as a
-          service provider under Google's data processing terms. We do not sell, rent, or share
-          your personal information with any other third party.
-        </p>
-
-        <h3 class="font-display text-base uppercase tracking-feature text-brand-charcoal mt-8 mb-3">
-          What We Do Not Do
-        </h3>
-        <p>
-          We do not sell your personal information. We do not share it for cross-context behavioral
-          advertising. Google Signals and ads personalization are disabled on this Analytics
-          property; no advertising-related data is stored.
-        </p>
-
-        <h3 class="font-display text-base uppercase tracking-feature text-brand-charcoal mt-8 mb-3">
-          Retention
-        </h3>
-        <p>
-          Google Analytics event data is retained for 14 months, after which it is automatically
-          deleted.
-        </p>
-
-        <h3 class="font-display text-base uppercase tracking-feature text-brand-charcoal mt-8 mb-3">
-          Your Choices
-        </h3>
-        <p>
-          You can opt out of Google Analytics measurement at any time using the control below.
-          Your choice is saved in your browser and does not expire. If your browser sends a
-          <a href="https://globalprivacycontrol.org/" target="_blank" rel="noopener noreferrer"
-            class="text-brand-pink underline underline-offset-2">Global Privacy Control</a>
-          signal, we honor it automatically and do not load analytics on your device.
-        </p>
-
-        <h3 class="font-display text-base uppercase tracking-feature text-brand-charcoal mt-8 mb-3">
-          California Residents
-        </h3>
-        <p>
-          If you are a California resident, you have the right to know what personal information
-          we collect about you, the right to delete it, and the right to correct inaccurate
-          information. To exercise any of these rights, please contact us:
-        </p>
-        <address class="not-italic mt-3">
-          <strong class="font-display uppercase tracking-feature text-brand-charcoal">{venue.fullName}</strong><br />
-          {venue.address.street}<br />
-          {venue.address.city}, {venue.address.state} {venue.address.zip}<br />
-          <a href={venue.phoneHref} class="text-brand-pink hover:underline underline-offset-2">{venue.phone}</a>
-        </address>
-
-      </div>
-
-      <!-- PRIVACY CHOICES CONTROL -->
       <div id="choices" class="mt-16 border-t border-brand-charcoal/10 pt-12">
         <h2 class="font-display text-lg uppercase tracking-feature text-brand-charcoal mb-2">
           Your Privacy Choices
@@ -114,14 +46,36 @@ import { venue } from '../data/venue';
             <!-- label set by script -->
           </button>
         </div>
-        <p class="text-xs text-brand-charcoal/40 mt-4 uppercase tracking-label">
+        <p class="text-xs text-brand-charcoal/70 mt-4 uppercase tracking-label">
           If your browser sends Global Privacy Control, analytics are disabled automatically — no action needed.
         </p>
       </div>
 
-    </div>
-  </section>
-</Layout>
+
+    <h2>Messaging Choices and Privacy Requests</h2>
+    <p>You can stop business messages by replying STOP or using the block or unsubscribe options in your messaging app. For help, or to request access to, correction of, or deletion of information we hold about you, contact us using the details below. We may need to verify your identity, and legal requirements or the rights of others may limit a request. Requests concerning information held independently by Google, your carrier, or a booking or ordering provider should also be directed to that provider.</p>
+    <p>Starting a customer-service conversation does not enroll you in promotional messaging. Any separate marketing messaging requires the applicable consent.</p>
+
+    <h2>Retention and Security</h2>
+    <p>Retention depends on the type of information, the purpose of the inquiry or transaction, applicable service settings, and legal or recordkeeping requirements. Contact us for information about a particular record or to request deletion. Google, carriers, and other providers apply their own retention practices to information they hold; deleting information from our records does not necessarily delete their copies.</p>
+    <p>No internet transmission or storage system can be guaranteed completely secure. Please use the designated reservation or ordering provider for payment information rather than sending it by email or chat.</p>
+
+    <h2>Children's Privacy</h2>
+    <p>Our website and messaging are not directed to children under 13. If you believe a child has provided personal information to us, please contact us so we can address it.</p>
+
+    <h2>Changes to This Policy</h2>
+    <p>We may update this policy as our services or practices change. The date above identifies the latest revision. Where required, we will provide additional notice or obtain consent.</p>
+
+    <h2 id="contact">Contact Us</h2>
+    <p>For privacy questions or requests, contact:</p>
+    <address class="not-italic">
+      {venue.fullName}<br />
+      {venue.address.street}<br />
+      {venue.address.city}, {venue.address.state} {venue.address.zip}<br />
+      <a href={`mailto:${venue.email}`}>{venue.email}</a><br />
+      <a href={venue.phoneHref}>{venue.phone}</a>
+    </address>
+</LegalPage>
 
 <script is:inline>
   (function () {
@@ -141,6 +95,12 @@ import { venue } from '../data/venue';
       var statusEl = document.getElementById('privacy-status');
       var btn = document.getElementById('privacy-toggle');
       if (!statusEl || !btn) return;
+      if (navigator.globalPrivacyControl === true) {
+        statusEl.textContent = 'Analytics: blocked by Global Privacy Control';
+        btn.textContent = 'Controlled by browser';
+        btn.disabled = true;
+        return;
+      }
 
       var isOut = window.lilosPrivacy
         ? window.lilosPrivacy.isOptedOut()
@@ -154,7 +114,7 @@ import { venue } from '../data/venue';
       } else {
         statusEl.textContent = 'Analytics: active';
         btn.textContent = 'Opt out';
-        btn.style.cssText = 'background:var(--color-brand-pink,#cc6f8d);color:#fff;border-color:transparent;';
+        btn.style.cssText = 'background:var(--color-brand-pink,#cc6f8d);color:var(--color-brand-charcoal,#2b2420);border-color:transparent;';
       }
     }
 
@@ -163,6 +123,7 @@ import { venue } from '../data/venue';
       var btn = document.getElementById('privacy-toggle');
       if (!btn) return;
       btn.addEventListener('click', function () {
+        if (navigator.globalPrivacyControl === true) return;
         var isOut = window.lilosPrivacy
           ? window.lilosPrivacy.isOptedOut()
           : (function () { var r = readPrivacy(); return r ? !!r.optOut : false; })();
