@@ -2,6 +2,7 @@
 import Layout from './Layout.astro';
 interface Props { title: string; description: string; }
 const { title, description } = Astro.props;
+const currentPath = Astro.url.pathname.replace(/\/$/, '');
 ---
 <Layout title={`${title} — Cococabana Rooftop Bar`} description={description}>
   <section class="legal-page bg-brand-cream px-6 sm:px-8 lg:px-12 py-20 sm:py-28" aria-labelledby="legal-title">
@@ -11,8 +12,8 @@ const { title, description } = Astro.props;
         <h1 id="legal-title" class="font-display text-section-xl leading-display uppercase text-brand-charcoal mb-6">{title}</h1>
         <p class="text-sm text-brand-charcoal/70">Last updated: <time datetime="2026-10-29">October 29, 2026</time></p>
         <nav aria-label="Legal information" class="flex flex-wrap gap-x-6 gap-y-3 mt-6 text-sm">
-          <a href="/privacy" aria-current={Astro.url.pathname === '/privacy' ? 'page' : undefined}>Privacy Policy</a>
-          <a href="/terms" aria-current={Astro.url.pathname === '/terms' ? 'page' : undefined}>Terms of Service</a>
+          <a href="/privacy" aria-current={currentPath === '/privacy' ? 'page' : undefined}>Privacy Policy</a>
+          <a href="/terms" aria-current={currentPath === '/terms' ? 'page' : undefined}>Terms of Service</a>
           <a href="/privacy#choices">Your Privacy Choices</a>
         </nav>
       </header>
