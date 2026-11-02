@@ -52,16 +52,16 @@
     {
       "dayOfWeek": "Friday",
       "opens": "15:00",
-      "closes": "23:59"
+      "closes": "24:00"
     },
     {
       "dayOfWeek": "Saturday",
-      "opens": "10:00",
-      "closes": "23:59"
+      "opens": "11:00",
+      "closes": "24:00"
     },
     {
       "dayOfWeek": "Sunday",
-      "opens": "10:00",
+      "opens": "11:00",
       "closes": "20:00"
     }
   ],
@@ -85,11 +85,11 @@
       },
       {
         "days": "Saturday",
-        "hours": "10:00 AM – 12:00 AM"
+        "hours": "11:00 AM – 12:00 AM"
       },
       {
         "days": "Sunday",
-        "hours": "10:00 AM – 8:00 PM"
+        "hours": "11:00 AM – 8:00 PM"
       }
     ],
     "shortSummary": "Open Daily · Brunch Sat & Sun from 10 AM"
